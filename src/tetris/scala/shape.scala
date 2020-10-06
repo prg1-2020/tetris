@@ -93,13 +93,16 @@ object ShapeLib {
   }
 
   // 2. empty
-  // 目的：
+  // 目的： rows行cols列の空のShapeを作る
   def empty(rows: Int, cols: Int): Shape = {
     duplicate(rows, duplicate(cols, Transparent))
   }
 
   // 3. size
-  // 目的：
+  // 目的： Shapeのサイズを(rows, cols)の形式で返す
+  def size(sh: Shape): (Int, Int) = {
+    (sh.length, sh.foldRight(0)((x, k) => max(x.length, k)))
+  }
 
   // 4. blockCount
   // 目的：
@@ -164,10 +167,11 @@ object ShapeTest extends App {
   ))
 
   // 3. size
-  // println("size")
-  // println(size(Nil) == (0, 0))
-  // println(size(shapeI) == (4, 1))
-  // println(size(shapeZ) == (2, 3))
+  println("size")
+  println(size(Nil) == (0, 0))
+  println(size(shapeI) == (4, 1))
+  println(size(shapeZ) == (2, 3))
+  println(size(empty(5, 4)) == (5, 4))
 
   // 4. blockCount
   // println("blockCount")

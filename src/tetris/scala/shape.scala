@@ -12,9 +12,11 @@ package tetris
 
 import scala.collection.immutable.Range
 import scala.util.Random
-import scala.math.max
+import scala.math.max 
+import scala.math.min
 
 import sdraw._
+import java.awt.Transparency
 
 // テトロミノを操作するための関数
 object ShapeLib {
@@ -85,28 +87,70 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
-
+  // 目的：整数 n と任意の型の値 a を受け取り、n 個のa からなるリストを作る
+  def duplicate[A](n: Int, x: A): List[A] = {
+    if(n <= 0) Nil
+    else x::duplicate(n - 1, x)
+  }
 
 
   // 2. empty
-  // 目的：
-
+  // 目的：rows 行 cols 列の空の shape を作る
+  def empty(row: Int, col: Int): Shape = {
+    if(col <= 0) Nil
+    else if(row <= 0) Nil
+    else duplicate(col, Transparent)::empty(row - 1, col)
+  }
 
 
   // 3. size
-  // 目的：
+  // 目的：受け取った shape のサイズを (行数, 列数) の形で返す
+  def size(sh: Shape): (Int, Int) = {
+    def rSize(sh: Shape):Int = {
+      sh match {
+        case Nil => 0
+        case x::xs => max(x.length, rSize(xs))
+      }
+    }
 
+    (sh.length, rSize((sh)))
+  }
 
 
   // 4. blockCount
-  // 目的：
-
+  // 目的：受け取った shape に含まれる空でないブロックの数を返す
+  def blockCount(sh: Shape): Int = {
+    def rowCount(row: Row): Int = {
+      row match {
+        case Nil => 0
+        case x::xs => if(x != Transparent) 1 + rowCount(xs) else rowCount(xs)
+      }
+    }
+    sh match{
+      case Nil => 0
+      case x::xs => rowCount(x) + blockCount(xs)
+    }
+  }
 
 
   // 5. wellStructured
-  // 目的：
-
+  // 目的：受け取った shape がまっとうであるかを判断する
+  def wellStructured(sh: Shape): Boolean = {
+    def minMax(sh: Shape): (Int, Int) = {
+      sh match {
+        case Nil => (100, -1)
+        case x::xs => {
+          val st = minMax(xs)
+          assert(x.length < 100 && x.length > -1)
+          (min(x.length, st._1), max(x.length, st._2))
+        }
+      }
+    }
+    
+    val rt = minMax((sh))
+    if((sh.length < 1) || (rt._1 != rt._2) || (rt._1 < 1)) false
+    else true
+  }
 
 
   // 6. rotate
@@ -149,12 +193,14 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+  
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
+  //自作
+  println(duplicate(3, "7") == List("7", "7", "7"))
 
   // 2. empty
   println("empty")
@@ -183,7 +229,9 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+  //自作
+  println(wellStructured(shapeS) == true)
+/*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

@@ -113,7 +113,13 @@ object ShapeLib {
   }
 
   // 5. wellStructured
-  // 目的：
+  // 目的： shapeのcol, rowが一行以上, 各行の要素数が全て一致することを判定する
+  def wellStructured(sh: Shape): Boolean = {
+    val (rows, cols) = size(sh)
+    rows > 0 && cols > 0 && sh.foldRight(true)((x, k) => 
+      k && cols == x.length
+    )
+  }
 
   // 6. rotate
   // 目的：
@@ -186,13 +192,14 @@ object ShapeTest extends App {
   println(blockCount(make(List("I  ", "II ", "III"))) == 6)
 
   // 5. wellStructured
-  // println("wellStructured")
-  // println(wellStructured(Nil) == false)
-  // println(wellStructured(List(Nil, Nil)) == false)
-  // println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue, Blue))) == true)
-  // println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
-  // println(wellStructured(shapeI) == true)
-  // println(wellStructured(shapeZ) == true)
+  println("wellStructured")
+  println(wellStructured(Nil) == false)
+  println(wellStructured(List(Nil, Nil)) == false)
+  println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue, Blue))) == true)
+  println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
+  println(wellStructured(shapeI) == true)
+  println(wellStructured(shapeZ) == true)
+  println(wellStructured(List(List(Red), Nil)) == false)
 
   // 6. rotate
   // println("rotate")

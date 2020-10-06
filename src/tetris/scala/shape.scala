@@ -94,6 +94,9 @@ object ShapeLib {
 
   // 2. empty
   // 目的：
+  def empty(rows: Int, cols: Int): Shape = {
+    duplicate(rows, duplicate(cols, Transparent))
+  }
 
   // 3. size
   // 目的：
@@ -138,14 +141,27 @@ object ShapeTest extends App {
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
-  println(duplicate(2, duplicate(3, Nil)) == List(List(Nil, Nil, Nil), List(Nil, Nil, Nil)))
+  println(
+    duplicate(2, duplicate(3, Nil)) == List(
+      List(Nil, Nil, Nil),
+      List(Nil, Nil, Nil)
+    )
+  )
 
   // 2. empty
-  // println("empty")
-  // println(empty(1, 3) == List(List(Transparent, Transparent, Transparent)))
-  // println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
-  // println(empty(0, 2) == Nil)
-  // println(empty(2, 0) == List(Nil, Nil))
+  println("empty")
+  println(empty(1, 3) == List(List(Transparent, Transparent, Transparent)))
+  println(
+    empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent))
+  )
+  println(empty(0, 2) == Nil)
+  println(empty(2, 0) == List(Nil, Nil))
+  println(empty(4, 5) == List(
+    List(Transparent, Transparent, Transparent, Transparent, Transparent),
+    List(Transparent, Transparent, Transparent, Transparent, Transparent),
+    List(Transparent, Transparent, Transparent, Transparent, Transparent),
+    List(Transparent, Transparent, Transparent, Transparent, Transparent)
+  ))
 
   // 3. size
   // println("size")

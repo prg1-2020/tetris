@@ -105,7 +105,12 @@ object ShapeLib {
   }
 
   // 4. blockCount
-  // 目的：
+  // 目的： shapeの空でない部分を返す
+  def blockCount(sh: Shape): Int = {
+    sh.foldRight(0)((x, k) => 
+      k + x.foldRight(0)((x1, k1) => if (x1 != Transparent) 1 + k1 else k1)
+    )
+  }
 
   // 5. wellStructured
   // 目的：
@@ -174,10 +179,11 @@ object ShapeTest extends App {
   println(size(empty(5, 4)) == (5, 4))
 
   // 4. blockCount
-  // println("blockCount")
-  // println(blockCount(Nil) == 0)
-  // println(blockCount(shapeI) == 4)
-  // println(blockCount(shapeZ) == 4)
+  println("blockCount")
+  println(blockCount(Nil) == 0)
+  println(blockCount(shapeI) == 4)
+  println(blockCount(shapeZ) == 4)
+  println(blockCount(make(List("I  ", "II ", "III"))) == 6)
 
   // 5. wellStructured
   // println("wellStructured")

@@ -85,30 +85,85 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
-
-
+  // 目的：整数nと任意の型の値aを受け取り、n個のaからなるリストを作る
+  def duplicate[A](n: Int, a: A): List[A] = {
+    if(n <= 0) Nil
+    else a :: duplicate(n-1,a)
+  } 
 
   // 2. empty
-  // 目的：
-
+  // 目的：rows行cols列の空のshapeを作る
+  def empty(rows: Int, cols: Int): Shape = {
+    duplicate(rows,duplicate(cols,Transparent))
+  }
 
 
   // 3. size
-  // 目的：
-
+  // 目的：受け取ったshapeのサイズを(行数、列数)の形で返す
+  def size(shape: Shape): (Int,Int) = {
+    //目的:受け取ったshapeの最大の列数を返す
+    def maxcols(s: Shape): Int = {
+      s match {
+        case Nil => 0
+        case r :: rs => max(r.length,maxcols(rs))
+      }
+    }
+    shape match {
+      case Nil => (0,0)
+      case t :: ts => (shape.length,max(t.length,maxcols(ts)))
+    }
+  }
 
 
   // 4. blockCount
-  // 目的：
-
-
+  // 目的：受け取ったshapeに含まれる空でないブロックの数を返す
+  def blockCount(shape: Shape): Int = {
+    //目的:受け取ったrowに含まれる空でないブロックの数を返す
+    def subblockCount(row: List[Block]): Int = {
+      row match {
+        case Nil => 0
+        case r :: rs => 
+          r match {
+            case Transparent => subblockCount(rs)
+            case _ => 1 + subblockCount(rs)
+          }
+      }
+    }
+    shape match {
+      case Nil => 0
+      case t :: ts => subblockCount(t) + blockCount(ts) 
+    }
+  }
 
   // 5. wellStructured
-  // 目的：
-
-
-
+  // 目的：受け取ったshapeが全うであるかを判断する(ただし、「まっとう」とは行数・列数がともに1以上であり、各行の要素数がすべて等しいことを指す)
+  def wellStructured(shape: Shape): Boolean = {
+    //目的:受け取ったshapeの各行の要素数がすべて等しいかどうか判定する
+    def subwellStructed(s: Shape): Boolean = {
+      //目的:受け取ったshapeの最大の列数を返す
+      def maxcols(s1: Shape): Int = {
+        s1 match {
+          case Nil => 0
+          case r :: rs => max(r.length,maxcols(rs))
+        }
+      }
+      s match {
+        case Nil => true
+        case r :: rs => {
+          if(rs == Nil) true
+          else if(r.length == maxcols(rs)) true && subwellStructed(rs)
+          else false
+        }
+      }
+    }
+    shape match {
+      case Nil => false 
+      case r :: rs => {
+        if(r == Nil) false
+        else subwellStructed(shape)
+      }
+    }
+  }
   // 6. rotate
   // 目的：
   // 契約：
@@ -149,12 +204,13 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
+  println(duplicate(2, List(Nil,Nil)) == List(List(Nil,Nil),List(Nil,Nil)))
 
   // 2. empty
   println("empty")
@@ -162,18 +218,21 @@ object ShapeTest extends App {
   println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
+  println(empty(0,0) == Nil)
 
   // 3. size
   println("size")
   println(size(Nil) == (0, 0))
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
+  println(size(List(Nil,Nil)) == (2,0))
 
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
+  println(blockCount(List(List(Transparent,Red,Blue))) == 2)
 
   // 5. wellStructured
   println("wellStructured")
@@ -183,7 +242,8 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+  println(wellStructured(List(List(Transparent,Red,Blue),Nil)) == false)
+/*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

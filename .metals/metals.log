@@ -1,0 +1,594 @@
+2020.10.06 15:30:09 INFO  started: Metals version 0.9.4 in workspace '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris' for client vscode.
+2020.10.06 15:30:10 INFO  time: initialize in 1.11s
+2020.10.06 15:30:19 INFO  skipping build import with status 'Dismissed'
+2020.10.06 15:30:38 INFO  no build target: using presentation compiler with only scala-library
+2020.10.06 15:30:38 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+10月 06, 2020 3:32:21 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 06, 2020 3:32:21 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 06, 2020 3:38:38 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 06, 2020 3:38:39 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 06, 2020 3:40:27 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 06, 2020 3:40:27 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 06, 2020 3:41:52 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: offset 2378, count -2, length 5155
+java.lang.StringIndexOutOfBoundsException: offset 2378, count -2, length 5155
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:376)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:374)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:199)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:310)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.$anonfun$visit$5(SignatureHelpProvider.scala:340)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.$anonfun$visit$5$adapted(SignatureHelpProvider.scala:317)
+	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:924)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:923)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.$anonfun$visit$3(SignatureHelpProvider.scala:317)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.$anonfun$visit$3$adapted(SignatureHelpProvider.scala:316)
+	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:924)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:923)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:316)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:273)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:27)
+
+10月 06, 2020 3:42:15 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 06, 2020 3:42:15 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 06, 2020 3:43:04 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 06, 2020 3:43:04 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 06, 2020 3:43:08 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 06, 2020 3:43:08 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 06, 2020 3:43:45 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 06, 2020 3:43:45 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.06 15:44:54 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 15:49:16 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 15:49:16 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 15:50:08 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 15:51:21 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 15:51:21 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 15:53:29 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 15:53:29 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 15:53:45 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 15:55:36 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/tetris.scala
+2020.10.06 15:59:00 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 18:53:15 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 18:53:15 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 18:53:33 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 18:53:33 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 18:53:39 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+10月 06, 2020 6:55:56 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.06 21:38:04 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 21:38:34 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 21:38:34 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 21:38:34 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 21:38:51 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 21:39:28 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 21:39:28 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 21:39:33 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:08:51 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:09:01 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:09:06 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:09:14 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:09:43 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:09:43 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:09:47 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:10:52 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:11:18 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:11:59 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:12:30 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:12:31 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+10月 06, 2020 10:13:01 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:13:01 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:13:01 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:13:01 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:13:01 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:13:02 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020.10.06 22:13:11 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:13:18 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:13:18 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:13:32 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:14:44 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+10月 06, 2020 10:14:56 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:14:56 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:14:57 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:14:57 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020.10.06 22:15:02 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:15:10 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:15:20 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+10月 06, 2020 10:16:08 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:16:09 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:16:09 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:16:09 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:16:09 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 06, 2020 10:16:09 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020.10.06 22:16:50 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:17:00 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:17:17 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:17:17 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:17:17 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:17:17 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:17:31 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:18:21 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:18:21 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:18:50 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:19:05 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:34:05 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+10月 06, 2020 10:34:24 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4743
+10月 06, 2020 10:34:24 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4744
+2020.10.06 22:34:32 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:34:44 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:35:05 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:35:05 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:35:05 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:36:28 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:36:28 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:36:28 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.06 22:36:53 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:37:14 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:37:46 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:38:02 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:38:32 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 22:51:09 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 23:40:29 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 23:40:37 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 23:41:05 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 23:42:06 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.06 23:42:26 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 00:32:22 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 00:34:24 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 00:34:51 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 00:34:53 INFO  shutting down Metals
+2020.10.07 16:59:38 INFO  started: Metals version 0.9.4 in workspace '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris' for client vscode.
+2020.10.07 16:59:40 INFO  time: initialize in 1.31s
+2020.10.07 16:59:42 INFO  no build target: using presentation compiler with only scala-library
+2020.10.07 16:59:42 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:02:25 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:02:49 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:03:05 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:03:26 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:04:03 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:21:02 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.07 17:21:02 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:21:15 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:21:31 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:23:52 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+10月 07, 2020 5:24:30 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 07, 2020 5:24:30 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.07 17:28:10 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:32:57 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:33:08 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:33:58 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:34:58 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:35:09 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+10月 07, 2020 5:35:49 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.07 17:39:46 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:39:46 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:39:55 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.07 17:41:34 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala

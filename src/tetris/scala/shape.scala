@@ -104,8 +104,8 @@ object ShapeLib {
   def size(shape:Shape):(Int, Int) ={
     def sizeCol(shape:Shape):Int ={
       shape match{
-        case x::xs => max(x.length, sizeCol(xs))
         case Nil   => 0
+        case x::xs => max(x.length, sizeCol(xs))
       }
     }
     (shape.length, sizeCol(shape))
@@ -117,14 +117,15 @@ object ShapeLib {
   def blockCount(shape:Shape):Int ={
     def findNotTransRow(row:Row):Int ={
       row match{
+        case Nil   => 0
         case x::xs => if (x!=Transparent) 1+findNotTransRow(xs) 
                       else findNotTransRow(xs)
-        case Nil   => 0
       }
     }
     shape match{
-      case x::xs => findNotTransRow(x)+blockCount(xs)
       case Nil   => 0
+      case x::xs => findNotTransRow(x)+blockCount(xs)
+
     }
   }
 
@@ -135,15 +136,15 @@ object ShapeLib {
   def wellStructured(shape:Shape):Boolean ={
     def moreOne(shape:Shape):Boolean ={
       shape match{
-        case x::xs => (x!=Nil)||moreOne(xs)
         case Nil   => false
+        case x::xs => (x!=Nil)||moreOne(xs)
       }
     }
     def sameBlock(shape:Shape):Boolean ={
       shape match{
-        case x1::x2::xs => (x1.length==x2.length)&&sameBlock(x2::xs)
-        case x2::Nil    => true
         case Nil        => true
+        case x2::Nil    => true
+        case x1::x2::xs => (x1.length==x2.length)&&sameBlock(x2::xs)
       }
     }
     moreOne(shape)&&sameBlock(shape)

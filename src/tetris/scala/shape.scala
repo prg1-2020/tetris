@@ -93,7 +93,7 @@ object ShapeLib {
 
 
   // 2. empty
-  // 目的：rows行cols列の空のShapeを返す
+  // 目的：rows行cols列のブロックがすべてTransparentなShapeを返す
   def empty(rows:Int, cols:Int):Shape ={
     duplicate(rows, duplicate(cols, Transparent))
   }
@@ -131,15 +131,12 @@ object ShapeLib {
 
 
   // 5. wellStructured
-  // 目的：引数のshapeが行数・列数が1以上かつ各行の要素数がすべて等しいかをBooleanで返す
+  // 目的：引数のshapeが、行数・列数が1以上かつ各行の要素数がすべて等しいかをBooleanで返す
   def wellStructured(shape:Shape):Boolean ={
-    def moreOneCol(shape:Shape):Boolean ={
-      shape != Nil
-    }
-    def moreOneRow(shape:Shape):Boolean ={
+    def moreOne(shape:Shape):Boolean ={
       shape match{
-        case x::xs => (x!=Nil)&&moreOneRow(xs)
-        case Nil   => true
+        case x::xs => (x!=Nil)||moreOne(xs)
+        case Nil   => false
       }
     }
     def sameBlock(shape:Shape):Boolean ={
@@ -149,7 +146,7 @@ object ShapeLib {
         case Nil        => true
       }
     }
-    moreOneCol(shape)&&moreOneRow(shape)&&sameBlock(shape)
+    moreOne(shape)&&sameBlock(shape)
   }
 
 
@@ -218,6 +215,7 @@ object ShapeTest extends App {
   println(size(shapeZ) == (2, 3))
   //自作テスト
   println(size(List(List(Transparent), List(Transparent), List(Transparent))) == (3, 1))
+  println(size(List(List(Transparent), List(Transparent, Red, Red), List(Transparent))) == (3, 3))
 
   // 4. blockCount
   println("blockCount")
@@ -237,6 +235,7 @@ object ShapeTest extends App {
   println(wellStructured(shapeZ) == true)
   //自作テスト
   println(wellStructured(List(List(Transparent, Blue), List(Transparent, Red))) == true)
+  println(wellStructured(List(Nil, List(Red), Nil)) == false)
   /*
   // 6. rotate
   println("rotate")

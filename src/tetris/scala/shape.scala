@@ -235,6 +235,8 @@ object ShapeTest extends App {
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
 
+  println(wellStructured(List(List(Red, Yellow, Blue), List(Yellow, Blue, Yellow))) == true)
+
   /*
 
   // 6. rotate

@@ -311,3 +311,10 @@ java.lang.NullPointerException
 2020.10.08 13:28:19 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/shape.scala
 10月 08, 2020 1:29:06 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
+10月 08, 2020 1:32:47 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 16322
+2020.10.08 13:33:27 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/shape.scala
+10月 08, 2020 1:34:58 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 16663
+2020.10.08 13:35:00 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/shape.scala
+2020.10.08 13:35:20 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/shape.scala

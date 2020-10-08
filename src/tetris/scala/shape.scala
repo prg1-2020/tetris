@@ -85,7 +85,7 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：整数nと任意の方の値aを引数にとってn個のaでできたリストを返す
+  // 目的：整数nと任意の型の値aを引数にとってn個のaから成るリストを返す
   def duplicate[A](n:Int, a:A):List[A] ={
     if (n >= 1) a::duplicate(n-1, a)
     else Nil
@@ -113,7 +113,7 @@ object ShapeLib {
 
 
   // 4. blockCount
-  // 目的：受け取ったShape型のshapeに含まれるからでないブロック数を返す
+  // 目的：受け取ったShape型のshapeに含まれる空でないブロック数を返す
   def blockCount(shape:Shape):Int ={
     def findNotTransRow(row:Row):Int ={
       row match{

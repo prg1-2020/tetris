@@ -1,0 +1,446 @@
+2020.10.06 15:54:28 INFO  started: Metals version 0.9.4 in workspace '/Users/ira/Downloads/3Q/プログラミング第一/tetris' for client vscode.
+2020.10.06 15:54:30 INFO  time: initialize in 2.11s
+2020.10.06 15:54:36 INFO  running '/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -Dsbt.version=1.3.13 -jar /var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/metals2296698730900948944/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2020.10.06 15:54:47 INFO  [info] Updated file /Users/ira/Downloads/3Q/プログラミング第一/tetris/project/build.properties: set sbt.version to 1.3.13
+2020.10.06 15:54:47 INFO  [info] welcome to sbt 1.3.13 (AdoptOpenJDK Java 11.0.8)
+2020.10.06 15:54:51 INFO  [info] loading settings for project tetris-build-build from metals.sbt ...
+2020.10.06 15:54:57 INFO  [info] loading project definition from /Users/ira/Downloads/3Q/プログラミング第一/tetris/project/project
+2020.10.06 15:55:01 INFO  [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+2020.10.06 15:55:03 INFO  [info] loading settings for project tetris-build from metals.sbt ...
+2020.10.06 15:55:03 INFO  [info] loading project definition from /Users/ira/Downloads/3Q/プログラミング第一/tetris/project
+2020.10.06 15:55:04 INFO  [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+2020.10.06 15:55:10 INFO  [success] Generated .bloop/tetris-build.json
+2020.10.06 15:55:10 INFO  [success] Total time: 7 s, completed 2020/10/06 15:55:10
+2020.10.06 15:55:13 INFO  [info] loading settings for project root from build.sbt ...
+2020.10.06 15:55:13 INFO  [info] set current project to root (in build file:/Users/ira/Downloads/3Q/プログラミング第一/tetris/)
+2020.10.06 15:55:15 INFO  [success] Generated .bloop/support-test.json
+2020.10.06 15:55:15 INFO  [success] Generated .bloop/support.json
+2020.10.06 15:55:15 INFO  [success] Generated .bloop/root.json
+2020.10.06 15:55:15 INFO  [success] Generated .bloop/root-test.json
+2020.10.06 15:55:15 INFO  [success] Generated .bloop/tetris-test.json
+2020.10.06 15:55:15 INFO  [success] Generated .bloop/tetris.json
+2020.10.06 15:55:15 INFO  [success] Total time: 1 s, completed 2020/10/06 15:55:15
+2020.10.06 15:55:15 INFO  build tool exit: 0
+2020.10.06 15:55:16 INFO  time: ran 'sbt bloopInstall' in 39s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher5816698991089563217/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading 6 projects from '/Users/ira/Downloads/3Q/プログラミング第一/tetris/.bloop'...
+[0m[32m[D][0m Loading project from '/Users/ira/Downloads/3Q/プログラミング第一/tetris/.bloop/root-test.json'
+[0m[32m[D][0m Loading project from '/Users/ira/Downloads/3Q/プログラミング第一/tetris/.bloop/tetris.json'
+[0m[32m[D][0m Loading project from '/Users/ira/Downloads/3Q/プログラミング第一/tetris/.bloop/support-test.json'
+[0m[32m[D][0m Loading project from '/Users/ira/Downloads/3Q/プログラミング第一/tetris/.bloop/support.json'
+[0m[32m[D][0m Loading project from '/Users/ira/Downloads/3Q/プログラミング第一/tetris/.bloop/root.json'
+[0m[32m[D][0m Loading project from '/Users/ira/Downloads/3Q/プログラミング第一/tetris/.bloop/tetris-test.json'
+[0m[32m[D][0m Missing analysis file for project 'tetris'
+[0m[32m[D][0m Missing analysis file for project 'support-test'
+[0m[32m[D][0m Missing analysis file for project 'support'
+[0m[32m[D][0m Missing analysis file for project 'root'
+[0m[32m[D][0m Missing analysis file for project 'tetris-test'
+[0m[32m[D][0m Missing analysis file for project 'root-test'
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher5816698991089563217/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher5816698991089563217/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.06 15:55:16 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ira/Library/Caches/org.scalameta.metals/bsp.trace.json
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher6690412372413407852/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher6690412372413407852/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher6690412372413407852/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.06 15:55:16 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ira/Library/Caches/org.scalameta.metals/bsp.trace.json
+2020.10.06 15:55:16 INFO  time: connected to build server in 0.37s
+2020.10.06 15:55:16 INFO  Connected to Build server v1.4.4-13-408f4d80
+2020.10.06 15:55:30 INFO  time: indexed workspace in 14s
+2020.10.06 16:01:31 INFO  shutting down Metals
+No more data in the client stdin, exiting...
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+2020.10.09 18:16:31 INFO  started: Metals version 0.9.4 in workspace '/Users/ira/Downloads/3Q/プログラミング第一/tetris' for client vscode.
+2020.10.09 18:16:32 INFO  time: initialize in 1.8s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher2590648131969842310/bsp.socket'...
+Waiting for the bsp connection to come up...
+2020.10.09 18:16:33 INFO  skipping build import with status 'Installed'
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher2590648131969842310/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher2590648131969842310/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.09 18:16:34 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ira/Library/Caches/org.scalameta.metals/bsp.trace.json
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher642024874910395892/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher642024874910395892/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/w8/srt10gl916ddzx6gxw3q1dhh0000gn/T/bsp-launcher642024874910395892/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.09 18:16:34 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ira/Library/Caches/org.scalameta.metals/bsp.trace.json
+2020.10.09 18:16:34 INFO  time: connected to build server in 0.72s
+2020.10.09 18:16:34 INFO  Connected to Build server v1.4.4-13-408f4d80
+2020.10.09 18:16:34 INFO  time: imported build in 0.11s
+2020.10.09 18:16:44 INFO  time: indexed workspace in 9.81s
+2020.10.09 18:17:02 INFO  compiling support (4 scala sources and 21 java sources)
+2020.10.09 18:17:10 INFO  compiling tetris (2 scala sources)
+2020.10.09 18:17:10 INFO  time: compiled support in 7.67s
+2020.10.09 18:17:13 INFO  time: compiled tetris in 3.08s
+10月 09, 2020 6:24:39 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 134
+10月 09, 2020 6:25:04 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 217
+10月 09, 2020 6:25:36 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 303
+10月 09, 2020 6:25:36 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 305
+10月 09, 2020 6:25:36 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 304
+10月 09, 2020 6:25:36 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 307
+10月 09, 2020 6:25:36 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 309
+10月 09, 2020 6:26:00 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 371
+2020.10.09 18:26:22 INFO  compiling tetris (1 scala source)
+2020.10.09 18:26:27 INFO  time: compiled tetris in 4.42s
+2020.10.09 18:26:53 INFO  compiling tetris (1 scala source)
+2020.10.09 18:26:56 INFO  time: compiled tetris in 2.69s
+2020.10.09 18:29:00 INFO  compiling tetris (1 scala source)
+2020.10.09 18:29:00 INFO  time: compiled tetris in 0.4s
+2020.10.09 18:29:15 INFO  compiling tetris (1 scala source)
+2020.10.09 18:29:18 INFO  time: compiled tetris in 2.62s
+2020.10.09 18:30:06 INFO  compiling tetris (1 scala source)
+2020.10.09 18:30:09 INFO  time: compiled tetris in 3.02s
+10月 09, 2020 6:30:58 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 713
+2020.10.09 18:31:14 INFO  compiling tetris (1 scala source)
+2020.10.09 18:31:16 INFO  time: compiled tetris in 1.95s
+2020.10.09 18:31:32 INFO  compiling tetris (1 scala source)
+2020.10.09 18:31:32 INFO  time: compiled tetris in 0.2s
+2020.10.09 18:31:51 INFO  compiling tetris (1 scala source)
+2020.10.09 18:31:51 INFO  time: compiled tetris in 0.17s
+10月 09, 2020 6:32:16 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 951
+2020.10.09 18:32:17 INFO  compiling tetris (1 scala source)
+2020.10.09 18:32:20 INFO  time: compiled tetris in 3.17s
+2020.10.09 18:32:32 INFO  compiling tetris (1 scala source)
+2020.10.09 18:32:34 INFO  time: compiled tetris in 1.93s
+10月 09, 2020 6:35:01 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 6:35:01 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 09, 2020 6:36:11 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 1360
+2020.10.09 18:36:42 INFO  compiling tetris (1 scala source)
+2020.10.09 18:36:42 INFO  time: compiled tetris in 0.56s
+2020.10.09 18:38:20 INFO  compiling tetris (1 scala source)
+2020.10.09 18:38:22 INFO  time: compiled tetris in 1.91s
+2020.10.09 18:38:39 INFO  compiling tetris (1 scala source)
+2020.10.09 18:38:42 INFO  time: compiled tetris in 2.18s
+10月 09, 2020 6:39:30 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 1585
+2020.10.09 18:39:44 INFO  compiling tetris (1 scala source)
+2020.10.09 18:39:47 INFO  time: compiled tetris in 3.46s
+2020.10.09 18:41:41 INFO  compiling tetris (1 scala source)
+2020.10.09 18:41:43 INFO  time: compiled tetris in 2.37s
+2020.10.09 18:44:06 INFO  compiling tetris (1 scala source)
+2020.10.09 18:44:06 INFO  time: compiled tetris in 0.42s
+2020.10.09 18:44:52 INFO  compiling tetris (1 scala source)
+2020.10.09 18:44:52 INFO  time: compiled tetris in 0.66s
+10月 09, 2020 6:46:31 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 6:46:31 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.09 18:47:14 INFO  compiling tetris (1 scala source)
+2020.10.09 18:47:14 INFO  time: compiled tetris in 0.39s
+2020.10.09 18:51:27 INFO  compiling tetris (1 scala source)
+2020.10.09 18:51:30 INFO  time: compiled tetris in 3.48s
+2020.10.09 18:52:05 INFO  compiling tetris (1 scala source)
+2020.10.09 18:52:08 INFO  time: compiled tetris in 2.73s
+10月 09, 2020 6:52:24 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2193
+2020.10.09 18:52:24 INFO  compiling tetris (1 scala source)
+2020.10.09 18:52:28 INFO  time: compiled tetris in 3.54s
+10月 09, 2020 6:54:06 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 6:54:07 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.09 18:54:11 INFO  compiling tetris (1 scala source)
+2020.10.09 18:54:11 INFO  time: compiled tetris in 0.28s
+2020.10.09 18:54:22 INFO  compiling tetris (1 scala source)
+10月 09, 2020 6:54:24 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: offset 2612, count -1, length 5444
+2020.10.09 18:54:24 INFO  time: compiled tetris in 1.68s
+2020.10.09 18:55:18 INFO  compiling tetris (1 scala source)
+2020.10.09 18:55:18 INFO  time: compiled tetris in 71ms
+2020.10.09 18:55:58 INFO  compiling tetris (1 scala source)
+2020.10.09 18:56:00 INFO  time: compiled tetris in 1.72s
+10月 09, 2020 7:22:16 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2847
+2020.10.09 19:23:37 INFO  compiling tetris (1 scala source)
+2020.10.09 19:23:37 INFO  time: compiled tetris in 0.46s
+10月 09, 2020 7:24:08 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2957
+10月 09, 2020 7:24:08 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2963
+2020.10.09 19:24:14 INFO  compiling tetris (1 scala source)
+2020.10.09 19:24:16 INFO  time: compiled tetris in 2.2s
+10月 09, 2020 7:32:24 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 7:32:24 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 09, 2020 7:33:38 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 3306
+2020.10.09 19:43:33 INFO  compiling tetris (1 scala source)
+2020.10.09 19:43:33 INFO  time: compiled tetris in 0.89s
+2020.10.09 19:44:18 INFO  compiling tetris (1 scala source)
+2020.10.09 19:44:18 INFO  time: compiled tetris in 0.29s
+10月 09, 2020 7:44:31 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 7:44:32 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.09 19:47:43 INFO  compiling tetris (1 scala source)
+2020.10.09 19:47:43 INFO  time: compiled tetris in 0.39s
+2020.10.09 19:47:47 INFO  compiling tetris (1 scala source)
+2020.10.09 19:47:47 INFO  time: compiled tetris in 0.2s
+2020.10.09 19:47:50 INFO  compiling tetris (1 scala source)
+2020.10.09 19:47:52 INFO  time: compiled tetris in 2.1s
+2020.10.09 19:48:20 INFO  compiling tetris (1 scala source)
+2020.10.09 19:48:21 INFO  time: compiled tetris in 1.52s
+2020.10.09 19:48:46 INFO  compiling tetris (1 scala source)
+2020.10.09 19:48:48 INFO  time: compiled tetris in 1.62s
+2020.10.09 19:49:04 INFO  compiling tetris (1 scala source)
+2020.10.09 19:49:06 INFO  time: compiled tetris in 2.01s
+2020.10.09 19:49:34 INFO  compiling tetris (1 scala source)
+2020.10.09 19:49:34 INFO  time: compiled tetris in 0.25s
+2020.10.09 19:49:50 INFO  compiling tetris (1 scala source)
+2020.10.09 19:49:52 INFO  time: compiled tetris in 1.71s
+10月 09, 2020 7:51:33 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4757
+10月 09, 2020 7:51:49 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 7:51:49 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.09 19:54:19 INFO  compiling tetris (1 scala source)
+2020.10.09 19:54:19 INFO  time: compiled tetris in 0.39s
+2020.10.09 19:54:21 INFO  compiling tetris (1 scala source)
+2020.10.09 19:54:21 INFO  time: compiled tetris in 0.28s
+2020.10.09 19:55:35 INFO  compiling tetris (1 scala source)
+2020.10.09 19:55:37 INFO  time: compiled tetris in 2.26s
+2020.10.09 19:56:29 INFO  compiling tetris (1 scala source)
+2020.10.09 19:56:31 INFO  time: compiled tetris in 2.18s
+2020.10.09 19:57:23 INFO  compiling tetris (1 scala source)
+2020.10.09 19:57:27 INFO  time: compiled tetris in 3.83s
+2020.10.09 19:58:03 INFO  compiling tetris (1 scala source)
+2020.10.09 19:58:03 INFO  time: compiled tetris in 0.63s
+10月 09, 2020 7:58:21 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 5604
+10月 09, 2020 7:58:58 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 7:58:58 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 09, 2020 8:04:23 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 8:04:23 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10月 09, 2020 8:04:28 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 8:04:28 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+something's wrong: no file:///Users/ira/Downloads/3Q/%E3%83%95%E3%82%9A%E3%83%AD%E3%82%AF%E3%82%99%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%AF%E3%82%99%E7%AC%AC%E4%B8%80/tetris/src/tetris/scala/shape.scala in (Int, <error>)RangePosition(file:///Users/ira/Downloads/3Q/%E3%83%95%E3%82%9A%E3%83%AD%E3%82%AF%E3%82%99%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%AF%E3%82%99%E7%AC%AC%E4%B8%80/tetris/src/tetris/scala/shape.scala, 3401, 3401, 3415)
+2020.10.09 20:05:41 INFO  compiling tetris (1 scala source)
+2020.10.09 20:05:41 INFO  time: compiled tetris in 0.55s
+2020.10.09 20:05:41 INFO  compiling tetris (1 scala source)
+2020.10.09 20:05:42 INFO  time: compiled tetris in 0.41s
+10月 09, 2020 8:06:12 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 8:06:12 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.09 20:08:31 INFO  compiling tetris (1 scala source)
+2020.10.09 20:08:31 INFO  time: compiled tetris in 0.32s
+2020.10.09 20:10:20 INFO  compiling tetris (1 scala source)
+2020.10.09 20:10:20 INFO  time: compiled tetris in 0.3s
+10月 09, 2020 8:10:48 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 8:10:48 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.09 20:11:07 INFO  compiling tetris (1 scala source)
+2020.10.09 20:11:07 INFO  time: compiled tetris in 0.35s
+2020.10.09 20:11:46 INFO  compiling tetris (1 scala source)
+2020.10.09 20:11:46 INFO  time: compiled tetris in 0.34s
+2020.10.09 20:12:42 INFO  compiling tetris (1 scala source)
+2020.10.09 20:12:42 INFO  time: compiled tetris in 0.3s
+2020.10.09 20:12:51 INFO  compiling tetris (1 scala source)
+2020.10.09 20:12:53 INFO  time: compiled tetris in 2.59s
+2020.10.09 20:14:26 INFO  compiling tetris (1 scala source)
+2020.10.09 20:14:28 INFO  time: compiled tetris in 1.56s
+10月 09, 2020 8:15:45 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 6689
+2020.10.09 20:15:52 INFO  compiling tetris (1 scala source)
+2020.10.09 20:15:52 INFO  time: compiled tetris in 0.32s
+2020.10.09 20:16:09 INFO  compiling tetris (1 scala source)
+2020.10.09 20:16:09 INFO  time: compiled tetris in 0.43s
+2020.10.09 20:16:18 INFO  compiling tetris (1 scala source)
+2020.10.09 20:16:18 INFO  time: compiled tetris in 0.43s
+2020.10.09 20:16:44 INFO  compiling tetris (1 scala source)
+2020.10.09 20:16:46 INFO  time: compiled tetris in 1.72s
+2020.10.09 20:17:15 INFO  compiling tetris (1 scala source)
+2020.10.09 20:17:18 INFO  time: compiled tetris in 2.13s
+10月 09, 2020 8:18:36 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 8:18:36 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:419)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:136)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:109)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:98)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:963)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:811)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.09 20:20:16 INFO  compiling tetris (1 scala source)
+2020.10.09 20:20:16 INFO  time: compiled tetris in 76ms
+2020.10.09 20:21:04 INFO  compiling tetris (1 scala source)
+2020.10.09 20:21:04 INFO  time: compiled tetris in 0.26s
+2020.10.09 20:21:37 INFO  compiling tetris (1 scala source)
+2020.10.09 20:21:38 INFO  time: compiled tetris in 1.67s
+2020.10.09 20:22:51 INFO  compiling tetris (1 scala source)
+2020.10.09 20:22:51 INFO  time: compiled tetris in 0.41s
+2020.10.09 20:23:08 INFO  compiling tetris (1 scala source)
+2020.10.09 20:23:09 INFO  time: compiled tetris in 1.59s
+2020.10.09 20:24:19 INFO  compiling tetris (1 scala source)
+2020.10.09 20:24:19 INFO  time: compiled tetris in 66ms
+2020.10.09 20:24:30 INFO  compiling tetris (1 scala source)
+2020.10.09 20:24:30 INFO  time: compiled tetris in 0.29s
+2020.10.09 20:24:57 INFO  compiling tetris (1 scala source)
+2020.10.09 20:24:57 INFO  time: compiled tetris in 69ms
+2020.10.09 20:25:00 INFO  compiling tetris (1 scala source)
+2020.10.09 20:25:00 INFO  time: compiled tetris in 0.3s
+2020.10.09 20:25:06 INFO  compiling tetris (1 scala source)
+2020.10.09 20:25:06 INFO  time: compiled tetris in 0.17s
+2020.10.09 20:25:17 INFO  compiling tetris (1 scala source)
+2020.10.09 20:25:17 INFO  time: compiled tetris in 0.11s
+2020.10.09 20:25:25 INFO  compiling tetris (1 scala source)
+2020.10.09 20:25:25 INFO  time: compiled tetris in 68ms
+2020.10.09 20:25:39 INFO  compiling tetris (1 scala source)
+2020.10.09 20:25:41 INFO  time: compiled tetris in 1.9s
+2020.10.09 20:25:55 INFO  compiling tetris (1 scala source)
+2020.10.09 20:25:57 INFO  time: compiled tetris in 2.11s
+10月 09, 2020 8:26:39 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8090
+10月 09, 2020 8:26:59 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8165
+2020.10.09 20:27:02 INFO  compiling tetris (1 scala source)
+2020.10.09 20:27:04 INFO  time: compiled tetris in 1.98s
+2020.10.09 20:28:08 INFO  compiling tetris (1 scala source)
+2020.10.09 20:28:10 INFO  time: compiled tetris in 1.82s
+2020.10.09 20:30:02 INFO  compiling tetris (1 scala source)
+2020.10.09 20:30:04 INFO  time: compiled tetris in 2.06s
+10月 09, 2020 8:39:25 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

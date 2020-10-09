@@ -85,27 +85,75 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
+  // 目的：a(A型)がｎ個入ったリストを作る
+  def duplicate[A](n: Int, a: A): List[A] = {
+    if(n <= 0) Nil
+    else a :: duplicate(n - 1, a)
+  }
 
 
 
   // 2. empty
-  // 目的：
+  // 目的：rows行cols列のShapeを作る
+  def empty(rows: Int, cols: Int): Shape = {
+    duplicate(rows, duplicate(cols, Transparent))
+  }
+  
 
 
 
   // 3. size
-  // 目的：
+  // 目的：受け取ったShape型を（行数、列数）で返す
+  def size(s: Shape): (Int, Int) = {
+    val r = s.length
+    val c = {
+      if(r == 0) 0
+      else s(0).length
+    }
+    (r, c)
+  }
 
 
 
   // 4. blockCount
-  // 目的：
+  // 目的：受け取ったShape型に含まれる空でないブロックの数を返す
+  def blockCount(s: Shape): Int = {
+    def subCount(r: Row): Int = {
+      r match {
+        case Nil => 0
+        case x :: xs => {
+          val subC = subCount(xs)
+          if(x == Transparent) subC
+          else 1 + subC
+        }
+      }
+    }
+    s match {
+      case Nil => 0
+      case x :: xs => subCount(x) + blockCount(xs)
+    }
+  }
 
 
 
   // 5. wellStructured
-  // 目的：
+  // 目的：受け取ったShape型がまっとうであるかを判定する
+  def wellStructured(s: Shape): Boolean = {
+    size(s) match {
+      case (x, y) => {
+        if(x == 0 || y == 0) false
+        else {
+          var boo = true
+          var i = 0
+          while(i < x){
+            boo = boo && (s(i).length == y)
+            i = i + 1
+          }
+          boo
+        }
+      }
+    }
+  }
 
 
 
@@ -149,32 +197,36 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+  
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
-
+  println(duplicate(4, Nil) == List(Nil, Nil, Nil, Nil))  
+  
   // 2. empty
   println("empty")
   println(empty(1, 3) == List(List(Transparent, Transparent, Transparent)))
   println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
-
+  println(empty(1, 1) == List(List(Transparent)))
+  
   // 3. size
   println("size")
   println(size(Nil) == (0, 0))
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
-
+  println(size(shapeL) == (3, 2))
+  
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
-
+  println(blockCount(shapeL) == 4)
+  
   // 5. wellStructured
   println("wellStructured")
   println(wellStructured(Nil) == false)
@@ -183,7 +235,8 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+  println(wellStructured(shapeL) == true)
+  /*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

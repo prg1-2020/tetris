@@ -86,26 +86,43 @@ object ShapeLib {
 
   // 1. duplicate
   // 目的：
-
+  def duplicate[A](Int: n, A: a): List[A] = {
+    if (n < 1) Nill
+    else x :: duplicate(n-1, xs)
+  }
 
 
   // 2. empty
   // 目的：
-
+  def empty[A](Int: rows, Int: cols): List[A] = {
+    duplicate[Color](rows, duplicate[Color](cols, Transparent))
+  }
 
 
   // 3. size
   // 目的：
+  def size(list: List[Color]): List[Int] = {
+    list match {
+      case Nil => (0, 0)
+      case 
+    }
+  }
 
 
 
   // 4. blockCount
   // 目的：
+  def blockCount(): Int = {
+
+  }
 
 
 
   // 5. wellStructured
   // 目的：
+  def wellStructured(): Boolean = {
+    
+  }
 
 
 

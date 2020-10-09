@@ -215,6 +215,7 @@ object ShapeTest extends App {
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
+  println(blockCount(shapeT) == 4)
 
   // 5. wellStructured
   println("wellStructured")

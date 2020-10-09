@@ -1,0 +1,157 @@
+2020.10.06 16:41:35 INFO  started: Metals version 0.9.4 in workspace 'C:\Users\tomohiro\tetris' for client vscode.
+2020.10.06 16:41:38 INFO  time: initialize in 2.62s
+2020.10.06 16:41:48 INFO  no build target: using presentation compiler with only scala-library
+2020.10.06 16:41:48 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.06 17:24:08 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+10月 06, 2020 5:25:06 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 06, 2020 5:25:06 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.06 17:30:17 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.06 17:30:17 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.06 17:30:17 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.06 17:30:17 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.06 17:30:22 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.06 17:30:22 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2707)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2700)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2701)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2702)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2701)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2700)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2701)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2702)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2703)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2698, 2698, 2712)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2698, 2698, 2705)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2698, 2698, 2706)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2698, 2698, 2707)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2698, 2698, 2708)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2698, 2698, 2709)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2738, 2738, 2752)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2738, 2738, 2746)
+2020.10.07 15:03:44 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2941, 2941, 2955)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2941, 2941, 2948)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2941, 2941, 2949)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2941, 2941, 2950)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2941, 2941, 2951)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2960)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2953)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2954)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2955)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2956)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2957)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2957)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2957)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[<error>]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2946, 2946, 2957)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[List[<error>]]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2710)
+something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala in List[List[<error>]]RangePosition(file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.scala, 2693, 2693, 2710)
+2020.10.07 19:46:37 INFO  shutting down Metals
+2020.10.07 19:47:24 INFO  started: Metals version 0.9.4 in workspace 'C:\Users\tomohiro\tetris' for client vscode.
+2020.10.07 19:47:27 INFO  time: initialize in 3.46s
+2020.10.07 19:47:42 INFO  no build target: using presentation compiler with only scala-library
+2020.10.07 19:47:42 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+10月 09, 2020 10:09:46 午前 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 09, 2020 10:09:46 午前 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.09 11:06:46 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.09 11:07:10 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+10月 09, 2020 11:56:16 午前 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.09 12:00:53 WARN  no build target for: C:\Users\tomohiro\lx00\hello\hello.scala
+10月 09, 2020 12:12:02 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: offset 4392, count -1, length 6404
+2020.10.09 13:19:26 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+10月 09, 2020 1:19:36 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.09 13:20:04 INFO  shutting down Metals
+2020.10.09 13:20:52 INFO  started: Metals version 0.9.4 in workspace 'C:\Users\tomohiro\tetris' for client vscode.
+2020.10.09 13:20:58 INFO  time: initialize in 5.25s
+2020.10.09 13:21:00 INFO  skipping build import with status 'Requested'
+2020.10.09 13:21:10 INFO  no build target: using presentation compiler with only scala-library
+2020.10.09 13:21:10 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 13:27:57 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 13:35:51 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 13:36:55 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 13:37:12 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.09 13:37:12 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 13:55:46 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.09 15:29:38 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:33:39 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.09 15:33:39 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:35:05 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.09 15:35:05 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:39:44 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+10月 09, 2020 3:40:05 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: offset 3647, count -1, length 6711
+java.lang.StringIndexOutOfBoundsException: offset 3647, count -1, length 6711
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:376)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:374)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:199)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:310)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:273)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:27)
+
+10月 09, 2020 3:40:09 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: offset 3647, count -1, length 6718
+java.lang.StringIndexOutOfBoundsException: offset 3647, count -1, length 6718
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:376)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:374)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:199)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:310)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:273)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:27)
+
+2020.10.09 15:40:52 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.09 15:40:52 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:48:21 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:48:39 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:50:16 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.09 15:50:16 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:50:59 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:54:10 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.09 15:54:10 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 15:54:31 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+10月 09, 2020 3:58:04 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2785
+2020.10.09 16:01:07 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala' because it doesn't belong to a build target.
+2020.10.09 16:01:07 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.09 16:01:36 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+10月 09, 2020 4:02:03 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

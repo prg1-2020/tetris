@@ -1,0 +1,200 @@
+2020.10.10 21:50:30 INFO  started: Metals version 0.9.4 in workspace '/Users/oosakishuuhei/Documents/workspace/scala/tetris' for client vscode.
+2020.10.10 21:50:31 INFO  time: initialize in 1.63s
+2020.10.10 21:54:18 INFO  no build target: using presentation compiler with only scala-library
+2020.10.10 21:54:18 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 21:57:30 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.10.10 21:59:00 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+10月 10, 2020 10:05:00 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 313
+2020.10.10 22:05:17 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 22:09:32 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+10月 10, 2020 10:11:13 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 766
+2020.10.10 22:12:22 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:15:35 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 22:16:22 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:17:57 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/lec1/currency.scala
+2020.10.10 22:20:14 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:28:31 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:29:32 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:32:51 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:37:08 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:39:03 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:39:32 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:41:13 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 22:49:56 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.10.10 22:55:01 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+something's wrong: no file:///Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala in () => <error>RangePosition(file:///Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala, 2412, 2414, 2415)
+something's wrong: no file:///Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala in () => <error>RangePosition(file:///Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala, 2412, 2414, 2415)
+2020.10.10 22:55:43 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 22:56:04 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:57:00 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:57:59 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 22:58:22 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:58:51 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:59:59 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 22:59:59 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+10月 10, 2020 11:02:33 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2904
+2020.10.10 23:02:41 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 23:03:20 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 23:03:20 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:03:53 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+10月 10, 2020 11:15:38 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 10, 2020 11:15:38 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 10, 2020 11:15:40 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 10, 2020 11:15:40 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 10, 2020 11:15:40 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 10, 2020 11:15:40 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 10, 2020 11:15:40 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 10, 2020 11:15:40 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 10, 2020 11:15:41 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 10, 2020 11:15:41 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 10, 2020 11:15:42 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 10, 2020 11:15:42 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 10, 2020 11:15:55 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 3199
+2020.10.10 23:22:07 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+10月 10, 2020 11:30:07 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 3734
+2020.10.10 23:36:46 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:37:04 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 23:37:04 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:37:21 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:37:30 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 23:37:30 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:38:37 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:38:55 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:39:08 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:39:58 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:41:16 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:41:41 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:43:53 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.10 23:44:21 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.10 23:44:40 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+10月 10, 2020 11:50:44 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: offset 2830, count -1, length 5762
+2020.10.10 23:59:52 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:02:41 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:05:27 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:08:19 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:08:57 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:09:20 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:09:28 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:09:41 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:10:05 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:11:06 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:11:49 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:11:53 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:12:07 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:12:42 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:16:29 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:17:55 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:18:28 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:18:44 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:18:46 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:19:29 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:19:39 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:20:30 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:20:51 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:20:55 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:21:25 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:21:28 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:21:35 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:21:42 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:21:49 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:22:07 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:26:28 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 00:27:22 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+10月 11, 2020 12:28:05 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 7062
+2020.10.11 00:47:44 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/lec7/nPuzzle.scala
+2020.10.11 00:59:33 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 00:59:56 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 01:01:03 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 01:01:39 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 01:04:12 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 01:04:36 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.11 01:04:40 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 01:05:16 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 01:05:41 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 01:06:08 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.10.11 01:06:23 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala

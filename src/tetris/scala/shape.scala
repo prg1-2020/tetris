@@ -85,28 +85,58 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
-
+  // 目的：整数nと任意の型の値aを受け取り、n個のaからなるリストを作る
+  def duplicate[A](n: Int, a: A): List[A] = {
+    if(n <= 0) Nil
+    else a :: duplicate(n-1, a)
+  }
 
 
   // 2. empty
-  // 目的：
-
+  // 目的：rows行cols列の空のshapeを作る
+  def empty(rows: Int, cols: Int): Shape = {
+    duplicate(rows, duplicate(cols, Transparent))
+  }
 
 
   // 3. size
-  // 目的：
-
+  // 目的：受け取ったshapeのサイズを(行数, 列数)の形で返す
+  //行数はshapeのlength
+  //列数はmax(max(max(Init, row0.length), row1.length), row2.length) 各行の列数の最大値
+  def size(shape: Shape): (Int, Int) = {
+    (
+      shape.length
+    ,
+      shape.foldLeft(0)((r: Int, x: Row) => max(r, x.length))
+    )
+  }
 
 
   // 4. blockCount
-  // 目的：
-
+  // 目的：受け取ったshapeに含まれる空でないブロックの数を返す
+  //各行の各マスについてTransparentでないマスの数を合計する
+  def blockCount(shape: Shape): Int = {
+    shape.foldLeft(0)((r: Int, x: Row) => //各行について繰り返す
+      r + x.foldLeft(0)((r: Int, x: Block) => //各マスについて繰り返す
+        r + (if(x != Transparent) 1 else 0)
+      )
+    )
+  }
 
 
   // 5. wellStructured
-  // 目的：
-
+  // 目的：受け取ったshapeがまっとうであるかを判断する
+  //「まっとう」とは行数・列数がともに１以上であり、各行の要素数が全て等しいことを指す
+  //(最初の行がある)(最初の行の要素数が1以上)(最初の行の要素数と他の行の要素数が等しい)を順に確認する
+  def wellStructured(shape: Shape): Boolean = {
+    shape match {
+      case Nil => false
+      case x :: xs => //最初の行あり
+        val cols = x.length
+        (cols >= 1) && //最初の行の要素数が1以上
+          xs.foldLeft(true)((ans: Boolean, row: Row) => ans && (row.length == cols)) //最初の行の要素数がcolsなのは自明なので省略
+    }
+  }
 
 
   // 6. rotate
@@ -149,7 +179,7 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+  
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
@@ -162,6 +192,8 @@ object ShapeTest extends App {
   println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
+
+  println(empty(2, 3) == List(List(Transparent, Transparent, Transparent), List(Transparent, Transparent, Transparent)))
 
   // 3. size
   println("size")
@@ -183,7 +215,7 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+  /*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

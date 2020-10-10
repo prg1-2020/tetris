@@ -1,0 +1,69 @@
+2020.10.08 22:50:11 INFO  started: Metals version 0.9.4 in workspace '/Users/kyosuke.d/classes/prg01/tetris' for client vscode.
+2020.10.08 22:50:13 INFO  time: initialize in 1.63s
+2020.10.08 22:50:22 INFO  no build target: using presentation compiler with only scala-library
+2020.10.08 22:51:57 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.08 22:52:02 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.08 22:52:06 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.08 22:59:48 INFO  shutting down Metals
+2020.10.11 03:36:15 INFO  started: Metals version 0.9.4 in workspace '/Users/kyosuke.d/classes/prg01/tetris' for client vscode.
+2020.10.11 03:36:17 INFO  time: initialize in 1.63s
+2020.10.11 03:36:18 INFO  skipping build import with status 'Requested'
+2020.10.11 03:36:22 INFO  no build target: using presentation compiler with only scala-library
+2020.10.11 03:36:22 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+10月 11, 2020 3:50:29 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 961
+10月 11, 2020 4:00:52 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 1881
+10月 11, 2020 4:09:10 午前 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 11, 2020 4:09:10 午前 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 11, 2020 4:09:14 午前 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 11, 2020 4:09:14 午前 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+2020.10.11 04:43:34 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 04:56:11 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 04:57:39 INFO  shutting down Metals
+2020.10.11 04:58:02 INFO  started: Metals version 0.9.4 in workspace '/Users/kyosuke.d/classes/prg01/tetris' for client vscode.
+2020.10.11 04:58:03 INFO  time: initialize in 1.44s
+2020.10.11 04:58:04 INFO  skipping build import with status 'Requested'
+2020.10.11 04:58:06 INFO  no build target: using presentation compiler with only scala-library
+2020.10.11 04:58:06 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+10月 11, 2020 4:58:07 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4
+10月 11, 2020 4:58:07 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2
+2020.10.11 04:58:19 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.11 05:02:31 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 05:04:41 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 05:18:00 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 05:18:06 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 05:19:38 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 05:20:38 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 05:20:58 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+2020.10.11 05:21:15 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
+10月 11, 2020 5:21:36 午前 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

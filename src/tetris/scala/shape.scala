@@ -65,7 +65,6 @@ object ShapeLib {
       List(" SS", "SS "))
 
   def make(spec: ShapeSpec): Shape = {
-
     def color(c: ColorSymbol): Color =
       Sym2Color.find(p => p._1.equals(c)) match {
         case Some((_, c)) => c
@@ -85,7 +84,7 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
+  // 目的： n 個の, 任意の型の値 a からなるリストを作る.
   def duplicate[A](n: Int, a: A): List[A] = {
     if (n < 1) Nil
     else a :: duplicate(n - 1, a)
@@ -93,16 +92,15 @@ object ShapeLib {
 
 
   // 2. empty
-  // 目的：
+  // 目的： rows 行 cols 列の空の shape を作る.
   def empty(rows: Int, cols: Int): Shape = {
     duplicate(rows, duplicate(cols, Transparent))
   }
 
 
   // 3. size
-  // 目的：
+  // 目的： 受け取った shape のサイズの (行数, 列数) の形で返す.
   def size(shape: Shape): (Int, Int) = {
-
     def sizeAcc(shape: Shape, a:Int, b:Int): (Int, Int) = {
       shape match {
         case Nil => (a, b)
@@ -115,9 +113,8 @@ object ShapeLib {
 
 
   // 4. blockCount
-  // 目的：
+  // 目的： 受け取った shape に含まれる空でないブロックの数を返す.
   def blockCount(shape: Shape): Int = {
-
     def blockCountRow(row: Row): Int = {
       row match {
         case Nil => 0
@@ -134,12 +131,13 @@ object ShapeLib {
 
 
   // 5. wellStructured
-  // 目的：
+  // 目的： 受け取った shape が行数・列数がともに 1 以上であり, 各行の要素数が全て等しいことを調べる.
   def wellStructured(shape: Shape): Boolean = {
-
     def wellStructuredAcc(shape: Shape, a: Int, b: Int): Boolean = {
       shape match {
-        case Nil => if (a == 0) false else true
+        case Nil =>
+          if (a == 0) false
+          else true
         case x :: xs =>
           if ((x.length == 0) || ((x.length != b) && (b != 0))) false
           else wellStructuredAcc(xs, a + 1, x.length)
@@ -196,6 +194,7 @@ object ShapeTest extends App {
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
+  println(duplicate(4, "Scala") == List("Scala", "Scala", "Scala", "Scala"))
 
   // 2. empty
   println("empty")
@@ -203,18 +202,21 @@ object ShapeTest extends App {
   println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
+  println(empty(0, 0) == Nil)
 
   // 3. size
   println("size")
   println(size(Nil) == (0, 0))
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
+  println(size(shapeS) == (2, 3))
 
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
+  println(blockCount(shapeL) == 4)
 
   // 5. wellStructured
   println("wellStructured")

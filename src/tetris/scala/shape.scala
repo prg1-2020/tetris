@@ -85,23 +85,37 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
+  // 目的：整数nと任意の型aを受け取り、n個のaからなるリストを作る。
+  def duplicate[A](n:Int,x:A):List[A] = {
+    if(n <= 0) Nil
+    else x :: duplicate(n-1,x)
+  }
 
 
 
   // 2. empty
-  // 目的：
-
+  // 目的：row行col列の空のshapeを作る
+  def empty[A](m:Int,n:Int):List[A] = {
+    if(m <= 0) Nil
+    else duplicate(n,Transparent) :: empty(m-1,n)
+    }
+  }
 
 
   // 3. size
-  // 目的：
-
+  // 目的：受け取ったshapeのサイズを返す
+  def size[A](n:Shape) = {
+    if(n.length == 0)(0,0)
+    else (n.length,foldRight(0)(x:List[A],y:List[A]) => max(x.length,y.length))
+  }
 
 
   // 4. blockCount
-  // 目的：
-
+  // 目的：受け取ったshapeに含まれるブロックの数を返す
+  def blockCount[A](n:Shape) = {
+    if(n.length == 0)
+    
+  }
 
 
   // 5. wellStructured

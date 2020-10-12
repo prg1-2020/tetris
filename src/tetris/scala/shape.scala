@@ -103,7 +103,8 @@ object ShapeLib {
   // 目的：行数と列数を返す
   def size(shape: Shape): (Int, Int) = {
     val rowSize = shape.length
-    val columnSize = if (rowSize == 0) 0 else shape.maxBy(_.length)
+    val columnSize =
+      if (rowSize == 0) 0 else shape.map(_.length).foldLeft(-1)(max(_, _))
     (rowSize, columnSize)
   }
 

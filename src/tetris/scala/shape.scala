@@ -85,23 +85,9 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
 
-  //0.not_transprant_len
-  //目的：Row型の空白を除いた長さを数える
-      def not_transprant_len(shape:Row,count:Int):Int ={ 
-        shape match{
-            case Nil => count
-            case x::xs=>{
-                if (x == Transparent) not_transprant_len(xs,count)
-                else {
-                    val count_now = count +1
-                    not_transprant_len(xs,count_now)
-                }
-            }
-        }
-    }
   // 1. duplicate
   // 目的：nこの任意の型を持つaからなるリストを作成する
-    def duplicate[A](n:Int , x:A):List[A]={
+    def duplicate[A](n:Int, x:A):List[A]={
         if (n<=0)  Nil
         else x::duplicate[A](n-1,x)
     }
@@ -110,45 +96,57 @@ object ShapeLib {
   // 2. empty
   // 目的：rows行cols列のshapeを作る
     def empty(rows:Int ,cols:Int): Shape ={
-        if (rows<=0)  Nil //duplicate(rows,Nil)
+        if (rows<=0)  Nil 
         else duplicate(cols,Transparent)::empty(rows-1,cols)
     }
 
 
-
   // 3. size
   // 目的：受け取ったshapeのサイズを(列、行)の形で返す
-  //行数：list.lengthで取得  中身をループさせて大きかったら更新 =!Transprant で判定
     def size(shape:Shape):(Int,Int)={
-        val rows = shape.length
 
-        def myfanc(shape:Shape , cols:Int) :Int ={
+        def get_cols(shape:Shape , cols:Int) :Int ={
             shape match{
                 case Nil => cols
                 case x::xs => {
                     val cols_now = max(cols,x.length)
-                    myfanc(xs,cols_now)
+                    get_cols(xs,cols_now)
                 }
             }
         }
+        val rows = shape.length
+        val cols = get_cols(shape,0)
 
-        (rows,myfanc(shape,0))
+        (rows,cols)
     }
 
 
   // 4. blockCount
   // 目的：受け取ったshapeに含まれる空以外のブロックの数を返す
     def blockCount(shape:Shape):Int={
+        def not_transprant_len(shape:Row,count:Int):Int ={ 
+            shape match{
+                case Nil => count
+                case x::xs=>{
+                    if (x == Transparent) not_transprant_len(xs,count)
+                    else {
+                        val count_now = count +1
+                        not_transprant_len(xs,count_now)
+                    }
+                }
+            }
+        }
+
         def count_re(shape:Shape,count:Int):Int ={
             shape match{
                 case Nil => count
                 case x::xs => {
-                    val count_now =count + not_transprant_len(x,0)
+                    val count_now = not_transprant_len(x,count)
                     count_re(xs,count_now)
                 }
             }
         }
-        return count_re(shape,0)
+        count_re(shape,0)
     }
 
 
@@ -164,6 +162,7 @@ object ShapeLib {
                 }
             }
         }
+        
 
         def matto1(shape:Shape):Int={
             val rows = shape.length
@@ -171,22 +170,20 @@ object ShapeLib {
             if(cols>0 && rows>0) 0
             else 1
         }
-
-        def matto2(shape:Shape):Int={
-            val cols_now = get_cols(shape,0)
-            def matto2_re(shape:Shape,cols_now:Int,bool:Int):Int={
-                shape match{
-                    case Nil => bool
-                    case x::xs => {
-                        if (x.length == cols_now) matto2_re(xs,cols_now,0)
-                        else matto2_re(xs,cols_now,1)
-                    }
+        val cols_now = get_cols(shape,0)
+        def matto2(shape:Shape,bool:Int):Int={
+            shape match{
+                case Nil => bool
+                case x::xs => {
+                    if (x.length == cols_now) matto2(xs,0)
+                    else matto2(xs,1)
                 }
             }
-            matto2_re(shape,cols_now,0)
         }
+        val condition1 = matto1(shape)
+        val condition2 = matto2(shape,0)
         
-        if(matto2(shape)+matto1(shape) == 0) true
+        if(condition1+condition2 == 0) true
         else false
     }
 

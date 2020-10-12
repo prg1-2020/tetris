@@ -86,42 +86,66 @@ object ShapeLib {
 
   // 1. duplicate
   // 目的：
-  def duplicate[A](Int: n, A: a): List[A] = {
-    if (n < 1) Nill
-    else x :: duplicate(n-1, xs)
+  def duplicate[A](n: Int, a: A): List[A] = {
+    if (n < 1) Nil
+    else a :: duplicate(n - 1, a)
   }
 
 
   // 2. empty
   // 目的：
-  def empty[A](Int: rows, Int: cols): List[A] = {
-    duplicate[Color](rows, duplicate[Color](cols, Transparent))
+  def empty(rows: Int, cols: Int): Shape = {
+    duplicate(rows, duplicate(cols, Transparent))
   }
 
 
   // 3. size
   // 目的：
-  def size(list: List[Color]): List[Int] = {
-    list match {
-      case Nil => (0, 0)
-      case 
+  def size(shape: Shape): (Int, Int) = {
+
+    def sizeAcc(shape: Shape, a:Int, b:Int): (Int, Int) = {
+      shape match {
+        case Nil => (a, b)
+        case x :: xs => sizeAcc(xs, a + 1, max(b, x.length))
+      }
     }
+    sizeAcc(shape, 0, 0)
   }
 
 
 
   // 4. blockCount
   // 目的：
-  def blockCount(): Int = {
+  def blockCount(shape: Shape): Int = {
 
+    def blockCountRow(row: Row): Int = {
+      row match {
+        case Nil => 0
+        case Transparent :: xs => blockCountRow(xs)
+        case x :: xs => blockCountRow(xs) + 1
+      }
+    }
+    shape match {
+      case Nil => 0
+      case x :: xs => blockCountRow(x) + blockCount(xs)
+    }
   }
 
 
 
   // 5. wellStructured
   // 目的：
-  def wellStructured(): Boolean = {
-    
+  def wellStructured(shape: Shape): Boolean = {
+
+    def wellStructuredAcc(shape: Shape, a: Int, b: Int): Boolean = {
+      shape match {
+        case Nil => if (a == 0) false else true
+        case x :: xs =>
+          if ((x.length == 0) || ((x.length != b) && (b != 0))) false
+          else wellStructuredAcc(xs, a + 1, x.length)
+      }
+    }
+  wellStructuredAcc(shape, 0, 0)
   }
 
 
@@ -166,7 +190,7 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
@@ -200,7 +224,7 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+/*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

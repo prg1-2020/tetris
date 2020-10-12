@@ -85,29 +85,63 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
-
-
+  // 目的：n 個の x (型は任意)からなるリストを作る
+  def duplicate[A](n: Int, a: A): List[A] = {
+    if (n == 0) Nil
+    else a :: duplicate(n-1, a)
+  }
 
   // 2. empty
-  // 目的：
-
-
+  // 目的：与えられた行数、列数の空のshapeを作る
+  def empty(n: Int, m: Int): Shape = {
+    if (n == 0) Nil
+    else duplicate(m, Transparent) :: empty(n-1, m)
+  }
 
   // 3. size
-  // 目的：
-
-
+  // 目的：受け取ったshapeのサイズを(行数, 列数)で返す
+  def maxCols(shape: Shape): Int = {
+    shape match {
+      case Nil => 0
+      case x :: xs => max(x.length, maxCols(xs))
+    }
+  }
+  def size(shape: Shape): (Int, Int) = {
+   val rows = shape.length
+   val cols = maxCols(shape)
+   (rows, cols)
+  }
 
   // 4. blockCount
-  // 目的：
-
-
+  // 目的：受け取ったshapeに含まれる空でないブロックを数える
+  def blockCountRow(row: Row): Int = {
+    row match{
+      case Nil => 0
+      case x :: xs =>
+      if (x == Transparent) blockCountRow(xs)
+      else 1 + blockCountRow(xs)
+    }
+  }
+  def blockCount(shape: Shape): Int = {
+    shape match {
+      case Nil => 0
+      case x :: xs => blockCountRow(x) + blockCount(xs)
+    }
+  }
 
   // 5. wellStructured
-  // 目的：
-
-
+  // 目的：受け取ったshapeの行数、列数が1以上であり各行の要素数が等しいかどうかを判別する
+  def minCols(shape: Shape): Int = {
+    shape match {
+      case Nil => 0
+      case x :: xs => 
+      if (xs == Nil) x.length
+      else -max(-x.length, -minCols(xs))
+    }
+  }
+  def wellStructured(shape: Shape): Boolean = {
+    minCols(shape) == maxCols(shape) && minCols(shape) != 0
+  }
 
   // 6. rotate
   // 目的：
@@ -149,19 +183,21 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
 
+  println(duplicate(5, "おはよう!") == List("おはよう!", "おはよう!", "おはよう!", "おはよう!", "おはよう!")) //自作テスト
+
   // 2. empty
   println("empty")
   println(empty(1, 3) == List(List(Transparent, Transparent, Transparent)))
   println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
   println(empty(0, 2) == Nil)
-  println(empty(2, 0) == List(Nil, Nil))
+
+  println(empty(2, 0) == List(Nil, Nil)) //自作テスト
 
   // 3. size
   println("size")
@@ -169,11 +205,15 @@ object ShapeTest extends App {
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
 
+  println(size(List(List(Transparent, Transparent), List(Transparent, Transparent, Transparent), List(Transparent))) == (3, 3)) //自作テスト
+
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
+
+  println(blockCount(List(List(Transparent, Transparent), List(Transparent, Transparent, Transparent), List(Transparent))) == 0) //自作テスト
 
   // 5. wellStructured
   println("wellStructured")
@@ -183,7 +223,10 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
+  
+  println(wellStructured(List(List(Blue, Blue), List(Yellow, Yellow, Yellow), Nil)) == false) //自作テスト
 
+  /*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

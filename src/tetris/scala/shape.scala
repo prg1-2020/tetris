@@ -24,8 +24,8 @@ object ShapeLib {
   val blockSymbols = List('I', 'J', 'T', 'O', 'Z', 'L', 'S')
   val blockColors = {
     val n = blockSymbols.length
-    for (i <- Range(0, n)) yield (HSB(360f * i / n, 0.3f, 1))
-  }
+    for (i <- Range(0, n)) yield (HSB(360f * i / n, 0.3f, 1)) 
+  
   val colorSymbols = blockSymbols ++ List('G', 'g')
   val colors = blockColors ++ List(DarkGray, LightGray)
   val Color2Sym = colors.zip(colorSymbols).toList
@@ -85,28 +85,48 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
-
+  // 目的：整数nと型aを受け取り、n個のaからなるリストを作る
+  def duplicate[A](n:Int, a: A):List[A]={
+    if (n<=0) Nill
+    else a :: duplicate(n-1,a)
+  }
 
 
   // 2. empty
-  // 目的：
+  // 目的：rows行cols列の空のshapeを作る関数
+  def empty (rows:Int, cols:Int):Shape={
+    duplicate(rows,duplicate(cols,Transparent))
+  }
 
+   
+  
 
 
   // 3. size
-  // 目的：
+  // 目的：shapeのサイズを返す
+  def size (shape : Shape): (Int, Int) = {
+    (shape.length, shape.foldRight(0)((n, m) => max(n.length,m)))
+  }
+
 
 
 
   // 4. blockCount
-  // 目的：
+  // 目的：shape内のブロックの数を返す
+  def blockCount(shape: Shape): Int = {
+    shape.foldRight(0)((n,m) =>
+      m + n.foldRight(0)((l, o) => if (l != Transparent) o + 1 else o)
+      )
+  }
 
 
 
   // 5. wellStructured
-  // 目的：
-
+  // 目的：shapeが真っ当か判断する
+  def wellStructured(shape: Shape) : Boolean ={
+    val (rows, cols) = size(shape)
+    rows >= 1 && cols >= 1 && shape.foldRight(true)((n,m) => n && cols == m.length)
+  }
 
 
   // 6. rotate

@@ -119,23 +119,33 @@ object ShapeLib {
   // 4. blockCount
   // 目的：受け取った shape に含まれる空でないブロックの数を返す
   def blockCount(shape: Shape): Int = {
-    def colCount(cols : Row,n: Int): Int = {
+    var count_sub = 0
+    var count = 0
+    def colCount(cols: Row): Int = {
       cols match{
-        case Nil => n
-        case x :: xs => {
-          if(x != Transparent) colCount(xs,n+1)
-          else colCount(xs,n)
+        case Nil => count_sub
+        case x :: xs =>{
+          if(x != Transparent){
+            count_sub = count_sub + 1
+            colCount(xs)
+          }
+          else colCount(xs)
         }
       }
     }
 
-    def blockCountAcc(shape: Shape,n: Int): Int = {
+    def shapeCount(shape: Shape): Int = {
       shape match{
-        case Nil => n
-        case x :: xs => blockCountAcc(xs,n + colCount(x,0))
+        case Nil => count
+        case x :: xs => {
+          count_sub = 0
+          count = count + colCount(x)
+          shapeCount(xs)
+        }
       }
     }
-    blockCountAcc(shape,0)
+
+    shapeCount(shape)
   }
 
 

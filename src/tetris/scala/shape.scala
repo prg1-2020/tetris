@@ -154,7 +154,7 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
@@ -164,7 +164,9 @@ object ShapeTest extends App {
   // 2. empty
   println("empty")
   println(empty(1, 3) == List(List(Transparent, Transparent, Transparent)))
-  println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
+  println(
+    empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent))
+  )
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
 
@@ -184,11 +186,19 @@ object ShapeTest extends App {
   println("wellStructured")
   println(wellStructured(Nil) == false)
   println(wellStructured(List(Nil, Nil)) == false)
-  println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue, Blue))) == true)
-  println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
+  println(
+    wellStructured(
+      List(List(Red, Red), List(Yellow, Yellow), List(Blue, Blue))
+    ) == true
+  )
+  println(
+    wellStructured(
+      List(List(Red, Red), List(Yellow, Yellow), List(Blue))
+    ) == false
+  )
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+  /*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

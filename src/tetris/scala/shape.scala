@@ -84,31 +84,115 @@ object ShapeLib {
 
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
-  // 1. duplicate
-  // 目的：
 
+  //0.not_transprant_len
+  //目的：Row型の空白を除いた長さを数える
+      def not_transprant_len(shape:Row,count:Int):Int ={ 
+        shape match{
+            case Nil => count
+            case x::xs=>{
+                if (x == Transparent) not_transprant_len(xs,count)
+                else {
+                    val count_now = count +1
+                    not_transprant_len(xs,count_now)
+                }
+            }
+        }
+    }
+  // 1. duplicate
+  // 目的：nこの任意の型を持つaからなるリストを作成する
+    def duplicate[A](n:Int , x:A):List[A]={
+        if (n<=0)  Nil
+        else x::duplicate[A](n-1,x)
+    }
 
 
   // 2. empty
-  // 目的：
+  // 目的：rows行cols列のshapeを作る
+    def empty(rows:Int ,cols:Int): Shape ={
+        if (rows<=0)  Nil //duplicate(rows,Nil)
+        else duplicate(cols,Transparent)::empty(rows-1,cols)
+    }
 
 
 
   // 3. size
-  // 目的：
+  // 目的：受け取ったshapeのサイズを(列、行)の形で返す
+  //行数：list.lengthで取得  中身をループさせて大きかったら更新 =!Transprant で判定
+    def size(shape:Shape):(Int,Int)={
+        val rows = shape.length
 
+        def myfanc(shape:Shape , cols:Int) :Int ={
+            shape match{
+                case Nil => cols
+                case x::xs => {
+                    val cols_now = max(cols,x.length)
+                    myfanc(xs,cols_now)
+                }
+            }
+        }
+
+        (rows,myfanc(shape,0))
+    }
 
 
   // 4. blockCount
-  // 目的：
-
+  // 目的：受け取ったshapeに含まれる空以外のブロックの数を返す
+    def blockCount(shape:Shape):Int={
+        def count_re(shape:Shape,count:Int):Int ={
+            shape match{
+                case Nil => count
+                case x::xs => {
+                    val count_now =count + not_transprant_len(x,0)
+                    count_re(xs,count_now)
+                }
+            }
+        }
+        return count_re(shape,0)
+    }
 
 
   // 5. wellStructured
-  // 目的：
+  // 目的：受け取ったshapeが行数・列数ともに１以上で各行の要素数が等しいか確かめる
+    def wellStructured(shape:Shape):Boolean={
+        def get_cols(shape:Shape , cols:Int) :Int ={
+            shape match{
+                case Nil => cols
+                case x::xs => {
+                    val cols_now = max(cols,x.length)
+                    get_cols(xs,cols_now)
+                }
+            }
+        }
+
+        def matto1(shape:Shape):Int={
+            val rows = shape.length
+            val cols = get_cols(shape,0)
+            if(cols>0 && rows>0) 0
+            else 1
+        }
+
+        def matto2(shape:Shape):Int={
+            val cols_now = get_cols(shape,0)
+            def matto2_re(shape:Shape,cols_now:Int,bool:Int):Int={
+                shape match{
+                    case Nil => bool
+                    case x::xs => {
+                        if (x.length == cols_now) matto2_re(xs,cols_now,0)
+                        else matto2_re(xs,cols_now,1)
+                    }
+                }
+            }
+            matto2_re(shape,cols_now,0)
+        }
+        
+        if(matto2(shape)+matto1(shape) == 0) true
+        else false
+    }
 
 
 
+/*
   // 6. rotate
   // 目的：
   // 契約：
@@ -141,15 +225,14 @@ object ShapeLib {
   // 契約：
 
 
-
+*/
 }
 
 // テスト
 object ShapeTest extends App {
   import ShapeLib._
 
-  // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+  // 関数を定義するたびに、コメント開始位置を後ろにずらす 
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
@@ -167,13 +250,15 @@ object ShapeTest extends App {
   println("size")
   println(size(Nil) == (0, 0))
   println(size(shapeI) == (4, 1))
-  println(size(shapeZ) == (2, 3))
+  println(size(shapeZ)== (2, 3))
+  println(size(shapeS) == (2,3))
 
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
+  println(blockCount(shapeT) == 4)
 
   // 5. wellStructured
   println("wellStructured")
@@ -183,7 +268,7 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+/*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

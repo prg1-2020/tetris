@@ -162,6 +162,7 @@ object ShapeTest extends App {
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
+  println(duplicate(4, "hoge") == List("hoge", "hoge", "hoge", "hoge"))
 
   // 2. empty
   println("empty")
@@ -171,18 +172,21 @@ object ShapeTest extends App {
   )
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
+  println(empty(2, 1) == List(List(Transparent), List(Transparent)))
 
   // 3. size
   println("size")
   println(size(Nil) == (0, 0))
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
+  println(size(shapeJ) == (3, 2))
 
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
+  println(blockCount(shapeJ) == 4)
 
   // 5. wellStructured
   println("wellStructured")
@@ -200,6 +204,7 @@ object ShapeTest extends App {
   )
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
+  println(wellStructured(shapeJ) == true)
   /*
   // 6. rotate
   println("rotate")

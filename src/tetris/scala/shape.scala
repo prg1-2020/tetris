@@ -122,7 +122,8 @@ object ShapeLib {
   // 目的：Shapeが真っ当であるか判定する
   def wellStructured(shape: Shape): Boolean = {
     val rowSize = shape.length
-    val columnSize = if (rowSize == 0) 0 else shape.maxBy(_.length)
+    val columnSize =
+      if (rowSize == 0) 0 else shape.map(_.length).foldLeft(-1)(max(_, _))
     if (rowSize == 0 || columnSize == 0) false
     else shape.map(_.length == shape.head.length).foldLeft(true)(_ && _)
   }

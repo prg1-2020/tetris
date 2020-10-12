@@ -105,11 +105,11 @@ object ShapeLib {
   // 3. size
   // 目的：受け取った shape のサイズを (行数, 列数) の形で返す
   def size(shape: Shape): (Int, Int)={
-    //アキュミュレータ：(a, b)今までのサイズ
-    def sizeAcc(shape: Shape, a: Int, b: Int): (Int,Int) ={
+    //アキュミュレータ：(rows, cols)：この関数を呼び出す前までに数えてきたサイズ
+    def sizeAcc(shape: Shape, rows: Int, cols: Int): (Int,Int) ={
       shape match{
-        case Nil => (a, b)
-        case x::xs => sizeAcc(xs, a + 1, max(b, x.length))
+        case Nil => (rows, cols)
+        case x::xs => sizeAcc(xs, rows + 1, max(cols, x.length))
       }
     }
     sizeAcc(shape, 0, 0)
@@ -140,14 +140,14 @@ object ShapeLib {
   //      ただし、「まっとう」とは行数・列数がともに1以上であり、
   //      各行の要素数が全て等しいことを指す。
   def wellStructured(shape: Shape): Boolean ={
-    //アキュミュレーター：(a, b)今までのサイズ a:行　b:列
-    def wellStructuredAcc(shape: Shape, a: Int, b: Int): Boolean={
+    //アキュミュレーター：(rows, cols)：この関数を呼び出す前までの(元の)shape のサイズ rows:行　cols:列
+    def wellStructuredAcc(shape: Shape, rows: Int, cols: Int): Boolean={
       shape match{
-        case Nil => if(a==0) false else true
+        case Nil => if(rows==0) false else true
         case x::xs =>
           if(x.length==0) false
-          else if(x.length!=b && b!=0) false
-          else wellStructuredAcc(xs, a+1, x.length)
+          else if(x.length!=cols && cols!=0) false
+          else wellStructuredAcc(xs, rows+1, x.length)
       }
     }
     wellStructuredAcc(shape, 0, 0)

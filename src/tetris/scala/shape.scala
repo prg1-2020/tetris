@@ -85,27 +85,51 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
+  // 目的：n個のxからなるListの作成
+  def duplicate[A](n: Int, x: A): List[A] = {
+    if(n <= 0) Nil
+    else x::duplicate(n-1, x)
+  }
 
 
 
   // 2. empty
-  // 目的：
-
+  // 目的：N*Mの空のshapeの作成 
+  def empty(n: Int, m: Int): Shape = {
+    duplicate(n, duplicate(m, Transparent))
+  }
 
 
   // 3. size
-  // 目的：
+  // 目的：s:Shapeのsizeを返す
+  def size(s: Shape): (Int, Int) = {
+    if(s.length == 0)
+      (0, 0)
+    else
+      (s.length, s.map(_.length).foldLeft(0)(max(_, _)))
+  }
 
 
 
   // 4. blockCount
-  // 目的：
+  // 目的：透明でない部分の個数を返す。
+  def blockCount(s: Shape): Int = {
+    if(s.length == 0)
+      0
+    else
+      s.map(_.map(x => if(x==Transparent) 0 else 1).foldLeft(0)(_+_)).foldLeft(0)(_+_)
+  }
 
 
 
   // 5. wellStructured
-  // 目的：
+  // 目的:s:Shapeがemptyで無い長方形状かを調べる -> Boolean
+  def wellStructured(s: Shape): Boolean = {
+    if(s.length == 0)
+      false
+    else
+      s.head.length>0 && s.map(_.length==s.head.length).foldLeft(true)(_&&_)
+  }
 
 
 
@@ -149,7 +173,7 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+  
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
@@ -183,7 +207,7 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+/*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

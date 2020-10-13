@@ -163,7 +163,6 @@ object ShapeLib {
         case (Nil, Nil) => Nil
         case (x::xs, Nil) => List(x)::subSum(xs, Nil)
         case (sh1_x::sh1_xs, sh2_x::sh2_xs) => (sh1_x::sh2_x)::subSum(sh1_xs, sh2_xs)
-        case _ => println("nanikayarakasiteiru\n")
       }
     }
 
@@ -174,9 +173,25 @@ object ShapeLib {
   // 7. shiftSE
   // 目的：
   def shiftSE(sh: Shape, x: Int, y: Int): Shape = {
-    val size: (Int, Int) = size(sh)
-    def subShiftSE(sh: Shape, x: Int, y: Int): Shape = {
+    val si: (Int, Int) = size(sh)
 
+    def subShiftSE(ro: Row, x: Int): Row = {
+      if(x > 0){
+        Transparent::subShiftSE(ro, x - 1)
+      }else ro
+    }
+
+    def makeEmpty(x: Int): Row = {
+      if(x > 0) Transparent::makeEmpty(x - 1)
+      else Nil
+    }
+
+    if(y > 0) makeEmpty(si._2 + x)::shiftSE(sh, x, y -1)
+    else{
+      sh match {
+        case Nil => Nil
+        case ro::ssh => subShiftSE(ro, x)::shiftSE(ssh, x, y)
+      }
     }
   }
 
@@ -262,7 +277,7 @@ object ShapeTest extends App {
 
   // rotate が満たすべき性質のテスト
 
-/*
+
   // 7. shiftSE
   println("shiftSE")
   println(shiftSE(List(List(Blue)), 1, 2) ==
@@ -271,6 +286,7 @@ object ShapeTest extends App {
          List(Transparent, Blue)))
   show(shiftSE(shapeI, 1, 2))
 
+/*
   // 8. shiftNW
   println("shiftNW")
   println(shiftNW(List(List(Blue)), 1, 2) ==

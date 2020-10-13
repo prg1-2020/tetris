@@ -6,7 +6,7 @@
 4. run と入力し、return を押す
 5. コンパイルが成功したら、tetris.ShapeTest を選択（2 と入力）し、return を押す
 6. プログラムを変更後、もう一度実行したいときは run と入力し、return を押す
-*/
+ */
 
 package tetris
 
@@ -15,6 +15,7 @@ import scala.util.Random
 import scala.math.max
 
 import sdraw._
+import java.beans.Transient
 
 // テトロミノを操作するための関数
 object ShapeLib {
@@ -49,7 +50,7 @@ object ShapeLib {
   def showBlock(block: Block): Char = {
     Color2Sym.find(_._1 == block) match {
       case Some((_, sym)) => sym
-      case None => '.'
+      case None           => '.'
     }
   }
 
@@ -62,14 +63,15 @@ object ShapeLib {
       List("OO", "OO"),
       List("ZZ ", " ZZ"),
       List("L ", "L ", "LL"),
-      List(" SS", "SS "))
+      List(" SS", "SS ")
+    )
 
   def make(spec: ShapeSpec): Shape = {
 
     def color(c: ColorSymbol): Color =
       Sym2Color.find(p => p._1.equals(c)) match {
         case Some((_, c)) => c
-        case _ => Transparent
+        case _            => Transparent
       }
 
     spec.map((row: String) => row.toList.map(color))
@@ -85,62 +87,67 @@ object ShapeLib {
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
   // 1. duplicate
-  // 目的：
-
-
+  // 目的：整数nと任意型aを受け取ってn個のaからなるリストを作る
+  def duplicate[A](n: Int, a: A): List[A] = {
+    if (n <= 0) Nil
+    else a :: duplicate[A](n - 1, a)
+  }
 
   // 2. empty
-  // 目的：
-
-
+  // 目的；空のShapeを作る
+  def empty(rows: Int, cols: Int): Shape = {
+    duplicate(rows, duplicate(cols, Transparent))
+  }
 
   // 3. size
-  // 目的：
-
-
+  // 目的：行数と列数を返す
+  def size(shape: Shape): (Int, Int) = {
+    val rowSize = shape.length
+    val columnSize =
+      if (rowSize == 0) 0 else shape.map(_.length).foldLeft(-1)(max(_, _))
+    (rowSize, columnSize)
+  }
 
   // 4. blockCount
-  // 目的：
-
-
+  // 目的：空でないブロックの数を返す
+  def blockCount(shape: Shape): Int = {
+    if (shape.length == 0) 0
+    else
+      shape
+        .map(_.map(z => if (z == Transparent) 0 else 1).foldLeft(0)(_ + _))
+        .foldLeft(0)(_ + _)
+  }
 
   // 5. wellStructured
-  // 目的：
-
-
+  // 目的：Shapeが真っ当であるか判定する
+  def wellStructured(shape: Shape): Boolean = {
+    val rowSize = shape.length
+    val columnSize =
+      if (rowSize == 0) 0 else shape.map(_.length).foldLeft(-1)(max(_, _))
+    if (rowSize == 0 || columnSize == 0) false
+    else shape.map(_.length == shape.head.length).foldLeft(true)(_ && _)
+  }
 
   // 6. rotate
   // 目的：
   // 契約：
 
-
-
   // 7. shiftSE
   // 目的：
 
-
-
   // 8. shiftNW
   // 目的：
-
-
 
   // 9. padTo
   // 目的：
   // 契約：
 
-
-
   // 10. overlap
   // 目的：
-
-
 
   // 11. combine
   // 目的：
   // 契約：
-
-
 
 }
 
@@ -149,41 +156,56 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
+  println(duplicate(4, "hoge") == List("hoge", "hoge", "hoge", "hoge"))
 
   // 2. empty
   println("empty")
   println(empty(1, 3) == List(List(Transparent, Transparent, Transparent)))
-  println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
+  println(
+    empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent))
+  )
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
+  println(empty(2, 1) == List(List(Transparent), List(Transparent)))
 
   // 3. size
   println("size")
   println(size(Nil) == (0, 0))
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
+  println(size(shapeJ) == (3, 2))
 
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
+  println(blockCount(shapeJ) == 4)
 
   // 5. wellStructured
   println("wellStructured")
   println(wellStructured(Nil) == false)
   println(wellStructured(List(Nil, Nil)) == false)
-  println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue, Blue))) == true)
-  println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
+  println(
+    wellStructured(
+      List(List(Red, Red), List(Yellow, Yellow), List(Blue, Blue))
+    ) == true
+  )
+  println(
+    wellStructured(
+      List(List(Red, Red), List(Yellow, Yellow), List(Blue))
+    ) == false
+  )
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-
+  println(wellStructured(shapeJ) == true)
+  /*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
@@ -227,5 +249,5 @@ object ShapeTest extends App {
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+   */
 }

@@ -156,34 +156,56 @@ object ShapeLib {
   // 6. rotate
   // 目的：
   // 契約：
+  def rotate(sh: Shape): Shape = {
+    assert(wellStructured((sh)))
+    def subSum(sh1: Row, sh2: Shape): Shape = {
+      (sh1, sh2) match {
+        case (Nil, Nil) => Nil
+        case (x::xs, Nil) => List(x)::subSum(xs, Nil)
+        case (sh1_x::sh1_xs, sh2_x::sh2_xs) => (sh1_x::sh2_x)::subSum(sh1_xs, sh2_xs)
+        case _ => println("nanikayarakasiteiru\n")
+      }
+    }
 
+    sh.foldRight(Nil: Shape)((ro, sh) => subSum(ro, sh))
+  }
 
 
   // 7. shiftSE
   // 目的：
+  def shiftSE(sh: Shape, x: Int, y: Int): Shape = {
+    val size: (Int, Int) = size(sh)
+    def subShiftSE(sh: Shape, x: Int, y: Int): Shape = {
 
+    }
+  }
 
 
   // 8. shiftNW
   // 目的：
 
 
-
   // 9. padTo
   // 目的：
   // 契約：
-
+  def padTo(sh: Shape, rows: Int, cols: Int): Shape = {
+Nil
+  }
 
 
   // 10. overlap
   // 目的：
-
+  def overlap(sh1: Shape, sh2: Shape): Boolean = {
+false
+  }
 
 
   // 11. combine
   // 目的：
   // 契約：
-
+  def combine(sh1: Shape, sh2: Shape): Shape = {
+Nil
+  }
 
 
 }
@@ -231,7 +253,7 @@ object ShapeTest extends App {
   println(wellStructured(shapeZ) == true)
   //自作
   println(wellStructured(shapeS) == true)
-/*
+
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
@@ -240,7 +262,7 @@ object ShapeTest extends App {
 
   // rotate が満たすべき性質のテスト
 
-
+/*
   // 7. shiftSE
   println("shiftSE")
   println(shiftSE(List(List(Blue)), 1, 2) ==

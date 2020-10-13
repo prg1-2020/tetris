@@ -133,7 +133,7 @@ object ShapeLib {
   }
 
   // 7. shiftSE
-  // 目的：shapeを右にx, 左にyずらす
+  // 目的：shapeを右にx, 下にyずらす
   def shiftSE(sh: Shape, x: Int, y: Int): Shape = {
     val (rows, cols) = size(sh)
     (duplicate(y, duplicate(cols, Transparent)) ++ sh).map(i => {
@@ -142,7 +142,13 @@ object ShapeLib {
   }
 
   // 8. shiftNW
-  // 目的：
+  // 目的：shapeを左にx,上にyずらす
+  def shiftNW(sh: Shape, x: Int, y: Int): Shape = {
+    val(rows, cols) = size(sh)
+    (sh ++ duplicate(y, duplicate(cols, Transparent))).map(i => {
+      i ++ duplicate(x, Transparent)
+    })
+  }
 
   // 9. padTo
   // 目的：
@@ -245,12 +251,13 @@ object ShapeTest extends App {
   show(shiftSE(shapeJ, 2, 3))
 
   // 8. shiftNW
-  // println("shiftNW")
-  // println(shiftNW(List(List(Blue)), 1, 2) ==
-  //   List(List(Blue, Transparent),
-  //        List(Transparent, Transparent),
-  //        List(Transparent, Transparent)))
-  // show(shiftNW(shapeI, 1, 2))
+  println("shiftNW")
+  println(shiftNW(List(List(Blue)), 1, 2) ==
+    List(List(Blue, Transparent),
+         List(Transparent, Transparent),
+         List(Transparent, Transparent)))
+  show(shiftNW(shapeI, 1, 2))
+  show(shiftNW(shapeJ, 2, 3))
 
   // 9. padTo
   // println("padTo")

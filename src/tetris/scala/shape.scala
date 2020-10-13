@@ -160,7 +160,21 @@ object ShapeLib {
   }
 
   // 10. overlap
-  // 目的：
+  // 目的：shapeの重なりを判定する
+  def overlap(sh1: Shape, sh2: Shape): Boolean = {
+    def acc(lis1: Row, lis2: Row): Boolean = {
+      (lis1, lis2) match {
+        case (x::xs, y::ys) => (x != Transparent && y != Transparent) || acc(xs, ys)
+        case _ => false
+      }
+    }
+    val (rows1, cols1) = size(sh1)
+    val (rows2, cols2) = size(sh2)
+    (sh1, sh2) match {
+      case (x::xs, y::ys) => acc(x, y) || overlap(xs, ys)
+      case _ => false
+    }
+  }
 
   // 11. combine
   // 目的：
@@ -286,9 +300,11 @@ object ShapeTest extends App {
          List(Transparent, Transparent, Transparent)))
 
   // 10. overlap
-  // println("overlap")
-  // println(overlap(shapeI, shapeZ) == true)
-  // println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
+  println("overlap")
+  println(overlap(shapeI, shapeZ) == true)
+  println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
+  println(overlap(shapeT, shiftSE(shapeI, 0, 1)) == false)
+  println(overlap(shapeT, shiftSE(shapeI, 1, 1)) == true)
 
   // 11. combine
   // println("combine")

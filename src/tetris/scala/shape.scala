@@ -122,8 +122,17 @@ object ShapeLib {
   }
 
   // 6. rotate
-  // 目的：
-  // 契約：
+  // 目的：shapeを反時計回りに90°回す
+  // 契約：wellStructured が true
+  def rotate(sh: Shape): Shape = {
+    assert(wellStructured(sh))
+    val (rows, cols) = size(sh)
+    Range(0, cols).toList.map(i => {
+      Range(0, rows).toList.map(j => {
+        sh(j)(cols-i-1)
+      })
+    })
+  }
 
   // 7. shiftSE
   // 目的：
@@ -202,10 +211,11 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red), Nil)) == false)
 
   // 6. rotate
-  // println("rotate")
-  // println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
-  // show(rotate(shapeI))
-  // show(rotate(shapeZ))
+  println("rotate")
+  println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
+  show(rotate(shapeI))
+  show(rotate(shapeZ))
+  show(rotate(shapeT))
 
   // rotate が満たすべき性質のテスト
 

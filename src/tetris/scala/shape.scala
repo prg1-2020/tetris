@@ -107,7 +107,7 @@ object ShapeLib {
   // 4. blockCount
   // 目的： shapeの空でない部分を返す
   def blockCount(sh: Shape): Int = {
-    sh.foldRight(0)((x, k) => 
+    sh.foldRight(0)((x, k) =>
       k + x.foldRight(0)((x1, k1) => if (x1 != Transparent) 1 + k1 else k1)
     )
   }
@@ -116,9 +116,7 @@ object ShapeLib {
   // 目的： shapeのcol, rowが一行以上, 各行の要素数が全て一致することを判定する
   def wellStructured(sh: Shape): Boolean = {
     val (rows, cols) = size(sh)
-    rows > 0 && cols > 0 && sh.foldRight(true)((x, k) => 
-      k && cols == x.length
-    )
+    rows > 0 && cols > 0 && sh.foldRight(true)((x, k) => k && cols == x.length)
   }
 
   // 6. rotate
@@ -129,13 +127,19 @@ object ShapeLib {
     val (rows, cols) = size(sh)
     Range(0, cols).toList.map(i => {
       Range(0, rows).toList.map(j => {
-        sh(j)(cols-i-1)
+        sh(j)(cols - i - 1) // できればインデックス使わずにやりたかったけど
       })
     })
   }
 
   // 7. shiftSE
-  // 目的：
+  // 目的：shapeを右にx, 左にyずらす
+  def shiftSE(sh: Shape, x: Int, y: Int): Shape = {
+    val (rows, cols) = size(sh)
+    (duplicate(y, duplicate(cols, Transparent)) ++ sh).map(i => {
+      duplicate(x, Transparent) ++ i
+    })
+  }
 
   // 8. shiftNW
   // 目的：
@@ -179,12 +183,14 @@ object ShapeTest extends App {
   )
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
-  println(empty(4, 5) == List(
-    List(Transparent, Transparent, Transparent, Transparent, Transparent),
-    List(Transparent, Transparent, Transparent, Transparent, Transparent),
-    List(Transparent, Transparent, Transparent, Transparent, Transparent),
-    List(Transparent, Transparent, Transparent, Transparent, Transparent)
-  ))
+  println(
+    empty(4, 5) == List(
+      List(Transparent, Transparent, Transparent, Transparent, Transparent),
+      List(Transparent, Transparent, Transparent, Transparent, Transparent),
+      List(Transparent, Transparent, Transparent, Transparent, Transparent),
+      List(Transparent, Transparent, Transparent, Transparent, Transparent)
+    )
+  )
 
   // 3. size
   println("size")
@@ -204,8 +210,16 @@ object ShapeTest extends App {
   println("wellStructured")
   println(wellStructured(Nil) == false)
   println(wellStructured(List(Nil, Nil)) == false)
-  println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue, Blue))) == true)
-  println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
+  println(
+    wellStructured(
+      List(List(Red, Red), List(Yellow, Yellow), List(Blue, Blue))
+    ) == true
+  )
+  println(
+    wellStructured(
+      List(List(Red, Red), List(Yellow, Yellow), List(Blue))
+    ) == false
+  )
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
   println(wellStructured(List(List(Red), Nil)) == false)
@@ -218,14 +232,17 @@ object ShapeTest extends App {
   show(rotate(shapeT))
 
   // rotate が満たすべき性質のテスト
+  println(rotate(rotate(shapeJ)) == shapeJ.map(_.reverse).reverse)
+  println(rotate(rotate(rotate(rotate(shapeJ)))) == shapeJ)
 
   // 7. shiftSE
-  // println("shiftSE")
-  // println(shiftSE(List(List(Blue)), 1, 2) ==
-  //   List(List(Transparent, Transparent),
-  //        List(Transparent, Transparent),
-  //        List(Transparent, Blue)))
-  // show(shiftSE(shapeI, 1, 2))
+  println("shiftSE")
+  println(shiftSE(List(List(Blue)), 1, 2) ==
+    List(List(Transparent, Transparent),
+         List(Transparent, Transparent),
+         List(Transparent, Blue)))
+  show(shiftSE(shapeI, 1, 2))
+  show(shiftSE(shapeJ, 2, 3))
 
   // 8. shiftNW
   // println("shiftNW")

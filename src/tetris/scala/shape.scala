@@ -102,11 +102,20 @@ object ShapeLib {
   // 3. size
   // 目的：受け取った shape のサイズを (行数, 列数) の形で返す
   def size(shape :Shape): (Int, Int) = {
+    /*
     var max = 0
     for (i <- shape) {
       if(i.size>max) max = i.size
     }
     (shape.size, max)
+    */
+    def maxshape(shape :Shape, max :Int): Int = {
+      shape match {
+        case Nil => max
+        case x::xs => if(x.size > max) maxshape(xs, x.size) else maxshape(xs, max)
+      }
+    }
+    (shape.size, maxshape(shape, 0))
   }
 
   // 4. blockCount
@@ -136,7 +145,6 @@ object ShapeLib {
   // 6. rotate
   // 目的：
   // 契約：
-
 
 
   // 7. shiftSE

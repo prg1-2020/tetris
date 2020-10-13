@@ -144,15 +144,20 @@ object ShapeLib {
   // 8. shiftNW
   // 目的：shapeを左にx,上にyずらす
   def shiftNW(sh: Shape, x: Int, y: Int): Shape = {
-    val(rows, cols) = size(sh)
+    val (rows, cols) = size(sh)
     (sh ++ duplicate(y, duplicate(cols, Transparent))).map(i => {
       i ++ duplicate(x, Transparent)
     })
   }
 
   // 9. padTo
-  // 目的：
-  // 契約：
+  // 目的：shapeをrows行cols列に拡張する
+  // 契約：size(shape)のrows,cols以上になるrows,cols
+  def padTo(sh: Shape, rows: Int, cols: Int): Shape = {
+    val (s_rows, s_cols) = size(sh)
+    assert(cols >= s_cols && rows >= s_rows)
+    shiftNW(sh, cols - s_cols, rows - s_rows)
+  }
 
   // 10. overlap
   // 目的：
@@ -249,6 +254,11 @@ object ShapeTest extends App {
          List(Transparent, Blue)))
   show(shiftSE(shapeI, 1, 2))
   show(shiftSE(shapeJ, 2, 3))
+  println(shiftSE(List(List(Blue, Transparent)), 0, 3) == 
+    List(List(Transparent, Transparent),
+         List(Transparent, Transparent),
+         List(Transparent, Transparent),
+         List(Blue, Transparent)))
 
   // 8. shiftNW
   println("shiftNW")
@@ -258,13 +268,22 @@ object ShapeTest extends App {
          List(Transparent, Transparent)))
   show(shiftNW(shapeI, 1, 2))
   show(shiftNW(shapeJ, 2, 3))
+  println(shiftNW(List(List(Blue, Transparent)), 0, 3) == 
+    List(List(Blue, Transparent),
+         List(Transparent, Transparent),
+         List(Transparent, Transparent),
+         List(Transparent, Transparent)))
 
   // 9. padTo
-  // println("padTo")
-  // println(padTo(List(List(Blue)), 2, 3) ==
-  //   List(List(Blue, Transparent, Transparent),
-  //        List(Transparent, Transparent, Transparent)))
-  // show(padTo(shapeI, 6, 2))
+  println("padTo")
+  println(padTo(List(List(Blue)), 2, 3) ==
+    List(List(Blue, Transparent, Transparent),
+         List(Transparent, Transparent, Transparent)))
+  show(padTo(shapeI, 6, 2))
+  println(padTo(List(List(Blue, Transparent)), 3, 3) == 
+    List(List(Blue, Transparent, Transparent),
+         List(Transparent, Transparent, Transparent),
+         List(Transparent, Transparent, Transparent)))
 
   // 10. overlap
   // println("overlap")

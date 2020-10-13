@@ -130,6 +130,8 @@ object ShapeLib {
         sh(j)(cols - i - 1) // できればインデックス使わずにやりたかったけど
       })
     })
+    // ワンライナー
+    // sh.map(_.reverse).transpose
   }
 
   // 7. shiftSE

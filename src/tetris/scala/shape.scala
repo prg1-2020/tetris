@@ -181,7 +181,7 @@ object ShapeLib {
         }
       }
     }
-    assert(wellStructured(shape) == true) //契約
+    assert(wellStructured(shape)) //契約
     shape match{
       case Nil => Nil
       case r :: rs => shape.foldRight(duplicate(r.length,Nil): Shape)((x: Row,t: Shape) => subrotate(t,x))
@@ -189,25 +189,38 @@ object ShapeLib {
   }
 
   // 7. shiftSE
-  // 目的：
-
-
+  // 目的：受け取ったshapeを右にx,下にyずらしたshapeを返す
+  def shiftSE(shape: Shape,x: Int,y :Int): Shape = {
+    val (a,b) = size(shape)
+    val shiftdown = empty(y,b) ++ shape
+    shiftdown match{
+      case Nil => Nil
+      case r :: rs => (duplicate(x,Transparent) ++ r) :: shiftSE(rs,x,0)
+    }
+  }
 
   // 8. shiftNW
-  // 目的：
-
-
+  // 目的：受け取ったshapeを左にx,上にyずらしたshapeを返す
+  def shiftNW(shape: Shape,x: Int,y :Int): Shape = {
+    val (a,b) = size(shape)
+    val shiftup = shape ++ empty(y,b)
+    shiftup match{
+      case Nil => Nil
+      case r :: rs => (r ++ duplicate(x,Transparent)) :: shiftNW(rs,x,0)
+    }
+  }
 
   // 9. padTo
-  // 目的：
-  // 契約：
-
-
+  // 目的：受け取ったshapeをrows行cols列に拡大したshapeを返す
+  // 契約：rows,colsはshapeの行数・列数以上
+  def padTo(shape: Shape,rows: Int,cols: Int) = {
+    val (a,b) = size(shape)
+    assert(rows >= a && cols >= b)
+    shiftNW(shape,cols-b,rows-a)
+  }
 
   // 10. overlap
-  // 目的：
-
-
+  // 目的：2つのshapeが重なりを持つかを判断する
 
   // 11. combine
   // 目的：
@@ -270,10 +283,10 @@ object ShapeTest extends App {
   show(rotate(shapeZ))
 
   // rotate が満たすべき性質のテスト
-  println(wellStructured(rotate(shapeI)) == true)
-  println(rotate(rotate(rotate(rotate(shapeI)))) == shapeI)
-  println(size(rotate(shapeI)) == (1,4))
-/*
+  println(wellStructured(rotate(shapeS)) == true)
+  println(rotate(rotate(rotate(rotate(shapeS)))) == shapeS)
+  println(size(rotate(shapeS)) == (3,2))
+
   // 7. shiftSE
   println("shiftSE")
   println(shiftSE(List(List(Blue)), 1, 2) ==
@@ -296,7 +309,7 @@ object ShapeTest extends App {
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
   show(padTo(shapeI, 6, 2))
-
+/*
   // 10. overlap
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)

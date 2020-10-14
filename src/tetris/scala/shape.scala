@@ -164,11 +164,29 @@ object ShapeLib {
       }
     }
   }
+
   // 6. rotate
-  // 目的：
-  // 契約：
-
-
+  // 目的：受け取ったshapeを反時計回りに90度回転させたshapeを返す
+  // 契約：受け取ったshapeはまっとう
+  def rotate(shape: Shape): Shape = {
+    //目的: 行一つとshapeを受け取って, shapeの各行の先頭に受け取った行の要素を逆順に一つずつ足してできるshapeを返す 
+    def subrotate(s: Shape,list:Row):Shape = {
+      s match{
+        case Nil => duplicate(list.length,Nil)
+        case r :: rs => {
+          list match{
+            case Nil => s
+            case _ => (list.last :: r) :: subrotate(rs,list.init)  
+          }
+        }
+      }
+    }
+    assert(wellStructured(shape) == true) //契約
+    shape match{
+      case Nil => Nil
+      case r :: rs => shape.foldRight(duplicate(r.length,Nil): Shape)((x: Row,t: Shape) => subrotate(t,x))
+    }
+  }
 
   // 7. shiftSE
   // 目的：
@@ -243,7 +261,8 @@ object ShapeTest extends App {
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
   println(wellStructured(List(List(Transparent,Red,Blue),Nil)) == false)
-/*
+
+
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
@@ -251,8 +270,10 @@ object ShapeTest extends App {
   show(rotate(shapeZ))
 
   // rotate が満たすべき性質のテスト
-
-
+  println(wellStructured(rotate(shapeI)) == true)
+  println(rotate(rotate(rotate(rotate(shapeI)))) == shapeI)
+  println(size(rotate(shapeI)) == (1,4))
+/*
   // 7. shiftSE
   println("shiftSE")
   println(shiftSE(List(List(Blue)), 1, 2) ==

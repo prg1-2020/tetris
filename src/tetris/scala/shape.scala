@@ -221,13 +221,58 @@ object ShapeLib {
 
   // 10. overlap
   // 目的：2つのshapeが重なりを持つかを判断する
+  def overlap(s1: Shape,s2: Shape): Boolean = {
+    (s1,s2) match{
+      case (Nil,_) => false
+      case (_,Nil) => false
+      case (r1 :: rs1,r2 :: rs2) =>{
+        (r1,r2) match{
+          case (Nil,_) => false && overlap(rs1,rs2)
+          case (_,Nil) => false && overlap(rs1,rs2)
+          case (t1 :: ts1,t2 :: ts2) => {
+            if(t1 != Transparent && t2 != Transparent) true
+            else false && overlap(ts1 :: rs1, ts2 :: rs2)
+          }
+        }
+      }
+    }
+  }
 
   // 11. combine
-  // 目的：
-  // 契約：
-
-
-
+  // 目的：2つのshapeを結合する.まっとうなshapeになるよう空白を補う
+  // 契約：引数のshapeは重なりを持たない
+  def combine(s1: Shape,s2: Shape): Shape ={
+    assert(! overlap(s1,s2))
+    //目的:2つのshapeを結合する
+    def subcombine(s1: Shape,s2: Shape): Shape ={
+      //目的:2つのRowを重ねる
+      def rowcombine(r1: Row,r2: Row): Row = {
+        (r1,r2) match{
+          case (Nil,_) => r2
+          case (_,Nil) => r1
+          case (x :: xs,y ::ys) => {
+            if(x != Transparent) x :: rowcombine(xs,ys)
+            else y :: rowcombine(xs,ys)
+          }
+        }
+      }
+      (s1,s2) match{
+        case (_,Nil) => s1
+        case (Nil,_) => s2
+        case (r1 :: rs1,r2 :: rs2) => rowcombine(r1,r2) :: subcombine(rs1,rs2)
+      }
+    }
+    //目的:空白を追加してshapeをまっとうなものに整える
+    def wellshape(shape: Shape,m: Int): Shape = {
+      shape match{
+        case Nil => Nil
+        case r :: rs => (r ++ duplicate(m-r.length,Transparent)) :: wellshape(rs,m)
+      }
+    } 
+    val combineshape = subcombine(s1,s2)
+    val (a,b) = size(combineshape)
+    wellshape(combineshape,b)
+  }
 }
 
 // テスト
@@ -309,7 +354,7 @@ object ShapeTest extends App {
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
   show(padTo(shapeI, 6, 2))
-/*
+
   // 10. overlap
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)
@@ -320,6 +365,6 @@ object ShapeTest extends App {
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+
 }

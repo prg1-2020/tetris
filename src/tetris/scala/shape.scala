@@ -214,9 +214,17 @@ object ShapeLib {
   // 目的：受け取ったshapeをrows行cols列に拡大したshapeを返す
   // 契約：rows,colsはshapeの行数・列数以上
   def padTo(shape: Shape,rows: Int,cols: Int) = {
+    //目的:空白を追加してshapeをまっとうなものに整える
+    def wellshape(shape: Shape,m: Int): Shape = {
+      shape match{
+        case Nil => Nil
+        case r :: rs => (r ++ duplicate(m-r.length,Transparent)) :: wellshape(rs,m)
+      }
+    } 
     val (a,b) = size(shape)
     assert(rows >= a && cols >= b)
-    shiftNW(shape,cols-b,rows-a)
+    val s1 = shiftNW(shape,cols-b,rows-a)
+    wellshape(s1,cols)
   }
 
   // 10. overlap
@@ -262,16 +270,9 @@ object ShapeLib {
         case (r1 :: rs1,r2 :: rs2) => rowcombine(r1,r2) :: subcombine(rs1,rs2)
       }
     }
-    //目的:空白を追加してshapeをまっとうなものに整える
-    def wellshape(shape: Shape,m: Int): Shape = {
-      shape match{
-        case Nil => Nil
-        case r :: rs => (r ++ duplicate(m-r.length,Transparent)) :: wellshape(rs,m)
-      }
-    } 
     val combineshape = subcombine(s1,s2)
     val (a,b) = size(combineshape)
-    wellshape(combineshape,b)
+    padTo(combineshape,a,b)
   }
 }
 
@@ -356,7 +357,7 @@ object ShapeTest extends App {
   println(padTo(List(List(Blue)), 2, 3) ==
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
-  println(padTo(List(List(Blue,Red),List(Yellow,Yellow)),2,2) == List(List(Blue,Red),List(Yellow,Yellow)))
+  println(padTo(List(List(Blue,Red),List(Yellow)),2,2) == List(List(Blue,Red),List(Yellow,Transparent)))
   show(padTo(shapeI, 6, 2))
 
   // 10. overlap

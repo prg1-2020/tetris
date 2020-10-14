@@ -324,6 +324,7 @@ object ShapeTest extends App {
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
+  println(rotate(List(List(Red,Blue),List(Yellow,Transparent))) == List(List(Blue,Transparent),List(Red,Yellow)))
   show(rotate(shapeI))
   show(rotate(shapeZ))
 
@@ -338,6 +339,7 @@ object ShapeTest extends App {
     List(List(Transparent, Transparent),
          List(Transparent, Transparent),
          List(Transparent, Blue)))
+  println(shiftSE(List(List(Blue,Red),List(Yellow,Yellow)),0,2) == List(List(Transparent,Transparent),List(Transparent,Transparent),List(Blue,Red),List(Yellow,Yellow)))
   show(shiftSE(shapeI, 1, 2))
 
   // 8. shiftNW
@@ -346,6 +348,7 @@ object ShapeTest extends App {
     List(List(Blue, Transparent),
          List(Transparent, Transparent),
          List(Transparent, Transparent)))
+  println(shiftNW(List(List(Blue,Red),List(Yellow,Yellow)),0,2) == List(List(Blue,Red),List(Yellow,Yellow),List(Transparent,Transparent),List(Transparent,Transparent)))
   show(shiftNW(shapeI, 1, 2))
 
   // 9. padTo
@@ -353,18 +356,22 @@ object ShapeTest extends App {
   println(padTo(List(List(Blue)), 2, 3) ==
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
+  println(padTo(List(List(Blue,Red),List(Yellow,Yellow)),2,2) == List(List(Blue,Red),List(Yellow,Yellow)))
   show(padTo(shapeI, 6, 2))
 
   // 10. overlap
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
+  println(overlap(shapeS, shiftSE(shapeZ,3,2)) == false)
 
   // 11. combine
   println("combine")
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
+  println(combine(List(List(Red), List(Transparent)),
+                  List(List(Transparent,Blue))) == List(List(Red,Blue),List(Transparent,Transparent)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
 
 }

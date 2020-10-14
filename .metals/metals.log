@@ -1580,3 +1580,16 @@ java.lang.NullPointerException
 2020.10.14 22:20:56 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
 2020.10.14 22:23:12 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
 2020.10.14 22:24:51 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.14 22:27:11 INFO  shutting down Metals
+2020.10.14 22:31:39 INFO  started: Metals version 0.9.4 in workspace '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris' for client vscode.
+2020.10.14 22:31:40 INFO  time: initialize in 1.03s
+2020.10.14 22:31:40 INFO  skipping build import with status 'Requested'
+2020.10.14 22:31:42 INFO  no build target: using presentation compiler with only scala-library
+2020.10.14 22:31:42 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.14 22:32:29 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.14 22:32:54 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.14 22:32:54 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+2020.10.14 22:33:17 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.14 22:33:17 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/shape.scala
+10月 14, 2020 10:33:27 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

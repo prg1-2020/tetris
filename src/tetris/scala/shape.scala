@@ -213,6 +213,7 @@ object ShapeLib {
   // 契約：rows, cols はshape の行数・列数以上
   def padTo(s:Shape, r:Int, c:Int):Shape={
     val (sr,sc) = size(s)
+    assert((r>=sr)&&(c>=sc))
     shiftNW(s, c-sc, r-sr)
   }
 

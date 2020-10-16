@@ -87,7 +87,7 @@ object ShapeLib {
   // 1. duplicate
   // 目的：整数nと型aを受け取り、n個のaからなるリストを作る
   def duplicate[A](n:Int, a: A):List[A]={
-    if (n<=0) Nill
+    if (n<=0) Nil
     else a :: duplicate(n-1,a)
   }
 

@@ -498,3 +498,436 @@ java.lang.NullPointerException
 2020.10.08 18:14:47 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
 2020.10.08 18:15:43 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
 2020.10.08 18:16:20 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 22:52:14 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 15, 2020 10:52:46 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 10278
+10 15, 2020 10:53:26 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 10462
+10 15, 2020 11:02:39 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10 15, 2020 11:02:39 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10 15, 2020 11:02:48 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 10963
+10 15, 2020 11:34:15 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 12075
+10 15, 2020 11:35:28 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 12214
+10 15, 2020 11:36:02 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 12282
+10 15, 2020 11:36:03 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+10 15, 2020 11:36:03 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+10 15, 2020 11:36:03 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+10 15, 2020 11:37:03 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: String index out of range: -5
+java.lang.StringIndexOutOfBoundsException: String index out of range: -5
+	at java.lang.String.<init>(String.java:196)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:376)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:374)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:199)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:310)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.$anonfun$visit$5(SignatureHelpProvider.scala:340)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.$anonfun$visit$5$adapted(SignatureHelpProvider.scala:317)
+	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:924)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:923)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.$anonfun$visit$3(SignatureHelpProvider.scala:317)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.$anonfun$visit$3$adapted(SignatureHelpProvider.scala:316)
+	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:924)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:923)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:316)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:273)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:27)
+
+10 15, 2020 11:37:33 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 12498
+10 15, 2020 11:38:10 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 12539
+2020.10.15 23:39:14 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:40:12 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:40:20 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:41:05 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:41:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:41:53 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:43:23 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:44:58 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:45:39 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:47:49 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.15 23:48:15 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 16, 2020 12:26:29 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 14323
+2020.10.16 00:30:29 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:30:44 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:30:58 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:31:19 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:31:58 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:32:26 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:32:41 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:33:17 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 16, 2020 12:34:23 午前 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10 16, 2020 12:34:23 午前 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+10 16, 2020 12:38:58 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 15796
+2020.10.16 00:39:10 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:39:22 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:39:37 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:42:17 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:42:31 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.16 00:42:33 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 14:53:09 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 14:53:09 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:00:56 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:02:00 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:02:03 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:03:03 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 17, 2020 3:05:17 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: String index out of range: -1
+2020.10.17 15:05:19 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:11:01 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:11:36 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:12:24 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:14:07 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:14:47 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:20:04 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 17, 2020 3:21:22 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 16870
+10 17, 2020 3:21:22 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 16867
+2020.10.17 15:21:30 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:21:43 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:24:58 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:26:49 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:26:58 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 17, 2020 3:41:48 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 17257
+10 17, 2020 3:41:55 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 17273
+2020.10.17 15:45:27 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:46:06 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:47:50 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:49:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:49:44 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:50:08 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:54:35 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 15:55:02 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:00:29 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 17, 2020 4:04:02 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 18101
+10 17, 2020 4:04:03 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 18103
+2020.10.17 16:04:33 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:04:47 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:04:50 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:04:55 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:05:02 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 17, 2020 4:05:10 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 18343
+2020.10.17 16:05:42 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:05:42 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:05:50 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:05:52 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:08:04 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:15:01 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:15:39 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:16:43 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:16:49 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:20:26 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.17 16:22:20 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 17, 2020 4:24:54 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 19964
+10 18, 2020 9:59:12 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10 18, 2020 9:59:12 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10 18, 2020 10:01:43 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+10 18, 2020 10:01:44 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+10 18, 2020 10:01:44 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020.10.18 22:04:45 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:05:12 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:05:29 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:05:34 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:05:35 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:05:48 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:05:49 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:05:52 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:05:58 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:06:00 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:06:20 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:08:35 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:08:59 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:09:10 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:12:52 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:13:08 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 10:14:17 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 22332
+10 18, 2020 10:14:17 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 22335
+2020.10.18 22:16:06 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:16:54 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:17:07 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:17:43 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:22:46 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 10:26:46 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 23553
+2020.10.18 22:28:04 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:28:25 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:30:08 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:30:11 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:32:44 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:33:39 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:34:06 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:34:55 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:35:57 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:36:27 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 10:40:25 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 24693
+2020.10.18 22:45:52 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 22:46:39 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 10:54:33 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 25953
+2020.10.18 22:54:34 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 10:57:29 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 26030
+10 18, 2020 11:00:20 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 26441
+10 18, 2020 11:02:25 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 27010
+10 18, 2020 11:02:25 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 27012
+10 18, 2020 11:02:25 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 27011
+10 18, 2020 11:02:25 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 27014
+10 18, 2020 11:02:25 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 27017
+10 18, 2020 11:02:25 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 27020
+2020.10.18 23:03:31 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:03:43 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:04:11 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:04:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:04:36 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:04:53 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:05:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:06:11 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:06:12 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:07:25 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 11:09:06 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 27722
+2020.10.18 23:20:52 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:21:06 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:21:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:23:26 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:23:28 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:25:25 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:25:46 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:26:06 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:27:28 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 11:28:08 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10 18, 2020 11:28:08 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10 18, 2020 11:28:08 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10 18, 2020 11:28:08 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10 18, 2020 11:30:45 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 30421
+2020.10.18 23:34:23 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:34:50 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:35:02 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 11:35:28 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: String index out of range: -1
+2020.10.18 23:37:30 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:38:03 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:38:29 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:38:40 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:38:45 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 18, 2020 11:47:41 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 32667
+2020.10.18 23:47:46 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:48:04 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:48:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.18 23:49:14 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala

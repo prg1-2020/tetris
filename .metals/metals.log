@@ -931,3 +931,38 @@ java.lang.NullPointerException
 2020.10.18 23:48:04 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
 2020.10.18 23:48:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
 2020.10.18 23:49:14 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:38:08 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:38:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:38:19 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:38:21 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:38:48 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:39:03 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:40:22 WARN  code navigation does not work for the file '/Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 00:40:23 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 19, 2020 12:40:40 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 34325
+2020.10.19 00:40:43 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 19, 2020 12:40:45 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 34342
+2020.10.19 00:41:38 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 19, 2020 12:43:29 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 34716
+2020.10.19 00:45:32 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:45:49 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:48:57 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:49:13 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:49:26 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:52:52 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:56:34 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:56:35 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:56:36 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:58:13 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 00:58:40 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:05:13 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 19, 2020 1:06:12 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 35856
+2020.10.19 01:07:14 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:07:45 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:07:57 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:08:52 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:09:14 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala

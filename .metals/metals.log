@@ -966,3 +966,21 @@ java.lang.NullPointerException
 2020.10.19 01:07:57 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
 2020.10.19 01:08:52 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
 2020.10.19 01:09:14 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:13:56 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:16:19 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:16:46 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:17:00 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.10.19 01:17:16 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala
+10 19, 2020 1:19:34 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 36694
+10 19, 2020 1:19:42 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 36730
+10 19, 2020 1:19:47 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 36752
+10 19, 2020 1:19:47 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 36755
+10 19, 2020 1:19:47 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 36757
+10 19, 2020 1:19:47 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 36760
+2020.10.19 01:20:20 WARN  no build target for: /Users/yokoyamaakiradai/classes/prg1/tetris/src/tetris/scala/shape.scala

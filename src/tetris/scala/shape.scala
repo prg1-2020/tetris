@@ -170,7 +170,7 @@ object ShapeLib {
       }
     }
   }
-  def rotateAcc(list:Shape,list_new:Shape):Shape={//top,follo
+  def rotateAcc(list:Shape,list_new:Shape):Shape={
     list match{
       case Nil =>list_new
       case x::xs=>if(x==List()) list_new else rotateAcc(extract_following(list,Nil),extract_top(list,Nil)::list_new)
@@ -225,13 +225,14 @@ object ShapeLib {
     val (x2,y2)=size(list2)
     (max(x1,x2),max(y1,y2))
   }
-  
+  //契約　list1,list2のサイズは等しい(この関数を呼び出す際にはpadToを使って同じサイズにして代入する)
   def overlapRow(list1:Row,list2:Row):Boolean={//padToでサイズを同じにして代入する
     (list1,list2) match{
       case(Nil,Nil)=>false
       case(x::xs,y::ys)=>if(x!=Transparent && y!=Transparent) true else(overlapRow(xs,ys))
   }
   }
+  //契約　list1,list2のサイズは等しい(この関数を呼び出す際にはpadToを使って同じサイズにして代入する)
   def overlapSameSize(list1:Shape,list2:Shape):Boolean={
     (list1,list2) match{
       case (Nil,Nil) => false
@@ -253,7 +254,7 @@ object ShapeLib {
   // 目的：2つのShapeを結合する
   // 契約：二つのshapeは重なりを持たない
 
-  //契約　list1,list2のサイズは等しい
+  //契約　list1,list2のサイズは等しい(この関数を呼び出す際にはpadToを使って同じサイズにして代入する)
   def combineRow(list1:Row,list2:Row,newlist:Row):Row={
     (list1,list2) match{
       case (Nil,Nil)=>newlist.reverse
@@ -262,7 +263,7 @@ object ShapeLib {
       else combineRow(xs,ys,Transparent::newlist)
     }
   }
-  //契約　list1,list2のサイズは等しい
+  //契約　list1,list2のサイズは等しい(この関数を呼び出す際にはpadToを使って同じサイズにして代入する)
   def combineAcc(list1:Shape,list2:Shape,newlist:Shape):Shape={
     (list1,list2) match{
       case (Nil,Nil)=>newlist.reverse
@@ -447,17 +448,13 @@ object ShapeTest extends App {
 
 
   // 11. combine
-  println (combineRow(List(Red,Transparent,Transparent),List(Transparent,Red,Transparent),Nil))
-  println("combine")
-  
-  
+  println("combine")  
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
-  show(combine(shiftSE(shapeT,2,0),shapeZ))
 
   //test
-
+  show(combine(shiftSE(shapeT,2,0),shapeZ))
   
 }

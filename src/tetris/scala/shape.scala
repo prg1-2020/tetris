@@ -171,18 +171,40 @@ object ShapeLib {
 
 
   // 7. shiftSE
-  // 目的：
-
-
+  // 目的：受け取ったshape を右に x ,下に y ずらした shape を返す
+  def shiftSE(shape: Shape,x: Int, y: Int): Shape = {
+    def shiftRight(shape: Shape,x: Int): Shape = {
+      if(x != 0){
+        shiftRight(shape.map(row => Transparent :: row),x-1)  
+      }
+      else shape
+    }
+    val (rows, cols) = size(shape)
+    shiftRight(empty(y,cols) ++ shape,x)
+  }
 
   // 8. shiftNW
-  // 目的：
-
+  // 目的：受け取ったshape を左に x, 上に y ずらした shape を返す
+  def shiftNW(shape: Shape,x: Int, y: Int): Shape = {
+    def shiftLeft(shape: Shape,x: Int): Shape = {
+      if(x != 0){
+        shiftLeft(shape.map(row =>row ++ List(Transparent)),x-1)  
+      }
+      else shape
+    }
+    val (rows, cols) = size(shape)
+    shiftLeft(shape ++ empty(y,cols),x)
+  }
 
 
   // 9. padTo
-  // 目的：
-  // 契約：
+  // 目的：受け取った shape を rows 行 cols 列に拡大した shape を返す関
+  // 契約：rows, cols はshape の行数・列数以上
+  def padTo(shape: Shape,rows: Int, cols: Int): Shape = {
+    val (x, y) = size(shape)
+    assert(rows >= x && cols >= y) // 契約
+    shiftNW(shape, cols - y, rows - x)
+  }
 
 
 
@@ -253,6 +275,7 @@ object ShapeTest extends App {
   show(rotate(shapeZ))
 
   // rotate が満たすべき性質のテスト
+*/
 
 
   // 7. shiftSE
@@ -262,6 +285,7 @@ object ShapeTest extends App {
          List(Transparent, Transparent),
          List(Transparent, Blue)))
   show(shiftSE(shapeI, 1, 2))
+  show(shiftSE(shapeZ, 2, 1))
 
   // 8. shiftNW
   println("shiftNW")
@@ -270,6 +294,7 @@ object ShapeTest extends App {
          List(Transparent, Transparent),
          List(Transparent, Transparent)))
   show(shiftNW(shapeI, 1, 2))
+  show(shiftNW(shapeL, 3, 1))
 
   // 9. padTo
   println("padTo")
@@ -277,7 +302,8 @@ object ShapeTest extends App {
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
   show(padTo(shapeI, 6, 2))
-
+  show(padTo(shapeT, 2, 4))
+/*
   // 10. overlap
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)

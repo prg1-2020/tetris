@@ -179,7 +179,7 @@ object ShapeLib {
       val (n,m) = size(shape2)
       empty(x2,m) ++ shape2
    }
-    shiftS(shiftE(shape,x),y)
+    shiftS(shiftE(shape, x), y)
   }
   
   
@@ -224,17 +224,17 @@ object ShapeLib {
         case (b1 :: b1s, b2 :: b2s) => blockoverlap(b1, b2) || rowoverlap(b1s, b2s)
       }
     }
-    val (n1,m1) = size(shape1)
-    val (n2,m2) = size(shape2)
-    val n = max(n1,n2)
-    val m = max(m1,m2)
+    val (n1, m1) = size(shape1)
+    val (n2, m2) = size(shape2)
+    val n = max(n1, n2)
+    val m = max(m1, m2)
     val s1 = padTo(shape1, n, m)
     val s2 = padTo(shape2, n, m) 
 
-    (s1,s2) match {
-      case (Nil,Nil) => false
-      case (s,Nil) => false
-      case (Nil,s) => false
+    (s1,s 2) match {
+      case (Nil, Nil) => false
+      case (s, Nil) => false
+      case (Nil, s) => false
       case (x1 :: x1s, x2 :: x2s) => rowoverlap(x1, x2) || overlap(x1s, x2s)
     }
   }
@@ -245,7 +245,7 @@ object ShapeLib {
   // 目的： 二つの shape を結合する
   // 契約： 引数の shape は重なりを持たない
   def combine(shape1: Shape, shape2: Shape): Shape = {
-    assert(overlap(shape1,shape2) == false)
+    assert(overlap(shape1, shape2) == false)
     val (n1,m1) = size(shape1)
     val (n2,m2) = size(shape2)
     val n = max(n1, n2)

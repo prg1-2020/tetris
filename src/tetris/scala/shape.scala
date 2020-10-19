@@ -173,27 +173,15 @@ object ShapeLib {
   // 7. shiftSE
   // 目的：受け取ったshape を右に x ,下に y ずらした shape を返す
   def shiftSE(shape: Shape,x: Int, y: Int): Shape = {
-    def shiftRight(shape: Shape,x: Int): Shape = {
-      if(x != 0){
-        shiftRight(shape.map(row => Transparent :: row),x-1)  
-      }
-      else shape
-    }
     val (rows, cols) = size(shape)
-    shiftRight(empty(y,cols) ++ shape,x)
+    (empty(y,cols) ++ shape).map(row =>duplicate(x,Transparent) ++ row)
   }
 
   // 8. shiftNW
   // 目的：受け取ったshape を左に x, 上に y ずらした shape を返す
   def shiftNW(shape: Shape,x: Int, y: Int): Shape = {
-    def shiftLeft(shape: Shape,x: Int): Shape = {
-      if(x != 0){
-        shiftLeft(shape.map(row =>row ++ List(Transparent)),x-1)  
-      }
-      else shape
-    }
     val (rows, cols) = size(shape)
-    shiftLeft(shape ++ empty(y,cols),x)
+    (shape ++ empty(y,cols)).map(row =>row ++ duplicate(x,Transparent))
   }
 
 

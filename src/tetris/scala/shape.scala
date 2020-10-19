@@ -400,4 +400,15 @@ object ShapeTest extends App {
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+
+  println(combine(List(List(Red),
+                       List(Yellow),
+                       List(Transparent, Blue)),
+                  List(List(Transparent, Red),
+                       List(Transparent, Yellow),
+                       List(Blue))) ==
+    List(List(Red, Red),
+         List(Yellow, Yellow),
+         List(Blue, Blue))) //自作テスト
+  show(combine(shapeL, shiftSE(shapeO, 1, 0))) //自作テスト
 }

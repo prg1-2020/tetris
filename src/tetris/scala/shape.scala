@@ -25,7 +25,7 @@ object ShapeLib {
   val blockColors = {
     val n = blockSymbols.length
     for (i <- Range(0, n)) yield (HSB(360f * i / n, 0.3f, 1)) 
-  
+  }
   val colorSymbols = blockSymbols ++ List('G', 'g')
   val colors = blockColors ++ List(DarkGray, LightGray)
   val Color2Sym = colors.zip(colorSymbols).toList
@@ -125,7 +125,7 @@ object ShapeLib {
   // 目的：shapeが真っ当か判断する
   def wellStructured(shape: Shape) : Boolean ={
     val (rows, cols) = size(shape)
-    rows >= 1 && cols >= 1 && shape.foldRight(true)((n,m) => n && cols == m.length)
+    rows >= 1 && cols >= 1 && shape.foldRight(true)((n,m) => m && cols == n.length)
   }
 
 
@@ -136,18 +136,40 @@ object ShapeLib {
 
 
   // 7. shiftSE
-  // 目的：
+  // 目的：shapeを右にx下にy動かす
+  def shiftSE(shape: Shape,x: Int, y :Int) : Shape = {
+    val (n,m) = size(shape)
+    val newshiftSE = duplicate(y,duplicate(m,Transparent)) ++ shape
+    newshiftSE match{
+      case Nil => Nil
+      case r :: rs => (duplicate(x,Transparent) ++ r) :: shiftSE(rs,x,0)
+    }
+  }
 
 
 
   // 8. shiftNW
-  // 目的：
+  // 目的：shapeを左にx右にy動かす
+  def shiftNW(shape: Shape,x: Int,y :Int): Shape = {
+    val (n,m) = size(shape)
+    val newshiftNW = shape ++ duplicate(y,duplicate(m,Transparent))
+    newshiftNW match{
+      case Nil => Nil
+      case r :: rs =>(r ++ duplicate(x,Transparent)) :: shiftNW(rs,x,0)
+    }
+  }
 
 
 
   // 9. padTo
-  // 目的：
+  // 目的：shapeを受け取り、rows行cols列に拡大したshapeを返す
   // 契約：
+  def padTo (shape: Shape, rows:Int, cols: Int) : Shape ={
+    val (shaper,shapec) = size(shape)
+    assert((rows >= shaper) && (cols >= shapec))
+    shiftNW(shape,cols - shapec  , rows - shaper )
+  }
+
 
 
 

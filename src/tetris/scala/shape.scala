@@ -344,6 +344,13 @@ object ShapeTest extends App {
          List(Transparent, Blue)))
   show(shiftSE(shapeI, 1, 2))
 
+  println(shiftSE(List(List(Red, Yellow)), 2, 1) ==
+    List(
+      List(Transparent, Transparent, Transparent, Transparent),
+      List(Transparent, Transparent, Red, Yellow)
+    )
+  )
+
   // 8. shiftNW
   println("shiftNW")
   println(shiftNW(List(List(Blue)), 1, 2) ==
@@ -352,6 +359,14 @@ object ShapeTest extends App {
          List(Transparent, Transparent)))
   show(shiftNW(shapeI, 1, 2))
 
+  println(shiftNW(List(List(Red), List(Yellow)), 2, 1) ==
+    List(
+      List(Red, Transparent, Transparent),
+      List(Yellow, Transparent, Transparent),
+      List(Transparent, Transparent, Transparent)
+    )
+  )
+
   // 9. padTo
   println("padTo")
   println(padTo(List(List(Blue)), 2, 3) ==
@@ -359,10 +374,19 @@ object ShapeTest extends App {
          List(Transparent, Transparent, Transparent)))
   show(padTo(shapeI, 6, 2))
 
+  println(padTo(List(List(Transparent, Pink)), 3, 3) ==
+    List(
+      List(Transparent, Pink, Transparent),
+      List(Transparent, Transparent, Transparent),
+      List(Transparent, Transparent, Transparent)
+    ))
+
   // 10. overlap
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
+
+  println(overlap(shapeT, shiftSE(rotate(shapeL), 0, 1)) == false)
 
   // 11. combine
   println("combine")
@@ -370,4 +394,6 @@ object ShapeTest extends App {
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+
+  show(combine(shapeT, shiftSE(rotate(shapeL), 0, 1)))
 }

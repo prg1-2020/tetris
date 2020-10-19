@@ -230,6 +230,7 @@ object ShapeLib {
 
 }
 
+
 // テスト
 object ShapeTest extends App {
   import ShapeLib._

@@ -184,10 +184,10 @@ object ShapeLib {
   // 9. padTo
   // 目的：rows行cols列に拡大したshapeを返す(y行x列)
   // 契約：rows,colsはshapeの行数・列数以上
-  def padTo(shape:Shape, x:Int, y:Int):Shape={
+  def padTo(shape:Shape, r:Int, c:Int):Shape={
     val (rows, cols)=size(shape)
-    assert(y>=rows && x>=cols)
-    shiftNW(shape, x-cols, y-rows)
+    assert(r>=rows && c>=cols)
+    shiftNW(shape, c-cols, r-rows)
   }
 
 
@@ -275,9 +275,9 @@ object ShapeTest extends App {
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
   show(rotate(shapeI))
   show(rotate(shapeZ))
-  show(rotate(shapeL))
+  show(rotate(shapeO))
   // rotate が満たすべき性質のテスト
-  println(rotate(rotate(rotate(rotate(shapeL))))==shapeL)
+  println(rotate(rotate(rotate(rotate(shapeO))))==shapeO)
   
   // 7. shiftSE
   println("shiftSE")
@@ -303,7 +303,7 @@ object ShapeTest extends App {
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
   show(padTo(shapeI, 6, 2))
-  show(padTo(shapeL, 5, 4))
+  show(padTo(shapeL, 8, 8))
 
   // 10. overlap
   println("overlap")
@@ -317,6 +317,6 @@ object ShapeTest extends App {
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
-  show(combine(shiftSE(shapeL, 0, 1), shapeI))
+  show(combine(shiftSE(shapeL, 1, 1), shapeI))
   
 }

@@ -118,36 +118,106 @@ object ShapeLib {
   }
 
   // 6. rotate
-  // 目的：
-  // 契約：
-
+  // 目的：受け取ったshapeを反時計回りに90度回転させたshapeを返す
+  // 契約：受け取ったshapeがまっとうである
+  def rotate(x: Shape): Shape = {
+    //契約
+    assert(wellStructured(x))
+    def rot(y: Shape): Shape = {
+      if (wellStructured(y)) {
+        y.map(_.last).foldLeft(Nil: Row)((l, r) => l :+ r) :: rot(y.map(_.init))
+      }
+      else Nil
+    } 
+    rot(x)
+  }
 
 
   // 7. shiftSE
-  // 目的：
-
+  // 目的：受け取ったshapeを右にx,下にyずらしたshapeを返す
+  def shiftSE(s: Shape, x: Int, y: Int): Shape = {
+    val (h,w) = size(s)
+    val a = empty(1, x)
+    val b = empty(y, x + w)
+    val l1 = s.map(z => a.head ++ z)
+    b ++ l1
+  }
 
 
   // 8. shiftNW
-  // 目的：
+  // 目的：受け取ったshapeを左にx,上にyずらしたshapeを返す
+  def shiftNW(s: Shape, x: Int, y: Int): Shape = {
+    val (h,w) = size(s)
+    val a = empty(1, x)
+    val b = empty(y, x + w)
+    val l1 = s.map(z => z ++ a.head)
+    l1 ++ b
+  }
 
 
 
   // 9. padTo
-  // 目的：
-  // 契約：
+  // 目的：受け取ったshapeをrows行,cols列に拡大したshapeを返す
+  // 契約：rows,colsはshapeの行数・列数以上
+  def padTo(s: Shape, rows: Int, cols: Int): Shape = {
+    val (h,w) = size(s)
+    val (x,y) = (cols - w, rows - h)
+    //契約
+    assert(x >= 0 && y >= 0)
+    shiftNW(s, x, y)
+  }
 
 
 
   // 10. overlap
-  // 目的：
+  // 目的：２つのshapeが重なりを持つかを判断する
+  def overlap(s0_0: Shape, s1_0: Shape): Boolean = {
+    val (h0, w0) = size(s0_0)
+    val (h1, w1) = size(s1_0)
+    val (h, w) = (max(h0, h1), max(w0, w1))
+    val s0_1 = padTo(s0_0, h, w).foldLeft(List.empty[Color])((l, r) => l ++ r)
+    val s1_1 = padTo(s1_0, h, w).foldLeft(List.empty[Color])((l, r) => l ++ r)
+
+    def judge(a: List[Color], b: List[Color]): Boolean = {
+      val (ai, bi) = (a.init, b.init)
+      if (a.head != Transparent && b.head != Transparent) true
+      else if (ai == Nil || bi == Nil) false
+      else judge(ai, bi)
+    }
+
+    judge(s0_1, s1_1)
+  }
 
 
 
   // 11. combine
-  // 目的：
-  // 契約：
+  // 目的：２つのshapeを結合する
+  // 契約：引数のshapeは重なりを持たない
+def combine (s0: Shape, s1 : Shape): Shape = {
+  //契約
+  assert(!overlap(s0, s1))
+  val (h0, w0) = size(s0)
+  val (h1, w1) = size(s1)
+  val (h, w) = (max(h0, h1), max(w0, w1))
 
+  def ketsugo_row(r0: Row, r1: Row): Row = {
+    (r0, r1) match {
+      case (x :: xs, y :: ys) => (if (x == Transparent) y else x) :: ketsugo_row(xs, ys)
+      case _ => Nil
+    }
+  }
+
+  def ketsugo_col(sh0: Shape, sh1: Shape): Shape = {
+    (sh0, sh1) match {
+      case (x :: xs, y :: ys) => ketsugo_row(x, y) :: ketsugo_col(xs, ys)
+      case _ => Nil
+    }
+
+  }
+
+  ketsugo_col(padTo(s0, h, w), padTo(s1, h, w))
+
+}
 
 
 }
@@ -197,16 +267,21 @@ object ShapeTest extends App {
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
   println(wellStructured(List(List(Red))) == true)
-
-  /*
+  
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
   show(rotate(shapeI))
   show(rotate(shapeZ))
+  println(rotate(List(List(Red, Blue), List(Yellow, Red))) == List(List(Blue, Red), List(Red, Yellow)))
 
   // rotate が満たすべき性質のテスト
-
+  //4 回呼ぶと元の shape に戻る
+  println(rotate(rotate(rotate(rotate(shapeJ)))) == shapeJ)
+  //受け取った shape の形を (h, w) とすると、返す shape の形は (w, h)
+  println(size(rotate(shapeZ)) == (3,2))
+  //返す shape はまっとう
+  println(wellStructured(rotate(shapeL)))
 
   // 7. shiftSE
   println("shiftSE")
@@ -215,6 +290,13 @@ object ShapeTest extends App {
          List(Transparent, Transparent),
          List(Transparent, Blue)))
   show(shiftSE(shapeI, 1, 2))
+  println(shiftSE(List(List(Red, Blue), List(Yellow, Red)), 2, 3)  ==
+                  List(List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Red, Blue),
+                       List(Transparent, Transparent, Yellow, Red)))
+
 
   // 8. shiftNW
   println("shiftNW")
@@ -223,6 +305,12 @@ object ShapeTest extends App {
          List(Transparent, Transparent),
          List(Transparent, Transparent)))
   show(shiftNW(shapeI, 1, 2))
+  println(shiftNW(List(List(Red, Blue), List(Yellow, Red)), 2, 3)  ==
+                  List(List(Red, Blue, Transparent, Transparent),
+                       List(Yellow, Red, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent)))
 
   // 9. padTo
   println("padTo")
@@ -230,17 +318,47 @@ object ShapeTest extends App {
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
   show(padTo(shapeI, 6, 2))
+  println(padTo(List(List(Red, Blue), List(Yellow, Red)), 3, 4)  ==
+                  List(List(Red, Blue, Transparent, Transparent),
+                       List(Yellow, Red, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       ))
 
+  
   // 10. overlap
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
+  println(overlap(List(List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Red, Blue),
+                       List(Transparent, Transparent, Yellow, Red)),
+                       List(List(Red, Blue, Transparent, Transparent),
+                       List(Yellow, Red, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent))) == false)
 
   // 11. combine
   println("combine")
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+  println(combine(List(List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Red, Blue),
+                       List(Transparent, Transparent, Yellow, Red)),
+                       List(List(Red, Blue, Transparent, Transparent),
+                       List(Yellow, Red, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent))) 
+                    == List(List(Red, Blue, Transparent, Transparent),
+                       List(Yellow, Red, Transparent, Transparent),
+                       List(Transparent, Transparent, Transparent, Transparent),
+                       List(Transparent, Transparent, Red, Blue),
+                       List(Transparent, Transparent, Yellow, Red)) )
 }

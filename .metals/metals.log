@@ -78,3 +78,147 @@
 10月 12, 2020 11:44:33 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 警告: Unmatched cancel notification for request id 3665
 2020.10.12 23:45:49 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.13 14:56:02 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/support/scala/colors.scala
+2020.10.13 14:56:02 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/support/scala/sgeometry.scala
+2020.10.13 14:56:03 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/support/scala/world.scala
+2020.10.13 15:04:22 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.13 15:05:25 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.16 14:35:08 INFO  shutting down Metals
+2020.10.19 19:32:09 INFO  started: Metals version 0.9.4 in workspace '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris' for client vscode.
+2020.10.19 19:32:10 INFO  time: initialize in 1.34s
+2020.10.19 19:32:15 INFO  no build target: using presentation compiler with only scala-library
+2020.10.19 19:32:15 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 19:34:19 INFO  shutting down Metals
+2020.10.19 19:34:40 INFO  started: Metals version 0.9.4 in workspace '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris' for client vscode.
+2020.10.19 19:34:42 INFO  time: initialize in 2.32s
+2020.10.19 19:34:43 INFO  skipping build import with status 'Requested'
+2020.10.19 19:34:47 INFO  no build target: using presentation compiler with only scala-library
+2020.10.19 19:34:47 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 8:05:49 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 19, 2020 8:05:49 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+10月 19, 2020 8:05:50 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 19, 2020 8:05:50 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+2020.10.19 20:27:29 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:28:14 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 20:28:14 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:30:26 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:33:19 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 20:33:19 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 8:34:40 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 1385
+2020.10.19 20:36:32 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:40:39 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 20:41:07 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 8:42:28 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2224
+2020.10.19 20:43:00 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:43:23 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:44:08 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:44:21 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:45:06 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:45:16 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 8:46:45 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2672
+2020.10.19 20:47:03 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 8:47:08 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2784
+2020.10.19 20:58:16 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:58:27 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 20:58:44 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:02:54 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:03:04 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:03:25 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 9:04:01 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4268
+2020.10.19 21:05:01 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:05:49 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:05:49 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/support/scala/world.scala
+2020.10.19 21:06:00 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:06:59 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:07:11 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:08:48 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:09:05 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:10:15 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:12:37 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:13:14 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:13:29 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:13:39 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:13:39 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:13:44 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:13:57 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:14:16 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 9:17:05 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 5932
+2020.10.19 21:17:10 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:17:29 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:19:36 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:19:51 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:19:51 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:20:01 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 9:21:26 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 6309
+10月 19, 2020 9:21:32 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 6340
+2020.10.19 21:22:12 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:25:04 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:25:23 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:25:53 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:26:21 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:26:48 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:26:48 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:26:57 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:26:57 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:32:57 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:36:32 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:38:16 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:39:41 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:39:41 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:40:30 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:41:17 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:42:45 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:43:04 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 9:43:48 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 9216
+2020.10.19 21:45:30 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 9:47:28 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 9623
+2020.10.19 21:49:41 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:49:41 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:50:28 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.19 21:50:41 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+10月 19, 2020 9:50:59 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 10021
+10月 19, 2020 9:52:09 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: offset 5549, count -1, length 8963
+2020.10.19 21:52:19 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:52:34 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:53:49 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:54:53 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:55:30 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.19 21:55:47 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala

@@ -194,7 +194,7 @@ object ShapeLib {
   // 契約：引数のshapeは真っ当である（wellStructured(shape) == true)
   def rotate(shape:Shape):Shape={
       assert(wellStructured(shape))
-    //戦闘要素のみをリストにする。回転させるので
+    //先頭要素のみをリストにする。回転させるので
      def make_head(shape:Shape): Row={
          shape match{
              case Nil => Nil
@@ -244,12 +244,10 @@ def shiftNW(shape:Shape,x:Int,y:Int):Shape={
   // 契約：rows,colsはshapeの行数列数以上
   def padTo(shape:Shape,rows_to:Int,cols_to:Int):Shape = {
       val (rows_shape,cols_shape) = size(shape)
+      assert(rows_to >= rows_shape && cols_to >= cols_shape)
       val (y,x) = (rows_to - rows_shape, cols_to-cols_shape)
-
       shiftNW(shape,x,y)
-
   }
-
 
   // 10. overlap
   // 目的：2つのshapeが重なるかを調べる
@@ -268,6 +266,7 @@ def shiftNW(shape:Shape,x:Int,y:Int):Shape={
       val new_shape2 = padTo(shape2,rows_max,cols_max).flatten
 
       val zipped_shape = new_shape1.zip(new_shape2)
+
       def check_re(zipped:List[(Block,Block)],flag:Boolean):Boolean={
           if (flag) true
           else {
@@ -290,6 +289,8 @@ def shiftNW(shape:Shape,x:Int,y:Int):Shape={
   // 目的：２つのshapeを結合する
   // 契約：shapeは重なりを持たない
   def combine(shape1:Shape,shape2:Shape):Shape={
+      assert(overlap(shape1,shape2) == false)
+
       val (rows1,cols1) = size(shape1)
       val (rows2,cols2) = size(shape2)
       val (rows_max,cols_max) = (max(rows1,rows1),max(cols1,cols2))
@@ -302,6 +303,7 @@ def shiftNW(shape:Shape,x:Int,y:Int):Shape={
               case (block,Transparent) => block
           }
       }
+
       def combine_row(row1:Row,row2:Row):Row={
           (row1,row2) match{
               case (Nil,Nil)=> Nil
@@ -416,6 +418,8 @@ println(size(shapeO)==(2,2))
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
+  
+  println(overlap(shapeT,shiftSE(shapeS,2,0)) == false)
 
   // 11. combine
   println("combine")
@@ -423,5 +427,7 @@ println(size(shapeO)==(2,2))
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+
+  show(combine(shapeT,shiftSE(shapeS,2,0)))
   
 }

@@ -165,10 +165,29 @@ object ShapeLib {
 
 
   // 6. rotate
-  // 目的：
-  // 契約：
-
-
+  // 目的：受け取ったshape を反時計回りに90 度回転させたshape を返す
+  // 契約：引数のshape はまっとうである
+  def rotate(shape: Shape): Shape = {
+    assert(wellStructured(shape) == true) //契約
+    def allReverse(shape: Shape): Shape = {
+      shape match{
+        case x :: xs => x.reverse :: allReverse(xs)
+        case Nil => Nil
+      }
+    }
+    def ColToRow(shape: Shape,n: Int): Row = {
+      shape match{
+        case x :: xs => x(n) :: ColToRow(xs,n)
+        case Nil => Nil
+      }
+    }
+    val (x,y) = size(shape)
+    def transpose(shape: Shape,n: Int): Shape = {
+      if(n < y) ColToRow(shape,n) :: transpose(shape,n+1)
+      else Nil
+    }
+    transpose(allReverse(shape),0)
+  }
 
   // 7. shiftSE
   // 目的：受け取ったshape を右に x ,下に y ずらした shape を返す
@@ -290,16 +309,16 @@ object ShapeTest extends App {
   println(wellStructured(shapeZ) == true)
   println(wellStructured(List(List(Red, Red, Red), List(Transparent, Red, Transparent))) == true)
 
-/*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
   show(rotate(shapeI))
   show(rotate(shapeZ))
+  show(rotate(shapeT))
   // rotate が満たすべき性質のテスト
-*/
-
-
+  println(rotate(rotate(rotate(rotate(shapeT)))) == shapeT)//4回転で元に戻る
+  println(blockCount(rotate(shapeJ)) == blockCount(shapeJ))//個数の不変性
+  
   // 7. shiftSE
   println("shiftSE")
   println(shiftSE(List(List(Blue)), 1, 2) ==

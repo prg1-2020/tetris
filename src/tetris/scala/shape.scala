@@ -251,7 +251,25 @@ object ShapeLib {
   // 11. combine
   // 目的：２つの shape を結合する
   // 契約：引数の shape は重なりを持たない
-
+  def combine(shape1 :Shape, shape2 :Shape): Shape = {
+    //if (overlap(shape1, shape2)) return shape1
+    //else
+    def combineRow(shape1 :Shape, shape2 :Shape): Shape = {
+      def combineCol(row1 :Row, row2 :Row): Row = {
+        if(row1 == Nil || row2 == Nil) Nil
+        else if(row1.head != Transparent) row1.head::combineCol(row1.tail, row2.tail)
+        else if(row2.head != Transparent) row2.head::combineCol(row1.tail, row2.tail)
+        else Transparent::combineCol(row1.tail, row2.tail)
+      }
+      if(shape1 == Nil || shape2 == Nil) Nil
+      else combineCol(shape1.head, shape2.head)::combineRow(shape1.tail, shape2.tail)
+    }
+    val (row1, col1) = size(shape1)
+    val (row2, col2) = size(shape2)
+    val col = if(col1 > col2) col1 else col2
+    val row = if(row1 > row2) row1 else row2
+    combineRow(padTo(shape1, row, col), padTo(shape2, row, col))
+  }
 
 
 }
@@ -346,12 +364,10 @@ object ShapeTest extends App {
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
 
-  /*
   // 11. combine
   println("combine")
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
 }

@@ -132,7 +132,25 @@ object ShapeLib {
   // 6. rotate
   // 目的：
   // 契約：
-
+  def rotate(shape: Shape): Shape = {
+    //目的: 行一つとshapeを受け取って, shapeの各行の先頭に受け取った行の要素を逆順に一つずつ足してできるshapeを返す 
+    def newrotate(s: Shape,list:Row):Shape = {
+      s match{
+        case Nil => duplicate(list.length,Nil)
+        case r :: rs => {
+          list match{
+            case Nil => s
+            case _ => (list.last :: r) :: newrotate(rs,list.init)  
+          }
+        }
+      }
+    }
+    assert(wellStructured(shape)) //契約
+    shape match{
+      case Nil => Nil
+      case r :: rs => shape.foldRight(duplicate(r.length,Nil): Shape)((x: Row,t: Shape) => newrotate(t,x))
+    }
+   }
 
 
   // 7. shiftSE

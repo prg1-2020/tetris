@@ -1,0 +1,149 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "root-test",
+        "directory": "/Users/ron_ume/Desktop/tetris",
+        "workspaceDir": "/Users/ron_ume/Desktop/tetris",
+        "sources": [
+            "/Users/ron_ume/Desktop/tetris/src/test/scala-2.12",
+            "/Users/ron_ume/Desktop/tetris/src/test/scala",
+            "/Users/ron_ume/Desktop/tetris/src/test/java",
+            "/Users/ron_ume/Desktop/tetris/target/scala-2.12/src_managed/test"
+        ],
+        "dependencies": [
+            "root"
+        ],
+        "classpath": [
+            "/Users/ron_ume/Desktop/tetris/.bloop/root/scala-2.12/classes",
+            "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-library.jar"
+        ],
+        "out": "/Users/ron_ume/Desktop/tetris/.bloop/root",
+        "classesDir": "/Users/ron_ume/Desktop/tetris/.bloop/root/scala-2.12/test-classes",
+        "resources": [
+            "/Users/ron_ume/Desktop/tetris/src/test/resources",
+            "/Users/ron_ume/Desktop/tetris/target/scala-2.12/resource_managed/test"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.12.10",
+            "options": [
+                
+            ],
+            "jars": [
+                "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-library.jar",
+                "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-compiler.jar",
+                "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jline.jar",
+                "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-reflect.jar",
+                "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jansi.jar",
+                "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-xml_2.12.jar"
+            ],
+            "analysis": "/Users/ron_ume/Desktop/tetris/target/streams/test/bloopAnalysisOut/_global/streams/inc_compile_2.12.zip",
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
+                "options": [
+                    "-Duser.dir=/Users/ron_ume/Desktop/tetris"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.10",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-library.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.10/scala-library-2.12.10-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.10",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-library.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.10/scala-library-2.12.10-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}

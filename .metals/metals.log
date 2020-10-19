@@ -1,0 +1,950 @@
+2020.10.12 22:31:27 INFO  started: Metals version 0.9.4 in workspace '/Users/ron_ume/Desktop/tetris' for client vscode.
+2020.10.12 22:31:29 INFO  time: initialize in 1.88s
+2020.10.12 22:31:36 INFO  no build target: using presentation compiler with only scala-library
+2020.10.12 22:31:36 WARN  no build target for: /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala
+10月 12, 2020 10:32:32 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:32:36 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:32:37 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:32:38 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:32:38 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:32:39 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:32:39 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:32:39 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.12 22:33:15 INFO  running '/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/metals1737913444910431329/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2020.10.12 22:33:15 INFO  skipping build import with status 'Started'
+2020.10.12 22:33:25 INFO  [info] welcome to sbt 1.3.13 (AdoptOpenJDK Java 11.0.8)
+2020.10.12 22:33:30 INFO  [info] loading settings for project tetris-build-build from metals.sbt ...
+2020.10.12 22:33:36 INFO  [info] loading project definition from /Users/ron_ume/Desktop/tetris/project/project
+2020.10.12 22:33:42 INFO  [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+2020.10.12 22:33:45 INFO  [info] loading settings for project tetris-build from metals.sbt ...
+2020.10.12 22:33:45 INFO  [info] loading project definition from /Users/ron_ume/Desktop/tetris/project
+2020.10.12 22:33:46 INFO  [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+2020.10.12 22:33:55 INFO  [success] Generated .bloop/tetris-build.json
+2020.10.12 22:33:55 INFO  [success] Total time: 10 s, completed 2020/10/12 22:33:55
+2020.10.12 22:33:58 INFO  [info] loading settings for project root from build.sbt ...
+2020.10.12 22:33:59 INFO  [info] set current project to root (in build file:/Users/ron_ume/Desktop/tetris/)
+2020.10.12 22:34:02 INFO  [success] Generated .bloop/support.json
+2020.10.12 22:34:02 INFO  [success] Generated .bloop/support-test.json
+2020.10.12 22:34:02 INFO  [success] Generated .bloop/tetris.json
+2020.10.12 22:34:02 INFO  [success] Generated .bloop/tetris-test.json
+2020.10.12 22:34:02 INFO  [success] Generated .bloop/root.json
+2020.10.12 22:34:02 INFO  [success] Generated .bloop/root-test.json
+2020.10.12 22:34:02 INFO  [success] Total time: 3 s, completed 2020/10/12 22:34:02
+2020.10.12 22:34:02 INFO  build tool exit: 0
+2020.10.12 22:34:02 INFO  time: ran 'sbt bloopInstall' in 47s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4567256616092248104/bsp.socket'...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+No server running at 127.0.0.1:8212, let's fire one...
+Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.4-13-408f4d80...
+Starting bloop server at 127.0.0.1:8212...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+[0m[32m[D][0m Loading 6 projects from '/Users/ron_ume/Desktop/tetris/.bloop'...
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/root.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/support.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/tetris-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/support-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/tetris.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/root-test.json'
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.13.3.
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.12.10.
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.3.1/jna-5.3.1.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jansi.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.15.0/jline-3.15.0.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jline.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.3/scala-compiler-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-compiler.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.3/scala-library-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-library.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.3/scala-reflect-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-reflect.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-xml_2.12.jar
+[0m[32m[D][0m Missing analysis file for project 'tetris-test'
+[0m[32m[D][0m Missing analysis file for project 'support'
+[0m[32m[D][0m Missing analysis file for project 'tetris'
+[0m[32m[D][0m Missing analysis file for project 'root'
+[0m[32m[D][0m Missing analysis file for project 'root-test'
+[0m[32m[D][0m Missing analysis file for project 'support-test'
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4567256616092248104/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4567256616092248104/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.12 22:34:19 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher14342139847405271954/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher14342139847405271954/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher14342139847405271954/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.12 22:34:24 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+2020.10.12 22:34:24 INFO  time: connected to build server in 21s
+2020.10.12 22:34:24 INFO  Connected to Build server v1.4.4-13-408f4d80
+2020.10.12 22:34:24 INFO  time: imported build in 0.17s
+2020.10.12 22:34:38 INFO  time: indexed workspace in 13s
+2020.10.12 22:34:39 INFO  compiling support (4 scala sources and 21 java sources)
+2020.10.12 22:35:05 INFO  compiling tetris (2 scala sources)
+2020.10.12 22:35:05 INFO  time: compiled support in 26s
+2020.10.12 22:35:09 INFO  time: compiled tetris in 3.74s
+10月 12, 2020 10:35:11 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:35:11 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:35:24 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+10月 12, 2020 10:35:56 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.12 22:42:00 INFO  shutting down Metals
+No more data in the client stdin, exiting...
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+2020.10.12 22:42:19 INFO  started: Metals version 0.9.4 in workspace '/Users/ron_ume/Desktop/tetris' for client vscode.
+2020.10.12 22:42:21 INFO  time: initialize in 2s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher12646650110940787540/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher12646650110940787540/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher12646650110940787540/bsp.socket...
+2020.10.12 22:42:22 INFO  skipping build import with status 'Installed'
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.12 22:42:23 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher2399541723290318250/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher2399541723290318250/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher2399541723290318250/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.12 22:42:23 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+2020.10.12 22:42:23 INFO  time: connected to build server in 0.95s
+2020.10.12 22:42:23 INFO  Connected to Build server v1.4.4-13-408f4d80
+2020.10.12 22:42:23 INFO  time: imported build in 0.27s
+2020.10.12 22:42:28 INFO  no build target: using presentation compiler with only scala-library
+2020.10.12 22:42:37 INFO  time: indexed workspace in 14s
+2020.10.12 22:45:42 INFO  compiling tetris (1 scala source)
+2020.10.12 22:45:46 INFO  time: compiled tetris in 3.82s
+10月 12, 2020 10:47:30 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 108
+10月 12, 2020 10:47:30 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 110
+10月 12, 2020 10:47:41 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 135
+2020.10.12 22:50:07 INFO  compiling tetris (1 scala source)
+2020.10.12 22:50:09 INFO  time: compiled tetris in 2.21s
+10月 12, 2020 10:50:23 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.12 23:09:00 INFO  shutting down Metals
+No more data in the client stdin, exiting...
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+2020.10.19 00:34:44 INFO  started: Metals version 0.9.4 in workspace '/Users/ron_ume/Desktop/tetris' for client vscode.
+2020.10.19 00:34:46 INFO  time: initialize in 2.14s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4881308038858197175/bsp.socket'...
+Waiting for the bsp connection to come up...
+2020.10.19 00:34:48 INFO  skipping build import with status 'Installed'
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+2020.10.19 00:34:54 INFO  no build target: using presentation compiler with only scala-library
+2020.10.19 00:34:54 WARN  no build target for: /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+No server running at 127.0.0.1:8212, let's fire one...
+Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.4-13-408f4d80...
+Starting bloop server at 127.0.0.1:8212...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Loading 6 projects from '/Users/ron_ume/Desktop/tetris/.bloop'...
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/tetris-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/support.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/root.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/support-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/root-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/tetris.json'
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.12.10.
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.13.3.
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jansi.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jline.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-compiler.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.3.1/jna-5.3.1.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-library.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-reflect.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.15.0/jline-3.15.0.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-xml_2.12.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.3/scala-compiler-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.3/scala-library-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.3/scala-reflect-2.13.3.jar
+[0m[32m[D][0m Configured SemanticDB in projects 'root', 'root-test'
+[0m[32m[D][0m Configured SemanticDB in projects 'tetris', 'support', 'tetris-test', 'support-test'
+[0m[32m[D][0m Missing analysis file for project 'tetris-test'
+[0m[32m[D][0m Missing analysis file for project 'support-test'
+[0m[32m[D][0m Missing analysis file for project 'root'
+[0m[32m[D][0m Missing analysis file for project 'root-test'
+[0m[32m[D][0m Loading previous analysis for 'tetris' from '/Users/ron_ume/Desktop/tetris/src/tetris/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip'.
+[0m[32m[D][0m Loading previous analysis for 'support' from '/Users/ron_ume/Desktop/tetris/src/support/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip'.
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4881308038858197175/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4881308038858197175/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.19 00:34:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher15931751811298401819/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher15931751811298401819/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher15931751811298401819/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.19 00:34:58 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+2020.10.19 00:34:58 INFO  time: connected to build server in 10s
+2020.10.19 00:34:58 INFO  Connected to Build server v1.4.4-13-408f4d80
+2020.10.19 00:34:58 INFO  time: imported build in 0.24s
+2020.10.19 00:35:13 INFO  time: indexed workspace in 13s
+2020.10.19 00:35:53 INFO  compiling support (4 scala sources and 21 java sources)
+2020.10.19 00:36:04 INFO  compiling tetris (2 scala sources)
+2020.10.19 00:36:04 INFO  time: compiled support in 12s
+2020.10.19 00:36:09 INFO  time: compiled tetris in 4.88s
+10月 19, 2020 12:37:06 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 132
+10月 19, 2020 12:43:04 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 258
+10月 19, 2020 12:43:04 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 260
+10月 19, 2020 12:43:49 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 304
+10月 19, 2020 12:46:02 午前 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:468)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.expected$1(CompletionProvider.scala:374)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:466)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 12:46:02 午前 scala.meta.internal.pc.CompletionProvider expected$1
+警告: null
+10月 19, 2020 12:46:04 午前 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:468)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.expected$1(CompletionProvider.scala:374)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:466)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 12:46:04 午前 scala.meta.internal.pc.CompletionProvider expected$1
+警告: null
+10月 19, 2020 12:46:04 午前 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:468)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.expected$1(CompletionProvider.scala:374)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:466)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 12:46:04 午前 scala.meta.internal.pc.CompletionProvider expected$1
+警告: null
+10月 19, 2020 12:46:05 午前 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:468)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.expected$1(CompletionProvider.scala:374)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:466)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 12:46:05 午前 scala.meta.internal.pc.CompletionProvider expected$1
+警告: null
+10月 19, 2020 12:46:05 午前 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:468)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.expected$1(CompletionProvider.scala:374)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:466)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 12:46:05 午前 scala.meta.internal.pc.CompletionProvider expected$1
+警告: null
+10月 19, 2020 2:44:20 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 977
+10月 19, 2020 2:44:20 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 979
+10月 19, 2020 2:53:41 午後 scala.meta.internal.pc.MetalsGlobal inverseSemanticdbSymbols
+重大: invalid SemanticDB symbol: tetris/ShapeLib.rotate().(shape)
+illegal cyclic reference involving method rotate
+2020.10.19 15:25:12 INFO  compiling tetris (1 scala source)
+2020.10.19 15:25:14 INFO  time: compiled tetris in 1.95s
+10月 19, 2020 3:40:58 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 3:40:58 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 3:40:59 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 3:40:59 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 3:40:59 午後 scala.meta.internal.pc.completions.Completions completionPosition
+重大: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+10月 19, 2020 3:41:19 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: offset 3723, count -1, length 6628
+10月 19, 2020 5:26:14 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 7143
+10月 19, 2020 6:13:23 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8409
+10月 19, 2020 6:41:35 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8522
+10月 19, 2020 6:43:16 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8684
+10月 19, 2020 6:44:11 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8874
+10月 19, 2020 6:44:52 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 9033
+10月 19, 2020 6:49:44 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 9918
+10月 19, 2020 6:50:06 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: -1 is out of bounds (min 0, max 1)
+java.lang.IndexOutOfBoundsException: -1 is out of bounds (min 0, max 1)
+	at scala.collection.mutable.ArrayBuffer.apply(ArrayBuffer.scala:96)
+	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1282)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5419)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5470)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5914)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6071)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5917)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$40(Typers.scala:5030)
+	at scala.tools.nsc.typechecker.Typers$Typer.silent(Typers.scala:706)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5032)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5060)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5916)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedSelectOrSuperCall$1(Typers.scala:6071)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5917)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$40(Typers.scala:5030)
+	at scala.tools.nsc.typechecker.Typers$Typer.silent(Typers.scala:706)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5032)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5060)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5916)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArg(Typers.scala:3415)
+	at scala.tools.nsc.typechecker.PatternTypers$PatternTyper.typedArgWithFormal$1(PatternTypers.scala:117)
+	at scala.tools.nsc.typechecker.PatternTypers$PatternTyper.$anonfun$typedArgsForFormals$4(PatternTypers.scala:131)
+	at scala.tools.nsc.typechecker.PatternTypers$PatternTyper.typedArgsForFormals(PatternTypers.scala:131)
+	at scala.tools.nsc.typechecker.PatternTypers$PatternTyper.typedArgsForFormals$(PatternTypers.scala:112)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArgsForFormals(Typers.scala:203)
+	at scala.tools.nsc.typechecker.Typers$Typer.handleMonomorphicCall$1(Typers.scala:3743)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedApply(Typers.scala:3793)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$27(Typers.scala:4965)
+	at scala.tools.nsc.typechecker.Typers$Typer.silent(Typers.scala:706)
+	at scala.tools.nsc.typechecker.Typers$Typer.tryTypedApply$1(Typers.scala:4965)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5049)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5060)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5916)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedIf$1(Typers.scala:6051)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5892)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5926)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedFunction(Typers.scala:6062)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedFunction(Typers.scala:3073)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$105(Typers.scala:5857)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedFunction$1(Typers.scala:492)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5894)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5926)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArg(Typers.scala:3415)
+	at scala.tools.nsc.typechecker.Typers$Typer.handlePolymorphicCall$1(Typers.scala:3811)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedApply(Typers.scala:3830)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5051)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5060)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5916)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedFunction(Typers.scala:6062)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedFunction(Typers.scala:3073)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$105(Typers.scala:5857)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedFunction$1(Typers.scala:492)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5894)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5926)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArg(Typers.scala:3415)
+	at scala.tools.nsc.typechecker.Typers$Typer.handlePolymorphicCall$1(Typers.scala:3811)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedApply(Typers.scala:3830)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5051)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5060)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5916)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedBlock(Typers.scala:2559)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5891)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5926)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedDefDef(Typers.scala:6250)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5881)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:6051)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$8(Typers.scala:3397)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3397)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2058)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1934)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5883)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:6051)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$8(Typers.scala:3397)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3397)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5582)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5885)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5973)
+	at scala.tools.nsc.typechecker.Analyzer$typerFactory$TyperPhase.apply(Analyzer.scala:117)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:454)
+	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1345)
+	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global.typeCheck(Global.scala:669)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:818)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:23)
+
+2020.10.19 18:59:51 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 18:59:51 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 18:59:51 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 18:59:51 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 18:59:51 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 18:59:51 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 18:59:52 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 18:59:52 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+10月 19, 2020 7:01:02 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 10357
+2020.10.19 19:03:25 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:25 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:25 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:25 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:26 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:26 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:26 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:26 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:28 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:28 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:28 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:28 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:31 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:31 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:31 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:31 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:31 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:31 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+2020.10.19 19:03:32 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:153:12: stale bloop error: not found: value s
+        j=>s(j)(cols-1-i)
+           ^
+2020.10.19 19:03:32 INFO  /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala:241:11: stale bloop error: missing argument list for method rotate in object ShapeLib
+Unapplied methods are only converted to functions when a function type is expected.
+You can make this conversion explicit by writing `rotate _` or `rotate(_)` instead of `rotate`.
+  println(rotate(rotate(rotate(rotate(shapeZ))))=shapeZ)
+          ^^^^^^
+10月 19, 2020 7:03:39 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 10739
+10月 19, 2020 7:04:29 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 10827
+10月 19, 2020 7:05:39 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.19 19:11:13 INFO  shutting down Metals
+No more data in the client stdin, exiting...
+No more data in the client stdin, exiting...
+2020.10.19 20:49:30 INFO  started: Metals version 0.9.4 in workspace '/Users/ron_ume/Desktop/tetris' for client vscode.
+2020.10.19 20:49:33 INFO  time: initialize in 2.47s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher1373823368270409925/bsp.socket'...
+Waiting for the bsp connection to come up...
+2020.10.19 20:49:34 INFO  skipping build import with status 'Installed'
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+2020.10.19 20:49:41 INFO  no build target: using presentation compiler with only scala-library
+2020.10.19 20:49:41 WARN  no build target for: /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala
+10月 19, 2020 8:49:41 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 11
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 12
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 7
+Waiting for the bsp connection to come up...
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 15
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 14
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 20
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 22
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 23
+10月 19, 2020 8:49:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 19
+10月 19, 2020 8:49:43 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 26
+10月 19, 2020 8:49:43 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 25
+Waiting for the bsp connection to come up...
+No server running at 127.0.0.1:8212, let's fire one...
+Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.4-13-408f4d80...
+Starting bloop server at 127.0.0.1:8212...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Loading 6 projects from '/Users/ron_ume/Desktop/tetris/.bloop'...
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/support-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/tetris-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/root-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/root.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/tetris.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/support.json'
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.12.10.
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.13.3.
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jansi.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jline.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.3.1/jna-5.3.1.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-compiler.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.15.0/jline-3.15.0.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-library.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-reflect.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.3/scala-compiler-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-xml_2.12.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.3/scala-library-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.3/scala-reflect-2.13.3.jar
+[0m[32m[D][0m Configured SemanticDB in projects 'root-test', 'root'
+[0m[32m[D][0m Configured SemanticDB in projects 'tetris-test', 'support', 'support-test', 'tetris'
+[0m[32m[D][0m Missing analysis file for project 'tetris-test'
+[0m[32m[D][0m Missing analysis file for project 'support-test'
+[0m[32m[D][0m Missing analysis file for project 'root-test'
+[0m[32m[D][0m Missing analysis file for project 'root'
+[0m[32m[D][0m Loading previous analysis for 'tetris' from '/Users/ron_ume/Desktop/tetris/src/tetris/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip'.
+[0m[32m[D][0m Loading previous analysis for 'support' from '/Users/ron_ume/Desktop/tetris/src/support/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip'.
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher1373823368270409925/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher1373823368270409925/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.19 20:49:44 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher1866787853219275909/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher1866787853219275909/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher1866787853219275909/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.19 20:49:45 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+2020.10.19 20:49:45 INFO  time: connected to build server in 11s
+2020.10.19 20:49:45 INFO  Connected to Build server v1.4.4-13-408f4d80
+2020.10.19 20:49:45 INFO  time: imported build in 0.23s
+2020.10.19 20:49:57 INFO  compiling tetris (1 scala source)
+2020.10.19 20:50:05 INFO  time: indexed workspace in 19s
+2020.10.19 20:50:05 INFO  Deduplicating compilation of tetris from bsp client 'Metals 0.9.4' (since 19.774s)
+2020.10.19 20:50:05 INFO  compiling tetris (1 scala source)
+2020.10.19 20:50:26 INFO  time: compiled tetris in 21s
+2020.10.19 20:51:36 INFO  compiling tetris (1 scala source)
+2020.10.19 20:51:42 INFO  time: compiled tetris in 5.91s
+2020.10.19 20:56:16 INFO  compiling tetris (1 scala source)
+2020.10.19 20:56:21 INFO  time: compiled tetris in 4.39s
+2020.10.19 20:57:13 INFO  compiling tetris (1 scala source)
+2020.10.19 20:57:18 INFO  time: compiled tetris in 4.36s
+10月 19, 2020 8:57:26 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.10.19 20:59:31 INFO  shutting down Metals
+No more data in the client stdin, exiting...
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the server stdin, exiting...
+2020.10.19 23:53:24 INFO  started: Metals version 0.9.4 in workspace '/Users/ron_ume/Desktop/tetris' for client vscode.
+2020.10.19 23:53:27 INFO  time: initialize in 3.53s
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher16896598440127792470/bsp.socket'...
+Waiting for the bsp connection to come up...
+2020.10.19 23:53:28 INFO  skipping build import with status 'Installed'
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+2020.10.19 23:53:36 INFO  no build target: using presentation compiler with only scala-library
+2020.10.19 23:53:36 WARN  no build target for: /Users/ron_ume/Desktop/tetris/src/tetris/scala/shape.scala
+Waiting for the bsp connection to come up...
+No server running at 127.0.0.1:8212, let's fire one...
+Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.4-13-408f4d80...
+Starting bloop server at 127.0.0.1:8212...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+Attempting a connection to the server...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Loading 6 projects from '/Users/ron_ume/Desktop/tetris/.bloop'...
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/support.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/root-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/root.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/tetris-test.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/tetris.json'
+[0m[32m[D][0m Loading project from '/Users/ron_ume/Desktop/tetris/.bloop/support-test.json'
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.12.10.
+[0m[32m[D][0m Cache miss for scala instance org.scala-lang:scala-compiler:2.13.3.
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jansi.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/jline.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-compiler.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-library.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.3.1/jna-5.3.1.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-reflect.jar
+[0m[32m[D][0m   => /Users/ron_ume/.sbt/boot/scala-2.12.10/lib/scala-xml_2.12.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.15.0/jline-3.15.0.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.3/scala-compiler-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.3/scala-library-2.13.3.jar
+[0m[32m[D][0m   => /Users/ron_ume/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.3/scala-reflect-2.13.3.jar
+[0m[32m[D][0m Configured SemanticDB in projects 'root', 'root-test'
+[0m[32m[D][0m Configured SemanticDB in projects 'support', 'tetris-test', 'tetris', 'support-test'
+[0m[32m[D][0m Missing analysis file for project 'tetris-test'
+[0m[32m[D][0m Missing analysis file for project 'support-test'
+[0m[32m[D][0m Missing analysis file for project 'root'
+[0m[32m[D][0m Missing analysis file for project 'root-test'
+[0m[32m[D][0m Loading previous analysis for 'support' from '/Users/ron_ume/Desktop/tetris/src/support/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip'.
+[0m[32m[D][0m Loading previous analysis for 'tetris' from '/Users/ron_ume/Desktop/tetris/src/tetris/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.13.zip'.
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher16896598440127792470/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher16896598440127792470/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.19 23:53:38 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol local --socket /var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4369371213836287405/bsp.socket'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Loading workspace settings from bloop.settings.json
+[0m[32m[D][0m Waiting for a connection at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4369371213836287405/bsp.socket...
+The server is listening for incoming connections at local:///var/folders/6n/j4bl7t8n47105wk1fk4834yr0000gn/T/bsp-launcher4369371213836287405/bsp.socket...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+2020.10.19 23:53:38 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/ron_ume/Library/Caches/org.scalameta.metals/bsp.trace.json
+2020.10.19 23:53:38 INFO  time: connected to build server in 10s
+2020.10.19 23:53:38 INFO  Connected to Build server v1.4.4-13-408f4d80
+2020.10.19 23:53:38 INFO  time: imported build in 0.22s
+2020.10.19 23:53:52 INFO  time: indexed workspace in 13s
+2020.10.19 23:55:12 INFO  compiling tetris (1 scala source)
+2020.10.19 23:55:26 INFO  time: compiled tetris in 14s
+2020.10.19 23:58:20 INFO  compiling tetris (1 scala source)
+2020.10.19 23:58:25 INFO  time: compiled tetris in 4.76s
+10月 19, 2020 11:58:37 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

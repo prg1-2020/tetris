@@ -215,11 +215,33 @@ object ShapeLib {
   }
 
   // 11. combine
-  // 目的：
-  // 契約：
-
-
-
+  // 目的：２つのshape を結合して返す
+  // 契約：引数のshape は重なりを持たない
+  def combine(shape1: Shape,shape2: Shape): Shape = {
+    assert(overlap(shape1,shape2) == false) //契約
+    def row_combine(row1: Row,row2: Row): Row = {
+      (row1, row2) match{
+        case(x :: xs, y :: ys) =>{
+          if(y == Transparent) x :: row_combine(xs,ys)
+          else y :: row_combine(xs,ys)
+        }
+        case(Nil,y::ys) => row2
+        case(x::xs,Nil) => row1
+        case(Nil,Nil) => Nil
+      }
+    }
+    val (x1,y1) = size(shape1)
+    val (x2,y2) = size(shape2)   
+    def make_combine(shape1: Shape,shape2: Shape): Shape = {
+      (shape1,shape2) match{
+        case(x :: xs, y :: ys) => row_combine(x,y):: make_combine(xs,ys)
+        case(x :: xs,Nil) => row_combine(x,duplicate(y2,Transparent)):: make_combine(xs,Nil)
+        case(Nil,y::ys) => row_combine(duplicate(y1,Transparent),y):: make_combine(Nil,ys)
+        case(Nil,Nil) => Nil
+      }
+    }
+    make_combine(shape1,shape2)
+  }
 }
 
 // テスト
@@ -309,12 +331,13 @@ object ShapeTest extends App {
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
   println(overlap(shapeL, shiftSE(shapeT, 1, 1)) == false)
-/*
+
   // 11. combine
   println("combine")
+  
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+  show(combine(shapeL, shiftSE(shapeT, 1, 1)))
 }

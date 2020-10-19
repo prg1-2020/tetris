@@ -144,14 +144,23 @@ object ShapeLib {
   }
 
   // 7. shiftSE
-  // 目的：
-  def shiftSE(shape: Shape): Shape = {}
+  // 目的：受け取ったshapeをx,yだけずらしたshapeを返す
+  def shiftSE(shape: Shape, x: Int, y: Int): Shape = {
+    empty(y, size(shape)._2 + x) ++ shape.foldRight(Nil: SHape)((a, b) =>
+      (duplicate(x, Transparent) ++ a) :: b
+    )
+  }
 
   // 8. shiftNW
-  // 目的：
+  // 目的：受け取ったshapeをx,yだけずらしたshapeを返す
+  def shiftNW(shape: Shape, x: Int, y: Int): Shape = {
+    shape.foldRight(Nil: Shape)((a, b) =>
+      (a ++ duplicate(x, Transparent)) :: b
+    ) ++ empty(y, size(shape)._2 + x)
+  }
 
   // 9. padTo
-  // 目的：
+  // 目的：受け取ったshapeをrows行cols列に拡大したshapeを返す関数padToを定義せよ。
   // 契約：
 
   // 10. overlap

@@ -129,16 +129,22 @@ object ShapeLib {
 
   // 5. wellStructured
   // 目的：Shapeが真っ当かを判断
+  def rowblockCount2(row:Row):Int={
+    row match{
+      case Nil=>0
+      case r::rows=>1+rowblockCount2(rows)
+    }
+  }
   def wellStructured(shape:Shape):Boolean={
     def rowwellStructured(n:Int, shapea:Shape):Boolean={
       shapea match{
         case Nil=>true
-        case s::ss=>if(rowblockCount(s)==n)rowwellStructured(n, ss) else false
+        case s::ss=>if(rowblockCount2(s)==n)rowwellStructured(n, ss) else false
       }
     }
     shape match{
       case Nil=>false
-      case x::xs=>if(rowblockCount(x)==0)false else rowwellStructured(rowblockCount(x), xs)
+      case x::xs=>if(rowblockCount2(x)==0)false else rowwellStructured(rowblockCount2(x), xs)
     }
   }
 

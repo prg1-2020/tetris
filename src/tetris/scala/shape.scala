@@ -13,6 +13,7 @@ package tetris
 import scala.collection.immutable.Range
 import scala.util.Random
 import scala.math.max
+import scala.math.abs
 
 import sdraw._
 
@@ -154,37 +155,140 @@ object ShapeLib {
   }
 
 
-
   // 6. rotate
   // 目的：
-  // 契約：
+  // 契約：まっとうである
+  def rotate(shape: Shape): Shape ={
+    assert(wellStructured(shape))
+    var (rows: Int, cols: Int) = size(shape)
+
+    def headS(list: Shape): Row ={
+      if (list.headOption == None) Nil
+      else list.head
+    }
+    def tailS(list: Shape): Shape ={
+      if (list.headOption == None) Nil
+      else list.tail
+    }
+
+    //アキュムレータ：
+    def rotateAcc(shape: Shape, pivot: Int, shapeOver: Shape, shapeUnder: Shape, shapeConp: Shape): Shape ={
+      shape match {
+        case Nil => shapeConp
+        case Nil :: xs => shapeConp
+        case x :: xs =>
+          shapeUnder match{
+            case Nil => rotateAcc(x.tail :: xs, 2, Nil, x.tail :: xs, List(x.head) :: shapeConp )
+            case xU :: xsU =>
+              if (pivot<rows) rotateAcc(shapeOver ++ (x.tail :: xsU), pivot + 1, shapeOver ++ List(xU.tail) , xsU, (headS(shapeConp) ++ List(xU.head)) :: tailS(shapeConp))
+              else rotateAcc(shapeOver ++ List(xU.tail), 1, shapeOver ++ List(x.tail), xsU, (headS(shapeConp) ++ List(xU.head)) :: tailS(shapeConp))
+        }
+      }
+
+      
+
+      
+    }
+    
+
+    rotateAcc(shape, 1, Nil, shape, Nil)
+
+  }
 
 
 
   // 7. shiftSE
-  // 目的：
+  // 目的：受け取った shape を右に x, 下に y ずらした shape を返す
+  def shiftSE(shape: Shape, right: Int, down: Int): Shape ={
+    //目的：受け取った row に tp の分だけ左側に Transparent を付け加える
+    def addTransparent(row: Row, tp: Int): Row ={
+      if(tp == 0) row
+      else if(tp < 0) addTransparent(row, tp + 1) ++ List(Transparent)
+      else Transparent :: addTransparent(row, tp - 1)
+    }
 
+    if(down > 0){
+      var (rows: Int, cols: Int) = size(shape)
+      empty(down, cols + abs(right)) ++ shiftSE(shape, right, 0)
+    }
+
+    else if (down < 0){
+      var (rows: Int, cols: Int) = size(shape)
+      shiftSE(shape, right, 0) ++ empty(-down, cols + abs(right))
+    }
+
+    else{
+      shape match{
+        case Nil => Nil
+        case x::xs => addTransparent(x, right) :: shiftSE(xs, right, 0)
+      }
+    }
+  }
 
 
   // 8. shiftNW
-  // 目的：
+  // 目的：受け取った shape を左に x, 上に y ずらした shape を返す
+  def shiftNW(shape: Shape, left: Int, up: Int): Shape ={
+    shiftSE(shape, -left, -up)
+  }
 
 
 
   // 9. padTo
-  // 目的：
-  // 契約：
+  // 目的：受け取った shape を rows 行 cols 列に拡大し た shape を返す
+  // 契約：rows, cols は shape の行数・列数以上
+  def padTo(shape: Shape, rows: Int, cols: Int): Shape ={
+    var (shape_r, shape_c) = size(shape)
+    assert(shape_r <= rows, shape_c <= cols)
+    shiftNW(shape, cols - shape_c, rows - shape_r)
+  }
 
 
 
   // 10. overlap
-  // 目的：
+  // 目的：2つの shape が重なりを持つかを判断する
+  def overlap(shape1: Shape, shape2: Shape): Boolean ={
+    //目的：2つの row が重なりを持つかを判断する
+    def overlapRow(row1: Row, row2: Row): Boolean ={
+      (row1, row2) match{
+        case (Nil, b) => false
+        case (a, Nil) => false
+        case (x1 :: xs1, x2 :: xs2) => (x1 != Transparent && x2 != Transparent) || overlapRow(xs1, xs2)
+      }
+    }
+    (shape1,shape2) match{
+      case (Nil, b) => false
+      case (a, Nil) => false
+      case (x1 :: xs1, x2 :: xs2) => overlapRow(x1,x2) || overlap(xs1, xs2)
+    }
+  }
 
 
 
   // 11. combine
-  // 目的：
-  // 契約：
+  // 目的：2つの shape を結合する
+  // 契約：引数の shape は重なりを持たない
+  def combine(shape1: Shape, shape2: Shape): Shape ={
+    assert(!overlap(shape1, shape2))
+    //目的：2つの row を結合する （ combine で assert があるので契約は要らない）
+    def combineRow(row1: Row, row2: Row): Row ={
+      (row1, row2) match{
+      case (Nil, b) => b
+      case (a, Nil) => a
+      case (Transparent :: xs1, Transparent :: xs2) => Transparent :: combineRow(xs1, xs2)
+      case (x1 :: xs1, Transparent :: xs2) => x1 :: combineRow(xs1, xs2)
+      case (Transparent :: xs1, x2 :: xs2) => x2 :: combineRow(xs1, xs2)
+      case _ => Nil
+      }
+      
+    }
+    (shape1, shape2) match{
+      case (Nil, b) => b
+      case (a, Nil) => a
+      case (x1 :: xs1, x2 :: xs2) => List(combineRow(x1, x2)) ++ combine(xs1, xs2)
+    }
+  }
+
 
 
 
@@ -239,7 +343,7 @@ object ShapeTest extends App {
   println(wellStructured(shapeZ) == true)
   println(wellStructured(List(List(Red), Nil)) == false)
   println(wellStructured(shapeS) == true)
-  /*
+
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
@@ -255,6 +359,7 @@ object ShapeTest extends App {
     List(List(Transparent, Transparent),
          List(Transparent, Transparent),
          List(Transparent, Blue)))
+  println(shiftSE(List(List(Red)), 0 , 1) == List(List(Transparent), List(Red)))
   show(shiftSE(shapeI, 1, 2))
 
   // 8. shiftNW
@@ -263,6 +368,7 @@ object ShapeTest extends App {
     List(List(Blue, Transparent),
          List(Transparent, Transparent),
          List(Transparent, Transparent)))
+  println(shiftNW(List(List(Red)), 0, 1) == List(List(Red), List(Transparent)))
   show(shiftNW(shapeI, 1, 2))
 
   // 9. padTo
@@ -270,18 +376,21 @@ object ShapeTest extends App {
   println(padTo(List(List(Blue)), 2, 3) ==
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
+  println(padTo(List(List(Red)), 1, 2) == List(List(Red, Transparent)))
   show(padTo(shapeI, 6, 2))
 
   // 10. overlap
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
+  println(overlap(shapeJ, shapeO) == true)
 
   // 11. combine
   println("combine")
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  println(combine(List(List(Blue)), List(List(Transparent))) == List(List(Blue)))
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+
 }

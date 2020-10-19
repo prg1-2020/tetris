@@ -189,40 +189,136 @@ object ShapeLib {
 
 
 
-/*
   // 6. rotate
-  // 目的：
-  // 契約：
+  // 目的：受け取ったshapeを反時計回りに９０度回転させる
+  // 契約：引数のshapeは真っ当である（wellStructured(shape) == true)
+  def rotate(shape:Shape):Shape={
+      assert(wellStructured(shape))
+    //戦闘要素のみをリストにする。回転させるので
+     def make_head(shape:Shape): Row={
+         shape match{
+             case Nil => Nil
+             case x::xs => x.head::make_head(xs)
+         }
+     }
+      //残りの部分 後ろの関数で使う
+      def remain(shape:Shape):Shape={
+          shape match {
+              case Nil => Nil
+              case x::xs => x.tail ::remain(xs)
+          }
+      }
 
+      def stack_head(shape:Shape):Shape={
+          if (wellStructured(shape)){
+              stack_head(remain(shape)) ++ List(make_head(shape))
+          }
+          else Nil
+      }
+
+      stack_head(shape)
+
+  }
 
 
   // 7. shiftSE
-  // 目的：
-
+  // 目的：受け取ったshapeを右にx、下にyずらしたshapeを返す
+def shiftSE(shape:Shape,x:Int,y:Int):Shape={
+    val (rows,cols) = size(shape)
+    val shape_half = empty(y,cols)++shape
+    shape_half.map(block => duplicate[Block](x,Transparent)  ++ block)
+}
 
 
   // 8. shiftNW
-  // 目的：
-
+  // 目的：受け取ったshapeを左にx、上にyずらしたshapeを返す
+def shiftNW(shape:Shape,x:Int,y:Int):Shape={
+    val (rows,cols) = size(shape)
+    val shape_half = shape++empty(y,cols)
+    shape_half.map(block =>block ++ duplicate[Block](x,Transparent))
+  }
 
 
   // 9. padTo
-  // 目的：
-  // 契約：
+  // 目的：受け取ったshapeをrows行,cols列に拡大したshapeを返す
+  // 契約：rows,colsはshapeの行数列数以上
+  def padTo(shape:Shape,rows_to:Int,cols_to:Int):Shape = {
+      val (rows_shape,cols_shape) = size(shape)
+      val (y,x) = (rows_to - rows_shape, cols_to-cols_shape)
 
+      shiftNW(shape,x,y)
+
+  }
 
 
   // 10. overlap
-  // 目的：
+  // 目的：2つのshapeが重なるかを調べる
+  def overlap(shape1:Shape,shape2:Shape):Boolean = {
+      val (rows1,cols1) = size(shape1)
+      val (rows2,cols2) = size(shape2)
+      //大きさを大きい方に揃えたい
+      /*方針
+      ①PadToで大きさ揃える
+    ②flattenで平坦化する(①により場所が同じが担保
+    ③zipメソッドでtupleのリストにする
+    ④再帰回してbooleanを判定する    
+      */
+      val (rows_max,cols_max) = (max(rows1,rows1),max(cols1,cols2))
+      val new_shape1 = padTo(shape1,rows_max,cols_max).flatten
+      val new_shape2 = padTo(shape2,rows_max,cols_max).flatten
 
+      val zipped_shape = new_shape1.zip(new_shape2)
+      def check_re(zipped:List[(Block,Block)],flag:Boolean):Boolean={
+          if (flag) true
+          else {
+              zipped match{
+                  case Nil => false
+                  case x::xs=> {
+                      val (blo1,blo2) = x
+                      if(blo1 != Transparent && blo2 != Transparent) check_re(xs,true)
+                      else check_re(xs,false)
+                  }
+              }
+          }
+      }
+      check_re(zipped_shape,false)
+
+  }
 
 
   // 11. combine
-  // 目的：
-  // 契約：
+  // 目的：２つのshapeを結合する
+  // 契約：shapeは重なりを持たない
+  def combine(shape1:Shape,shape2:Shape):Shape={
+      val (rows1,cols1) = size(shape1)
+      val (rows2,cols2) = size(shape2)
+      val (rows_max,cols_max) = (max(rows1,rows1),max(cols1,cols2))
+      val new_shape1 = padTo(shape1,rows_max,cols_max)
+      val new_shape2 = padTo(shape2,rows_max,cols_max)
+
+      def combine_block(blo1:Block,blo2:Block):Block={
+          (blo1,blo2) match{
+              case (Transparent,block) => block
+              case (block,Transparent) => block
+          }
+      }
+      def combine_row(row1:Row,row2:Row):Row={
+          (row1,row2) match{
+              case (Nil,Nil)=> Nil
+              case (x::xs,y::ys) => combine_block(x,y)::combine_row(xs,ys)
+          }
+      }
+
+      def combine_re(shape1:Shape,shape2:Shape):Shape={
+          (shape1,shape2) match{
+              case (Nil,Nil) => Nil
+              case (x::xs,y::ys) => combine_row(x,y)::combine_re(xs,ys)
+          }
+      }
+      combine_re(new_shape1,new_shape2)
+  }
 
 
-*/
 }
 
 // テスト
@@ -277,7 +373,8 @@ println(size(shapeO)==(2,2))
   println(wellStructured(shapeZ) == true)
   //my
   println(wellStructured(shapeT) == true)
-/*
+  println(show(rotate(shapeS)))
+
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
@@ -285,6 +382,8 @@ println(size(shapeO)==(2,2))
   show(rotate(shapeZ))
 
   // rotate が満たすべき性質のテスト
+  println(rotate(rotate(rotate(rotate(shapeT)))) == shapeT)
+  println(wellStructured(rotate(shapeT)) == true)
 
 
   // 7. shiftSE
@@ -294,6 +393,7 @@ println(size(shapeO)==(2,2))
          List(Transparent, Transparent),
          List(Transparent, Blue)))
   show(shiftSE(shapeI, 1, 2))
+  show(shiftSE(shapeT,2,4))
 
   // 8. shiftNW
   println("shiftNW")
@@ -302,6 +402,7 @@ println(size(shapeO)==(2,2))
          List(Transparent, Transparent),
          List(Transparent, Transparent)))
   show(shiftNW(shapeI, 1, 2))
+  show(shiftNW(shapeZ,2,4))
 
   // 9. padTo
   println("padTo")
@@ -309,6 +410,7 @@ println(size(shapeO)==(2,2))
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
   show(padTo(shapeI, 6, 2))
+  show(padTo(shapeT,4,5))
 
   // 10. overlap
   println("overlap")
@@ -320,6 +422,6 @@ println(size(shapeO)==(2,2))
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+  
 }

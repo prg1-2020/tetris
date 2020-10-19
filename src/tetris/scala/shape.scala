@@ -148,36 +148,136 @@ object ShapeLib {
 
 
   // 6. rotate
-  // 目的：
-  // 契約：
-
+  // 目的：反時計回りに90度回転させる
+  // 契約：shapeはまっとう。
+  def rotate(s:Shape):Shape={
+    assert(wellStructured(s)==true)
+    val (m,n) = size(s)
+    def tuika(s1:Shape,r:Row):Shape={
+      (s1,r)match{
+        case(Nil,Nil) => Nil
+        case(Nil,x2::xs2) => Nil
+        case(x1::xs1,Nil) => Nil
+        case(x1::xs1,x2::xs2) => (x1.toList:+x2)::tuika(xs1,xs2)
+      }
+    }
+    s.foldLeft(empty(n,0))((acc:Shape,x:Row)=>tuika(acc,x)).reverse
+  }
 
 
   // 7. shiftSE
-  // 目的：
-
-
-
+  // 目的：右にx、下にy移動する。
+  def shiftE1(s:Shape):Shape={
+    s match{
+      case Nil => Nil
+      case x::xs => (Transparent::x)::shiftE1(xs)
+    }
+  }
+  def shiftS1(s:Shape):Shape={
+    def n_row(x:Int):Row={
+      x match{
+        case 0 => Nil
+        case x1 => Transparent::n_row(x-1)
+      }
+    }
+    val (m,n) = size(s)
+    n_row(n)::s
+  }
+  def shiftSE(s:Shape,x:Int,y:Int):Shape={
+    x match{
+      case 0 => y match{
+        case 0 => s
+        case y1 => shiftSE(shiftS1(s),x,y1-1)
+      }
+      case x1 => shiftSE(shiftE1(s),x1-1,y)
+    }
+  } 
   // 8. shiftNW
-  // 目的：
-
-
+  // 目的：左にx、上にy移動する
+  def shiftW1(s:Shape):Shape={
+    s match{
+      case Nil => Nil
+      case x::xs => (x.toList:+Transparent)::shiftW1(xs)
+    }
+  }
+  def shiftN1(s:Shape):Shape={
+    def n_row(x:Int):Row={
+      x match{
+        case 0 => Nil
+        case x1 => Transparent::n_row(x-1)
+      }
+    }
+    val (m,n) = size(s)
+    s.toList:+n_row(n)
+  }
+  def shiftNW(s:Shape,x:Int,y:Int):Shape={
+    x match{
+      case 0 => y match{
+        case 0 => s
+        case y1 => shiftNW(shiftN1(s),x,y1-1)
+      }
+      case x1 => shiftNW(shiftW1(s),x1-1,y)
+    }
+  }
 
   // 9. padTo
-  // 目的：
-  // 契約：
-
+  // 目的：rows行cols列に拡大
+  // 契約：rows、colsはshapeの行列以上
+  def padTo(s:Shape,rows:Int,cols:Int):Shape={
+    val (m,n) = size(s)
+    assert(rows>=m && cols>=n)
+    shiftNW(s,cols-n,rows-m)
+  }
 
 
   // 10. overlap
-  // 目的：
-
-
-
+  // 目的：２つのshapeが重なるかどうかの判定
+  def overlap(s1:Shape,s2:Shape):Boolean={
+    val (m1,n1) = size(s1)
+    val (m2,n2) = size(s2)
+    val (m_max,n_max) = (max(m1,m2),max(n1,n2))
+    def row_check(r1:Row,r2:Row):Boolean={
+      (r1,r2) match{
+        case (Nil,Nil) => false
+        case (x1::xs1,x2::xs2) => (x1!=Transparent && x2!=Transparent) || row_check(xs1,xs2)
+      }
+    }
+    def check(sh1:Shape,sh2:Shape):Boolean={
+      assert(size(sh1)==size(sh2))
+      (sh1,sh2) match{
+        case (Nil,Nil) =>false
+        case (x1::xs1,x2::xs2) => row_check(x1,x2) || check(xs1,xs2)
+      }
+    }
+    check(padTo(s1,m_max,n_max),padTo(s2,m_max,n_max))
+  }
   // 11. combine
-  // 目的：
-  // 契約：
-
+  // 目的：2つのshapeを結合する。
+  // 契約：shapeが重ならない
+  def combine(s1:Shape,s2:Shape):Shape={
+    assert(overlap(s1,s2)==false)
+    def row_combine(r1:Row,r2:Row):Row={
+      (r1,r2) match{
+        case (Nil,Nil) => Nil
+        case (x1::xs1,Nil) => x1::xs1
+        case (Nil,x2::xs2) => x2::xs2
+        case (x1::xs1,x2::xs2) => if(x1==Transparent)x2::row_combine(xs1,xs2) else x1::row_combine(xs1,xs2)
+      }
+    }
+    def sub_combine(sh1:Shape,sh2:Shape):Shape={
+      (sh1,sh2) match{
+        case (Nil,Nil) => Nil
+        case (x1::xs1,Nil) => x1::xs1
+        case (Nil,x2::xs2) => x2::xs2
+        case (x1::xs1,x2::xs2) => row_combine(x1,x2)::sub_combine(xs1,xs2)
+      }
+    }
+    val (m1,n1) = size(s1)
+    val (m2,n2) = size(s2)
+    val (m_max,n_max) = (max(m1,m2),max(n1,n2))
+    sub_combine(padTo(s1,m_max,n_max),padTo(s2,m_max,n_max))
+  }
+  
 
 
 }
@@ -226,15 +326,19 @@ object ShapeTest extends App {
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
   println(wellStructured(List(List(Red),List(Blue, Blue))) == false)
-/*
+
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
   show(rotate(shapeI))
   show(rotate(shapeZ))
+  show(rotate(shapeT))
 
   // rotate が満たすべき性質のテスト
-
+  println(rotate(rotate(rotate(rotate(shapeS))))==shapeS)//4回転させたら元通りになる
+  println(blockCount(rotate(shapeS))==blockCount(shapeS))//回転させてもブロックの数は変わらない
+  println(wellStructured(rotate(shapeS))==true)//回転後もまっとう
+  println(rotate(shapeS)!=shapeS)
 
   // 7. shiftSE
   println("shiftSE")
@@ -269,6 +373,5 @@ object ShapeTest extends App {
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
 }

@@ -93,14 +93,14 @@ object ShapeLib {
 
 
   // 2. empty
-  // 目的：rows 行 cols 列の空の Shape を作る
+  // 目的rows行cols列の空のShapeを作る
   def empty(rows :Int, cols :Int): Shape = {
     if(rows<=0) Nil
     else duplicate(rows, duplicate(cols, Transparent))
   }
 
   // 3. size
-  // 目的：受け取った shape のサイズを (行数, 列数) の形で返す
+  // 目的：受け取ったshapeのサイズを (行数, 列数) の形で返す
   def size(shape :Shape): (Int, Int) = {
     /*
     var max = 0
@@ -119,7 +119,7 @@ object ShapeLib {
   }
 
   // 4. blockCount
-  // 目的：受け取った shape に含まれる空でないブロックの数を返す
+  // 目的：受け取ったshapeに含まれる空でないブロックの数を返す
   def blockCount(shape :Shape): Int = {
     var cnt = 0
     for (i <- shape) {
@@ -131,7 +131,7 @@ object ShapeLib {
   }
 
   // 5. wellStructured
-  // 目的：
+  // 目的：受け取った shape がまっとうであるかを判断する
   def wellStructured(shape :Shape): Boolean = {
     if(shape == Nil || shape.head == Nil) return false
     var rows = shape.size
@@ -143,34 +143,114 @@ object ShapeLib {
   }
 
   // 6. rotate
-  // 目的：
-  // 契約：
+  // 目的：受け取ったshapeを反時計回りに90度回転させたshapeを返す
+  // 契約：引数のshapeがまっとうであること
+  def rotate(shape :Shape): Shape = {
+  //  if(!wellStructured(shape)) shape
+  //  else
+    def rotateshape(col :Int, shape :Shape): Shape = {
+      def addrow(col :Int, shape :Shape): Row = {
+        shape match {
+          case Nil => Nil
+          case x::xs => x.apply(col)::addrow(col, xs)
+        }
+      }
+      if(col < 0) Nil
+      else addrow(col, shape)::rotateshape(col-1, shape)
+    }
+    val (row, col) = size(shape)
+    rotateshape(col-1, shape)
+  }
 
 
   // 7. shiftSE
-  // 目的：
+  // 目的：受け取った shape を右に x, 下に y ずらした shape を返す
+  def shiftSE(shape :Shape, x :Int, y :Int): Shape = {
+    def shiftE(shape :Shape, x :Int): Shape = {
+      def addTransparentE(shape :Shape): Shape = {
+        shape match {
+          case Nil => Nil
+          case x::xs => (Transparent::x)::addTransparentE(xs)
+        }
+      }
+      if(x<=0) shape
+      else shiftE(addTransparentE(shape), x-1)
+    }
+    def shiftS(shape :Shape, y :Int, rowT :Row): Shape = {
+      if(y<=0) shape
+      else rowT::shiftS(shape, y-1, rowT)
+    }
+    def setRow(col :Int): Row = {
+      if(col<=0) Nil
+      else Transparent::setRow(col-1)
+    }
+    val (row, col) = size(shape)
+    val rowT = setRow(col+x)
+    return shiftS(shiftE(shape, x), y, rowT)
+  }
 
 
 
   // 8. shiftNW
-  // 目的：
-
+  // 目的：受け取った shape を左に x, 上に y ずらした shape を返す
+  def shiftNW(shape :Shape, x :Int, y :Int): Shape = {
+    def shiftW(shape :Shape, x :Int): Shape = {
+      def addTransparentW(shape :Shape): Shape = {
+        shape match {
+          case Nil => Nil
+          case x::xs => (x:+Transparent)::addTransparentW(xs)
+        }
+      }
+      if(x<=0) shape
+      else shiftW(addTransparentW(shape), x-1)
+    }
+    def shiftN(shape :Shape, y :Int, rowT :Row): Shape = {
+      if(y<=0) shape
+      else shiftN(shape, y-1, rowT):+rowT
+    }
+    def setRow(col :Int): Row = {
+      if(col<=0) Nil
+      else Transparent::setRow(col-1)
+    }
+    val (row, col) = size(shape)
+    val rowT = setRow(col+x)
+    return shiftN(shiftW(shape, x), y, rowT)
+  }
 
 
   // 9. padTo
-  // 目的：
-  // 契約：
+  // 目的：受け取った shape を rows 行 cols 列に拡大した shape を返す
+  // 契約：rows, cols は shape の行数・列数以上
+  def padTo(shape :Shape, rows :Int, cols :Int): Shape = {
+    val (row, col) = size(shape)
+    // if(rows<row || cols<col) shape
+    // else
+    return shiftNW(shape, cols-col, rows-row)
+  }
 
 
 
   // 10. overlap
-  // 目的：
+  // 目的：２つの shape が重なりを持つかを判断する
+  def overlap(shape1 :Shape, shape2 :Shape): Boolean = {
+    def overlapRow(shape1 :Shape, shape2 :Shape): Boolean = {
+      def overlapCol(row1 :Row, row2 :Row): Boolean = {
+        if(row1 == Nil || row2 == Nil) false
+        else if(row1.head == Transparent || row2.head == Transparent) overlapCol(row1.tail, row2.tail)
+        else true
+      }
+      if(shape1 == Nil || shape2 == Nil) false
+      else if(overlapCol(shape1.head, shape2.head)) true
+      else overlapRow(shape1.tail, shape2.tail)
+    }
+    return overlapRow(shape1, shape2)
+  }
 
 
 
   // 11. combine
-  // 目的：
-  // 契約：
+  // 目的：２つの shape を結合する
+  // 契約：引数の shape は重なりを持たない
 
 
 
@@ -228,7 +308,6 @@ object ShapeTest extends App {
 
   println(wellStructured(shapeL) == true)
 
-  /*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
@@ -236,7 +315,8 @@ object ShapeTest extends App {
   show(rotate(shapeZ))
 
   // rotate が満たすべき性質のテスト
-
+  println(wellStructured(rotate(shapeL)) == true)
+  println(rotate(rotate(rotate(rotate(shapeS)))) == shapeS)
 
   // 7. shiftSE
   println("shiftSE")
@@ -266,6 +346,7 @@ object ShapeTest extends App {
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
 
+  /*
   // 11. combine
   println("combine")
   println(combine(List(List(Red), List(Transparent)),

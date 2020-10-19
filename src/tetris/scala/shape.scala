@@ -7,7 +7,7 @@
 5. コンパイルが成功したら、tetris.ShapeTest を選択（2 と入力）し、return を押す
 6. プログラムを変更後、もう一度実行したいときは run と入力し、return を押す
 */
-ll
+
 package tetris
 
 import scala.collection.immutable.Range
@@ -84,30 +84,68 @@ object ShapeLib {
 
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
+ // 1. duplicate
+  // 目的：整数ｎと任意の型aを受け取り、ｎ個のaからなるリストを返す
   // 1. duplicate
-  // 目的：
+  // 目的：整数ｎと任意の型aを受け取り、ｎ個のaからなるリストを返す
+  def duplicate[A](n:Int,a:A): List[A]={
+    def s(n:Int,a:A,list:List[A]): List[A]={
+      if (n>=1) s(n-1,a,a::list)
+      else if (n==0) list
+      else Nil
+    }
+    s(n,a,Nil)    
+  }
 
-
-
+  
   // 2. empty
-  // 目的：
-
-
+  // 目的：r行 c列の空のshapeを作る
+   def empty(r:Int,c:Int): List[Row]={
+    if (r==0) Nil
+    else if (r!=0&&c==0) duplicate(r,Nil)
+    else   duplicate(r,duplicate(c,Transparent))
+  }
 
   // 3. size
-  // 目的：
+  // 目的：受け取った shape のサイズを (行数, 列数) の形で返す
+  def size(a:Shape): (Int,Int) ={
+    // 目的：受け取った listのサイズを返す
+    def length[A](list:List[A]): Int={
+      list match{
+        case Nil => 0
+        case x::xs => 1+length(xs)
+      } 
+    }
+    a match{
+      case Nil =>(0,0)  
+      case r::rs =>(length(r::rs),length(r))
+    }  
+  }
 
 
 
   // 4. blockCount
-  // 目的：
+  // 目的：受け取った shape に含まれる空でないブロックの数を返す
+  def blockCount(a:List[Row]): Int={
+     // 目的：受け取った row に含まれる空でないブロックの数を返す
+    def count(b:Row): Int={
+      b match{
+        case Nil =>0
+        case x::xs => if (x==Transparent)  count(xs)
+                      else 1+ count(xs)
+      }
+    }
+    a match{
+      case Nil =>0
+      case r::rs => count(r)+ blockCount(rs)
+    }
+  }
 
 
 
   // 5. wellStructured
-  // 目的：
-
-
+  // 目的：受け取ったshape行数・列数がともに１以上であり、各行の要素数が全て等しいか判断する
+ 
 
   // 6. rotate
   // 目的：
@@ -149,32 +187,33 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+  
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
   println(duplicate(1, true) == List(true))
   println(duplicate(3, "hi") == List("hi", "hi", "hi"))
-
+  
   // 2. empty
   println("empty")
+  
   println(empty(1, 3) == List(List(Transparent, Transparent, Transparent)))
   println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
-
+  
   // 3. size
   println("size")
   println(size(Nil) == (0, 0))
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
-
+ 
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
-
+  /*
   // 5. wellStructured
   println("wellStructured")
   println(wellStructured(Nil) == false)

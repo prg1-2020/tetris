@@ -131,9 +131,21 @@ object ShapeLib {
   // 6. rotate
   // 目的：
   // 契約：
+  def rotate(shape: Shape): Shape = {
+    assert(wellStructured(shape))
+    def rotSub(shape: Shape): Shape = {
+      if (!wellStructured(shape)) Nil
+      else
+        shape.map(_.head).foldRight(Nil: Row)(_ :: _) :: rotSub(
+          shape.map(_.tail).foldRight(Nil: Shape)(_ :: _)
+        )
+    }
+    rotSub(shape.map(_.reverse).foldRight(Nil: Shape)(_ :: _))
+  }
 
   // 7. shiftSE
   // 目的：
+  def shiftSE(shape: Shape): Shape = {}
 
   // 8. shiftNW
   // 目的：
@@ -205,15 +217,31 @@ object ShapeTest extends App {
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
   println(wellStructured(shapeJ) == true)
-  /*
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
   show(rotate(shapeI))
   show(rotate(shapeZ))
+  println(rotate(rotate(rotate(rotate(shapeI)))) == shapeI)
+  println(rotate(rotate(rotate(rotate(shapeJ)))) == shapeJ)
+  println(rotate(rotate(rotate(rotate(shapeL)))) == shapeL)
+  println(rotate(rotate(rotate(rotate(shapeO)))) == shapeO)
+  println(rotate(rotate(rotate(rotate(shapeT)))) == shapeT)
+  println(rotate(rotate(rotate(rotate(shapeS)))) == shapeS)
+  println(rotate(rotate(rotate(rotate(shapeZ)))) == shapeZ)
+  println(blockCount(rotate(shapeL)) == blockCount(shapeL))
+  println(
+    size(rotate(shapeL))._1 == size(shapeL)._2 && size(
+      rotate(shapeL)
+    )._2 == size(shapeL)._1
+  )
+
+  /*
 
   // rotate が満たすべき性質のテスト
-
+ブロックカウントが維持される
+4回作用させると元に戻る
+rotateごとにsizeが逆になる
 
   // 7. shiftSE
   println("shiftSE")

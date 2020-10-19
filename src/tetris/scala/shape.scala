@@ -7,7 +7,7 @@
 5. コンパイルが成功したら、tetris.ShapeTest を選択（2 と入力）し、return を押す
 6. プログラムを変更後、もう一度実行したいときは run と入力し、return を押す
 */
-
+ll
 package tetris
 
 import scala.collection.immutable.Range

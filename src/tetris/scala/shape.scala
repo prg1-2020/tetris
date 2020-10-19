@@ -150,38 +150,130 @@ object ShapeLib {
 
 
   // 6. rotate
-  // 目的：
-  // 契約：
+  // 目的：shapeを反時計回りに90度回転させたshapeを返す
+  // 契約：引数のshapeはまっとうである
+  def rotate(shape:Shape)= {
+    assert(wellStructured(shape) == true)
 
+    def headlist(s1:Shape) = s1.map(_.head)
+    def restlist(s2:Shape):Shape = {
+      val (m,n) = size(shape)
+      if(n == 1) Nil : Shape else s2.map(_.tail)
+    }
+    def subrotate(subshape:Shape):Shape = {
+      if (wellStructured(subshape) == false)  Nil
+      else subrotate(restlist(subshape)) ++ List(headlist(subshape))
+    }
+    subrotate(shape)
+  }
 
-
+  
   // 7. shiftSE
-  // 目的：
-
-
-
+  // 目的：右にｘ,下にｙずらしたshapeを返す
+  def shiftSE(shape:Shape,x:Int,y:Int): Shape ={
+    def shiftE(shape1:Shape,x1:Int):Shape ={
+      val addshapeE = duplicate(x1, Transparent) 
+      shape1.map(addshapeE ++_)
+    }
+    def shiftS(shape2:Shape,x2:Int):Shape={
+      val (n,m) = size(shape2)
+      empty(x2,m) ++ shape2
+   }
+    shiftS(shiftE(shape,x),y)
+  }
+  
   // 8. shiftNW
-  // 目的：
+  // 目的：左にx,上にｙずらしたshapeを返す
+  def shiftNW(shape:Shape,x:Int,y:Int):Shape ={
+    def shiftW(shape1:Shape,x1:Int):Shape ={
+      val addshapeW = duplicate(x1, Transparent) 
+      shape1.map(_++addshapeW)
+    }
+    def shiftN(shape2:Shape,x2:Int):Shape={
+      val (n,m) = size(shape2)
+      shape2 ++ empty(x2,m)
+   }
+   shiftN(shiftW(shape,x),y)
+  }
 
 
 
   // 9. padTo
-  // 目的：
-  // 契約：
+  // 目的：受け取ったshapeをrows,colsに拡張したshapeを返す
+  // 契約：rows,colsがshapeの列行以上
+  def padTo(shape:Shape,rows:Int,cols:Int):Shape={
+    val (n,m) = size(shape)
+    assert( rows>=n && cols>=m )
+    shiftNW(shape,cols-m,rows-n)
+  }
 
 
 
   // 10. overlap
-  // 目的：
+  // 目的：2つのshapeが重なりを持つかを判断する
+  def overlap(shape1:Shape, shape2:Shape):Boolean={
+
+    def blockoverlap(block1:Block,block2:Block):Boolean={
+      if(block1 != Transparent && block2 != Transparent)true else false
+    }
+    def rowoverlap(row1:Row,row2:Row):Boolean={
+      (row1,row2) match{
+        case (Nil,Nil) => false
+        case (Nil,r)   => false
+        case (r,Nil)   => false
+        case (b1::b1s,b2::b2s) => blockoverlap(b1,b2) || rowoverlap(b1s,b2s)
+      }
+    }
+
+    val (n1,m1) = size(shape1)
+    val (n2,m2) = size(shape2)
+    val n = max(n1,n2)
+    val m = max(m1,m2)
+    val s1 = padTo(shape1,n,m)
+    val s2 = padTo(shape2,n,m) 
+
+    (s1,s2) match{
+      case (Nil,Nil) => false
+      case (s,Nil) => false
+      case (Nil,s) => false
+      case (x1::x1s , x2::x2s) => rowoverlap(x1,x2) || overlap(x1s,x2s)
+    }
+    
+  }
 
 
 
   // 11. combine
-  // 目的：
-  // 契約：
+  // 目的：2つのshapeを結合する
+  // 契約：引数のshapeは重なりを持たない
+  def combine(shape1:Shape,shape2:Shape):Shape={
+    assert(overlap(shape1,shape2) == false)
 
+    val (n1,m1) = size(shape1)
+    val (n2,m2) = size(shape2)
+    val n = max(n1,n2)
+    val m = max(m1,m2)
+    val s1 = padTo(shape1,n,m)
+    val s2 = padTo(shape2,n,m) 
 
+    def blockcombine(block1:Block,block2:Block):Block={
+      (block1,block2) match{
+        case (Transparent,b) => b
+        case (b, Transparent)   => b
+      }
+    }
 
+    def rowcombine(row1:Row,row2:Row):Row={
+      (row1,row2) match{
+        case (Nil, Nil) => Nil
+        case (b1::b1s,b2::b2s) => blockcombine(b1,b2) ::rowcombine(b1s,b2s)  
+      }
+    }
+    (s1,s2) match{
+      case (Nil,Nil) => Nil
+      case (x1::x1s , x2::x2s) => rowcombine(x1,x2) :: combine(x1s,x2s)
+    }
+  }
 }
 
 // テスト
@@ -234,9 +326,12 @@ object ShapeTest extends App {
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
   show(rotate(shapeI))
   show(rotate(shapeZ))
+  show(rotate(shapeL)) //added test
 
   // rotate が満たすべき性質のテスト
-
+  println(rotate(rotate(rotate(rotate(shape = shapeT)))) == shapeT) //4回rotateしたらもとにもどる
+  println(wellStructured(rotate(shape = shapeJ)))                   //rotateしたshapeもまっとうである
+  println(blockCount(rotate(shape = shapeL)) == blockCount(shapeL)) //rotateしてもブロックの数は変わらない
 
   // 7. shiftSE
   println("shiftSE")
@@ -245,7 +340,8 @@ object ShapeTest extends App {
          List(Transparent, Transparent),
          List(Transparent, Blue)))
   show(shiftSE(shapeI, 1, 2))
-
+  show(shiftSE(shapeJ,2,2)) //added test
+  
   // 8. shiftNW
   println("shiftNW")
   println(shiftNW(List(List(Blue)), 1, 2) ==
@@ -253,6 +349,7 @@ object ShapeTest extends App {
          List(Transparent, Transparent),
          List(Transparent, Transparent)))
   show(shiftNW(shapeI, 1, 2))
+  show(shiftNW(shapeL,2,2)) //added test
 
   // 9. padTo
   println("padTo")
@@ -260,17 +357,19 @@ object ShapeTest extends App {
     List(List(Blue, Transparent, Transparent),
          List(Transparent, Transparent, Transparent)))
   show(padTo(shapeI, 6, 2))
+  show(padTo(shapeJ,4,4))   //added test
 
   // 10. overlap
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
-
+  println(overlap(shapeL,shiftSE(shapeZ,1,0)) == false) //added test
+  
   // 11. combine
   println("combine")
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+  show(combine(shapeL,shiftSE(shapeZ,1,1))) //added test
 }

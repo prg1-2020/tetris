@@ -231,7 +231,7 @@ object ShapeLib {
     val s1 = padTo(shape1, n, m)
     val s2 = padTo(shape2, n, m) 
 
-    (s1,s 2) match {
+    (s1, s2) match {
       case (Nil, Nil) => false
       case (s, Nil) => false
       case (Nil, s) => false
@@ -254,21 +254,21 @@ object ShapeLib {
     val s2 = padTo(shape2, n, m) 
 
     def blockcombine(block1: Block, block2: Block): Block = {
-      (block1,block2) match {
+      (block1, block2) match {
         case (Transparent, b) => b
         case (b, Transparent) => b
       }
     }
 
     def rowcombine(row1: Row,row2: Row): Row = {
-      (row1,row2) match{
+      (row1, row2) match{
         case (Nil, Nil) => Nil
         case (b1 :: b1s,b2 :: b2s) => blockcombine(b1, b2) :: rowcombine(b1s, b2s)  
       }
     }
-    (s1,s2) match{
-      case (Nil,Nil) => Nil
-      case (x1 :: x1s , x2 :: x2s) => rowcombine(x1, x2) :: combine(x1s, x2s)
+    (s1, s2) match{
+      case (Nil, Nil) => Nil
+      case (x1 :: x1s, x2 :: x2s) => rowcombine(x1, x2) :: combine(x1s, x2s)
     }
   }
 }

@@ -7,7 +7,7 @@
 5. コンパイルが成功したら、tetris.A を選択（1 と入力）し、return を押す
 6. ゲーム画面を閉じたら、手動で java を終了する
 7. プログラムを変更後、もう一度実行したいときは run と入力し、return を押す
-*/
+ */
 
 package tetris
 
@@ -19,14 +19,20 @@ import sdraw.{World, Color, Transparent, HSB}
 import tetris.{ShapeLib => S}
 
 // テトリスを動かすための関数
-case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends World() {
+case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape)
+    extends World() {
 
   // マウスクリックは無視
   def click(p: sgeometry.Pos): World = this
 
   // ブロックの描画
   def drawRect(x: Int, y: Int, w: Int, h: Int, c: Color): Boolean = {
-    canvas.drawRect(Pos(A.BlockSize * x, A.BlockSize * y), A.BlockSize * w, A.BlockSize * h, c)
+    canvas.drawRect(
+      Pos(A.BlockSize * x, A.BlockSize * y),
+      A.BlockSize * w,
+      A.BlockSize * h,
+      c
+    )
   }
 
   // shape の描画（与えられた位置）
@@ -62,19 +68,39 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    val newPiece = ((x, y + 1), shape)
+    if (collision(TetrisWorld(piece, pile))) TetrisWorld(piece, pile)
+    else TetrisWorld(newPiece, pile)
   }
 
   // 2, 5. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    key match {
+      case "RIGHT" =>
+        if (!collision(TetrisWorld(((x + 1, y), shape), pile)))
+          TetrisWorld(((x + 1, y), shape), pile)
+      case "LEFT" =>
+        if (!collision(TetrisWorld(((x - 1, y), shape))))
+          TetrisWorld(((x - 1, y), shape), pile)
+      case "UP" =>
+        if (!collision(TetrisWorld(((x, y), S.rotate(shape)), pile)))
+          TetrisWorld(((x, y), S.rotate(shape)), pile)
+    }
   }
 
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), shape) = piece
+    x < 0 || A.WellWidth <= x + S.size(shape)._1 || A.WellHeight <= y + S
+      .size(shape)
+      ._2 || S.overlap(
+      S.shiftSE(shape, x, y),
+      pile
+    )
   }
 
   // 6. eraseRows
@@ -96,15 +122,15 @@ object A extends App {
 
   def newPiece(): ((Int, Int), S.Shape) = {
     val pos = (WellWidth / 2 - 1, 0)
-    (pos,
-     List.fill(r.nextInt(4))(0).foldLeft(S.random())((shape, _) => shape))
+    (pos, List.fill(r.nextInt(4))(0).foldLeft(S.random())((shape, _) => shape))
   }
 
   // 最初のテトロミノ
   val piece = newPiece()
 
   // ゲームの初期値
-  val world = TetrisWorld(piece, List.fill(WellHeight)(List.fill(WellWidth)(Transparent)))
+  val world =
+    TetrisWorld(piece, List.fill(WellHeight)(List.fill(WellWidth)(Transparent)))
 
   // ゲームの開始
   world.bigBang(BlockSize * WellWidth, BlockSize * WellHeight, 1)

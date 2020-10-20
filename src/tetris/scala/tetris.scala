@@ -69,8 +69,11 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 2, 5. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    val ((x, y), sh) = piece
-    TetrisWorld(piece, pile)
+    var ((x, y), sh) = piece
+    if(key == "RIGHT") x += 1
+    if(key == "LEFT") x -= 1
+    if(key == "UP") sh = S.rotate(sh)
+    TetrisWorld(((x, y), sh), pile)
   }
 
   // 3. collision

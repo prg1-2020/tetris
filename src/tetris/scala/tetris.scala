@@ -62,25 +62,45 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape) = piece
+    val newworld = TetrisWorld(((x,y+ 1), shape), pile)
+    if(collision(newworld)) {
+      val combined = eraseRows(S.combine(S.shiftSE(shape,x,y),pile))
+      val ((nx,ny),nshape) = A.newPiece()
+      if(S.overlap(S.shiftSE(nshape,nx,ny),combined)) {
+        endOfWorld("Game Over")
+        TetrisWorld(piece, pile)
+      }
+      else TetrisWorld(((nx,ny),nshape), combined)
+    } 
+    else newworld
   }
 
   // 2, 5. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    var ret = key match {
+      case "RIGHT" => TetrisWorld(((piece._1._1 + 1,piece._1._2), piece._2), pile)
+      case "LEFT" => TetrisWorld(((piece._1._1 - 1,piece._1._2), piece._2), pile)
+      case "UP" => TetrisWorld(((piece._1._1,piece._1._2), S.rotate(piece._2)), pile)
+      case _ => TetrisWorld(piece, pile)
+    }
+    if(collision(ret)) TetrisWorld(piece, pile) else ret
   }
 
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x,y),shape) = world.piece
+    val (ph,pw) = S.size(shape)
+    val (h,w) = (A.WellHeight,A.WellWidth)
+    x < 0 || x + pw-1 >= w || y + ph-1 >= h || S.overlap(S.shiftSE(shape,x,y), world.pile)
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    S.padTo(pile.foldLeft(Nil:S.Shape)((ret, row) => if(row.count(_!=Transparent) == A.WellWidth) ret else row::ret),A.WellHeight,A.WellWidth).reverse
   }
 }
 
@@ -107,5 +127,5 @@ object A extends App {
   val world = TetrisWorld(piece, List.fill(WellHeight)(List.fill(WellWidth)(Transparent)))
 
   // ゲームの開始
-  world.bigBang(BlockSize * WellWidth, BlockSize * WellHeight, 1)
+  world.bigBang(BlockSize * WellWidth, BlockSize * WellHeight, 0.3)
 }

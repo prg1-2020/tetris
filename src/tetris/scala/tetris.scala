@@ -96,7 +96,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val ((x, y), sh) = world.piece
     val (y_sh, x_sh) = S.size(sh)
     val (hei, wid) = S.size(pile)
-    x < 0 || x > wid - x_sh || y > hei - y_sh || S.overlap(sh, pile)
+    x < 0 || x > wid - x_sh || y > hei - y_sh || S.overlap(sh, world.pile)
   }
 
   // 6. eraseRows

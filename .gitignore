@@ -1,6 +1,8 @@
 project/
 target/
 .DS_Store
+
 .vscode/
 .metals/
 .bloop/
+

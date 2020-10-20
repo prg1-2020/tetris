@@ -131,10 +131,13 @@ object ShapeLib {
   // 6. rotate
   // 目的：受け取った shape を反時計回りに 90 度回転させた shape を返す関数
   // 契約：引数の shape はまっとうである
-  def rotate(shape:Shape):Shape = {
-    assert(wellStructured(shape))
-    val sz = size(shape)
-    (0 to sz._2-1).toList.foldLeft(Nil:List[Row])((rs, i)=>((shape.flatten.reverse.foldLeft((Nil:Row, 0))( (l,c) => if (l._2%sz._2==i) (c :: (l._1),l._2+1) else (l._1,l._2+1)))._1)::rs)
+  def rotate(s: Shape) : Shape = {
+    assert(wellStructured(s))
+    def rot(s: Shape) : Shape = {
+      if(!wellStructured(s)) Nil
+      else s.map(_.head).foldRight(Nil: Row)(_::_)::rot(s.map(_.tail).foldRight(Nil: Shape)(_::_))
+    }
+    rot(s.map(_.reverse).foldRight(Nil: Shape)(_::_))
   }
 
 

@@ -100,9 +100,13 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：そろった行の削除
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    val (new_pile, k) = pile.foldRight((Nil: S.Shape, 0))((r, v) => {
+      if(r.count(_ == Transparent) == 0) (v._1, v._2 + 1)
+      else (r :: v._1, v._2)
+    })
+    S.empty(k, S.size(pile)._2) ++ new_pile
   }
 }
 

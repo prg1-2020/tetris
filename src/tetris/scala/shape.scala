@@ -235,11 +235,11 @@ object ShapeLib {
       case (_,Nil) => false
       case (r1 :: rs1,r2 :: rs2) =>{
         (r1,r2) match{
-          case (Nil,_) => false && overlap(rs1,rs2)
-          case (_,Nil) => false && overlap(rs1,rs2)
+          case (Nil,_) => false || overlap(rs1,rs2)
+          case (_,Nil) => false || overlap(rs1,rs2)
           case (t1 :: ts1,t2 :: ts2) => {
             if(t1 != Transparent && t2 != Transparent) true
-            else false && overlap(ts1 :: rs1, ts2 :: rs2)
+            else false || overlap(ts1 :: rs1, ts2 :: rs2)
           }
         }
       }

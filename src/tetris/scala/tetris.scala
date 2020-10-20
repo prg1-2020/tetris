@@ -60,14 +60,14 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的： ブロックを落とす
   def tick(): World = {
     val ((x, y), sh) = piece
     TetrisWorld(((x, y + 1), sh), pile)
   }
 
   // 2, 5. keyEvent
-  // 目的：
+  // 目的： ブロックの入力受け付け
   def keyEvent(key: String): World = {
     var ((x, y), sh) = piece
     if(key == "RIGHT") x += 1
@@ -77,9 +77,12 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 3. collision
-  // 目的：
+  // 目的：はみ出してたりしたらtrue
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), sh) = piece
+    val (y_sh, x_sh) = S.size(sh)
+    val (hei, wid) = S.size(pile)
+    x < 0 || x > wid - x_sh || y > hei - y_sh || S.overlap(sh, pile)
   }
 
   // 6. eraseRows

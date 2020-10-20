@@ -156,42 +156,55 @@ object ShapeLib {
 
 
   // 6. rotate
-  // 目的：
+  // 目的：shape を反時計回りに90度回転させたものを返す
   // 契約：まっとうである
   def rotate(shape: Shape): Shape ={
     assert(wellStructured(shape))
     var (rows: Int, cols: Int) = size(shape)
+    
 
+    //目的：listの先頭を返す　存在しない場合はNilを返す
     def headS(list: Shape): Row ={
       if (list.headOption == None) Nil
       else list.head
     }
+    //目的：listの先頭以外を返す　存在しない場合はNilを返す
     def tailS(list: Shape): Shape ={
       if (list.headOption == None) Nil
       else list.tail
     }
+    //目的：rowの先頭をRow型で返す　存在しない場合はNilを返す
+    def headR(list: Row): Row={
+      if (list.headOption == None) Nil
+      else List(list.head)
+    }
+    //目的：rowの先頭以外をShape型で返す　存在しない場合はNilを返す
+    def tailR(list: Row): Shape ={
+      if (list.lastOption == None) Nil
+      else List(list.tail)
+    }
 
-    //アキュムレータ：
+    //目的： row を shape に変換　ただし row == Nil の時、List(Nil) ではなく Nil を返す
+    def mkshape(row: Row): Shape={
+      if (row == Nil) Nil
+      else List(row)
+    }
+
+    //アキュムレータ：shape(分解してshapeConpの適切な位置に配置)、pivot(どの行に着目するか)、shapeOver(pivotより上の行,pivot==1 の時shape)、shapeUnder(pivot以下の行, pivot==1の時Nil)、shapeConp(最終的に完成するshape)
     def rotateAcc(shape: Shape, pivot: Int, shapeOver: Shape, shapeUnder: Shape, shapeConp: Shape): Shape ={
       shape match {
         case Nil => shapeConp
-        case Nil :: xs => shapeConp
         case x :: xs =>
           shapeUnder match{
-            case Nil => rotateAcc(x.tail :: xs, 2, Nil, x.tail :: xs, List(x.head) :: shapeConp )
+            case Nil => rotateAcc(tailR(x) ++ xs, 2, tailR(x) ++ Nil, xs, mkshape(headR(x)) ++ shapeConp )
             case xU :: xsU =>
-              if (pivot<rows) rotateAcc(shapeOver ++ (x.tail :: xsU), pivot + 1, shapeOver ++ List(xU.tail) , xsU, (headS(shapeConp) ++ List(xU.head)) :: tailS(shapeConp))
-              else rotateAcc(shapeOver ++ List(xU.tail), 1, shapeOver ++ List(x.tail), xsU, (headS(shapeConp) ++ List(xU.head)) :: tailS(shapeConp))
+              if (pivot<rows) rotateAcc(shapeOver ++ (tailR(xU) ++ xsU), pivot + 1, shapeOver ++ tailR(xU) , xsU, mkshape(headS(shapeConp) ++ headR(xU)) ++ tailS(shapeConp))
+              else rotateAcc(shapeOver ++ tailR(xU), 1, shapeOver ++ tailR(xU), xsU, mkshape(headS(shapeConp) ++ headR(xU)) ++ tailS(shapeConp))
         }
-      }
-
-      
-
-      
+      }      
     }
-    
 
-    rotateAcc(shape, 1, Nil, shape, Nil)
+    rotateAcc(shape, 1, shape, Nil, Nil)
 
   }
 
@@ -347,11 +360,17 @@ object ShapeTest extends App {
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
+  println(rotate(List(List(Transparent))) == List(List(Transparent)))
   show(rotate(shapeI))
   show(rotate(shapeZ))
+  show(rotate(combine(shiftSE(shapeL, 2, 0), shapeJ)))
 
   // rotate が満たすべき性質のテスト
-
+  println(rotate(rotate(rotate(rotate(shapeL)))) == shapeL)
+  var (a: Int, b: Int) = size(rotate(shapeL))
+  println((b, a) == size(shapeL))
+  println(blockCount(shapeL) == blockCount(rotate(shapeL)))
+  println(wellStructured(rotate(shapeL)))
 
   // 7. shiftSE
   println("shiftSE")

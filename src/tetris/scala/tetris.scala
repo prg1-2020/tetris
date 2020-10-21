@@ -58,29 +58,86 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     drawShape00(pile) &&
     drawShape(pos, shape)
   }
-
+  /*
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：1、落下中のテトリスを１下にずらす
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    val newpiece = ((x, y + 1), shape)
+    TetrisWorld(newpiece, pile)
   }
-
+  
+  // 4
+  //目的：1　+α　テトロミノが画面の１番下に達したらそれ以上落下しないようにする
+  def tick(): World = {
+    val ((x, y), shape) = piece
+    val world = TetrisWorld(((x, y + 1), shape), pile)
+    if(collision(world)) TetrisWorld(piece, pile)
+    else world
+  }
+  */
+  // 7
+  //目的：4　+α　テトロミノが下に移動できなくなった時の適切な処理をする関数
+  def tick(): World = {
+    val ((x, y), shape) = piece
+    val world = TetrisWorld(piece, pile)
+    val nextworld = TetrisWorld(((x, y + 1), shape), pile)
+    if(collision(world)) world
+    else if(collision(nextworld)) {
+      val newpile = eraseRows(S.combine(pile, S.shiftSE(shape, x, y)))
+      TetrisWorld(A.newPiece(), newpile)
+    }
+    else nextworld
+  }
+  /*
   // 2, 5. keyEvent
-  // 目的：
+  // 2
+  // 目的：キー入力で世界を更新する関数
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    key match {
+      case "RIGHT" => TetrisWorld(((x + 1, y), shape), pile)
+      case "LEFT" => TetrisWorld(((x - 1, y), shape), pile)
+      case "UP" => TetrisWorld(((x, y), S.rotate(shape)), pile)
+      case _ => TetrisWorld(piece, pile)
+    }
+  }
+  */
+  // 5
+  //目的：2　+α　キー操作によって衝突が起きるならばその操作を無視する関数
+  def keyEvent(key: String): World = {
+    var ((x, y), shape) = piece
+    key match {
+      case "RIGHT" => x += 1
+      case "LEFT" => x -= 1
+      case "UP" => shape = S.rotate(shape)
+    }
+    val world = TetrisWorld(((x, y), shape), pile)
+    if(collision(world)) TetrisWorld(piece, pile)
+    else world
   }
 
   // 3. collision
-  // 目的：
+  // 目的：世界のほしい仕組みに反していたらtrue
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val TetrisWorld(piece, pile) = world
+    val ((x, y), shape) = piece
+    val (y1, x1) = S.size(shape)
+    x < 0 || x + x1 > 10 || y + y1 > 10 || S.overlap(S.shiftSE(shape, x, y), pile)
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pileを受け取ったら、そろった行を削除する
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def fullrow(r: S.Row): Boolean = {
+      if(r.filter(_ == Transparent).length == 0) true
+      else false
+    }
+    val erased_pile = pile.foldRight(Nil: S.Shape)((r, rs) => {
+      if(fullrow(r)) rs
+      else r :: rs
+    })
+    S.empty(10 - erased_pile.length, 10) ++ erased_pile
   }
 }
 

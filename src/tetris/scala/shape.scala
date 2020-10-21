@@ -108,10 +108,7 @@ object ShapeLib {
     val r = s.length
     val c = {
       if(r == 0) 0
-      else ((List.range(0, r)) map { i =>
-        s(i).length
-      }).max
-
+      else s.map(_.length).max
     }
     (r, c)
   }

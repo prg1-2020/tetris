@@ -113,7 +113,7 @@ object ShapeLib {
       }
     }
 
-    (sh.length, rSize((sh)))
+    (sh.length, rSize(sh))
   }
 
 
@@ -357,7 +357,7 @@ object ShapeTest extends App {
   show(rotate(shapeZ))
 
   // rotate が満たすべき性質のテスト
-  println(rotate(rotate(rotate(rotate(shapeI)))) == shapeI)
+  println(rotate(rotate(rotate(rotate(shapeS)))) == shapeS)
   println(wellStructured(rotate(shapeI)) == true)
 
   // 7. shiftSE

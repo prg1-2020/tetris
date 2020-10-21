@@ -61,15 +61,23 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
 
   // 1, 4, 7. tick
   // 目的：時間の経過に応じて落下中のテトロミノを 1 だけ下に動かす
+/*  def tick(): World = {
+    val cur_x = piece._1._1
+    val cur_y = piece._1._2
+    if(collision(TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile))) return this
+    TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile)
+  }
+*/
   def tick(): World = {
     val cur_x = piece._1._1
     val cur_y = piece._1._2
+    if(collision(TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile))) return this
     TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile)
   }
 
   // 2, 5. keyEvent
   // 目的：キー入力に従って世界を更新する
-  def keyEvent(key: String): World = {
+/*  def keyEvent(key: String): World = {
     val cur_x = piece._1._1
     val cur_y = piece._1._2
     key match {
@@ -79,17 +87,42 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
       case _ => TetrisWorld(piece, pile)
     }
   }
+*/
+  def keyEvent(key: String): World = {
+    val cur_x = piece._1._1
+    val cur_y = piece._1._2
+    val nextWorld = key match {
+      case "RIGHT" | "l" => TetrisWorld(((cur_x + 1, cur_y),piece._2) , pile)
+      case "LEFT" | "j" => TetrisWorld(((cur_x - 1, cur_y), piece._2) , pile)
+      case "UP" => TetrisWorld(((cur_x, cur_y), S.rotate(piece._2)) , pile)
+      case _ => TetrisWorld(piece, pile)
+    }
+    if(collision(nextWorld)) {
+      return this
+    }
+
+    nextWorld
+  }
+
 
   // 3. collision
   // 目的：受け取った世界で衝突が起きているかを判定する
   def collision(world: TetrisWorld): Boolean = {
-    val (sx, sy) = S.size(piece._2)
+    val (piece, pile) = (world.piece, world.pile)
+    val (lsy, lsx) = S.size(pile)
+    val (sy, sx) = S.size(piece._2)
+    val cur_x = piece._1._1
+    val cur_y = piece._1._2
+    if(cur_x < 0 || cur_x + sx > lsx || cur_y + sy > lsy) return true
+    val cpiece = S.shiftSE(piece._2, cur_x, cur_y)
+    if(S.overlap(cpiece, pile)) return true
     false
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
+    
     pile
   }
 }

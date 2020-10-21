@@ -325,7 +325,7 @@ object ShapeTest extends App {
   println(empty(1, 3) == List(List(Transparent, Transparent, Transparent)))
   println(empty(3, 1) == List(List(Transparent), List(Transparent), List(Transparent)))
   println(empty(0, 2) == Nil)
-  println(empty(2, 0) == Nil)
+  println(empty(2, 0) == List(Nil, Nil))
 
   // 3. size
   println("size")

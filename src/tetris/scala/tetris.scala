@@ -60,20 +60,30 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：時間の経過に応じて落下中のテトロミノを 1 だけ下に動かす
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val cur_x = piece._1._1
+    val cur_y = piece._1._2
+    TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile)
   }
 
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：キー入力に従って世界を更新する
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val cur_x = piece._1._1
+    val cur_y = piece._1._2
+    key match {
+      case "RIGHT" | "l" => TetrisWorld(((cur_x + 1, cur_y),piece._2) , pile)
+      case "LEFT" | "j" => TetrisWorld(((cur_x - 1, cur_y), piece._2) , pile)
+      case "UP" => TetrisWorld(((cur_x, cur_y), S.rotate(piece._2)) , pile)
+      case _ => TetrisWorld(piece, pile)
+    }
   }
 
   // 3. collision
-  // 目的：
+  // 目的：受け取った世界で衝突が起きているかを判定する
   def collision(world: TetrisWorld): Boolean = {
+    val (sx, sy) = S.size(piece._2)
     false
   }
 

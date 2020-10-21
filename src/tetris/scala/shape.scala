@@ -108,7 +108,10 @@ object ShapeLib {
     val r = s.length
     val c = {
       if(r == 0) 0
-      else s(0).length
+      else ((List.range(0, r)) map { i =>
+        s(i).length
+      }).max
+
     }
     (r, c)
   }
@@ -282,6 +285,7 @@ object ShapeTest extends App {
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
   println(size(shapeL) == (3, 2))
+  println(size(List(List(Red), List(Blue, Blue))) == (2, 2))
   
   // 4. blockCount
   println("blockCount")

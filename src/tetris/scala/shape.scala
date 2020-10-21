@@ -173,7 +173,7 @@ object ShapeLib {
 
 
   // 7. shiftSE
-  // 目的：受け取ったshape型を右にx、左にｙずらしたshape型を返す
+  // 目的：受け取ったshape型を右にx、下にｙずらしたshape型を返す
   def shiftSE(s: Shape, x: Int, y: Int): Shape = {
     val (rows, cols) = size(s)
     (List.range(0, rows + y)) map { i =>

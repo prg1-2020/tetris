@@ -178,8 +178,8 @@ object ShapeLib {
   // 目的：左にx,上にyだけずらしたshapeを返す
   def shiftNW(shape:Shape, x:Int, y:Int)={
     val (rows, cols)=size(shape)
-    (List.range(0, rows+x))map{
-      i=>(List.range(0, cols+y))map{
+    (List.range(0, rows+y))map{
+      i=>(List.range(0, cols+x))map{
         j=>if(i<rows && j<cols)shape(i)(j) else Transparent
       }
     }

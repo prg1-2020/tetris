@@ -86,14 +86,14 @@ object ShapeLib {
 
   // 1. duplicate
   // 目的：整数nと任意の型の値aを受け取りリストを作る
-  def duplicate(n:Int,a:Any):List[Any]={
+  def duplicate[A](n:Int,a:A):List[A]={
     if(n<=0) Nil else a::duplicate(n-1,a)
   }
 
 
   // 2. empty
   // 目的：rows,colsの空のshapeを作る
-  def empty(rows:Int, cols:Int):List[Any]={
+  def empty(rows:Int, cols:Int):Shape={
     val ls = duplicate(cols,Transparent)
     duplicate(rows,ls)
   }
@@ -146,7 +146,7 @@ object ShapeLib {
     }
     equalJudge(lengthlist,maxoflength) && tupleplus(n,m)
   }
-  
+
 
 
   // 6. rotate
@@ -275,13 +275,12 @@ object ShapeLib {
     }
   }
 }
-
 // テスト
 object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+  
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
@@ -296,7 +295,6 @@ object ShapeTest extends App {
   println(empty(0, 2) == Nil)
   println(empty(2, 0) == List(Nil, Nil))
   println(empty(-1,5) == Nil)
-  
   // 3. size
   println("size")
   println(size(Nil) == (0, 0))
@@ -310,7 +308,7 @@ object ShapeTest extends App {
   println(blockCount(shapeI) == 4)
   println(blockCount(shapeZ) == 4)
   println(blockCount(shapeT) == 4)
-
+  
   // 5. wellStructured
   println("wellStructured")
   println(wellStructured(Nil) == false)
@@ -319,8 +317,8 @@ object ShapeTest extends App {
   println(wellStructured(List(List(Red, Red), List(Yellow, Yellow), List(Blue))) == false)
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
-  println(wellStructured(shapeT) == true)
-
+  println(wellStructured(shapeT) == true) 
+  
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))

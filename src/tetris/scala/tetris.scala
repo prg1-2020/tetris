@@ -62,7 +62,8 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape)=piece 
+    TetrisWorld(((x,y+1),shape), pile)
   }
 
   // 2, 5. keyEvent

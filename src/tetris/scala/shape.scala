@@ -84,8 +84,7 @@ object ShapeLib {
 
   def random(): Shape = allShapes(r.nextInt(allShapes.length))
 
- // 1. duplicate
-  // 目的：整数ｎと任意の型aを受け取り、ｎ個のaからなるリストを返す
+ 
   // 1. duplicate
   // 目的：整数ｎと任意の型aを受け取り、ｎ個のaからなるリストを返す
   def duplicate[A](n:Int,a:A): List[A]={
@@ -146,6 +145,13 @@ object ShapeLib {
   // 5. wellStructured
   // 目的：受け取ったshape行数・列数がともに１以上であり、各行の要素数が全て等しいか判断する
  
+    
+ 
+    
+  
+
+
+
 
   // 6. rotate
   // 目的：

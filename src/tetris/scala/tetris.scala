@@ -62,19 +62,55 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    /*
+    val ((x, y), shape) = piece
+    TetrisWorld(((x, y+1), shape), pile)
+    */
+    val ((x, y), shape) = piece
+    if (y + S.colsize(shape) == A.WellHeight) TetrisWorld(piece, pile)
+    else TetrisWorld(((x, y+1), shape), pile)
   }
 
   // 2, 5. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    /*
+    val ((x, y), shape) = piece
+    key match {
+      case "RIGHT" => TetrisWorld(((x+1, y), shape), pile)
+      case "LEFT"  => TetrisWorld(((x-1, y), shape), pile)
+      case "UP"    => TetrisWorld(((x, y), S.rotate(shape)), pile)
+    }
+    */
+    val ((x, y), shape) = piece
+    key match {
+      case "RIGHT" => {
+        val rworld = TetrisWorld(((x+1, y), shape), pile)
+        if (collision(rworld) == true) TetrisWorld(piece, pile)
+        else rworld
+      }
+      case "LEFT"  => {
+        val lworld = TetrisWorld(((x-1, y), shape), pile)
+        if (collision(lworld) == true) TetrisWorld(piece, pile)
+        else lworld
+      }
+      case "UP"    => {
+        val uworld = TetrisWorld(((x, y), S.rotate(shape)), pile)
+        if (collision(uworld) == true) TetrisWorld(piece, pile)
+        else uworld
+      }
+    }
   }
 
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), shape) = piece
+    if (x < 0) true
+    if (y + S.colsize(shape) > A.WellHeight) true
+    if (x + shape.length > A.WellWidth) true
+    if (S.overlap(shape, pile) == true) true
+    else false
   }
 
   // 6. eraseRows

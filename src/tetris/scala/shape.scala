@@ -114,7 +114,7 @@ object ShapeLib {
   }
 
   // 定義
-  def size(shape: Shape): Any = {
+  def size(shape: Shape): (Int, Int) = {
     (shape.length, colsize(shape))
   }
 

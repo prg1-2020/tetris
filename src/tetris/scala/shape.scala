@@ -157,17 +157,17 @@ object ShapeLib {
   // 目的：受け取った shape を反時計回りに 90 度回転させた shape を返す
   // 契約：wellStructuredであること
   def rotate(sh: Shape): Shape = {
-    assert(wellStructured((sh)))
-    def subSum(sh1: Row, sh2: Shape): Shape = {
-      (sh1, sh2) match {
+    assert(wellStructured(sh))
+    def subSum(ro: Row, sh: Shape): Shape = {
+      (ro, sh) match {
         case (Nil, Nil) => Nil
         case (x::xs, Nil) => List(x)::subSum(xs, Nil)
-        case (sh1_x::sh1_xs, sh2_x::sh2_xs) => (sh1_x::sh2_x)::subSum(sh1_xs, sh2_xs)
+        case (ro_x::ro_xs, sh_x::sh_xs) => (ro_x::sh_x)::subSum(ro_xs, sh_xs)
         case (_, _) => Nil
       }
     }
 
-    sh.foldRight(Nil: Shape)((ro, sh) => subSum(ro, sh))
+    sh.foldRight(Nil: Shape)((ro, sh) => subSum(ro.reverse, sh))
   }
 
 

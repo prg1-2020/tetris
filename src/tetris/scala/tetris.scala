@@ -60,21 +60,73 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的： (課題1)pieceのyをインクリメントし，下に1ブロック下げる。
+  //      (課題4)pieceの落下は画面一番下で停止するように。
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    //課題1
+    /*
+    val ((x, y), s) = piece
+    S.show(s)
+    TetrisWorld(((x, y+1), s), pile)
+    */
+
+    //課題4
+    val ((x, y), s) = piece
+    val (h, w) = S.size(s)
+    if(y+h == A.WellHeight){
+      TetrisWorld(piece, pile)
+    }else{
+      TetrisWorld(((x, y+1), s), pile)
+    }
+
   }
 
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：(課題2)矢印キー入力でpieceを移動。UPで反時計に90°回転
+  //     (課題5)入力により衝突が発生するならば無視。
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    //課題2
+    /*
+    var ((x, y), s) = piece
+
+    key match{
+      case "RIGHT" => x = x+1
+      case "LEFT" =>  x = x-1
+      case "UP" =>  s = S.rotate(s)
+    }
+
+    TetrisWorld(((x, y), s), pile)
+    */
+    
+    //課題5
+    var ((x, y), s) = piece
+    
+    key match{
+      case "RIGHT" => x = x+1
+      case "LEFT" =>  x = x-1
+      case "UP" =>  s = S.rotate(s)
+    }
+
+    val nextW = TetrisWorld(((x, y), s), pile)
+    
+    if(collision((nextW))){
+      TetrisWorld(piece, pile)
+    }else{
+      nextW
+    }
+    
   }
 
   // 3. collision
-  // 目的：
+  // 目的：(課題3)pieceが画面外 or pileと衝突でTrue
   def collision(world: TetrisWorld): Boolean = {
-    false
+
+    val ((x, y), s) = world.piece
+    val (h, w) = S.size(s)
+    val absS = S.shiftSE(s,x,y)
+
+    x < 0 || A.WellWidth < x + w || A.WellHeight <= y + h || S.overlap(absS, world.pile)
+    
   }
 
   // 6. eraseRows

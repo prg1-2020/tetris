@@ -103,11 +103,10 @@ object ShapeLib {
   // 3. size
   // 目的：s:Shapeのsizeを返す
   def size(s: Shape): (Int, Int) = {
-    assert(wellStructured(s))
     if(s.length == 0)
       (0, 0)
     else
-      (s.length, s.head.length)
+      (s.length, s.map(_.length).foldLeft(0)(max(_, _)))
   }
 
 
@@ -145,7 +144,7 @@ object ShapeLib {
       else
         thisS.map(_.head)::t(thisS.map(_.tail))
     }
-    t(s).map(_.reverse).filter(_.nonEmpty)
+    t(s.map(_.reverse)).filter(_.nonEmpty)
   }
 
 
@@ -309,7 +308,7 @@ object ShapeTest extends App {
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
 
   println(overlap(shapeT, shapeO))
-  println(overlap(shapeT, shiftSE(shapeO, 2, 1)))
+  println(overlap(shapeT, shiftSE(shapeO, 2, 1)))//=>false
 
   // 11. combine
   println("combine")

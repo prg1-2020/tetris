@@ -202,7 +202,7 @@ object ShapeLib {
       (this1,this2) match{
         case (t1::ts1, t2::ts2) =>
           (t1.zip(t2)).map(tuple2DtoList).map((lis)=>if(lis.head==Transparent) lis.last else if(lis.last==Transparent) lis.head else Transparent) :: f(ts1, ts2)
-        case (Nil, Nil) =>
+        case _ =>
           Nil
       }
     }

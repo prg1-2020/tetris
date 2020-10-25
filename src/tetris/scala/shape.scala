@@ -142,8 +142,9 @@ object ShapeLib {
         case x :: xs => (x.length == k) && checkRect(xs, k)
       }
     }
-    if (shape.length == 0 | maxCols(shape) == 0) false
-    else checkRect(shape, maxCols(shape))
+    val (n, m) = size(shape)
+    if (n == 0 | m == 0) false
+    else checkRect(shape, m)
   }
 
   // 6. rotate
@@ -222,8 +223,9 @@ object ShapeLib {
   // 目的：受け取ったshapeをrows行cols列に拡大する
   // 契約：rowsとcolsはshapeの行数、列数以上
   def padTo(shape: Shape, rows: Int, cols: Int): Shape = {
-    assert(rows - shape.length >= 0 && cols - maxCols(shape) >= 0) //契約
-    shiftNW(shape, cols - maxCols(shape), rows - shape.length)
+    val (n, m) = size(shape)
+    assert(rows - n >= 0 && cols - m >= 0) //契約
+    shiftNW(shape, cols - m, rows - n)
   }
 
   // 10. overlap

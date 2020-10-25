@@ -16,6 +16,7 @@ import scala.math.max
 
 import sdraw._
 import java.awt.Transparency
+import java.security.KeyStore.TrustedCertificateEntry
 
 // テトロミノを操作するための関数
 object ShapeLib {
@@ -148,36 +149,104 @@ object ShapeLib {
 
 
   // 6. rotate
-  // 目的：
-  // 契約：
+  // 目的：受け取った shape を反時計回りに 90 度回転させた shape を返す。
+  // 契約：引数の shape はまっとうである
+  def rotate(shape: Shape): Shape = {
+    def allRowReverse(subShape: Shape): Shape ={
+      subShape match {
+        case Nil => Nil
+        case r :: rs => r.reverse +: allRowReverse(rs)
+      }
+    }
+    allRowReverse(shape).transpose
+  }
 
 
 
   // 7. shiftSE
-  // 目的：
+  // 目的：受け取った shape を右に x, 下に y ずらしたshape を返す
+  def shiftSE(shape: Shape, x: Int, y: Int): Shape = {
+    def addNilToHead(shape: Shape,x: Int): Shape = {
+      shape match {
+          case Nil => Nil
+          case r :: rs => List.fill(x)(Transparent:Color) ++ r :: addNilToHead(rs,x)
+      }
+    }
+    empty(y,maxRowLength(shape)+x) ++ addNilToHead(shape,x)
+  }
 
 
 
   // 8. shiftNW
-  // 目的：
+  // 目的：受け取った shape を左に x, 上に y ずらしたshape を返す
+  def shiftNW(shape: Shape, x: Int, y: Int): Shape = {
+    def addNilToLast(shape: Shape,x: Int): Shape = {
+      shape match {
+          case Nil => Nil
+          case r :: rs => r ++ List.fill(x)(Transparent:Color) :: addNilToLast(rs,x)
+      }
+    }
+    addNilToLast(shape,x) ++ empty(y,maxRowLength(shape)+x)
+  }
 
 
 
   // 9. padTo
-  // 目的：
-  // 契約：
+  // 目的：受け取った shape を rows 行 cols 列に拡大した shape を返す
+  // 契約：rows, cols は shape の行数・列数以上
+    def padTo(shape : Shape, rows: Int, cols: Int):Shape = {
+      val(x,y):(Int,Int) = size(shape)
+      shiftNW(shape,cols-y,rows-x)
+    }
 
 
 
   // 10. overlap
-  // 目的：
+  // 目的：２つの shape が重なりを持つかを判断する
+  def overlap(shape1: Shape, shape2: Shape):Boolean = {
+    def overlapRow(row1: Row, row2: Row):Boolean = {
+      (row1, row2) match {
+        case (Nil,_) => false
+        case (_,Nil) => false
+        case (x::xs,y::ys) => if(x != Transparent && y != Transparent) true 
+        else overlapRow(xs,ys)
+      }
+    }
+    (shape1,shape2) match {
+      case (Nil,_) => false
+      case (_,Nil) => false
+      case (r1::rs1,r2::rs2) => if(overlapRow(r1,r2)) true
+      else overlap(rs1,rs2)
+    }
+  }
 
 
 
   // 11. combine
-  // 目的：
-  // 契約：
-
+  // 目的：二つのshapeを結合させる
+  // 契約：引数の shape は重なりを持たない
+  def combine(shape1:Shape,shape2:Shape): Shape = {
+    def subCombine(shape1:Shape,shape2:Shape): Shape = {
+      if(overlap(shape1,shape2)) Nil else{
+        def combineRow(r1:Row,r2:Row): Row = {
+          (r1,r2) match {
+            case (Nil,Nil) => Nil
+            case (Nil,ys) => ys
+            case (xs,Nil) => xs
+            case (x::xs,y::ys) => if(x==Transparent) y::combineRow(xs,ys)
+            else x::combineRow(xs, ys)
+          }
+        }
+        (shape1,shape2) match {
+          case (Nil,Nil) => Nil
+          case (Nil,rs2) => rs2
+          case (rs1,Nil) => rs1
+          case (r1::rs1,r2::rs2) => combineRow(r1,r2) :: combine(rs1,rs2)
+        }
+      }
+    }
+    subCombine(subCombine(shape1,shape2),empty(subCombine(shape1,shape2).length,maxRowLength(subCombine(shape1,shape2))))
+  }
 
 
 }
@@ -226,7 +295,7 @@ object ShapeTest extends App {
   println(wellStructured(shapeI) == true)
   println(wellStructured(shapeZ) == true)
   println(wellStructured(List(List(Red))) == true)
-  /*
+  
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
@@ -234,8 +303,10 @@ object ShapeTest extends App {
   show(rotate(shapeZ))
 
   // rotate が満たすべき性質のテスト
-
-
+  println(rotate(rotate(rotate(rotate(shapeZ)))) == shapeZ)
+  println(size(shapeT) == size(rotate(rotate(shapeT))))
+  println(blockCount(shapeJ) == blockCount(rotate(shapeJ)))
+  
   // 7. shiftSE
   println("shiftSE")
   println(shiftSE(List(List(Blue)), 1, 2) ==
@@ -263,12 +334,14 @@ object ShapeTest extends App {
   println("overlap")
   println(overlap(shapeI, shapeZ) == true)
   println(overlap(shapeI, shiftSE(shapeZ, 1, 1)) == false)
+  println(overlap(shapeI, shiftNW(shapeI, 10, 3)) == true)
 
+  
   // 11. combine
   println("combine")
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+  println(combine(shapeO, shapeJ)==Nil)
 }

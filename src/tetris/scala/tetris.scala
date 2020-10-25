@@ -60,26 +60,82 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：ゲームが更新されるたびに行われていく処理を定める
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    //TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    val (a, b) = S.size(shape)
+    //下は課題１
+    //TetrisWorld(((x, y+1), shape), pile)
+    //下は課題4
+    if (y+a>=A.WellHeight) TetrisWorld(((x, y), shape), shape) else TetrisWorld(((x, y+1), shape), pile)
+    //下は課題７
+    /*
+    if ((y+a>=A.WellHeight)||(collision(TetrisWorld(((x, y+1), shape), pile)))) {
+      val afterpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
+      val nextPiece = A.newPiece()
+      val nextWorld = TetrisWorld(nextPiece, afterpile)
+    //  if (collision(nextWorld)) endOfWorld("Game Over")
+    //  else nextWorld
+      nextWorld
+    }
+    else TetrisWorld(((x, y+1), shape), pile)
+    */
   }
 
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：ゲームのキー操作を定める
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    //課題２
+    /*
+    key match{
+      case "RIGHT" =>TetrisWorld(((x+1, y), shape), pile)
+      case "LEFT"  =>TetrisWorld(((x-1, y), shape), pile)
+      case "UP"    =>TetrisWorld(((x, y), S.rotate(shape)), pile)
+    }
+    */
+    //課題５
+    
+    val ((nX, nY), nShape) =
+      key match{
+        case "RIGHT" =>((x+1, y), shape)
+        case "LEFT"  =>((x-1, y), shape)
+        case "UP"    =>((x, y), S.rotate(shape))
+      }
+    val nextWorld = TetrisWorld(((nX, nY), nShape), pile)
+    if (collision(nextWorld)) TetrisWorld(piece, pile)
+    else nextWorld
+    //TetrisWorld(piece, pile)
   }
 
   // 3. collision
-  // 目的：
+  // 目的：受け取ったworldが下・右・左ではみ出しているか、また、pileとpieceが重なっているかをBooleanで返す
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), shape) = world.piece
+    val (a, b) = S.size(shape)
+    (x<0)||((x+b)>A.WellWidth)||((y+a)>A.WellHeight)||S.overlap(S.shiftSE(shape, x, y), pile)
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pileを受け取り、そろった行を削徐したpileを返す
   def eraseRows(pile: S.Shape): S.Shape = {
+    /*
+    def reverseRow[A](list:List[A]):List[A] = {
+      list match {
+        case Nil   => Nil
+        case x::xs => reverseRow(xs)++List(x)
+      }
+    }
+    def findFilled(revpile: S.Shape):S.Shape = {
+      revpile match{
+        case Nil   => Nil
+        case x::xs => if(x.foldLeft(true){(acc, x) => acc&&(x!=Transparent)}) findFilled(xs)++List(S.duplicate(A.WellWidth, Transparent))
+                      else  x::findFilled(xs)
+      }
+    }
+    reverseRow(findFilled(reverseRow(pile)))
+    */
     pile
   }
 }

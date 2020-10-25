@@ -60,21 +60,66 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：時間経過に応じてテトロミノを１だけ下に動かす
+  /*課題1
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape)=piece
+    TetrisWorld(((x, y+1), shape), pile)
+  }
+  */
+  //テトロミノを動かす関数movepieceを作成
+  def movepiece(piece:((Int, Int), S.Shape), dx:Int, dy:Int):((Int, Int), S.Shape)={
+    val ((x, y), shape)=piece
+    ((x+dx, y+dy), shape)
+  }
+  //課題4
+  def tick():World={
+    val nextworld=TetrisWorld(movepiece(piece, 0, 1), pile)
+    if(collision(nextworld)==false) nextworld
+    else TetrisWorld(piece, pile)
   }
 
+
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：キー入力に従い世界を更新
+  //回転させたテトロミノを返す
+  def rotatepiece(piece:((Int, Int), S.Shape)):((Int, Int), S.Shape)={
+    val ((x, y), shape)=piece
+    ((x, y), S.rotate(shape))
+  }
+  /*
+  //課題２
+  def keyEvent(key:String):World = {
+    val nextpiece=key match{
+      case "RIGHT"=>movepiece(piece, 1, 0)
+      case "LEFT"=>movepiece(piece, -1, 0)
+      case "UP"=>rotatepiece(piece)
+      case _=>piece
+    }
+    TetrisWorld(nextpiece, pile)
+  }
+  */
+  //課題５
+  //キー操作による衝突がある場合、操作を無視
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val nextpiece=key match{
+      case "RIGHT"=>movepiece(piece, 1, 0)
+      case "LEFT"=>movepiece(piece, -1, 0)
+      case "UP"=>rotatepiece(piece)
+      case _=>piece
+    }
+    val nextworld=TetrisWorld(nextpiece, pile)
+    if(collision(nextworld)==false) nextworld
+    else TetrisWorld(piece, pile)
   }
 
   // 3. collision
-  // 目的：
+  // 目的：衝突が起きているかを判定
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), shape)=piece
+    val (shapey, shapex)=S.size(shape)
+    val (h, w)=S.size(pile)
+    x<0 || x + shapex > w ||y + shapey > h || S.overlap(shape, pile)
   }
 
   // 6. eraseRows

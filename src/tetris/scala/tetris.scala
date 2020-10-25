@@ -73,6 +73,22 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val ((x, y), shape) = piece
     if (y + 1 + shape.length > A.WellHeight) TetrisWorld(piece, pile)
     else TetrisWorld(((x, y+1), shape), pile)
+    
+    /*
+    // 課題７
+    // 目的：テトロミノが一番下に達したら適切な処理を行う
+    val ((x, y), shape) = piece
+    val world = TetrisWorld(((x, y+1), shape), pile)
+    if (collision(world) == true) {
+      //if (collision(TetrisWorld(A.newPiece(), pile)) == false) {
+        TetrisWorld(A.newPiece(), S.shiftSE(shape, x, y) ++ pile)
+      //}
+      //else TetrisWorld(piece, pile)
+      // endOfWorld("Game Over")
+    }
+    else world
+    */
+
   }
 
   // 2, 5. keyEvent
@@ -105,14 +121,23 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def collision(world: TetrisWorld): Boolean = {
     val ((x, y), shape) = world.piece
     val (r, c) = S.size(shape) 
-    if(x < 0 || x + c > A.WellWidth || y + r > A.WellHeight) true
+    if(x < 0 || x + c > A.WellWidth || y + r > A.WellHeight || S.overlap(S.shiftSE(shape, x, y), pile)) true
     else false
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：揃った行を削除する
   def eraseRows(pile: S.Shape): S.Shape = {
     pile
+    /*
+    pile match {
+      case Nil => Nil
+      case x :: xs => {
+        if (S.blockCount(List(x)) == A.WellWidth) eraseRows(xs)
+        else x :: eraseRows(xs)
+      }
+    }
+    */
   }
 }
 

@@ -269,3 +269,82 @@ java.util.concurrent.RejectedExecutionException: Task scala.concurrent.impl.Call
 2020.10.24 11:41:45 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/shape.scala
 10月 24, 2020 11:42:03 午前 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
+2020.10.24 11:49:01 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+10月 24, 2020 11:58:31 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 854
+2020.10.24 11:59:27 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:00:14 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+10月 24, 2020 12:07:40 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: offset 1893, count -1, length 2679
+2020.10.24 12:08:01 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:08:22 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:08:36 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:09:01 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:09:08 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:21:18 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:23:38 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.24 12:23:41 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:25:54 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:27:44 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:29:15 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:29:40 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:33:57 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+10月 24, 2020 12:40:58 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2711
+2020.10.24 12:48:41 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.24 12:48:53 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:49:21 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:49:37 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 12:50:16 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:20:38 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:21:09 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:23:46 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:25:29 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:25:56 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:26:48 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:32:30 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:34:07 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:34:21 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+10月 24, 2020 1:34:21 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 24, 2020 1:34:21 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: no context found for source-file:///Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala,line-5,offset=100
+scala.reflect.internal.FatalError: no context found for source-file:///Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala,line-5,offset=100
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:113)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:102)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:24)
+
+2020.10.24 13:34:22 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:34:23 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+10月 24, 2020 1:34:23 午後 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+情報: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+10月 24, 2020 1:34:23 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: no context found for source-file:///Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala,line-5,offset=100
+scala.reflect.internal.FatalError: no context found for source-file:///Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala,line-5,offset=100
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:113)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:102)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:24)
+
+2020.10.24 13:34:23 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.24 13:34:31 INFO  shutting down Metals
+2020.10.26 00:23:34 INFO  started: Metals version 0.9.4 in workspace '/Users/kyosuke.d/classes/prg01/tetris' for client vscode.
+2020.10.26 00:23:36 INFO  time: initialize in 1.43s
+2020.10.26 00:23:36 INFO  skipping build import with status 'Requested'
+2020.10.26 00:23:39 INFO  no build target: using presentation compiler with only scala-library
+2020.10.26 00:23:39 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.26 00:26:40 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.26 00:27:08 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.26 00:27:22 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.26 00:31:02 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.26 00:31:32 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.26 00:31:35 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.10.26 00:31:44 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 00:31:44 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+10月 26, 2020 12:32:49 午前 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

@@ -386,6 +386,7 @@ object ShapeTest extends App {
          List(Yellow,Yellow,Transparent,Transparent),
          List(Transparent, Transparent,Transparent,Transparent))) 
   
+  
   // 9. padTo
   println("padTo")
   println(padTo(List(List(Blue)), 2, 3) ==

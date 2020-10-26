@@ -110,7 +110,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 3. collision
-  // 目的：受け取ったworldが下・右・左ではみ出しているか、また、pileとpieceが重なっているかをBooleanで返す
+  // 目的：受け取ったworldでpieceが下・右・左ではみ出しているか、また、pileとpieceが重なっているかをBooleanで返す
   def collision(world: TetrisWorld): Boolean = {
     val ((x, y), shape) = world.piece
     val (a, b) = S.size(shape)

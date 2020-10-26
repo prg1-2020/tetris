@@ -65,9 +65,20 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     // val ((x, y), sh) = piece
     // TetrisWorld(((x, y + 1), sh), pile)
 
+    // val ((x, y), sh) = piece
+    // val world = TetrisWorld(((x, y + 1), sh), pile)
+    // if (collision(world)) TetrisWorld(piece, pile)
+    // else world
+
     val ((x, y), sh) = piece
     val world = TetrisWorld(((x, y + 1), sh), pile)
-    if (collision(world)) TetrisWorld(piece, pile)
+    if (collision(world)) {
+      val new_pile = eraseRows(S.combine(S.shiftSE(sh, x, y), pile))
+      val new_piece = A.newPiece()
+      val new_world = TetrisWorld(new_piece, new_pile)
+      if(collision(new_world)) TetrisWorld(piece, pile) // endOfWorldが正常な状態じゃないらしいので見かけ上動作停止
+      else new_world
+    }
     else world
   }
 
@@ -96,7 +107,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val ((x, y), sh) = world.piece
     val (y_sh, x_sh) = S.size(sh)
     val (hei, wid) = S.size(pile)
-    x < 0 || x > wid - x_sh || y > hei - y_sh || S.overlap(sh, world.pile)
+    x < 0 || x > wid - x_sh || y > hei - y_sh || S.overlap(S.shiftSE(sh, x, y), world.pile)
   }
 
   // 6. eraseRows

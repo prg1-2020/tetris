@@ -1,5 +1,8 @@
 project/
 target/
 .DS_Store
-/.*
-!/.gitignore
+
+.vscode/
+.metals/
+.bloop/
+

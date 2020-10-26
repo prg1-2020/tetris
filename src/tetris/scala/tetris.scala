@@ -62,25 +62,88 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    /*
+    val ((x, y), s) = piece
+    TetrisWorld(((x, y + 1), s), pile)
+    */
+
+    /*
+    val ((x, y), s) = piece
+    val (r, _) = S.size(s)
+    TetrisWorld(
+      ((x, scala.math.min(y + 1, 10 - r)), s), pile
+    )
+    */
+
+    val ((x, y), s) = piece
+    val (r, _) = S.size(s)
+    val next = TetrisWorld(
+      ((x, y + 1), s), pile
+    )
+    if (!collision(next)) {
+      next
+    } else {
+      val nextPiece = A.newPiece()
+      val nextPile = eraseRows(S.combine(
+        S.shiftSE(s, x, y), pile
+      ))
+      TetrisWorld(
+        nextPiece, nextPile
+      )
+    }
+  }
+
+  def hardDrop(): ((Int, Int), S.Shape) = {
+    val ((x, y), s) = piece
+    val next = TetrisWorld(
+      ((x, y + 1), s), pile
+    )
+    if (collision(next)) piece
+    else next.hardDrop()
   }
 
   // 2, 5. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    /*
+    val ((x, y), s) = piece
+    TetrisWorld(
+      key match {
+        case "RIGHT" => ((x + 1, y), s)
+        case "LEFT" => ((x - 1, y), s)
+        case "UP" => ((x, y), S.rotate(s))
+        case _ => piece
+      }, pile
+    )
+    */
+    
+    val ((x, y), s) = piece
+    val next = TetrisWorld(
+      key match {
+        case "RIGHT" => ((x + 1, y), s)
+        case "LEFT" => ((x - 1, y), s)
+        case "UP" => ((x, y), S.rotate(s))
+        case "DOWN" => hardDrop()
+        case _ => piece
+      }, pile
+    )
+    if (collision(next)) this else next
   }
 
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), s) = world.piece
+    val (r, c) = S.size(s)
+    x < 0 || 10 < x + c || 10 < y + r || S.overlap(S.shiftSE(s, x, y), world.pile)
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    val d = pile.filter(!S.filled(_))
+    val (r, _) = S.size(d)
+    S.shiftSE(d, 0, 10 - r)
   }
 }
 

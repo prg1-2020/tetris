@@ -87,60 +87,150 @@ object ShapeLib {
   // 1. duplicate
   // 目的：
 
-
+  def duplicate[T](n: Int, a: T): List[T] = {
+    if (n == 0) Nil
+    else a :: duplicate(n - 1, a)
+  }
 
   // 2. empty
   // 目的：
 
-
+  def empty(rows: Int, cols: Int): Shape = {
+    duplicate(rows, duplicate(cols, Transparent))
+  }
 
   // 3. size
   // 目的：
 
-
+  def size[T](mat: List[List[T]]): (Int, Int) = {
+    (mat.length, mat.map(_.length).foldRight(0)(max(_, _)))
+  }
 
   // 4. blockCount
   // 目的：
 
-
+  def blockCount(shape: Shape): Int = {
+    shape.map(_.map((x) =>
+      if (x != Transparent) 1
+      else 0
+    ).foldRight(0)(_ + _)).foldRight(0)(_ + _)
+  }
 
   // 5. wellStructured
   // 目的：
 
-
+  def wellStructured[T](mat: List[List[T]]): Boolean = {
+    mat match {
+      case Nil => false
+      case h :: mat => {
+        val l = h.length;
+        if (l == 0) false
+        else mat.map(
+          _.length == l
+        ).foldRight(true)(_ && _)
+      }
+    }
+  }
 
   // 6. rotate
   // 目的：
   // 契約：
+
+  def transpose[T](matrix: List[List[T]]): List[List[T]] = {
+    def cons_all(head: List[T], tail: List[List[T]]): List[List[T]] = {
+      head match {
+        case Nil => tail
+        case h :: hs => {
+          tail match {
+            case Nil => (h :: Nil) :: cons_all(hs, Nil)
+            case t :: ts => (h :: t) :: cons_all(hs, ts)
+          }
+        }
+      }
+    }
+    matrix match {
+      case Nil => Nil
+      case r :: rs => cons_all(r, transpose(rs))
+    }
+  }
+
+  def reverse[T](list: List[T]): List[T] = {
+    return list.reverse
+    def help(list: List[T], rev: List[T]): List[T] = {
+      list match {
+        case Nil => rev
+        case x :: xs => help(xs, x :: rev)
+      }
+    }
+    help(list, Nil)
+  }
+
+  def g_rotate[T](matrix: List[List[T]]): List[List[T]] = {
+    reverse(transpose(matrix))
+  }
+
+  def rotate(shape: Shape): Shape = {
+    g_rotate(shape)
+  }
 
 
 
   // 7. shiftSE
   // 目的：
 
-
+  def shiftSE(shape: Shape, x: Int, y: Int): Shape = {
+    val (_, c) = size(shape)
+    empty(y, x + c) ++ shape.map(duplicate(x, Transparent) ++ _)
+  }
 
   // 8. shiftNW
   // 目的：
 
-
+  def shiftNW(shape: Shape, x: Int, y: Int): Shape = {
+    val (_, c) = size(shape)
+    shape.map(_ ++ duplicate(x, Transparent)) ++ empty(y, c + x)
+  }
 
   // 9. padTo
   // 目的：
   // 契約：
 
-
+  def padTo(shape: Shape, rows: Int, cols: Int): Shape = {
+    val (r, c) = size(shape)
+    shiftNW(shape, cols - c, rows - r)
+  }
 
   // 10. overlap
   // 目的：
 
-
+  def overlap(shape0: Shape, shape1: Shape): Boolean = {
+    shape0.zip(shape1).map(
+      {case (s0, s1) => s0.zip(s1).map(
+        {case (s0, s1) => s0 != Transparent && s1 != Transparent}
+      ).foldRight(false)(_ || _)}
+    ).foldRight(false)(_ || _)
+  }
 
   // 11. combine
   // 目的：
   // 契約：
 
+  def combine(shape0: Shape, shape1: Shape): Shape = {
+    val (r0, c0) = size(shape0)
+    val (r1, c1) = size(shape1)
+    val (r, c) = (max(r0, r1), max(c0, c1))
+    val s0 = padTo(shape0, r, c)
+    val s1 = padTo(shape1, r, c)
+    s0.zip(s1).map(
+      {case (s0, s1) => s0.zip(s1).map(
+        {case (s0, s1) => if (s0 == Transparent) s1 else s0}
+      )}
+    )
+  }
 
+  def filled(r: Row): Boolean = {
+    r.map(_ != Transparent).foldRight(true)(_ && _)
+  }
 
 }
 
@@ -149,7 +239,7 @@ object ShapeTest extends App {
   import ShapeLib._
 
   // 関数を定義するたびに、コメント開始位置を後ろにずらす
-  /*
+  
   // 1. duplicate
   println("duplicate")
   println(duplicate(0, 42) == Nil)
@@ -192,7 +282,6 @@ object ShapeTest extends App {
 
   // rotate が満たすべき性質のテスト
 
-
   // 7. shiftSE
   println("shiftSE")
   println(shiftSE(List(List(Blue)), 1, 2) ==
@@ -226,6 +315,6 @@ object ShapeTest extends App {
   println(combine(List(List(Red), List(Transparent)),
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
-  show(combine(shiftSE(shapeI, 0, 1), shapeZ)
-  */
+  show(combine(shiftSE(shapeI, 0, 1), shapeZ))
+  
 }

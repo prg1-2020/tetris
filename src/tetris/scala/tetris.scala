@@ -14,7 +14,7 @@ package tetris
 import scala.util.Random
 
 import sgeometry.Pos
-import sdraw.{World, Color, Transparent, HSB}
+import sdraw.{World, Color, NoColor, Transparent, HSB}
 
 import tetris.{ShapeLib => S}
 
@@ -29,7 +29,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     canvas.drawRect(Pos(A.BlockSize * x, A.BlockSize * y), A.BlockSize * w, A.BlockSize * h, c)
   }
 
-  // shape の描画（与えられた位置）
+  // shape の描画（与えられた位置）pos := (x, y)
   def drawShape(pos: (Int, Int), shape: S.Shape): Boolean = {
     val pos_colors = shape.zipWithIndex.flatMap(row_i => {
       val (row, i) = row_i
@@ -58,29 +58,120 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     drawShape00(pile) &&
     drawShape(pos, shape)
   }
+  
+  //// 自作関数群
+  /**
+   * piece をずらすための関数
+   * 右側に dx, 下側に dy だけずらす
+   */
+  def movePiece(piece: ((Int, Int), S.Shape), dx: Int, dy: Int) = {
+    val (x, y) = piece._1
+    ((x + dx, y + dy), piece._2)
+  }
+  
+  
+  //////
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：時間の経過に応じて世界を更新する関数(操作中のテトリミノを 1 マスだけ下に落下させる)
+  // // 1. 目的：下に落とすだけ
+  // def tick(): World = {
+  //   TetrisWorld(movePiece(piece, 0, 1), pile)
+  // }
+  // // 4. 目的：一番下との判定を行う
+  // def tick(): World = {
+  //   val next_world = TetrisWorld(movePiece(piece, 0, 1), pile)
+  //   if (!collision(next_world)) next_world
+  //   else this
+  // }
+  // 7. 目的：テトロミノが下に移動できなくなったときに盤面に固定して新たなテトリミノを出現させる。盤面からあふれれば画面を止めるようにする
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    if (piece._2 == List(List(Transparent))) this
+    else {
+        val ((x, y), mino) = piece
+        var next_world = TetrisWorld(movePiece(piece, 0, 1), pile)
+        if (collision(next_world)) { // テトリミノの確定処理, 新たなテトリミノの生成
+          val next_pile = eraseRows(S.combine(pile, S.shiftSE(mino, x, y)))
+          val new_piece = A.newPiece()
+          next_world = TetrisWorld(new_piece, next_pile)
+          if (collision(next_world)) TetrisWorld(((0, 0), List(List(Transparent))), next_pile)
+          else TetrisWorld(new_piece, next_pile)
+        }
+        else next_world
+    }
   }
 
-  // 2, 5. keyEvent
-  // 目的：
+  // 2, 5, 8. keyEvent
+  // 目的：キー入力に従って世界を更新する
+  // // 2. 目的: 画面外判定は行わない
+  // def keyEvent(key: String): World = {
+  //   val next_piece = key match {
+  //     case "RIGHT" => movePiece(piece, 1, 0)
+  //     case "LEFT" => movePiece(piece, -1, 0)
+  //     case "UP" => (piece._1, S.rotate(piece._2))
+  //     case _ => piece
+  //   }
+  //   TetrisWorld(next_piece, pile)
+  // }
+  // // 5. 画面外なら操作を無視する
+  // def keyEvent(key: String): World = {
+  //   if (piece._2 == List(List(Transparent))) this
+  //   else {
+  //     val next_piece = key match {
+  //       case "RIGHT" => movePiece(piece, 1, 0)
+  //       case "LEFT" => movePiece(piece, -1, 0)
+  //       case "UP" => (piece._1, S.rotate(piece._2))
+  //       case _ => piece
+  //     }
+  //     val next_world = TetrisWorld(next_piece, pile)
+  //     if (!collision(next_world)) next_world
+  //     else this
+  //   }
+  // }
+  // 8. ソフトドロップの追加
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    if (piece._2 == List(List(Transparent))) this
+    else {
+      val next_piece = key match {
+        case "RIGHT" => movePiece(piece, 1, 0)
+        case "LEFT" => movePiece(piece, -1, 0)
+        case "UP" => (piece._1, S.rotate(piece._2))
+        case "DOWN" => movePiece(piece, 0, 1)
+        case _ => piece
+      }
+      val next_world = TetrisWorld(next_piece, pile)
+      if (!collision(next_world)) next_world
+      else this
+    }
   }
-
+  
   // 3. collision
-  // 目的：
+  // 目的：受け取った世界で衝突が起きているかを判定する
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val (pileH, pileW) = S.size(world.pile)
+    val ((x, y), shape) = world.piece
+    
+    // 判定に用いる pile
+    val j_pile =
+      S.combHorizShapes(
+        S.combHorizShapes(
+          List.fill(pileH, 1)(NoColor),
+          world.pile
+        ),
+        List.fill(pileH, 1)(NoColor)
+      ) :+ List.fill(pileW + 2)(NoColor)
+    
+    S.overlap(
+      S.shiftSE(shape, x + 1, y),
+      j_pile
+    )
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pile から揃った行を削除して、それより上のブロックは行単位で落とした Shape を返す
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    val erase_pile = pile.filter(_.filter(_ != Transparent).length != pile(0).length)
+    List.fill(pile.length - erase_pile.length, pile(0).length)(Transparent) ++ erase_pile
   }
 }
 
@@ -94,10 +185,15 @@ object A extends App {
   // 新しいテトロミノの作成
   val r = new Random()
 
+  // 課題 8: 7 種類のミノを 1 セット(順番はランダム) としてセット毎に出現するようにする
+  var nextPieceList: List[S.Shape] = Nil
   def newPiece(): ((Int, Int), S.Shape) = {
     val pos = (WellWidth / 2 - 1, 0)
-    (pos,
-     List.fill(r.nextInt(4))(0).foldLeft(S.random())((shape, _) => shape))
+    if (nextPieceList == Nil) nextPieceList = Random.shuffle(S.allShapes)
+    
+    val (mino :: res) = nextPieceList
+    nextPieceList = res
+    (pos, mino)
   }
 
   // 最初のテトロミノ

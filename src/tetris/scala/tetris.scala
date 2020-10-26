@@ -91,7 +91,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
         val ((x, y), mino) = piece
         var next_world = TetrisWorld(movePiece(piece, 0, 1), pile)
         if (collision(next_world)) { // テトリミノの確定処理, 新たなテトリミノの生成
-          val next_pile = S.combine(pile, S.shiftSE(mino, x, y))
+          val next_pile = eraseRows(S.combine(pile, S.shiftSE(mino, x, y)))
           val new_piece = A.newPiece()
           next_world = TetrisWorld(new_piece, next_pile)
           if (collision(next_world)) TetrisWorld(((0, 0), List(List(Transparent))), next_pile)

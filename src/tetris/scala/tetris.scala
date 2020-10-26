@@ -68,7 +68,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     //下は課題１
     //TetrisWorld(((x, y+1), shape), pile)
     //下は課題4
-    if (y+a>=A.WellHeight) TetrisWorld(((x, y), shape), shape) else TetrisWorld(((x, y+1), shape), pile)
+    if (y+a==A.WellHeight) TetrisWorld(((x, y), shape), shape) else TetrisWorld(((x, y+1), shape), pile)
     //下は課題７
     /*
     if ((y+a>=A.WellHeight)||(collision(TetrisWorld(((x, y+1), shape), pile)))) {

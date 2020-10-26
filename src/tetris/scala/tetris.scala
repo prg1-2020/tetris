@@ -116,10 +116,10 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 3. collision
   // 目的：衝突が起きているかを判定
   def collision(world: TetrisWorld): Boolean = {
-    val ((x, y), shape)=piece
+    val ((x, y), shape)=world.piece
     val (shapey, shapex)=S.size(shape)
     val (h, w)=S.size(pile)
-    x<0 || x + shapex > w ||y + shapey > h || S.overlap(shape, pile)
+    x<0 || x + shapex > w ||y + shapey > h || S.overlap(shape, world.pile)
   }
 
   // 6. eraseRows

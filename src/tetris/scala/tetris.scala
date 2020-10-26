@@ -60,23 +60,54 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：落下中のテトリミノを１だけ下に動かす
+  /*def tick(): World = {
+    val ((x,y),shape)=piece 
+    TetrisWorld(((x,y+1),shape), pile)
+  }
+  */
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape)=piece
+    val (r,c)= S.size(shape)
+    if (y==10-r) TetrisWorld(((x,y),shape), pile)
+    else TetrisWorld(((x,y+1),shape), pile)
   }
-
+  
   // 2, 5. keyEvent
-  // 目的：
-  def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+  // 目的：キー入力に従って世界を更新する
+  /*def keyEvent(key: String): World = {
+    val ((x,y),shape)=piece
+    key match {case "RIGHT" =>TetrisWorld(((x+1,y),shape), pile)
+               case "LEFT"  =>TetrisWorld(((x-1,y),shape), pile)
+              //case "UP"    TetrisWorld(((x,y),S.rotate(shape) pile)
+               } 
   }
+  */
+  def keyEvent(key: String): World = {
+    val ((x,y),shape)=piece
+    key match {case "RIGHT" =>if (collision(TetrisWorld(((x+1,y),shape), pile))==true) TetrisWorld(((x,y),shape), pile)
+                              else TetrisWorld(((x+1,y),shape), pile)
+               case "LEFT"  =>if (collision(TetrisWorld(((x-1,y),shape), pile))==true) TetrisWorld(((x,y),shape), pile)
+                              else TetrisWorld(((x-1,y),shape), pile)
+               case "UP"    =>if(collision(TetrisWorld(((x,y),S.rotate(shape)), pile))==true) TetrisWorld(((x,y),shape), pile)
+                              else TetrisWorld(((x,y),S.rotate(shape)), pile)
+              }
+  }
+  
 
   // 3. collision
-  // 目的：
+  // 目的：受け取った世界で衝突が起きているか判定する
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x,y),shape1) = world.piece
+    val (r,c)= S.size(shape1)
+    val shape2 = world.pile
+    if (S.overlap(shape1,shape2)==true) true
+    else if (x<0) true
+    else if (x+c>10) true
+    else if (y+r>10) true
+    else false
   }
-
+  
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {

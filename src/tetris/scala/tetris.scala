@@ -69,7 +69,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
 
   def tick(): World = {
     val ((x,y), shape) = piece
-    if(collision(TetrisWorld(((x, y+1),shape),  pile))) TetrisWorld(((x, y),shape),  pile)
+    if(collision(TetrisWorld(((x, y+1),shape),  pile))) TetrisWorld(piece,  pile)
     else TetrisWorld(((x, y+1),shape),  pile)
   }
 
@@ -87,22 +87,21 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   */
   def keyEvent(key: String): World = {
     val ((x,y), shape) = piece
-    key match {
-      case "RIGHT" => if(collision(TetrisWorld(((x+1, y),shape), pile))) TetrisWorld(piece, pile)
-      else TetrisWorld(((x+1, y),shape),  pile)
-      case "LEFT" => if(collision(TetrisWorld(((x-1, y),shape), pile))) TetrisWorld(piece, pile)
-      else TetrisWorld(((x-1, y),shape),  pile)
-      case "UP" => if(collision(TetrisWorld(((x, y),S.rotate(shape)), pile))) TetrisWorld(piece, pile)
-      else TetrisWorld(((x, y),S.rotate(shape)), pile) 
+    val ((nextX, nextY), nextS) = key match {
+      case "RIGHT" => ((x+1, y), shape)
+      case "LEFT" => ((x-1, y), shape)
+      case "UP" => ((x, y), S.rotate(shape))
     }
+    val NextWorld = TetrisWorld(((nextX, nextY),nextS), pile)
+    if(collision(NextWorld)) TetrisWorld(piece, pile) else NextWorld
   }
 
   // 3. collision
-  // 目的：
+  // 目的：受け取った世界で衝突が起きているかを判定する。
   def collision(world: TetrisWorld): Boolean = {
-    val ((x,y), shape) = piece
-      if(x < 0 || x + S.maxRowLength(shape) > 10) true
-      else if(y + shape.length > 9) true
+    val ((x,y), shape) = world.piece
+      if(x < 0 || x + S.maxRowLength(shape) > A.WellWidth) true
+      else if(y + shape.length > A.WellHeight) true
       else if(S.overlap(shape,pile)) true
       else false
   }

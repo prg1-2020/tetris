@@ -332,3 +332,70 @@ something's wrong: no file:///C:/Users/tomohiro/tetris/src/tetris/scala/shape.sc
 2020.10.25 11:56:27 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
 2020.10.25 12:01:55 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
 2020.10.25 12:51:30 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+10åé 25, 2020 1:22:10 åﬂå„ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+èÓïÒ: Unsupported notification method: $/setTraceNotification
+2020.10.25 13:26:54 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.25 13:28:23 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.25 13:28:23 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 13:29:10 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.25 13:33:22 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 13:40:19 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 13:43:18 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 13:43:21 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 13:47:45 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:06:15 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:07:17 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.25 14:07:17 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:07:51 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.25 14:07:51 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:08:28 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:09:29 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:10:53 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:12:33 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:16:13 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:19:16 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:20:28 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:24:17 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.25 14:24:17 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:24:40 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:25:28 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 14:36:43 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 15:18:18 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 16:22:38 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 16:25:28 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 16:27:46 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 16:34:21 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 17:46:37 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.25 17:46:37 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 17:56:05 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 17:59:22 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 18:00:31 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 18:04:23 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 18:07:56 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 18:09:12 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 18:15:12 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.25 18:15:54 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+10åé 26, 2020 12:54:29 åﬂå„ org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+åxçê: Unmatched cancel notification for request id 16321
+10åé 26, 2020 12:56:25 åﬂå„ org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+åxçê: Unmatched cancel notification for request id 16393
+10åé 26, 2020 12:56:25 åﬂå„ org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+åxçê: Unmatched cancel notification for request id 16394
+2020.10.26 12:56:38 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.26 12:57:00 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.26 12:58:18 WARN  code navigation does not work for the file 'C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala' because it doesn't belong to a build target.
+2020.10.26 12:58:18 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.26 12:59:24 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.26 12:59:43 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.26 13:01:42 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.26 13:01:57 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.10.26 14:12:16 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.26 14:12:36 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.26 14:13:09 WARN  no build target for: C:\Users\tomohiro\lx00\hello\hello.scala
+10åé 26, 2020 2:13:12 åﬂå„ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+èÓïÒ: Unsupported notification method: $/setTraceNotification
+2020.10.26 14:19:12 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.26 14:19:33 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.26 14:19:40 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.26 14:20:12 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\shape.scala
+2020.10.26 15:16:46 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala

@@ -62,20 +62,66 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape) = piece
+    /* kadai 1
+    val new_piece = ((x,y+1),shape)
+    */
+
+    def make_new_y(y:Int,cols:Int):Int={
+        if (y+cols >= 10) y
+        else y+1
+    }
+    val new_piece = ((x,make_new_y(y,shape.length)),shape)
+    TetrisWorld(new_piece,pile)
   }
 
   // 2, 5. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+      val ((x,y),shape) = piece
+       //kadai2
+       /*
+      key match{
+          case "RIGHT" => TetrisWorld(((x+1,y),shape),pile)
+          case "LEFT" => TetrisWorld(((x-1,y),shape),pile)
+          case "UP" => TetrisWorld(((x,y),S.rotate(shape)),pile)
+      }
+      */
+      
+
+      def keyEvent_temp(key:String):TetrisWorld={
+          key match{
+            case "RIGHT" => TetrisWorld(((x+1,y),shape),pile)
+            case "LEFT" => TetrisWorld(((x-1,y),shape),pile)
+            case "UP" => TetrisWorld(((x,y),S.rotate(shape)),pile)
+        }
+    }
+    val temp_world = keyEvent_temp(key)
+
+    if (collision(keyEvent_temp(key))) TetrisWorld(((x,y),shape),pile)
+    else keyEvent_temp(key)
+    
   }
 
+  
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+      //bool(1~4) をifで判定
+    val TetrisWorld(piece,pile) = world
+    val ((x,y),shape) = piece
+    val piece_locate = S.shiftSE(shape,x,y)
+    val (rows,cols) = S.size(shape)
+    //それぞれの条件(エラー存在＝＞true)
+    S.overlap(S.shiftSE(shape,x,y),pile)
+    val bool1 = S.overlap(pile,S.shiftSE(shape,x,y)) //被ってたらtrue
+    val bool2 = x<0
+    val bool3 = (cols + x) > A.WellWidth
+    val bool4 = (rows + y) > A.WellHeight
+
+    bool1 || bool2 || bool3 || bool4
   }
+
 
   // 6. eraseRows
   // 目的：

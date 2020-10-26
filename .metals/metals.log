@@ -462,3 +462,4 @@ java.lang.NullPointerException
 2020.10.26 22:24:58 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
 10月 26, 2020 10:25:18 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
+2020.10.26 22:45:13 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala

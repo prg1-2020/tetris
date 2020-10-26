@@ -98,7 +98,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def collision(world: TetrisWorld): Boolean = {
     val ((x,y),mino) = world.piece
     val (r,c) = S.size(mino)
-    x < 0 || x+c > 10 || y+r > 10 || S.overlap(S.shiftSE(mino,x,y),pile)
+    x < 0 || x+c > 10 || y+r > 10 || S.overlap(S.shiftSE(mino,x,y),world.pile)
   }
 
   // 6. eraseRows

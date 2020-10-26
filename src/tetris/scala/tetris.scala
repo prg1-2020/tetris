@@ -60,21 +60,65 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：時間を１だけ進める
+
+  //課題4
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape)=piece
+    val (h,w) = S.size(shape)
+    if(y+h<10) TetrisWorld(((x,y+1),shape), pile)
+    else TetrisWorld(((x,y),shape), pile)
+
   }
+/*課題１
+  def tick(): World = {
+    val ((x,y),shape)=piece
+    TetrisWorld(((x,y+1),shape), pile)
+  }
+*/
 
   // 2, 5. keyEvent
-  // 目的：
-  def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
-  }
+  // 目的：入力を受け取りテトロミノを動かす
+def newWorld(key:String):TetrisWorld={
+  val ((x,y),shape)=piece
+  key match{
+    case "RIGHT"=>TetrisWorld(((x+1,y),shape), pile)
+    case "LEFT"=>TetrisWorld(((x-1,y),shape), pile)
+    case "UP" =>TetrisWorld(((x,y),S.rotate(shape)),pile) 
+    }
+}
+def keyEvent(key: String): World = {
 
+    val ((x,y),shape)=piece
+    val new_World = newWorld(key)
+    if(collision(new_World) == true) TetrisWorld(((x,y),shape), pile)
+    else new_World 
+   }
+
+
+/*課題2
+def keyEvent(key: String): World = {
+    val ((x,y),shape)=piece
+    key match{
+    case "RIGHT"=>TetrisWorld(((x+1,y),shape), pile)
+    case "LEFT"=>TetrisWorld(((x-1,y),shape), pile)
+    case "UP" =>TetrisWorld(((x,y),S.rotate(shape)),pile)  
+    }
+  }
+ 
+    
+
+
+*/  
   // 3. collision
   // 目的：
+  
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x,y),shape)= world.piece
+    val (h,w) = S.size(shape)
+    val (h_pile,w_pile) = S.size(world.pile)
+    val shape_extend = S.shiftSE(shape,x,y) //左上を揃える
+    (x< 0)||(x+w > h_pile)||(y+h> w_pile) ||S.overlap(shape_extend,pile)
   }
 
   // 6. eraseRows
@@ -97,7 +141,7 @@ object A extends App {
   def newPiece(): ((Int, Int), S.Shape) = {
     val pos = (WellWidth / 2 - 1, 0)
     (pos,
-     List.fill(r.nextInt(4))(0).foldLeft(S.random())((shape, _) => shape))
+     List.fill(r.nextInt(9))(0).foldLeft(S.random())((shape, _) => shape))
   }
 
   // 最初のテトロミノ

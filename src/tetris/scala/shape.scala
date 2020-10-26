@@ -351,6 +351,7 @@ object ShapeTest extends App {
   // 6. rotate
   println("rotate")
   println(rotate(List(List(Red), List(Blue))) == List(List(Red, Blue)))
+  //test
   println(rotate(List(
     List(Red,Yellow,Red,Red),
     List(Blue,Blue,Green,Green),

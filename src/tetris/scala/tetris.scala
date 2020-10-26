@@ -59,22 +59,57 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     drawShape(pos, shape)
   }
 
-  // 1, 4, 7. tick
+/*
+  // 1. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    val new_piece = ((x, y + 1), shape)
+    TetrisWorld(new_piece, pile)
   }
 
-  // 2, 5. keyEvent
+  // 2. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    key match {
+      case "RIGHT" => TetrisWorld(((x + 1, y), shape), pile)
+      case "LEFT" => TetrisWorld(((x - 1, y), shape), pile)
+      case "UP" => TetrisWorld(((x + 1, y), S.rotate(shape)), pile)
+      case _ => TetrisWorld(piece, pile)
+    }
   }
+*/
 
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), s) = world.piece
+    val (r, c) = S.size(s)
+    (x < 0) || (x + c > A.WellWidth) || (y + r > A.WellHeight) || (S.overlap(S.shiftSE(s, x, y), world.pile))
+  }
+
+  // 4. tick
+  // 目的：
+  def tick(): World = {
+    val ((x, y), s) = piece
+    val new_World = TetrisWorld(((x, y + 1), s), pile)
+    if (collision(new_World)) TetrisWorld(piece, pile)
+    else new_World
+  }
+
+  // 5. keyEvent
+  // 目的：
+  def keyEvent(key: String): World = {
+    val ((x, y), s) = piece
+    val newWorld = (key match {
+      case "RIGHT" => TetrisWorld(((x + 1, y), s), pile)
+      case "LEFT" => TetrisWorld(((x - 1, y), s), pile)
+      case "UP" => TetrisWorld(((x, y), S.rotate(s)), pile)
+      case _ => TetrisWorld(piece, pile)
+    })
+    if (collision(newWorld)) TetrisWorld(piece, pile)
+    else newWorld
   }
 
   // 6. eraseRows

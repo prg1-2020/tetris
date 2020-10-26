@@ -222,3 +222,75 @@ java.lang.NullPointerException
 2020.10.19 21:54:53 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
 2020.10.19 21:55:30 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
 2020.10.19 21:55:47 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.20 14:34:53 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+10月 20, 2020 2:34:54 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 10788
+2020.10.20 14:41:42 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 14:42:24 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 14:42:27 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 14:42:53 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 14:42:55 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 14:46:58 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+10月 20, 2020 3:09:06 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 11703
+2020.10.20 15:10:34 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 15:11:36 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.20 15:11:49 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 15:12:43 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 15:12:49 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 15:13:07 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.20 15:13:07 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 15:13:07 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.20 15:13:11 INFO  shutting down Metals
+2020.10.20 15:13:34 INFO  started: Metals version 0.9.4 in workspace '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris' for client vscode.
+2020.10.20 15:13:38 INFO  time: initialize in 4.4s
+2020.10.20 15:13:40 INFO  skipping build import with status 'Requested'
+2020.10.20 15:13:50 INFO  no build target: using presentation compiler with only scala-library
+2020.10.20 15:13:50 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:25:01 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/support/scala/world.scala
+2020.10.26 22:31:57 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:31:59 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:32:20 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+10月 26, 2020 10:34:37 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 889
+2020.10.26 22:36:22 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:36:40 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:36:40 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:36:40 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:37:22 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:37:26 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:37:28 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:37:42 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:37:59 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:38:02 INFO  shutting down Metals
+2020.10.26 22:38:41 INFO  started: Metals version 0.9.4 in workspace '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris' for client vscode.
+2020.10.26 22:38:44 INFO  time: initialize in 2.31s
+2020.10.26 22:38:45 INFO  skipping build import with status 'Requested'
+2020.10.26 22:38:50 INFO  no build target: using presentation compiler with only scala-library
+2020.10.26 22:38:50 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:40:33 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:40:41 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+10月 26, 2020 10:41:17 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 113
+10月 26, 2020 10:43:10 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 342
+2020.10.26 22:43:20 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:43:20 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+10月 26, 2020 10:44:47 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 556
+2020.10.26 22:45:27 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:45:27 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+10月 26, 2020 10:45:32 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 636
+2020.10.26 22:46:19 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:46:25 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:47:00 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:47:11 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:47:11 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:47:15 WARN  code navigation does not work for the file '/Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.26 22:47:15 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:47:22 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala
+2020.10.26 22:47:51 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.26 22:48:34 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.26 22:49:11 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/shape.scala
+2020.10.26 22:49:14 WARN  no build target for: /Users/kawamurayuya/Desktop/授業/プログラミング第一/tetris/src/tetris/scala/tetris.scala

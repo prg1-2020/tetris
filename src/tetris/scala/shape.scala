@@ -186,8 +186,8 @@ object ShapeLib {
       val (rows2,cols2) = size(s2)
       val max_rows = max(rows1,rows2)
       val max_cols = max(cols1,cols2)
-      val S1 = shiftNW(s1,max_rows,max_cols)
-      val S2 = shiftNW(s2,max_rows,max_cols)
+      val S1 = padTo(s1,max_rows,max_cols)
+      val S2 = padTo(s2,max_rows,max_cols)
       (List.range(0,max_rows)) map { i =>
         (List.range(0,max_cols)) map { j =>
           if (S1(i)(j) != Transparent && S2(i)(j) != Transparent) Red
@@ -210,8 +210,8 @@ object ShapeLib {
     val (rows2,cols2) = size(s2)
     val max_rows = max(rows1,rows2)
     val max_cols = max(cols1,cols2)
-    val S1 = shiftNW(s1,max_rows,max_cols)
-    val S2 = shiftNW(s2,max_rows,max_cols)
+    val S1 = padTo(s1,max_rows,max_cols)
+    val S2 = padTo(s2,max_rows,max_cols)
     (List.range(0,max_rows)) map { i =>
       (List.range(0,max_cols)) map { j =>
         if(S1(i)(j) != Transparent) S1(i)(j)

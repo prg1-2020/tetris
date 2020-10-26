@@ -178,24 +178,7 @@ object ShapeLib {
       case r :: rs => shape.foldRight(duplicate(r.length,Nil): Shape)((x: Row,t: Shape) => subrotate(t,x))
     }
   }  
-  /*
   
-  // 目的：受け取ったshapeを反時計回りに90度回転させたshapeを返す
-  // 契約：引数のshapeが関数wellStructuredでtureを返す
-  def rotate(shape:List[Row]): List[Row]={
-      def r(shape:List[Row],b:List): List
-      shape match{
-        case Nil =>Nil
-        case a::as =>as match{
-                    case Nil=>Nil
-                    case b::bs => r(as,) 
-                  }
-      }
-    }
-  */
-
-
-
   // 7. shiftSE
   // 目的：受け取ったshapeを右にｘ、下にｙずらしたshapeを返す
   def shiftSE(a:List[Row],x:Int,y:Int): List[Row]={

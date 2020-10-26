@@ -87,7 +87,8 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape)
     val movedKey = key match {
       case "RIGHT" => TetrisWorld(((x + 1, y), shape), pile)
       case "LEFT"  => TetrisWorld(((x - 1, y), shape), pile)
-      case "UP"    => TetrisWorld(((x, y), S.rotate(shape)), pile)
+      case "Z"     => TetrisWorld(((x, y), S.rotate(shape)), pile)
+      case "UP"    => dropShape(TetrisWorld(piece, pile))
       case _       => TetrisWorld(piece, pile)
     }
     if (collision(movedKey)) TetrisWorld(piece, pile)
@@ -114,6 +115,13 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape)
       A.WellWidth
     ).reverse
   }
+
+  def dropShape(world: TetrisWorld): TetrisWorld = {
+    val ((x, y), shape) = piece
+    val newWorld = TetrisWorld(((x, y + 1), shape), pile)
+    if (collision(newWorld)) world
+    else dropShape(newWorld)
+  }
 }
 
 // ゲームの実行
@@ -139,5 +147,5 @@ object A extends App {
     TetrisWorld(piece, List.fill(WellHeight)(List.fill(WellWidth)(Transparent)))
 
   // ゲームの開始
-  world.bigBang(BlockSize * WellWidth, BlockSize * WellHeight, 0.3)
+  world.bigBang(BlockSize * WellWidth, BlockSize * WellHeight, 1.0)
 }

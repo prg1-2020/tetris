@@ -79,7 +79,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   //目的:下に移動できなくなったときに適切な処理を行う
   def tick(): World = {
     val ((x,y),shape) = piece
-    if(collision(TetrisWorld(piece,pile))) TetrisWorld(piece,pile)//ゲームオーバー
+    if(S.overlap(pile,S.shiftSE(shape,x,y))) TetrisWorld(piece,pile)//ゲームオーバー
     else if(collision(TetrisWorld(((x,y+1),shape),pile))) {
       val newpile = eraseRows(S.combine(pile,S.shiftSE(shape,x,y)))
       TetrisWorld(A.newPiece(),newpile)

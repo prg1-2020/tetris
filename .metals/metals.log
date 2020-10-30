@@ -1051,3 +1051,86 @@ something's wrong: no file:///Users/endoutomohiro/Documents/GitHub/tetris/src/te
 2020.10.25 16:50:30 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
 10月 25, 2020 4:51:06 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
+2020.10.25 16:53:46 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 16:54:04 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+10月 25, 2020 4:56:09 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 3659
+2020.10.25 16:56:19 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:00:09 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:01:29 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:02:26 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:03:44 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:04:19 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:05:43 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:06:11 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:06:34 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:09:02 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:09:27 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:11:43 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:12:37 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:14:13 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:16:00 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:17:01 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:17:06 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:19:13 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.25 17:21:48 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:27:48 WARN  code navigation does not work for the file '/Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.27 14:28:08 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:30:13 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:30:38 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:41:16 WARN  code navigation does not work for the file '/Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.27 14:41:16 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:41:34 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:42:13 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:42:25 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:42:33 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+10月 27, 2020 2:48:46 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 5643
+2020.10.27 14:51:53 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:52:10 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:53:15 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:53:33 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:54:01 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:54:19 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:54:42 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:55:16 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:55:44 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:57:38 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+10月 27, 2020 2:57:42 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 6360
+2020.10.27 14:57:43 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 14:57:56 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 15:00:05 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 15:01:40 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 15:04:03 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 15:12:11 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 16:41:58 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.27 16:45:53 WARN  code navigation does not work for the file '/Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.10.27 16:45:53 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/shape.scala
+2020.10.27 16:47:22 WARN  code navigation does not work for the file '/Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.27 16:47:37 WARN  code navigation does not work for the file '/Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.27 16:50:04 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 09:59:42 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/shape.scala
+10月 28, 2020 9:59:43 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 6741
+2020.10.28 10:00:29 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 10:00:36 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 10:03:52 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 10:07:51 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 10:14:49 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 10:18:42 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 10:19:19 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+10月 28, 2020 11:08:59 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 7126
+2020.10.28 11:09:11 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 11:09:26 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 11:09:46 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.28 11:12:48 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+10月 29, 2020 12:22:49 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 7245
+2020.10.30 12:44:44 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+10月 30, 2020 12:45:12 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 7319
+2020.10.30 12:45:18 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala
+2020.10.30 12:45:38 WARN  code navigation does not work for the file '/Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 12:46:30 WARN  no build target for: /Users/endoutomohiro/Documents/GitHub/tetris/src/tetris/scala/tetris.scala

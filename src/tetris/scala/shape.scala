@@ -261,7 +261,6 @@ object ShapeLib {
 
   // 10. overlap
   // 目的：２つのshapeが重なりを持つかを判断する
-
   // 定義
   def overlap(shape1: Shape, shape2: Shape): Boolean = {
 

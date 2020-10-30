@@ -20,6 +20,18 @@ import tetris.{ShapeLib => S}
 
 // テトリスを動かすための関数
 case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends World() {
+  // ゲームウィンドウとブロックのサイズ
+  val WellWidth = 10
+  val WellHeight = 10
+  val BlockSize = 30
+  // 新しいテトロミノの作成
+  val r = new Random()
+
+  def newPiece(): ((Int, Int), S.Shape) = {
+    val pos = (WellWidth / 2 - 1, 0)
+    (pos,
+     List.fill(r.nextInt(4))(0).foldLeft(S.random())((shape, _) => shape))
+  }
 
   // マウスクリックは無視
   def click(p: sgeometry.Pos): World = this
@@ -64,14 +76,30 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
 /*  def tick(): World = {
     val cur_x = piece._1._1
     val cur_y = piece._1._2
+    TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile)
+  }
+*/
+/*  def tick(): World = {
+    val cur_x = piece._1._1
+    val cur_y = piece._1._2
     if(collision(TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile))) return this
     TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile)
   }
 */
   def tick(): World = {
+    if(piece._2 == List(List(Transparent))) return this
     val cur_x = piece._1._1
     val cur_y = piece._1._2
-    if(collision(TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile))) return this
+    if(collision(TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile))) {
+      val cpiece = S.shiftSE(piece._2, cur_x, cur_y)
+      val nextPile = eraseRows(S.combine(pile, cpiece))
+      val nextWorld = TetrisWorld(newPiece(), nextPile)
+      if(collision(nextWorld)){
+        println("Game Over")
+        return TetrisWorld(((0, 0), List(List(Transparent))), nextPile)
+      }
+      else return nextWorld
+    }
     TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile)
   }
 
@@ -95,6 +123,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
       case "RIGHT" | "l" => TetrisWorld(((cur_x + 1, cur_y),piece._2) , pile)
       case "LEFT" | "j" => TetrisWorld(((cur_x - 1, cur_y), piece._2) , pile)
       case "UP" => TetrisWorld(((cur_x, cur_y), S.rotate(piece._2)) , pile)
+      case "DOWN" => TetrisWorld(((cur_x, cur_y + 1), piece._2) , pile)
       case _ => TetrisWorld(piece, pile)
     }
     if(collision(nextWorld)) {
@@ -120,10 +149,13 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pile を受け取ったら、揃った行を削除する
   def eraseRows(pile: S.Shape): S.Shape = {
-    
-    pile
+    def denseRow(row: S.Row): Boolean = {
+      row.foldLeft(true)((p, block) => p && (block != Transparent))
+    }
+    val condensedPile = pile.foldRight(List[List[S.Block]]())((row, nextPile) => if(denseRow(row)) nextPile else row::nextPile)
+    List.fill(WellHeight - condensedPile.length)(List.fill(WellWidth)(Transparent)) ++ condensedPile
   }
 }
 

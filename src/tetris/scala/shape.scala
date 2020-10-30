@@ -115,18 +115,19 @@ object ShapeLib {
       (shape.length,maxRowLength(shape))
   }
 
-
-
-  // 4. blockCount
-  // 目的：受け取った shape に含まれる空でないブロックの数を返す
-  def blockCount(shape : Shape): Int = {
-    def blockCountPerRow(row : Row): Int = {
+  // 4. blockCountとtetris.scalaで使う。
+  // 目的：受け取ったRowｎ含まれる空でないブロックの数を返す
+  def blockCountPerRow(row : Row): Int = {
       row match {
       case Nil =>  0
       case x :: xs => if(x == Transparent) blockCountPerRow(xs)
                       else 1 + blockCountPerRow(xs)
       }
     }
+
+  // 4. blockCount
+  // 目的：受け取った shape に含まれる空でないブロックの数を返す
+  def blockCount(shape : Shape): Int = {
     shape match {
       case Nil => 0
       case x :: xs => blockCountPerRow(x) + blockCount(xs)

@@ -66,13 +66,19 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val ((x,y), shape) = piece
     TetrisWorld(((x, y+1),shape),  pile)
   } */
-
+  /* 4.
   def tick(): World = {
     val ((x,y), shape) = piece
     if(collision(TetrisWorld(((x, y+1),shape),  pile))) TetrisWorld(piece,  pile)
     else TetrisWorld(((x, y+1),shape),  pile)
   }
-
+  */
+  def tick(): World = {
+    val ((x,y), shape) = piece
+    val NewWorld = TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(shape,x,y), pile)))
+    if(collision(TetrisWorld(((x, y+1),shape), pile))) NewWorld
+    else TetrisWorld(((x, y+1),shape), pile)
+  }
   // 2, 5. keyEvent
   // 目的：キー入力に従って世界を更新する。
   /* 2.
@@ -102,14 +108,20 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val ((x,y), shape) = world.piece
       if(x < 0 || x + S.maxRowLength(shape) > A.WellWidth) true
       else if(y + shape.length > A.WellHeight) true
-      else if(S.overlap(shape,pile)) true
+      else if(S.overlap(S.shiftSE(shape,x,y),world.pile)) true
       else false
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pile を受け取ったら、揃った行を削除する。
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def eraseOnly(pile: S.Shape): S.Shape = {
+      pile match {
+        case Nil => Nil
+        case r::rs => if(S.blockCountPerRow(r)==A.WellWidth) eraseOnly(rs) else r::eraseOnly(rs)
+      }
+    }
+  S.empty(A.WellHeight-eraseOnly(pile).length,A.WellWidth) ++ eraseOnly(pile) 
   }
 }
 

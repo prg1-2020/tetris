@@ -69,7 +69,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     TetrisWorld(p, pile)
   }
   */
-
+  /*
   // 4.tick
   // 目的：tickをテトロミノが一番下まで来たらそれ以上落下しないようにする改良する
   def tick(): World = {
@@ -77,6 +77,20 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val p = ((x,y+1),shape)
     val w = TetrisWorld(p, pile)
     if (collision(w)) TetrisWorld(piece,pile) else w
+  }
+  */
+  // 7.tick
+  // 目的：tickをテトロミノが下に移動できなくなったときに適切な処理をするように改良する
+  def tick(): World = {
+    val ((x,y),shape) = piece
+    val p = ((x,y+1),shape)
+    val w = TetrisWorld(p, pile)
+    if (collision(w)){
+      val z = TetrisWorld(A.newPiece(),eraseRows(S.combine(S.shiftSE(shape,x,y),pile)))
+      if (collision(z))  z //endOfWorld("Game Over")
+      else z
+    }
+    else w
   }
 
   // 2, 5. keyEvent
@@ -115,11 +129,14 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val (m,n) = S.size(shape)
     x < 0 || x + n > A.WellWidth || y + m > A.WellHeight || S.overlap(pile,S.shiftSE(shape,x,y))
   }
-
+  
   // 6. eraseRows
-  // 目的：
+  // 目的：揃った行を消去する
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def rowcheck(row:S.Row):Boolean ={
+      row.contains(Transparent) || row.length != A.WellWidth
+    }
+    S.empty(A.WellHeight-pile.count(rowcheck),A.WellWidth)++pile.filter(rowcheck)
   }
 }
 

@@ -62,15 +62,21 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：(課題１)pieceを１ブロック下げる 
   //(課題４)pieceが一番下に達したらそれ以上落下しないようにする
+  //(課題７)pieceが下に移動できなくなったときに、適切な処理が行われるようにする
   def tick(): World = {
     /*課題１
     val ((x,y), s) = piece
     TetrisWorld(((x, y+1), s), pile)*/
-
+    /*
     //課題４
     val ((x,y), s) = piece
     val (h, w) = S.size(s)
     if (y+h == A.WellHeight) TetrisWorld(piece, pile)
+    else TetrisWorld(((x, y+1), s), pile)
+    */
+    //課題７
+    val ((x,y), s) = piece
+    if (collision(TetrisWorld(((x, y+1), s), pile))) TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(s, x, y),pile)))
     else TetrisWorld(((x, y+1), s), pile)
   }
 
@@ -99,15 +105,18 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def collision(world: TetrisWorld): Boolean = {
     val ((x,y), s) = world.piece
     val (h, w) = S.size(s)
-    if(x<0 || A.WellWidth < x + w || A.WellHeight <= y + h || S.overlap(S.shiftSE(s, x, y), world.pile)) true
+    if(x<0 || A.WellWidth < x + w || A.WellHeight < y + h || S.overlap(S.shiftSE(s, x, y), world.pile)) true
     else 
     false
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pileを受け取ったら、揃った行を削除する
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def check(r: S.Row): Boolean = {
+      r.contains(Transparent) || r.length != A.WellWidth
+    }
+    S.empty(A.WellHeight-pile.count(check), A.WellWidth) ++ pile.filter(check)
   }
 }
 

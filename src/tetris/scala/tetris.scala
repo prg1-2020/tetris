@@ -75,8 +75,15 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     else TetrisWorld(((x, y+1), s), pile)
     */
     //課題７
-    val ((x,y), s) = piece
-    if (collision(TetrisWorld(((x, y+1), s), pile))) TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(s, x, y),pile)))
+    val ((x,y),s) = piece
+    val nw = TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(s, x, y),pile)))
+    if (collision(TetrisWorld(((x, y+1), s), pile))) {
+      if (collision(nw)) {
+        println("Game Over")
+        nw
+      }
+      else nw
+    }
     else TetrisWorld(((x, y+1), s), pile)
   }
 

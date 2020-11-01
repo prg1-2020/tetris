@@ -440,3 +440,31 @@ java.lang.StringIndexOutOfBoundsException: offset 2038, count -2, length 3635
 2020.11.01 20:35:09 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
 11月 01, 2020 8:35:39 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
+2020.11.01 20:38:22 INFO  shutting down Metals
+2020.11.01 21:22:58 INFO  started: Metals version 0.9.4 in workspace '/Users/kyosuke.d/classes/prg01/tetris' for client vscode.
+2020.11.01 21:22:59 INFO  time: initialize in 1.32s
+2020.11.01 21:23:00 INFO  skipping build import with status 'Requested'
+2020.11.01 21:23:03 INFO  no build target: using presentation compiler with only scala-library
+2020.11.01 21:23:03 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:25:45 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.01 21:25:45 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:25:45 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.01 21:28:24 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:29:45 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.01 21:29:56 WARN  code navigation does not work for the file '/Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.01 21:29:56 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:31:35 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:32:28 INFO  shutting down Metals
+2020.11.01 21:36:52 INFO  started: Metals version 0.9.4 in workspace '/Users/kyosuke.d/classes/prg01/tetris' for client vscode.
+2020.11.01 21:36:53 INFO  time: initialize in 1.45s
+2020.11.01 21:36:54 INFO  skipping build import with status 'Requested'
+2020.11.01 21:36:57 INFO  no build target: using presentation compiler with only scala-library
+2020.11.01 21:36:57 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:39:22 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:42:37 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:42:49 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:43:01 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:48:01 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+2020.11.01 21:48:40 WARN  no build target for: /Users/kyosuke.d/classes/prg01/tetris/src/tetris/scala/tetris.scala
+11月 01, 2020 9:48:42 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

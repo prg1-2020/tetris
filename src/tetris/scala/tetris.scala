@@ -66,9 +66,8 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val ((x, y), shape) = piece
     TetrisWorld(((x, y+1), shape), pile)
   }
-  */
 
-  // 4, 7. tick
+  // 4. tick
   // 目的：テトロミノが一番下に到達したとき、そこで停止する
   def tick(): World = {
     val ((x, y), shape) = piece
@@ -76,6 +75,24 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
       TetrisWorld(((x, y+1), shape), pile)
     } else {
       TetrisWorld(piece, pile)
+    }
+  }
+  */
+
+  // 7. tick
+  // 目的：テトロミノが一番下に到達したとき、そこで停止する
+  def tick(): World = {
+    val ((x, y), shape) = piece
+    if (!collision(TetrisWorld(((x, y+1), shape), pile))) {
+      TetrisWorld(((x, y+1), shape), pile)
+    } else {
+      val newPile = S.combine(pile, S.shiftSE(shape, x, y))
+      val P = A.newPiece()
+      if (!collision(TetrisWorld(P, eraseRows(newPile)))) {
+        TetrisWorld(P, eraseRows(newPile))
+      } else {
+        TetrisWorld(((x, y), Nil), newPile) // endOfWorldの代わり
+      }
     }
   }
 
@@ -118,6 +135,13 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
           TetrisWorld(piece, pile)
         }
       }
+      case ("DOWN") => {
+        if(!collision(TetrisWorld(((x, y+1), shape), pile))) {
+          TetrisWorld(((x, y+1), shape), pile)
+        } else {
+          TetrisWorld(piece, pile)
+        }
+      }
     }
   }
 
@@ -136,7 +160,27 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    // 6-1. eraser
+    // 目的：埋まった行を消してその分詰める
+    def eraser(p: S.Shape): S.Shape = {
+      // 6-2. checkFullRow
+      // 目的：受け取ったrowが一列ブロックで埋まっているか調べる
+      def checkFullRow(row: S.Row): Boolean = {
+        row match {
+          case Nil => true
+          case r :: rs => (r != Transparent) && checkFullRow(rs)
+        }
+      }
+      p match {
+        case Nil => Nil
+        case x :: xs => {
+          if (checkFullRow(x)) eraser(xs)
+          else x :: eraser(xs)
+        }
+      }
+    }
+    val pileX = eraser(pile)
+    S.shiftSE(pileX, 0, 10 - pileX.length)
   }
 }
 

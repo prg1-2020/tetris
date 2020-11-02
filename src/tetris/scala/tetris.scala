@@ -60,21 +60,46 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：時間経過に応じて世界を更新する。
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape) = piece
+    val (a,b) = S.size(shape)
+    if (y+a >= A.WellHeight) TetrisWorld(piece, pile) 
+    else TetrisWorld(((x,y+1),shape), pile)
   }
+  /*課題1
+    def tick(): World = {
+    val ((x,y),shape) = piece
+    TetrisWorld(((x,y+1),shape), pile)
+  }*/
+
 
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：キー入力に従って世界を更新する。
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape) = piece  
+    val w = TetrisWorld(piece,pile)
+    val wr = TetrisWorld(((x+1,y),shape),pile)
+    val wl = TetrisWorld(((x-1,y),shape),pile)
+    val wro = TetrisWorld(((x,y),S.rotate(shape)),pile)
+    key match{
+    case "RIGHT" =>  
+     if (collision(wr)) w else wr
+    case "LEFT" => 
+     if (collision(wl)) w else wl
+    case "UP" => 
+     if (collision(wro)) w else wro
+    }
   }
 
   // 3. collision
-  // 目的：
+  // 目的：受け取った世界で衝突が起きているか判定する。
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val TetrisWorld(piece,pile) = world
+    val ((x,y),shape) = piece
+    val (a,b) = S.size(shape) 
+   (x < 0)||((x+b) > A.WellWidth)||((y+a)>A.WellHeight)||(S.overlap(S.shiftSE(shape,x,y),pile))
+    
   }
 
   // 6. eraseRows

@@ -70,7 +70,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     //if (y+a==A.WellHeight) TetrisWorld(((x, y), shape), shape) else TetrisWorld(((x, y+1), shape), pile)
     //課題７
     //ゲームオーバーはゲームが見かけ上停止する形式での実装
-    //shapeがTransparentなpieceであることをゲームオーバーの現れとしている
+    //shapeがList(List(Transparent))なpieceであることをゲームオーバーの現れとしている
     if (shape == List(List(Transparent))) TetrisWorld(piece, pile) 
     if ((collision(TetrisWorld(((x, y+1), shape), pile)))) {
       val afterpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
@@ -79,7 +79,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
       if (collision(TetrisWorld(nextPiece, afterpile))) {
         //指示に沿ってendOfWorldを入れているが効果はない
         if(true) endOfWorld("Game Over")
-        //ゲームオーバーを示すやり方として、Transparentなブロックをpieceとして見かけ上動かなくしている
+        //ゲームオーバーを示すやり方として、shapeがList(List(Transparent))なpieceを使い、見かけ上動かなくしている
         TetrisWorld(((1, 1), List(List(Transparent))), afterpile)
       } 
       else nextWorld

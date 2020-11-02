@@ -60,27 +60,83 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  /*
+  // 1.tick
+  // 目的：テトロミノを１ずつ下に落下させる(突き抜けて構わない)
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape) = piece
+    val p = ((x,y+1),shape)
+    TetrisWorld(p, pile)
+  }
+  */
+  /*
+  // 4.tick
+  // 目的：tickをテトロミノが一番下まで来たらそれ以上落下しないようにする改良する
+  def tick(): World = {
+    val ((x,y),shape) = piece
+    val p = ((x,y+1),shape)
+    val w = TetrisWorld(p, pile)
+    if (collision(w)) TetrisWorld(piece,pile) else w
+  }
+  */
+  // 7.tick
+  // 目的：tickをテトロミノが下に移動できなくなったときに適切な処理をするように改良する
+  def tick(): World = {
+    val ((x,y),shape) = piece
+    val p = ((x,y+1),shape)
+    val w = TetrisWorld(p, pile)
+    if (collision(w)){
+      val z = TetrisWorld(A.newPiece(),eraseRows(S.combine(S.shiftSE(shape,x,y),pile)))
+      if (collision(z))  z //endOfWorld("Game Over")
+      else z
+    }
+    else w
   }
 
   // 2, 5. keyEvent
-  // 目的：
+  /*
+  // 2. keyEvent
+  // 目的：キー入力に応じてテトロミノを操作する
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y),shape) = piece
+    var p = piece
+    key match{
+      case "RIGHT" => p = ((x+1,y),shape)
+      case "LEFT"  => p = ((x-1,y),shape)
+      case "UP"    => p = ((x,y),S.rotate(shape))
+    }
+    TetrisWorld(p, pile)
+  }
+  */
+  // 5. keyEvent
+  // 目的：キー操作によって衝突が起こるときその操作を無視するようにkeyEventを改良する
+  def keyEvent(key: String): World = {
+    val ((x,y),shape) = piece
+    var p = piece
+    key match{
+      case "RIGHT" => p = ((x+1,y),shape)
+      case "LEFT"  => p = ((x-1,y),shape)
+      case "UP"    => p = ((x,y),S.rotate(shape))
+    }
+    if(collision(TetrisWorld(p,pile))) TetrisWorld(piece, pile) else TetrisWorld(p,pile)
   }
 
   // 3. collision
-  // 目的：
+  // 目的：受け取った世界が衝突を起こしているかを調べる
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val TetrisWorld(piece,pile) = world
+    val ((x,y),shape) = piece
+    val (m,n) = S.size(shape)
+    x < 0 || x + n > A.WellWidth || y + m > A.WellHeight || S.overlap(pile,S.shiftSE(shape,x,y))
   }
-
+  
   // 6. eraseRows
-  // 目的：
+  // 目的：揃った行を消去する
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def rowcheck(row:S.Row):Boolean ={
+      row.contains(Transparent) || row.length != A.WellWidth
+    }
+    S.empty(A.WellHeight-pile.count(rowcheck),A.WellWidth)++pile.filter(rowcheck)
   }
 }
 

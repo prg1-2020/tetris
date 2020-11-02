@@ -76,7 +76,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def tick(): World = {
     val ((x,y), shape) = piece
     val NewWorld = TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(shape,x,y), pile)))
-    if(collision(TetrisWorld(((x, y+1),shape), pile))) NewWorld
+    if(collision(TetrisWorld(((x, y+1),shape), pile))) if(collision(NewWorld)) TetrisWorld(A.newPiece(), List.fill(A.WellHeight)(List.fill(A.WellWidth)(Transparent))) else NewWorld
     else TetrisWorld(((x, y+1),shape), pile)
   }
   // 2, 5. keyEvent

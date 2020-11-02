@@ -441,3 +441,14 @@ java.lang.StringIndexOutOfBoundsException: offset 3620, count -1, length 4249
 2020.10.30 17:42:19 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
 2020.10.30 17:43:31 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
 2020.10.30 17:44:29 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+11åé 02, 2020 4:57:51 åﬂå„ org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+åxçê: Unmatched cancel notification for request id 20229
+2020.11.02 17:00:50 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+11åé 02, 2020 5:00:53 åﬂå„ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+èÓïÒ: Unsupported notification method: $/setTraceNotification
+11åé 02, 2020 5:00:53 åﬂå„ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+èÓïÒ: Unsupported notification method: $/setTraceNotification
+2020.11.02 17:16:12 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.11.02 17:17:22 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.11.02 17:18:34 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala
+2020.11.02 17:21:05 WARN  no build target for: C:\Users\tomohiro\tetris\src\tetris\scala\tetris.scala

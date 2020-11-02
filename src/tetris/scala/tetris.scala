@@ -66,7 +66,6 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     var ((x: Int, y: Int), shapet) = piece
     TetrisWorld(((x,  y + 1), shapet), pile)
   }
-
   // 目的：テトロミノが画面の一番下に達したら、それ以上落下しない(課題４)
   def tick(): World = {
     var ((x: Int, y: Int), shapet) = piece
@@ -118,7 +117,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 3. collision
   // 目的：受け取った世界で衝突が起きているかを判定する関数(課題３)
   def collision(world: TetrisWorld): Boolean = {
-    val ((x: Int, y: Int), shapet) = world.piece
+    var ((x: Int, y: Int), shapet) = world.piece
     if(x <  0 || x > 10 - S.size(shapet)._2 ||  y > 10 - S.size(shapet)._1 || S.overlap(S.shiftSE(shapet, x, y), pile)) true
     else false
   }

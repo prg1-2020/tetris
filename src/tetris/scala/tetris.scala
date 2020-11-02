@@ -88,7 +88,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val (r, c) = S.size(s)
     (x < 0) || (x + c > A.WellWidth) || (y + r > A.WellHeight) || (S.overlap(S.shiftSE(s, x, y), world.pile))
   }
-
+/*
   // 4. tick
   // 目的：
   def tick(): World = {
@@ -97,6 +97,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     if (collision(new_World)) TetrisWorld(piece, pile)
     else new_World
   }
+*/
 
   // 5. keyEvent
   // 目的：
@@ -113,10 +114,28 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的： そろった行を消す
   def eraseRows(pile: S.Shape): S.Shape = {
     pile
+    def rowcheck(row: S.Row): Boolean = {
+      row.contains(Transparent) || row.length != A.WellWidth
+    }
+    S.empty(A.WellHeight - pile.count(rowcheck), A.WellWidth) ++ pile.filter(rowcheck)
   }
+
+  // 7. tick
+  // 目的: テトロミノが下に移動できなくなった時に適切な処理をするようにする
+  def tick(): World = {
+    val ((x,y),shape) = piece
+    val newWorld = TetrisWorld(((x,y+1),shape), pile)
+    if (collision(newWorld)){
+      val z = TetrisWorld(A.newPiece(),eraseRows(S.combine(S.shiftSE(shape,x,y),pile)))
+      if (collision(z)) z
+      else z
+    }
+    else newWorld
+  }
+
 }
 
 // ゲームの実行

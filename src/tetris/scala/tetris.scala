@@ -60,27 +60,112 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的： (課題1)pieceのyをインクリメントし，下に1ブロック下げる。
+  //      (課題4)pieceの落下は画面一番下で停止するように。
+  //      (課題7)pieceをpileへ堆積，行削除の判定
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    //課題1
+    /*
+    val ((x, y), s) = piece
+    S.show(s)
+    TetrisWorld(((x, y+1), s), pile)
+    */
+
+    //課題4
+    /*
+    val ((x, y), s) = piece
+    val (h, w) = S.size(s)
+    if(y+h == A.WellHeight){
+      TetrisWorld(piece, pile)
+    }else{
+      TetrisWorld(((x, y+1), s), pile)
+    }
+    */
+
+    //課題7
+    val ((x, y), s) = piece
+    val (h, w) = S.size(s)
+    val nextW = TetrisWorld(((x, y+1), s), pile)
+
+    if(y+h == A.WellHeight || collision(nextW)){
+      val newW = TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(s,x,y), pile)))
+      if(collision(newW)){
+        endOfWorld("Game Over")
+      }
+      newW
+      
+    }else{
+      nextW
+    }
+
   }
 
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：(課題2)矢印キー入力でpieceを移動。UPで反時計に90°回転
+  //     (課題5)入力により衝突が発生するならば無視。
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    //課題2
+    /*
+    var ((x, y), s) = piece
+
+    key match{
+      case "RIGHT" => x = x+1
+      case "LEFT" =>  x = x-1
+      case "UP" =>  s = S.rotate(s)
+    }
+
+    TetrisWorld(((x, y), s), pile)
+    */
+    
+    //課題5
+    var ((x, y), s) = piece
+    
+    key match{
+      case "RIGHT" => x = x+1
+      case "LEFT" =>  x = x-1
+      case "UP" =>  s = S.rotate(s)
+    }
+
+    val nextW = TetrisWorld(((x, y), s), pile)
+    
+    if(collision((nextW))){
+      TetrisWorld(piece, pile)
+    }else{
+      nextW
+    }
+    
   }
 
   // 3. collision
-  // 目的：
+  // 目的：(課題3)pieceが画面外 or pileと衝突でTrue
   def collision(world: TetrisWorld): Boolean = {
-    false
+
+    val ((x, y), s) = world.piece
+    val (h, w) = S.size(s)
+    val absS = S.shiftSE(s,x,y)
+
+    x < 0 || A.WellWidth < x + w || S.overlap(absS, world.pile)
+    
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的： pileを受け取ったら揃った行を削除する。
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+
+    //揃った行(けすべき) => false, 揃ってない行(けさないべき) => true
+    def thisFilter[A](row:List[A]):Boolean = {
+      row.map(x => if(x!=Transparent) false else true).foldLeft(false)(_||_)
+    }
+    def padToButOnlyToSouth(s: S.Shape, rows: Int): S.Shape = {
+      val sr = s.length
+      assert(rows >= sr)
+      S.shiftSE(s, 0, rows-sr)
+    }
+
+    val newPile = pile.filter(thisFilter)
+    val formattedPile = padToButOnlyToSouth(newPile, A.WellHeight)
+
+    formattedPile
   }
 }
 

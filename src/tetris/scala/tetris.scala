@@ -64,11 +64,23 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def tick(): World = {
     val ((x,y),shape) = piece
     if(collision(TetrisWorld(((x,y+1),shape),pile))){
+      TetrisWorld(A.newPiece(),eraseRows(S.combine(S.shiftSE(shape,x,y),pile)))
+    }else{
+      TetrisWorld(((x,y+1),shape),pile)
+    }
+  }
+
+  //課題4で定義した関数
+  /*
+  def tick(): World = {
+    val ((x,y),shape) = piece
+    if(collision(TetrisWorld(((x,y+1),shape),pile))){
       TetrisWorld(piece,pile)
     }else{
       TetrisWorld(((x,y+1),shape),pile)
     }
   }
+  */
 
   //課題1で定義した関数
   // 目的：時間経過で落下させる
@@ -136,11 +148,11 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pileの揃った行を削除する
   def eraseRows(pile: S.Shape): S.Shape = {
     def erase(_pile: S.Shape): S.Shape = {
       _pile.foldRight(Nil: S.Shape)((r,rs) =>
-        if(r.filter(_ == Transparent).length == 0) rs
+        if(r.filter(_ == Transparent).length == 0) rs //空のブロックがなければその行を無視する
         else r::rs
       )
     }

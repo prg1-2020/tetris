@@ -2168,3 +2168,6 @@ something's wrong: no file:///Users/masaki/Documents/TokyoTech/2020/Programming%
 2020.11.02 12:27:40 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/tetris.scala
 11月 02, 2020 12:28:14 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
+2020.11.02 12:29:41 WARN  code navigation does not work for the file '/Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 12:29:41 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/tetris.scala
+2020.11.02 12:30:25 WARN  no build target for: /Users/masaki/Documents/TokyoTech/2020/Programming I/tetris/src/tetris/scala/tetris.scala

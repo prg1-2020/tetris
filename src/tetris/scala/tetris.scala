@@ -77,7 +77,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     else TetrisWorld(((x,y+1),s), pile)
   }
   */
-  
+  //6
   def tick(): World = {
     var ((x,y),s)= piece
     var (r,c) = S.size(s)
@@ -120,7 +120,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
         TetrisWorld(((x,y),s),pile)
       }
       case "LEFT" => {
-        x-=1
+        x -= 1
         if (collision(TetrisWorld(((x,y),s), pile))) x += 1
         TetrisWorld(((x,y),s),pile)
       }

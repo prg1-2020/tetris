@@ -60,27 +60,84 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：落下中のテトロミノを 1 だけ下に 動かす(課題１)
+/*
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    var ((x: Int, y: Int), shapet) = piece
+    TetrisWorld(((x,  y + 1), shapet), pile)
+  }
+  // 目的：テトロミノが画面の一番下に達したら、それ以上落下しない(課題４)
+  def tick(): World = {
+    var ((x: Int, y: Int), shapet) = piece
+    if(y >= 10 - S.size(shapet)._1) TetrisWorld(piece, pile)
+    else TetrisWorld(((x,  y + 1), shapet), pile)
+  }
+*/
+  //テトロミノが下に移動できなくなったときに、適切な処理が行われる(課題７)
+  def tick(): World ={
+    val ((x: Int, y: Int), shapet) = piece
+    val future = TetrisWorld(((x,  y + 1), shapet), pile)
+    if(collision(TetrisWorld(piece, pile))) TetrisWorld(piece, pile)
+    else if(collision(future))  TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(shapet, x, y), pile)))
+    else if(y >= 10 - S.size(shapet)._1) TetrisWorld(piece, pile)
+    else future
+
   }
 
   // 2, 5. keyEvent
-  // 目的：
+/*
+  // 目的：キー入力に従って世界を更新する(課題２)
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    var ((x: Int, y: Int), shapet) = piece
+    if(collision(TetrisWorld(piece, pile)) TetrisWorld(piece, pile)
+    else key match{
+      case "UP" => TetrisWorld(((x, y), S.rotate(shapet)), pile)
+      case "LEFT" => TetrisWorld(((x - 1, y), shapet), pile)
+      case "RIGHT" => TetrisWorld(((x + 1, y), shapet), pile)
+      case _ => TetrisWorld(piece, pile)
+    }
+    
+  }
+*/
+  // 目的：キー操作によって衝突が起きるなら、その操作を無視する(課題５)
+  def keyEvent(key: String): World = {
+    val ((x: Int, y: Int), shapet) = piece
+    val future = key match{
+      case "UP" => TetrisWorld(((x, y), S.rotate(shapet)), pile)
+      case "LEFT" => TetrisWorld(((x - 1, y), shapet), pile)
+      case "RIGHT" => TetrisWorld(((x + 1, y), shapet), pile)
+      case _ => TetrisWorld(piece, pile)
+    }
+
+    if (collision(future) || collision(TetrisWorld(piece, pile))) TetrisWorld(((x, y), shapet), pile)
+    else future
+    
   }
 
   // 3. collision
-  // 目的：
+  // 目的：受け取った世界で衝突が起きているかを判定する関数(課題３)
   def collision(world: TetrisWorld): Boolean = {
-    false
+    var ((x: Int, y: Int), shapet) = world.piece
+    if(x <  0 || x > 10 - S.size(shapet)._2 ||  y > 10 - S.size(shapet)._1 || S.overlap(S.shiftSE(shapet, x, y), pile)) true
+    else false
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pile を受け取ったら、揃った行を削除する
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    val cols = S.size(pile)._2
+    //アキュムレータ： eraseNum(消すべき行の数、underの上に空行を加える時に使う), under(消さないべき行、画面下に寄せる)
+    def eraseRowsAcc(pile: S.Shape, eraseNum: Int, under: S.Shape): S.Shape ={
+      pile match {  
+        case Nil => List.fill(eraseNum)(List.fill(cols)(Transparent)) ++ under
+        case x :: xs
+         => if (S.blockCount(List(x)) != cols) eraseRowsAcc(xs, eraseNum, under ++ List(x))
+            else eraseRowsAcc(xs, eraseNum + 1, under)
+      }
+    }
+
+    eraseRowsAcc(pile, 0, Nil)
+  
   }
 }
 

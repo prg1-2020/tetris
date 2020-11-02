@@ -59,28 +59,125 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     drawShape(pos, shape)
   }
 
-  // 1, 4, 7. tick
-  // 目的：
+  /*
+  // 1. tick
+  // 目的：tickのたびにpieceがひとつ下に落ちるようにする
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    TetrisWorld(((x, y+1), shape), pile)
   }
 
-  // 2, 5. keyEvent
-  // 目的：
+  // 4. tick
+  // 目的：テトロミノが一番下に到達したとき、そこで停止する
+  def tick(): World = {
+    val ((x, y), shape) = piece
+    if(!collision(TetrisWorld(((x, y+1), shape), pile))) {
+      TetrisWorld(((x, y+1), shape), pile)
+    } else {
+      TetrisWorld(piece, pile)
+    }
+  }
+  */
+
+  // 7. tick
+  // 目的：テトロミノが一番下に到達したとき、そこで停止する
+  def tick(): World = {
+    val ((x, y), shape) = piece
+    if (!collision(TetrisWorld(((x, y+1), shape), pile))) {
+      TetrisWorld(((x, y+1), shape), pile)
+    } else {
+      val newPile = S.combine(pile, S.shiftSE(shape, x, y))
+      val P = A.newPiece()
+      if (collision(TetrisWorld(P, newPile))) endOfWorld("Game Over")
+      TetrisWorld(P, eraseRows(newPile)) 
+    }
+  }
+
+  /*
+  // 2. keyEvent
+  // 目的：矢印入力に対応する（↑は回転操作を対応させる）
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    key match {
+      case ("RIGHT") => TetrisWorld(((x+1, y), shape), pile)
+      case ("LEFT") => TetrisWorld(((x-1, y), shape), pile)
+      case ("UP") => TetrisWorld(((x, y), S.rotate(shape)), pile)
+    }
+  }
+  */
+
+  // 5. keyEvent
+  // 目的：各壁への衝突が起こる場合の入力を無視する
+  def keyEvent(key: String): World = {
+    val ((x, y), shape) = piece
+    key match {
+      case ("RIGHT") => {
+        if(!collision(TetrisWorld(((x+1, y), shape), pile))) {
+          TetrisWorld(((x+1, y), shape), pile)
+        } else {
+          TetrisWorld(piece, pile)
+        }
+      }
+      case ("LEFT") => {
+        if(!collision(TetrisWorld(((x-1, y), shape), pile))) {
+          TetrisWorld(((x-1, y), shape), pile)
+        } else {
+          TetrisWorld(piece, pile)
+        }
+      }
+      case ("UP") => {
+        if(!collision(TetrisWorld(((x, y), S.rotate(shape)), pile))) {
+          TetrisWorld(((x, y), S.rotate(shape)), pile)
+        } else {
+          TetrisWorld(piece, pile)
+        }
+      }
+      case ("DOWN") => {
+        if(!collision(TetrisWorld(((x, y+1), shape), pile))) {
+          TetrisWorld(((x, y+1), shape), pile)
+        } else {
+          TetrisWorld(piece, pile)
+        }
+      }
+    }
   }
 
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val TetrisWorld(((x, y), shape), pile) = world
+    val (n, m) = S.size(shape)
+    if (x < 0 | x + m > 10 | y < 0 | y + n > 10) true
+    else {
+      val s = S.shiftSE(shape, x, y)
+      S.overlap(s, pile)
+    }
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    // 6-1. eraser
+    // 目的：埋まった行を消してその分詰める
+    def eraser(p: S.Shape): S.Shape = {
+      // 6-2. checkFullRow
+      // 目的：受け取ったrowが一列ブロックで埋まっているか調べる
+      def checkFullRow(row: S.Row): Boolean = {
+        row match {
+          case Nil => true
+          case r :: rs => (r != Transparent) && checkFullRow(rs)
+        }
+      }
+      p match {
+        case Nil => Nil
+        case x :: xs => {
+          if (checkFullRow(x)) eraser(xs)
+          else x :: eraser(xs)
+        }
+      }
+    }
+    val pileX = eraser(pile)
+    S.shiftSE(pileX, 0, 10 - pileX.length)
   }
 }
 

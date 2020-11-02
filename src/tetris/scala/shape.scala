@@ -223,11 +223,13 @@ object ShapeLib {
         case (x :: xs, y :: ys) => if (x == Transparent) y :: combinerow(xs,ys) else x :: combinerow(xs,ys)
       }
     }
-    (mino1, mino2) match {
+    val nmino = (mino1, mino2) match {
       case (Nil, _) => mino2
       case (_, Nil) => mino1
       case (x :: xs, y :: ys) => combinerow(x, y) :: combine(xs, ys)
     }
+    val (r,c) = size(nmino)
+    nmino.map(x=> if (x.length<c) x ++ duplicate(c-x.length, Transparent) else x)
   }
 
 
@@ -363,6 +365,5 @@ object ShapeTest extends App {
     List(List(Red), List(Blue)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
   // 自作
-  show(combine(shapeI, shiftSE(shapeZ, 1, 1)) )
-
+  show(combine(shapeI, shiftSE(shapeZ, 1, 1)))
 }

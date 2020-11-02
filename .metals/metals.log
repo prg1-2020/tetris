@@ -548,3 +548,30 @@ java.lang.StringIndexOutOfBoundsException: offset 2705, count -7, length 3271
 2020.11.02 23:44:52 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
 11月 02, 2020 11:45:02 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
+2020.11.02 23:56:38 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.02 23:58:05 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.11.02 23:58:13 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.02 23:58:23 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.02 23:58:38 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:10:56 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.11.03 00:11:04 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+11月 03, 2020 12:13:39 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 5410
+11月 03, 2020 12:13:50 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 5453
+2020.11.03 00:15:27 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:15:36 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+11月 03, 2020 12:16:13 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 5637
+2020.11.03 00:18:27 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.11.03 00:19:26 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:19:43 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala' because it doesn't belong to a build target.
+2020.11.03 00:19:43 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:20:21 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:21:34 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:22:01 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:22:33 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:23:14 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:23:27 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:23:31 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.03 00:23:50 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala

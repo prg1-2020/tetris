@@ -81,16 +81,13 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     if (collision(world) == true) {
       val newpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
       if (collision(TetrisWorld(A.newPiece(), newpile)) == false) {
-        TetrisWorld(A.newPiece(), newpile)
+        return TetrisWorld(A.newPiece(), newpile)
       }
-      else TetrisWorld(piece, pile)
+      else TetrisWorld(piece, pile) //ゲーム終了
     }
     else world
   }
 
-  def endtick(): Unit = {
-    if (collision(TetrisWorld(A.newPiece(), pile)) == true) println("Gsme Over")
-  }
 
   // 2, 5. keyEvent
   def keyEvent(key: String): World = {

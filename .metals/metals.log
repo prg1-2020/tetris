@@ -463,3 +463,88 @@ java.lang.NullPointerException
 10月 26, 2020 10:25:18 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
 2020.10.26 22:45:13 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.10.27 16:31:28 INFO  shutting down Metals
+2020.11.02 22:13:21 INFO  started: Metals version 0.9.4 in workspace '/Users/oosakishuuhei/Documents/workspace/scala/tetris' for client vscode.
+2020.11.02 22:13:23 INFO  time: initialize in 1.38s
+2020.11.02 22:13:24 INFO  skipping build import with status 'Requested'
+2020.11.02 22:13:26 INFO  no build target: using presentation compiler with only scala-library
+2020.11.02 22:13:26 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:15:04 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:18:35 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 22:19:09 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:19:46 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:23:23 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+11月 02, 2020 10:23:49 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: offset 2705, count -7, length 3271
+java.lang.StringIndexOutOfBoundsException: offset 2705, count -7, length 3271
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:376)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:374)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:199)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:310)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:273)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:27)
+
+2020.11.02 22:24:49 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/shape.scala
+2020.11.02 22:25:13 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:25:40 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:25:48 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:32:01 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:32:46 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:32:57 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:35:24 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:36:02 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:36:33 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:37:26 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:37:45 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:38:57 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:41:25 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:42:23 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 22:42:30 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:43:39 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:53:34 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:54:05 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:54:29 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:54:50 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 22:55:00 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:00:28 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:08:10 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 23:08:19 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 23:09:08 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 23:09:08 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:09:33 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:10:09 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:10:13 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:11:37 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:14:02 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:21:13 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:21:32 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:24:15 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:27:40 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 23:29:36 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:32:00 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:32:13 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:32:30 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:33:10 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 23:33:10 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:33:47 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:33:50 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:34:47 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 23:34:50 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 23:34:58 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:36:50 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:37:02 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:37:11 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:40:03 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:41:48 WARN  code navigation does not work for the file '/Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 23:41:48 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:42:48 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+2020.11.02 23:44:52 WARN  no build target for: /Users/oosakishuuhei/Documents/workspace/scala/tetris/src/tetris/scala/tetris.scala
+11月 02, 2020 11:45:02 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification

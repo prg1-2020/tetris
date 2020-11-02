@@ -60,27 +60,71 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：時間経過に応じて世界を更新する
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    //1
+    //val ((x,y),mino) = piece
+    //TetrisWorld(((x,y+1),mino), pile)
+
+    //4
+    //val ((x,y),mino) = piece
+    //val nw = TetrisWorld(((x,y+1), mino), pile)
+    //if (collision(nw)) TetrisWorld(piece,pile)
+    //else nw
+
+    //7
+    val ((x,y),mino) = piece
+    val nw = TetrisWorld(((x,y+1), mino), pile)
+    if (collision(nw)) {
+      val npile = eraseRows(S.combine(pile, S.shiftSE(mino, x, y)))
+      val npiece = A.newPiece()
+      val ((nx,ny),nmino) = npiece
+      if (S.overlap(npile,S.shiftSE(nmino,nx, ny))) {
+        //endofWorld("Game Over")
+        TetrisWorld(piece,pile)
+      }
+      else TetrisWorld(npiece,npile)
+    }
+    else nw
   }
 
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：キー入力に応じて世界を更新する
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    //2
+    //var ((x,y), mino) = piece
+    //if(key == "RIGHT") x += 1
+    //if(key == "LEFT") x -= 1
+    //if(key == "UP") mino = S.rotate(mino)
+    //TetrisWorld(((x,y), mino), pile)
+    
+    //5
+    var ((x,y), mino) = piece
+    if(key == "RIGHT") x += 1
+    if(key == "LEFT") x -= 1
+    if(key == "UP") mino = S.rotate(mino)
+    val nw = TetrisWorld(((x,y), mino), pile)
+    if (collision(nw)) TetrisWorld(piece, pile)
+    else nw
   }
 
   // 3. collision
-  // 目的：
+  // 受け取った世界で衝突が起きているかを判定する
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x,y),mino) = world.piece
+    val (r,c) = S.size(mino)
+    x < 0 || x+c > 10 || y+r > 10 || S.overlap(S.shiftSE(mino,x,y),world.pile)
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    var npile = pile.foldRight[S.Shape](Nil)((xs,init) => 
+    if (xs.foldLeft(true)((init2,x) => init2 && x != Transparent)) init
+    else xs :: init)
+
+    if (npile.length < pile.length) S.empty(pile.length-npile.length,10) ++ npile
+    else npile
   }
 }
 

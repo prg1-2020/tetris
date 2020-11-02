@@ -283,27 +283,34 @@ object ShapeLib {
   // 契約：引数の shape は重なりを持たない
   def combine(shape1: Shape, shape2: Shape): Shape ={
     assert(!overlap(shape1, shape2))
-    //目的：2つの row を結合する （ combine で assert があるので契約は要らない）
-    def combineRow(row1: Row, row2: Row): Row ={
-      (row1, row2) match{
-      case (Nil, b) => b
-      case (a, Nil) => a
-      case (Transparent :: xs1, Transparent :: xs2) => Transparent :: combineRow(xs1, xs2)
-      case (x1 :: xs1, Transparent :: xs2) => x1 :: combineRow(xs1, xs2)
-      case (Transparent :: xs1, x2 :: xs2) => x2 :: combineRow(xs1, xs2)
-      case _ => Nil
+
+    def combineTemp(shape1: Shape, shape2: Shape) = {
+      //目的：2つの row を結合する （ combine で assert があるので契約は要らない）
+      def combineRow(row1: Row, row2: Row): Row ={
+        (row1, row2) match{
+          case (Nil, b) => b
+          case (a, Nil) => a
+          case (Transparent :: xs1, Transparent :: xs2) => Transparent :: combineRow(xs1, xs2)
+          case (x1 :: xs1, Transparent :: xs2) => x1 :: combineRow(xs1, xs2)
+          case (Transparent :: xs1, x2 :: xs2) => x2 :: combineRow(xs1, xs2)
+          case _ => Nil
+        }
+      }
+      def emptyRow(cols: Int): Row ={
+        if (cols == 0) Nil
+        else Transparent :: emptyRow(cols - 1)
       }
       
+      (shape1, shape2) match{
+        case (Nil, b) => b
+        case (a, Nil) => a
+        case (x1 :: xs1, x2 :: xs2) => List(combineRow(x1, x2)) ++ combine(xs1, xs2)
+      }
     }
-    (shape1, shape2) match{
-      case (Nil, b) => b
-      case (a, Nil) => a
-      case (x1 :: xs1, x2 :: xs2) => List(combineRow(x1, x2)) ++ combine(xs1, xs2)
-    }
+    val shapeTemp = combineTemp(shape1, shape2)
+    combineTemp(shapeTemp, empty(size(shapeTemp)._1, size(shapeTemp)._2))
+
   }
-
-
-
 
 }
 
@@ -410,6 +417,13 @@ object ShapeTest extends App {
                   List(List(Transparent), List(Blue))) ==
     List(List(Red), List(Blue)))
   println(combine(List(List(Blue)), List(List(Transparent))) == List(List(Blue)))
+  println(combine(
+  List(List(Transparent),List(Transparent)), // 縦長, 高さ2*幅1のShape
+  List(List(Transparent,Transparent)) // 横長, 高さ1*幅2のShape
+  ) ==
+  List(
+  List(Transparent,Transparent),
+  List(Transparent,Transparent)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
 
 }

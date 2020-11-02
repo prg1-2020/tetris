@@ -64,19 +64,22 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def tick(): World = {
     val ((x, y), shape) = piece
     val (a, b) = S.size(shape)
-    //下は課題１
+    //課題１
     //TetrisWorld(((x, y+1), shape), pile)
-    //下は課題4
+    //課題4
     //if (y+a==A.WellHeight) TetrisWorld(((x, y), shape), shape) else TetrisWorld(((x, y+1), shape), pile)
-    //下は課題７
+    //課題７
+    //ゲームオーバーはゲームが見かけ上停止する形式での実装
+    //shapeがTransparentなpieceであることをゲームオーバーの現れとしている
     if (shape == List(List(Transparent))) TetrisWorld(piece, pile) 
     if ((collision(TetrisWorld(((x, y+1), shape), pile)))) {
-      val afterpile = if (!S.overlap(S.shiftSE(shape, x, y), pile)) eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
-                      else pile      
+      val afterpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
       val nextPiece = A.newPiece()
       val nextWorld = TetrisWorld(nextPiece, afterpile)
-      if (collision(nextWorld)) {
+      if (collision(TetrisWorld(nextPiece, afterpile))) {
+        //指示に沿ってendOfWorldを入れているが効果はない
         if(true) endOfWorld("Game Over")
+        //ゲームオーバーを示すやり方として、Transparentなブロックをpieceとして見かけ上動かなくしている
         TetrisWorld(((1, 1), List(List(Transparent))), afterpile)
       } 
       else nextWorld
@@ -108,7 +111,6 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val nextWorld = TetrisWorld(((nX, nY), nShape), pile)
     if (collision(nextWorld)) TetrisWorld(piece, pile)
     else nextWorld
-    //TetrisWorld(piece, pile)
   }
 
   // 3. collision
@@ -116,7 +118,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def collision(world: TetrisWorld): Boolean = {
     val ((x, y), shape) = world.piece
     val (a, b) = S.size(shape)
-    (x<0)||((x+b)>A.WellWidth)||((y+a)>A.WellHeight)||S.overlap(S.shiftSE(shape, x, y), pile)
+    (x<0)||((x+b)>A.WellWidth)||((y+a)>A.WellHeight)||S.overlap(S.shiftSE(shape, x, y), world.pile)
   }
 
   // 6. eraseRows

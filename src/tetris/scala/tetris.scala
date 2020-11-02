@@ -17,6 +17,7 @@ import sgeometry.Pos
 import sdraw.{World, Color, Transparent, HSB}
 
 import tetris.{ShapeLib => S}
+import java.awt.Transparency
 
 // テトリスを動かすための関数
 case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends World() {
@@ -61,18 +62,58 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
 
   // 1, 4, 7. tick
   // 目的：
+  /*
   def tick(): World = {
     val ((x,y),shape) = piece
-    /* kadai 1
+     /*kadai 1
     val new_piece = ((x,y+1),shape)
     */
-
+    
+     //kadai4
     def make_new_y(y:Int,cols:Int):Int={
         if (y+cols >= 10) y
         else y+1
     }
     val new_piece = ((x,make_new_y(y,shape.length)),shape)
     TetrisWorld(new_piece,pile)
+    
+    def stopworld(y:Int,cols:Int):World={
+        //overlapの一個手前
+        if(y+cols>= A.WellHeight || S.overlap(pile,piece)){
+            //piece => pile and new piece 
+            val new_pile = 
+        }
+    }
+  }
+  }
+  */
+  def tick():World = {
+      val ((x,y),shape) = piece
+      val updatedpiece = ((x,y+1),shape)
+      val ((newx,newy),newpiece) = A.newPiece()
+      val newpile = eraseRows(S.combine(S.shiftSE(shape,x,y),pile))
+      if (collision(TetrisWorld(updatedpiece,pile))){
+          if(S.overlap(S.shiftSE(newpiece,newx,newy),newpile)){
+              endOfWorld("Game Over")
+              TetrisWorld(piece,pile)
+          }
+          else TetrisWorld(A.newPiece(),newpile)
+      }
+      else TetrisWorld(updatedpiece,pile)
+
+  }
+
+  def convert(shape:S.Shape):S.Shape={
+      shape match{
+          case S.shapeI => S.shapeJ
+          case S.shapeJ => S.shapeT
+          case S.shapeT => S.shapeO
+          case S.shapeO => S.shapeZ
+          case S.shapeZ => S.shapeL
+          case S.shapeL => S.shapeS
+          case S.shapeS => S.shapeI
+          case _ => shape
+      }
   }
 
   // 2, 5. keyEvent
@@ -88,24 +129,21 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
       }
       */
       
-
       def keyEvent_temp(key:String):TetrisWorld={
           key match{
             case "RIGHT" => TetrisWorld(((x+1,y),shape),pile)
             case "LEFT" => TetrisWorld(((x-1,y),shape),pile)
             case "UP" => TetrisWorld(((x,y),S.rotate(shape)),pile)
-        }
-    }
-    val temp_world = keyEvent_temp(key)
-
-    if (collision(keyEvent_temp(key))) TetrisWorld(((x,y),shape),pile)
-    else keyEvent_temp(key)
+          }
+      }
+      val temp_world = keyEvent_temp(key)
+        if (collision(keyEvent_temp(key))) TetrisWorld(((x,y),shape),pile)
+        else keyEvent_temp(key)
+      }
     
-  }
-
-  
   // 3. collision
   // 目的：
+  
   def collision(world: TetrisWorld): Boolean = {
       //bool(1~4) をifで判定
     val TetrisWorld(piece,pile) = world
@@ -113,7 +151,6 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val piece_locate = S.shiftSE(shape,x,y)
     val (rows,cols) = S.size(shape)
     //それぞれの条件(エラー存在＝＞true)
-    S.overlap(S.shiftSE(shape,x,y),pile)
     val bool1 = S.overlap(pile,S.shiftSE(shape,x,y)) //被ってたらtrue
     val bool2 = x<0
     val bool3 = (cols + x) > A.WellWidth
@@ -126,7 +163,16 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    //消す条件　横一列に”全て”ブロックが存在  == Transplant が存在しない
+    //消す条件　そもそも例としてlen==7の場合もある　＝＞row のrenを調べる必要性。
+    //消したら上のものを下にシフト => 再起だと難しい？？
+    //空白＋消した後の形　map or filter
+    
+    def row4filter(row : S.Row):Boolean={
+        row.length != A.WellWidth || row.contains(Transparent)
+    }
+
+    S.empty(A.WellHeight-pile.count(row4filter),A.WellHeight) ++ pile.filter(row4filter)
   }
 }
 

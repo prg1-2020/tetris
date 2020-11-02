@@ -222,6 +222,14 @@ object ShapeLib {
 
 
   }
+  
+  def blockCountRow(r:Row):Int = {
+    r match{
+      case Nil => 0
+      case x :: xs => if(x == Transparent) blockCountRow(xs) else blockCountRow(xs) + 1
+    }
+  }
+
 }
 
 // テスト

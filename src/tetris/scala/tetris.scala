@@ -60,27 +60,68 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：時間の経過に応じて世界を更新する。
+  /*  1.
+    def tick(): World = {
+    val ((x,y), shape) = piece
+    TetrisWorld(((x, y+1),shape),  pile)
+  } */
+  /* 4.
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y), shape) = piece
+    if(collision(TetrisWorld(((x, y+1),shape),  pile))) TetrisWorld(piece,  pile)
+    else TetrisWorld(((x, y+1),shape),  pile)
   }
-
+  */
+  def tick(): World = {
+    val ((x,y), shape) = piece
+    val NewWorld = TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(shape,x,y), pile)))
+    if(collision(TetrisWorld(((x, y+1),shape), pile))) if(collision(NewWorld)) TetrisWorld(A.newPiece(), List.fill(A.WellHeight)(List.fill(A.WellWidth)(Transparent))) else NewWorld
+    else TetrisWorld(((x, y+1),shape), pile)
+  }
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：キー入力に従って世界を更新する。
+  /* 2.
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x,y), shape) = piece
+    key match {
+      case "RIGHT" => TetrisWorld(((x+1, y),shape),  pile)
+      case "LEFT" => TetrisWorld(((x-1, y),shape),  pile)
+      case "UP" => TetrisWorld(((x, y),S.rotate(shape)),  pile) 
+    }
+  }
+  */
+  def keyEvent(key: String): World = {
+    val ((x,y), shape) = piece
+    val ((nextX, nextY), nextS) = key match {
+      case "RIGHT" => ((x+1, y), shape)
+      case "LEFT" => ((x-1, y), shape)
+      case "UP" => ((x, y), S.rotate(shape))
+    }
+    val NextWorld = TetrisWorld(((nextX, nextY),nextS), pile)
+    if(collision(NextWorld)) TetrisWorld(piece, pile) else NextWorld
   }
 
   // 3. collision
-  // 目的：
+  // 目的：受け取った世界で衝突が起きているかを判定する。
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x,y), shape) = world.piece
+      if(x < 0 || x + S.maxRowLength(shape) > A.WellWidth) true
+      else if(y + shape.length > A.WellHeight) true
+      else if(S.overlap(S.shiftSE(shape,x,y),world.pile)) true
+      else false
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pile を受け取ったら、揃った行を削除する。
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def eraseOnly(pile: S.Shape): S.Shape = {
+      pile match {
+        case Nil => Nil
+        case r::rs => if(S.blockCountPerRow(r)==A.WellWidth) eraseOnly(rs) else r::eraseOnly(rs)
+      }
+    }
+  S.empty(A.WellHeight-eraseOnly(pile).length,A.WellWidth) ++ eraseOnly(pile) 
   }
 }
 

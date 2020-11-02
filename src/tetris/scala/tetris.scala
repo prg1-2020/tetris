@@ -66,16 +66,37 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def tick(): World = {
     val ((x,y),shape)=piece
     val (h,w) = S.size(shape)
-    if(y+h<10) TetrisWorld(((x,y+1),shape), pile)
-    else TetrisWorld(((x,y),shape), pile)
-
+    //pileとoverlapした時も考える
+    if(collision(TetrisWorld(((x,y+1),shape), pile))==false) TetrisWorld(((x,y+1),shape), pile)
+    
+//ここでミノは止まるから　elseの中に操作をかく（ミノが最下点に到達した時１秒猶予を与えるってのもあり？？）    
+    else {
+      //pileにつなげる(pieceの左上をpileに合わせる)
+      
+      val shape_extend = S.shiftSE(shape,x,y)
+      val pileCombine = S.combine(pile,shape_extend)
+      val pileNew = eraseRows(pileCombine)
+      
+      if(collision(TetrisWorld(((4,0),S.random), pileNew))) TetrisWorld(((4,0),shape), pile)
+      else TetrisWorld(((4,0),S.random), pileNew)
+    }
   }
 /*課題１
   def tick(): World = {
     val ((x,y),shape)=piece
     TetrisWorld(((x,y+1),shape), pile)
   }
+
+  //課題4
+  def tick(): World = {
+    val ((x,y),shape)=piece
+    val (h,w) = S.size(shape)
+    if(y+h<10) TetrisWorld(((x,y+1),shape), pile)
+    else TetrisWorld(((x,y),shape), pile)
+
+  }
 */
+
 
   // 2, 5. keyEvent
   // 目的：入力を受け取りテトロミノを動かす
@@ -122,10 +143,13 @@ def keyEvent(key: String): World = {
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pileを受け取り揃った行を消したpileを返す
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
-  }
+    val (h_pile,w_pile) = S.size(pile)
+    val list = pile.filter(x => S.blockCountRow(x) < w_pile)
+    S.empty(h_pile - list.length,w_pile)++list
+    }
+
 }
 
 // ゲームの実行
@@ -134,6 +158,7 @@ object A extends App {
   val WellWidth = 10
   val WellHeight = 10
   val BlockSize = 30
+
 
   // 新しいテトロミノの作成
   val r = new Random()

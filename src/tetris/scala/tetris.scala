@@ -73,8 +73,18 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     */
 
     val ((x, y), shape) = piece
-    if(collision(TetrisWorld(((x, y+1), shape), pile))) TetrisWorld(A.newPiece(), eraseRows(S.combine(S.shiftSE(shape, x, y), pile)))
-    else TetrisWorld(((x, y+1), shape), pile)
+    if(collision(TetrisWorld(((x, y+1), shape), pile))) {
+      val ((newx, newy), newshape) = A.newPiece()
+      val newpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
+      if(S.overlap(S.shiftSE(newshape, newx, newy), newpile)) {
+        //endOfWorld("Game Over")
+        sys.exit() //上の関数を直接書いてもだめだったので、とりあえず強制終了するようにはしました。
+      } else {
+        TetrisWorld(((newx, newy), newshape), newpile)
+      }
+    } else {
+      TetrisWorld(((x, y+1), shape), pile)
+    }
   }
 
   // 2, 5. keyEvent

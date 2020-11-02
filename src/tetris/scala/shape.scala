@@ -128,11 +128,11 @@ object ShapeLib {
   def rotate(shape:Shape):Shape = {
     assert(wellStructured(shape))
     val (r,c) = size(shape)
-    Range(0,c).toList.map(i => {
-      Range(0,r).toList.map(j => {
-        shape(r)(c - i - 1)
-      })
-    })
+    (List.range(0,c))map{
+      i => (List.range(0,r))map{
+        j  => shape(j)(c - i - 1)
+      }
+    }
   }
 
 
@@ -141,8 +141,8 @@ object ShapeLib {
   // 目的：与えられた図形を右にx,下にy移したものを返す
   def shiftSE(shape:Shape,x:Int,y:Int):Shape = {
         val (r,c) = size(shape)
-    (List.range(0,c + y))map{
-      i => (List.range(0,r + x))map{
+    (List.range(0,r + y))map{
+      i => (List.range(0,c + x))map{
         j => if(i < y || j < x) Transparent else shape(i - y)(j - x)
       }
     }
@@ -153,9 +153,9 @@ object ShapeLib {
   // 目的：与えられた図形を左にx,上にy移したものを返す
   def shiftNW(shape:Shape,x:Int,y:Int):Shape = {
     val (r,c) = size(shape)
-    (List.range(0,c + y))map{
-      i => (List.range(0,r + x))map{
-        j => if(i >= r || j >= c) Transparent else shape(x)(y)
+    (List.range(0,r + y))map{
+      i => (List.range(0,c + x))map{
+        j => if(i >= r || j >= c) Transparent else shape(i)(j)
       }
     }
   }
@@ -163,15 +163,11 @@ object ShapeLib {
 
   // 9. padTo
   // 目的：row行col列に拡大したShapeを返す
-  // 契約：row,coｌはShapeのx,y以上
+  // 契約：row,colはShapeのx,y以上
   def padTo(shape:Shape,r:Int,c:Int):Shape = {
     val (x,y) = size(shape)
-    assert(x >= r && y >= c)
-    (List.range(0,c))map{
-      i => (List.range(0,r))map{
-        j => if(i >= r - x || j >= c - y) Transparent else shape(x)(y)
-      }
-    }
+    assert(x <= r && y <= c)
+    shiftNW(shape,c - y,r - x)
   }
 
 
@@ -197,6 +193,13 @@ object ShapeLib {
   // 目的：2つのShapeを結合する
   // 契約：2つのShapeは共通部分を持たない
   def combine(shape1:Shape,shape2:Shape):Shape = {
+    assert(!overlap(shape1,shape2))
+    val (x1,y1) = size(shape1)
+    val (x2,y2) = size(shape2)
+    def max(a:Int,b:Int):Int = {
+      if(a >= b) a else b
+    }
+
     def combinerow(r1:Row,r2:Row):Row = {
       (r1,r2)match{
         case(_,Nil) => r1
@@ -204,11 +207,20 @@ object ShapeLib {
         case(x :: xs,y :: ys) => if(x == Transparent) y :: combinerow(xs,ys) else x :: combinerow(xs,ys)
       }
     }
-    (shape1,shape2) match{
-        case(_,Nil) => shape1
-        case(Nil,_) => shape2
-      case(x :: xs,y :: ys) => shiftNW(combinerow(x,y) :: combine(xs,ys),0,0)
+    def combineall(block1:Shape,block2:Shape):Shape = {
+      (block1,block2) match{
+          case(Nil,Nil) => Nil
+          case(x :: xs,Nil) => (List.range(0,max(y1,y2))).map{i => if(i >= combinerow(x,Nil).length) Transparent else combinerow(x,Nil)(i)} :: combineall(xs,Nil)
+          case(Nil,y :: ys) => (List.range(0,max(y1,y2))).map{i => if(i >= combinerow(Nil,y).length) Transparent else combinerow(Nil,y)(i)} :: combineall(Nil,ys)
+          case(x :: xs,y :: ys) => {
+              (List.range(0,max(y1,y2))).map{i => if(i >= combinerow(x,y).length) Transparent else combinerow(x,y)(i)} :: combineall(xs,ys)
+        }
+      }
     }
+
+    combineall(shape1,shape2)
+
+
   }
 }
 
@@ -317,7 +329,7 @@ object ShapeTest extends App {
     List(List(Red), List(Blue)))
   show(combine(shiftSE(shapeI, 0, 1), shapeZ))
 
-  println(combine(List(List(Red), List(Transparent), List(Transparent)),
-              List(List(Transparent), List(Blue), List(Blue))) ==
-    List(List(Red), List(Blue), List(Blue)))
+  println(combine(List(List(Red), List(Transparent)),
+                  List(List(Transparent,Green))) ==
+    List(List(Red,Green), List(Transparent,Transparent)))
 }

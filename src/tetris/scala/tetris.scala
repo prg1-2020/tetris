@@ -131,14 +131,20 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def collision(world: TetrisWorld): Boolean = {
     val TetrisWorld(((x,y),shape),plie) = world
     val (s,t) = S.size(shape)
-    if(x<0 | x+s >10 | y<0 | y+t>10) true //world境界との衝突
+    if(x<0 | x+s > A.WellWidth | y<0 | y+t> A.WellHeight) true //world境界との衝突
     else S.overlap(S.shiftSE(shape,x,y),pile) //pileとの衝突
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def erase(_pile: S.Shape): S.Shape = {
+      _pile.foldRight(Nil: S.Shape)((r,rs) =>
+        if(r.filter(_ == Transparent).length == 0) rs
+        else r::rs
+      )
+    }
+    S.empty(A.WellHeight-erase(pile).length,A.WellWidth) ++ erase(pile)
   }
 }
 

@@ -60,27 +60,84 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
 
   // 1, 4, 7. tick
-  // 目的：
+  // 目的：ゲームが更新されるたびに行われていく処理を定める
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    val (a, b) = S.size(shape)
+    //課題１
+    //TetrisWorld(((x, y+1), shape), pile)
+    //課題4
+    //if (y+a==A.WellHeight) TetrisWorld(((x, y), shape), shape) else TetrisWorld(((x, y+1), shape), pile)
+    //課題７
+    //ゲームオーバーはゲームが見かけ上停止する形式での実装
+    //shapeがList(List(Transparent))なpieceであることをゲームオーバーの現れとしている
+    if (shape == List(List(Transparent))) TetrisWorld(piece, pile) 
+    if ((collision(TetrisWorld(((x, y+1), shape), pile)))) {
+      val afterpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
+      val nextPiece = A.newPiece()
+      val nextWorld = TetrisWorld(nextPiece, afterpile)
+      if (collision(TetrisWorld(nextPiece, afterpile))) {
+        //指示に沿ってendOfWorldを入れているが効果はない
+        if(true) endOfWorld("Game Over")
+        //ゲームオーバーを示すやり方として、shapeがList(List(Transparent))なpieceを使い、見かけ上動かなくしている
+        TetrisWorld(((1, 1), List(List(Transparent))), afterpile)
+      } 
+      else nextWorld
+    }
+    else TetrisWorld(((x, y+1), shape), pile)
+    
   }
 
   // 2, 5. keyEvent
-  // 目的：
+  // 目的：ゲームのキー操作を定める
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    val ((x, y), shape) = piece
+    //課題２
+    /*
+    key match{
+      case "RIGHT" =>TetrisWorld(((x+1, y), shape), pile)
+      case "LEFT"  =>TetrisWorld(((x-1, y), shape), pile)
+      case "UP"    =>TetrisWorld(((x, y), S.rotate(shape)), pile)
+    }
+    */
+    //課題５
+    
+    val ((nX, nY), nShape) =
+      key match{
+        case "RIGHT" =>((x+1, y), shape)
+        case "LEFT"  =>((x-1, y), shape)
+        case "UP"    =>((x, y), S.rotate(shape))
+      }
+    val nextWorld = TetrisWorld(((nX, nY), nShape), pile)
+    if (collision(nextWorld)) TetrisWorld(piece, pile)
+    else nextWorld
   }
 
   // 3. collision
-  // 目的：
+  // 目的：受け取ったworldでpieceが下・右・左ではみ出しているか、また、pileとpieceが重なっているかをBooleanで返す
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), shape) = world.piece
+    val (a, b) = S.size(shape)
+    (x<0)||((x+b)>A.WellWidth)||((y+a)>A.WellHeight)||S.overlap(S.shiftSE(shape, x, y), world.pile)
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pileを受け取り、そろった行を削徐したpileを返す
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def reverseRow[A](list:List[A]):List[A] = {
+      list match {
+        case Nil   => Nil
+        case x::xs => reverseRow(xs)++List(x)
+      }
+    }
+    def findFilled(revpile: S.Shape):S.Shape = {
+      revpile match{
+        case Nil   => Nil
+        case x::xs => if(x.foldLeft(true){(acc, x) => acc&&(x!=Transparent)}) findFilled(xs)++List(S.duplicate(A.WellWidth, Transparent))
+                      else  x::findFilled(xs)
+      }
+    }
+    reverseRow(findFilled(reverseRow(pile)))
   }
 }
 

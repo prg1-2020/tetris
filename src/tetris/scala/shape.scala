@@ -127,7 +127,7 @@ object ShapeLib {
   // 4. blockCount
   // 目的：受け取った shape に含まれる空でないブロックの数を返す
   def blockCount(a:Shape): Int={
-     // 目的：受け取った row に含まれる空でないブロックの数を返す
+    // 目的：受け取った row に含まれる空でないブロックの数を返す
     def count(b:Row): Int={
       b match{
         case Nil =>0

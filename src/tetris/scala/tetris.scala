@@ -65,14 +65,25 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     val ((x,y),shape)=piece 
     TetrisWorld(((x,y+1),shape), pile)
   }
-  */
+  
   def tick(): World = {
     val ((x,y),shape)=piece
     val (r,c)= S.size(shape)
     if (y==10-r) TetrisWorld(((x,y),shape), pile)
     else TetrisWorld(((x,y+1),shape), pile)
-  }
+  }*/
   
+  def tick(): World = {
+    val ((x,y),shape)=piece
+    val newPile = S.combine(S.shiftSE(shape,x,y),pile)
+    if (collision(TetrisWorld(((x,y+1),shape), pile))==true) 
+      {
+       if (collision(TetrisWorld(A.newPiece(),eraseRows(newPile)))==true) TetrisWorld(piece,pile)
+       else TetrisWorld(A.newPiece(), eraseRows(newPile))
+      }
+    else TetrisWorld(((x,y+1),shape), pile)
+  }
+
   // 2, 5. keyEvent
   // 目的：キー入力に従って世界を更新する
   /*def keyEvent(key: String): World = {
@@ -91,6 +102,8 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
                               else TetrisWorld(((x-1,y),shape), pile)
                case "UP"    =>if(collision(TetrisWorld(((x,y),S.rotate(shape)), pile))==true) TetrisWorld(((x,y),shape), pile)
                               else TetrisWorld(((x,y),S.rotate(shape)), pile)
+               case "DOWN"  =>if (collision(TetrisWorld(((x,y+1),shape), pile))==true) TetrisWorld(((x,y),shape), pile)
+                              else TetrisWorld(((x,y+1),shape), pile)           
               }
   }
   
@@ -98,10 +111,9 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 3. collision
   // 目的：受け取った世界で衝突が起きているか判定する
   def collision(world: TetrisWorld): Boolean = {
-    val ((x,y),shape1) = world.piece
-    val (r,c)= S.size(shape1)
-    val shape2 = world.pile
-    if (S.overlap(shape1,shape2)==true) true
+    val ((x,y),shape) = world.piece
+    val (r,c)= S.size(shape)
+    if (S.overlap(S.shiftSE(shape,x,y),pile)==true) true
     else if (x<0) true
     else if (x+c>10) true
     else if (y+r>10) true
@@ -109,9 +121,21 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   }
   
   // 6. eraseRows
-  // 目的：
+  // 目的：受け取ったpileの揃った行を削除する
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    // 目的：受け取った row に含まれる空でないブロックの数を返す
+    def count(r:S.Row): Int={
+      r match{
+        case Nil =>0
+        case x::xs => if (x==Transparent)  count(xs)
+                      else 1 + count(xs)
+      }
+    }
+    pile match{
+      case Nil=>Nil
+      case x::xs => if(count(x)==10) eraseRows(xs)
+                    else x::eraseRows(xs)
+    }
   }
 }
 

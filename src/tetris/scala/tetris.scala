@@ -62,25 +62,83 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
+    /* 課題1
+    val ((x, y), shape) = piece
+    TetrisWorld(((x, y+1), shape), pile)
+    */
+
+    /* 課題4
+    val ((x, y), shape) = piece
+    if(collision(TetrisWorld(((x, y+1), shape), pile))) TetrisWorld(((x, y), shape), pile) else TetrisWorld(((x, y+1), shape), pile)
+    */
+
+    val ((x, y), shape) = piece
+    if(collision(TetrisWorld(((x, y+1), shape), pile))) {
+      val ((newx, newy), newshape) = A.newPiece()
+      val newpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
+      if(S.overlap(S.shiftSE(newshape, newx, newy), newpile)) {
+        //endOfWorld("Game Over")
+        sys.exit() //上の関数を直接書いてもだめだったので、とりあえず強制終了するようにはしました。
+      } else {
+        TetrisWorld(((newx, newy), newshape), newpile)
+      }
+    } else {
+      TetrisWorld(((x, y+1), shape), pile)
+    }
   }
 
   // 2, 5. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    /* 課題2
+    val ((x, y), shape) = piece
+    key match {
+      case "RIGHT" => TetrisWorld(((x+1, y), shape), pile)
+      case "LEFT"  => TetrisWorld(((x-1, y), shape), pile)
+      case "UP"    => TetrisWorld(((x, y), S.rotate(shape)), pile)
+      case _       => TetrisWorld(((x, y), shape), pile)
+    }
+    */
+
+    val ((x, y), shape) = piece
+    key match {
+      case "RIGHT" => if(collision(TetrisWorld(((x+1, y), shape), pile))) TetrisWorld(((x, y), shape), pile) else TetrisWorld(((x+1, y), shape), pile)
+      case "LEFT"  => if(collision(TetrisWorld(((x-1, y), shape), pile))) TetrisWorld(((x, y), shape), pile) else TetrisWorld(((x-1, y), shape), pile)
+      case "UP"    => if(collision(TetrisWorld(((x, y), S.rotate(shape)), pile))) TetrisWorld(((x, y), shape), pile) else TetrisWorld(((x, y), S.rotate(shape)), pile)
+      case _       => TetrisWorld(((x, y), shape), pile)
+    }
   }
 
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x, y), shape) = world.piece
+    val (h, w) = S.size(shape)
+    if(x < 0) true                       //左とぶつかる
+    else if(x+w-1 >= A.WellWidth) true   //右とぶつかる
+    else if(y+h-1 >= A.WellHeight) true  //下とぶつかる
+    else if(S.overlap(S.shiftSE(shape, x, y), world.pile)) true  //pileとぶつかる
+    else false
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def checkRows(pile: S.Shape): S.Shape = {
+      def checkTransparentOfRow(row: S.Row): Boolean = { //受け取ったrowの中にTransparentが無ければ(=1列揃っていれば)trueを返す
+        row match {
+          case Nil   => true
+          case x::xs => if(x == Transparent) false else checkTransparentOfRow(xs)
+        }
+      }
+      pile match {
+        case Nil   => pile
+        case x::xs => if(checkTransparentOfRow(x)) checkRows(xs) else x::checkRows(xs)
+      }
+    }
+    val newpile = checkRows(pile)
+    val (rows, cols) = S.size(newpile)
+    return S.shiftSE(newpile, 0, A.WellHeight-rows)
   }
 }
 

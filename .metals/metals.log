@@ -696,3 +696,227 @@ something's wrong: no file:///Users/fumi/classes/prg1/tetris/src/tetris/scala/sh
 2020.10.23 19:01:52 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
 10月 23, 2020 7:01:59 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTraceNotification
+2020.10.23 19:08:12 INFO  shutting down Metals
+2020.10.26 16:04:02 INFO  started: Metals version 0.9.4 in workspace '/Users/fumi/classes/prg1/tetris' for client vscode.
+2020.10.26 16:04:04 INFO  time: initialize in 2.02s
+2020.10.26 16:04:04 INFO  skipping build import with status 'Requested'
+2020.10.26 16:04:09 INFO  no build target: using presentation compiler with only scala-library
+2020.10.26 16:04:09 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.26 16:04:09 INFO  shutting down Metals
+2020.10.30 19:52:42 INFO  started: Metals version 0.9.4 in workspace '/Users/fumi/classes/prg1/tetris' for client vscode.
+2020.10.30 19:52:43 INFO  time: initialize in 1.33s
+2020.10.30 19:52:44 INFO  skipping build import with status 'Requested'
+2020.10.30 19:52:47 INFO  no build target: using presentation compiler with only scala-library
+2020.10.30 19:52:47 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+10月 30, 2020 8:01:26 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 305
+10月 30, 2020 8:02:04 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 365
+2020.10.30 20:08:11 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:11:01 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:12:04 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:19:05 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:19:10 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:21:59 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:22:14 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:23:10 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:29:45 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:29:56 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:32:36 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:33:35 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:33:58 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:37:59 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:48:49 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:49:14 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 20:49:17 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 20:49:21 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:50:03 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 20:52:57 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:00:02 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:00:22 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:01:08 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:01:18 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:01:31 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:03:16 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:04:49 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 21:04:49 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 21:04:59 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:05:10 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 21:05:10 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:05:26 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:06:01 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+10月 30, 2020 9:06:54 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 2321
+2020.10.30 21:07:24 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+10月 30, 2020 9:15:12 午後 scala.meta.internal.pc.CompletionProvider expected$1
+警告: offset 3446, count -1, length 4025
+2020.10.30 21:15:13 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:20:39 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:20:56 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 21:20:56 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:22:18 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:23:52 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:25:23 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:26:26 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 21:26:28 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:32:37 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.30 21:32:39 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:34:43 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+10月 30, 2020 9:34:53 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 3105
+2020.10.30 21:34:54 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.30 21:35:14 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+10月 30, 2020 9:36:25 午後 scala.meta.internal.pc.CompilerAccess handleError
+重大: offset 3450, count -6, length 4027
+java.lang.StringIndexOutOfBoundsException: offset 3450, count -6, length 4027
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3304)
+	at java.base/java.lang.String.rangeCheck(String.java:280)
+	at java.base/java.lang.String.<init>(String.java:276)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:376)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:374)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:199)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:310)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:273)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:27)
+
+2020.10.30 21:36:50 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 01:58:03 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:00:24 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:00:55 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:01:11 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:02:23 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+10月 31, 2020 2:06:12 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 3624
+2020.10.31 02:07:43 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:07:43 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:07:52 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:10:19 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:10:19 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:10:35 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:10:42 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:11:19 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:11:55 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:15:17 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+10月 31, 2020 2:18:12 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4220
+2020.10.31 02:19:05 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:19:05 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:19:06 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:25:42 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:25:48 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:26:04 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:26:04 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+10月 31, 2020 2:27:55 午前 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4788
+2020.10.31 02:27:58 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:29:51 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:29:57 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:41:20 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:41:36 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:41:42 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:43:20 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:43:34 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:48:29 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:48:29 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:48:48 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:49:16 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:50:20 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:51:36 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:53:02 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:53:02 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:53:52 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:53:52 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 02:54:58 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:54:58 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.10.31 02:54:59 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 03:00:04 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.10.31 03:01:40 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:21:55 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:21:55 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:22:12 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:41:06 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:48:56 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:49:09 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:50:14 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:50:33 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:50:33 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:50:33 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+11月 02, 2020 5:50:51 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTraceNotification
+2020.11.02 17:55:30 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:55:33 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:55:33 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:55:33 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:55:41 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:56:21 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:57:53 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:57:53 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:57:53 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 17:58:07 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 17:58:32 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:10:59 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:11:36 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:13:50 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:13:53 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:14:36 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:15:53 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:17:26 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:30:31 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:34:42 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:35:30 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:36:29 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:42:40 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:43:16 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:43:20 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:44:14 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:44:14 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:44:18 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:45:13 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:45:13 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:45:13 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:45:13 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:45:17 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:47:44 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:47:51 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:47:55 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:48:22 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:48:22 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:51:00 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:51:10 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:51:22 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:51:22 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:51:24 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:51:24 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:51:55 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:51:55 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:52:26 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+11月 02, 2020 6:55:39 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8128
+2020.11.02 18:55:47 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:55:47 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:55:55 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:56:10 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 18:56:14 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 18:56:30 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 19:00:48 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:00:59 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+11月 02, 2020 7:06:36 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 8621
+2020.11.02 19:06:40 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:07:36 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:09:28 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 19:09:35 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:10:24 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:12:09 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:13:34 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/shape.scala
+2020.11.02 19:15:04 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:15:23 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:15:23 WARN  code navigation does not work for the file '/Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala' because it doesn't belong to a build target.
+2020.11.02 19:16:27 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:18:05 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:18:57 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala
+2020.11.02 19:19:00 WARN  no build target for: /Users/fumi/classes/prg1/tetris/src/tetris/scala/tetris.scala

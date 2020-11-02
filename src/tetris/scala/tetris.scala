@@ -67,10 +67,27 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
     TetrisWorld(((x,y+1),s),pile)
   }
   */
+  /*4のtick
   def tick(): World = {
     val ((x,y),s) = piece
     val wd = TetrisWorld(((x,y+1),s),pile)
     if (collision(wd)) TetrisWorld(piece,pile) else wd
+  }
+  */
+  def tick(): World = {
+    val ((x,y),s) = piece
+    if(s == List(List(Transparent))) return this
+    if(collision(TetrisWorld(((x,y+1),s),pile))) {
+      val bigpiece = S.shiftSE(s,x,y)
+      val nextPile = eraseRows(S.combine(pile, bigpiece))
+      val nextWorld = TetrisWorld(A.newPiece(), nextPile)
+      if(collision(nextWorld)){
+        println("Game Over")
+        return TetrisWorld(((0, 0), List(List(Transparent))), nextPile)
+      }
+      else return nextWorld
+    }
+    TetrisWorld(((x,y+1),s),pile)
   }
   // 2, 5. keyEvent
   // 目的：
@@ -99,13 +116,17 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def collision(world: TetrisWorld): Boolean = {
     val ((x,y),s) = piece
     val (m,n) = S.size(s)
-    x<=0 || A.WellWidth<=x+n || A.WellHeight<=y+m || S.overlap(S.shiftSE(s,x,y),pile)
+    x<0 || A.WellWidth<x+n || A.WellHeight<=y+m || S.overlap(S.shiftSE(s,x,y),pile)
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    def denseRow(row: S.Row): Boolean = {
+      row.foldLeft(true)((p, block) => p && (block != Transparent))
+    }
+    val condensedPile = pile.foldRight(List[List[S.Block]]())((row, nextPile) => if(denseRow(row)) nextPile else row::nextPile)
+    List.fill(A.WellHeight - condensedPile.length)(List.fill(A.WellWidth)(Transparent)) ++ condensedPile
   }
 }
 

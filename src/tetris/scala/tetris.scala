@@ -65,11 +65,18 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
    // val ((x,y), shape) = piece
    // TetrisWorld(((x,y+1),shape) , pile)
 
+   //val ((x,y), shape) = piece
+   //val notcollision = TetrisWorld(((x,y+1), shape), pile)
+   //if (collision(notcollision)) TetrisWorld(piece, pile)
+   //else notcollision
+
    val ((x,y), shape) = piece
    val notcollision = TetrisWorld(((x,y+1), shape), pile)
-   if (collision(notcollision)) TetrisWorld(piece, pile)
+   val newpile = eraseRows(S.combine(S.shiftSE(shape,x,y),pile))
+   if (collision(notcollision))  TetrisWorld(A.newPiece(),newpile)
    else notcollision
-   }
+
+ }
 
   // 2, 5. keyEvent
   // 目的：
@@ -104,7 +111,18 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    
+    def neweraseRows(pile: S.Shape): S.Shape = {
+      pile match {
+        case Nil => Nil
+        case x :: xs => {
+          if (x.filter(_ == Transparent).length == 0) neweraseRows(xs)
+          else x :: neweraseRows(xs)
+        }
+      }
+    }
+    
+    S.empty(10 -neweraseRows(pile).length, 10) ++ neweraseRows(pile)
   }
 }
 

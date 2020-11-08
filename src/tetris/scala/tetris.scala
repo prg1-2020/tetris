@@ -62,20 +62,32 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
+   //1
    // val ((x,y), shape) = piece
-   // TetrisWorld(((x,y+1),shape) , pile)
+   // TetrisWorld(((x,y+1),shape) , pile)    
 
+
+   // 4
    //val ((x,y), shape) = piece
    //val notcollision = TetrisWorld(((x,y+1), shape), pile)
    //if (collision(notcollision)) TetrisWorld(piece, pile)
    //else notcollision
 
+   // 7 改良前
+   //val ((x,y), shape) = piece
+   // val notcollision = TetrisWorld(((x,y+1), shape), pile)
+   // val newpile = eraseRows(S.combine(S.shiftSE(shape,x,y),pile))
+   // if (collision(notcollision))  TetrisWorld(A.newPiece(),newpile)
+   // else notcollision
+
    val ((x,y), shape) = piece
    val notcollision = TetrisWorld(((x,y+1), shape), pile)
-   val newpile = eraseRows(S.combine(S.shiftSE(shape,x,y),pile))
-   if (collision(notcollision))  TetrisWorld(A.newPiece(),newpile)
+   if (S.overlap(pile, S.shiftSE(shape,x,y))) TetrisWorld(piece,pile)
+   else if (collision(notcollision)) {
+     val newpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
+    TetrisWorld(A.newPiece(),newpile)
+   }
    else notcollision
-
  }
 
   // 2, 5. keyEvent

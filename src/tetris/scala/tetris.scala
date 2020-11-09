@@ -62,25 +62,82 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：
   def tick(): World = {
-    TetrisWorld(piece, pile)
-  }
+   //1
+   // val ((x,y), shape) = piece
+   // TetrisWorld(((x,y+1),shape) , pile)    
+
+
+   // 4
+   //val ((x,y), shape) = piece
+   //val notcollision = TetrisWorld(((x,y+1), shape), pile)
+   //if (collision(notcollision)) TetrisWorld(piece, pile)
+   //else notcollision
+
+   // 7 改良前
+   //val ((x,y), shape) = piece
+   // val notcollision = TetrisWorld(((x,y+1), shape), pile)
+   // val newpile = eraseRows(S.combine(S.shiftSE(shape,x,y),pile))
+   // if (collision(notcollision))  TetrisWorld(A.newPiece(),newpile)
+   // else notcollision
+
+   val ((x,y), shape) = piece
+   val notcollision = TetrisWorld(((x,y+1), shape), pile)
+   if (S.overlap(pile, S.shiftSE(shape,x,y))) {
+     println("What a loser!!")
+     TetrisWorld(piece,pile)
+   }
+   else if (collision(notcollision)) {
+     val newpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
+    TetrisWorld(A.newPiece(),newpile)
+   }
+   else notcollision
+ }
 
   // 2, 5. keyEvent
   // 目的：
   def keyEvent(key: String): World = {
-    TetrisWorld(piece, pile)
+    // var ((x,y), shape) = piece
+    // if (key == "RIGHT") x = x+1
+    // if (key == "LEFT")  x = x-1
+    // if (key == "UP")  shape = S.rotate(shape)
+    // TetrisWorld(((x,y),shape), pile)
+     var ((x,y), shape) = piece
+     if (key == "RIGHT") x = x+1
+     if (key == "LEFT")  x = x-1
+     if (key == "UP")  shape = S.rotate(shape)
+     val notcollision = TetrisWorld(((x,y), shape), pile)
+     if (collision(notcollision))  TetrisWorld(piece,pile)
+     else notcollision
+ 
   }
 
   // 3. collision
   // 目的：
   def collision(world: TetrisWorld): Boolean = {
-    false
+    val ((x,y), shape) = piece
+    val (yy,xx) = S.size(shape)
+    if(x <= 0) true
+    else if (x + xx >= 10) true
+    else if (y + yy >= 10) true
+    else if (S.overlap(shape, pile)) true
+    else false 
   }
 
   // 6. eraseRows
   // 目的：
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    
+    def neweraseRows(pile: S.Shape): S.Shape = {
+      pile match {
+        case Nil => Nil
+        case x :: xs => {
+          if (x.filter(_ == Transparent).length == 0) neweraseRows(xs)
+          else x :: neweraseRows(xs)
+        }
+      }
+    }
+    
+    S.empty(10 -neweraseRows(pile).length, 10) ++ neweraseRows(pile)
   }
 }
 

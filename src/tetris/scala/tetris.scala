@@ -111,10 +111,10 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
         }
       }
       case "UP" => {
-        if(collision(TetrisWorld(((x,y+1),S.rotate(shape)),pile))){
+        if(collision(TetrisWorld(((x,y),S.rotate(shape)),pile))){
           TetrisWorld(piece,pile)
         }else{
-          TetrisWorld(((x,y+1),S.rotate(shape)),pile)
+          TetrisWorld(((x,y),S.rotate(shape)),pile)
         }
       }
       case _ => {
@@ -143,7 +143,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   def collision(world: TetrisWorld): Boolean = {
     val TetrisWorld(((x,y),shape),plie) = world
     val (s,t) = S.size(shape)
-    if(x<0 | x+s > A.WellWidth | y<0 | y+t> A.WellHeight) true //world境界との衝突
+    if(x<0 | x+t > A.WellWidth | y<0 | y+s> A.WellHeight) true //world境界との衝突
     else S.overlap(S.shiftSE(shape,x,y),pile) //pileとの衝突
   }
 

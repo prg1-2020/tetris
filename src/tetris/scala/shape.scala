@@ -171,21 +171,17 @@ object ShapeLib {
 
   // 10. overlap
   // 目的：２つのshapeが重なりを持つかを判断する
-  def overlap(s0_0: Shape, s1_0: Shape): Boolean = {
-    val (h0, w0) = size(s0_0)
-    val (h1, w1) = size(s1_0)
-    val (h, w) = (max(h0, h1), max(w0, w1))
-    val s0_1 = padTo(s0_0, h, w).foldLeft(List.empty[Color])((l, r) => l ++ r)
-    val s1_1 = padTo(s1_0, h, w).foldLeft(List.empty[Color])((l, r) => l ++ r)
-
-    def judge(a: List[Color], b: List[Color]): Boolean = {
-      val (ai, bi) = (a.init, b.init)
-      if (a.head != Transparent && b.head != Transparent) true
-      else if (ai == Nil || bi == Nil) false
-      else judge(ai, bi)
+    def overlap(s1:Shape,s2:Shape):Boolean = {
+    def ju(l1:Row,l2:Row):Boolean = {
+      (l1,l2) match{
+        case (x::xs,y::ys) => (x!=Transparent && y!=Transparent) || ju(xs,ys)
+        case _             => false
+      }
     }
-
-    judge(s0_1, s1_1)
+    (s1,s2) match{
+      case (x::xs,y::ys) => ju(x,y) || overlap(xs,ys)
+      case _             => false
+    }
   }
 
 

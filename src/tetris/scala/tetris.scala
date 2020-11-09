@@ -84,7 +84,11 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
       if (collision(TetrisWorld(A.newPiece(), newpile)) == false) {
         TetrisWorld(A.newPiece(), newpile)
       }
-      else TetrisWorld(piece, pile)
+      else {
+        println("Game Over")
+        TetrisWorld(piece, pile)
+      }
+      
     }
     else maybeNextWorld
   }

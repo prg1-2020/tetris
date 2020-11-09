@@ -82,7 +82,7 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
 */
 
   // 3. collision
-  // 目的：
+  // 目的： 衝突が起きているか判定する
   def collision(world: TetrisWorld): Boolean = {
     val ((x, y), s) = world.piece
     val (r, c) = S.size(s)
@@ -100,13 +100,14 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
 */
 
   // 5. keyEvent
-  // 目的：
+  // 目的: 衝突が起きるならその操作を無視する
   def keyEvent(key: String): World = {
     val ((x, y), s) = piece
     val newWorld = (key match {
       case "RIGHT" => TetrisWorld(((x + 1, y), s), pile)
       case "LEFT" => TetrisWorld(((x - 1, y), s), pile)
       case "UP" => TetrisWorld(((x, y), S.rotate(s)), pile)
+      case "DOWN" => TetrisWorld(((x, y + 1), s), pile)
       case _ => TetrisWorld(piece, pile)
     })
     if (collision(newWorld)) TetrisWorld(piece, pile)
@@ -116,7 +117,6 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 6. eraseRows
   // 目的： そろった行を消す
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
     def rowcheck(row: S.Row): Boolean = {
       row.contains(Transparent) || row.length != A.WellWidth
     }
@@ -161,5 +161,5 @@ object A extends App {
   val world = TetrisWorld(piece, List.fill(WellHeight)(List.fill(WellWidth)(Transparent)))
 
   // ゲームの開始
-  world.bigBang(BlockSize * WellWidth, BlockSize * WellHeight, 1)
+  world.bigBang(BlockSize * WellWidth, BlockSize * WellHeight, 0.2)
 }

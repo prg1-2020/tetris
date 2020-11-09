@@ -82,7 +82,10 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
 
    val ((x,y), shape) = piece
    val notcollision = TetrisWorld(((x,y+1), shape), pile)
-   if (S.overlap(pile, S.shiftSE(shape,x,y))) TetrisWorld(piece,pile)
+   if (S.overlap(pile, S.shiftSE(shape,x,y))) {
+     println("What a loser!!")
+     TetrisWorld(piece,pile)
+   }
    else if (collision(notcollision)) {
      val newpile = eraseRows(S.combine(S.shiftSE(shape, x, y), pile))
     TetrisWorld(A.newPiece(),newpile)

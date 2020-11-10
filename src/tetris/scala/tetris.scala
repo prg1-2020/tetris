@@ -62,21 +62,34 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 1, 4, 7. tick
   // 目的：時間の経過に応じて世界を更新する
   def tick(): World = {
-    /*
+    /*　課題１
     val ((x,y),s) = piece
     TetrisWorld(((x,y+1),S), pile)
     */
 
+    /*　課題４
     val ((x,y),s) = piece
     val world = TetrisWorld(((x,y+1),s), pile)
-    if(collision(world)) TetrisWorld(piece,pile)
+    if(collision(world)) TetrisWorld(piece,pile)  else world
+    */
+
+    val ((x,y),s) = piece
+    val world = TetrisWorld(((x,y+1),s), pile)
+    if(collision(world)) {
+      val nextPiece = A.newPiece()
+      val ((a,b),t) = nextPiece
+      val nextPile = eraseRows(S.combine(S.shiftSE(s,x,y),pile))
+      if(!S.overlap(S.shiftSE(t,a,b),nextPile)) TetrisWorld(nextPiece, nextPile)
+      //endOfWorld("Game Over")←これの使い方がわからずエラーが出るので初期化することにしました。
+      else TetrisWorld(nextPiece, S.empty(A.WellHeight,A.WellWidth))
+    }
     else world
   }
 
   // 2, 5. keyEvent
   // 目的：キー入力に従って世界を更新する
   def keyEvent(key: String): World = {
-    /*
+    /*　課題２
     val ((x,y),s) = piece
     key match {
       case "RIGHT" => TetrisWorld(((x+1,y),s), pile)
@@ -100,16 +113,28 @@ case class TetrisWorld(piece: ((Int, Int), S.Shape), pile: S.Shape) extends Worl
   // 3. collision
   // 目的：受け取った世界で衝突が起きているかを判定する
   def collision(world: TetrisWorld): Boolean = {
-    val ((x,y), s) = piece
+    val ((x,y), s) = world.piece
     val (r,c) = S.size(s)
-    if(x+c-1 >= A.WellWidth || x <= -1 || y+r-1 >= A.WellHeight || S.overlap(S.shiftSE(s,x,y),pile)) true
+    if(x+c-1 >= A.WellWidth || x <= -1 || y+r-1 >= A.WellHeight || S.overlap(S.shiftSE(s,x,y),world.pile)) true
     else false
   }
 
   // 6. eraseRows
-  // 目的：
+  // 目的：pile を受け取ったら、揃った行を削除する
   def eraseRows(pile: S.Shape): S.Shape = {
-    pile
+    //空白が無い行を消す
+    def choice(p:S.Shape):S.Shape = {
+      //空白の要素があればtrueを返す関数
+      def judge (r:S.Row):Boolean = {
+        r match{
+          case Nil   => false
+          case x::xs => if(x==Transparent) true  else judge(xs)
+        }
+      }
+      p.filter(judge(_))
+    }
+    val n = A.WellHeight - choice(pile).length
+    S.shiftSE(choice(pile),0,n)
   }
 }
 

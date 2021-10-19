@@ -275,8 +275,12 @@ object ShapeLib {
     }
   }
 
-
+  
 }
+
+
+
+
 
 // テスト
 object ShapeTest extends App {
@@ -304,7 +308,7 @@ object ShapeTest extends App {
   println(size(shapeI) == (4, 1))
   println(size(shapeZ) == (2, 3))
   println(size(List(List(Red,Red),List(Red,Yellow))) == (2, 2))
- 
+  
   // 4. blockCount
   println("blockCount")
   println(blockCount(Nil) == 0)
@@ -397,5 +401,7 @@ object ShapeTest extends App {
   println(combine(List(List(Yellow,Transparent), List(Transparent,Red)),
                   List(List(Transparent,Blue,Yellow), List(Blue,Transparent,Transparent),List(Blue,Red,Red))) ==
     List(List(Yellow,Blue,Yellow), List(Blue,Red,Transparent),List(Blue,Red,Red)))
+  
+  
   
 }
